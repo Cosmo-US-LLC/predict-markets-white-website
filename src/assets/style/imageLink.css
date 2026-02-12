@@ -1,0 +1,53 @@
+.predict_hero_bg {
+  background-image: url('../../assets/images/home/predict_hero/predict_hero_bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100%;
+}
+
+.predict_hero_dashboard {
+  background-image: url('../../assets/images/home/predict_hero/predict_hero_desboard.webp');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 750px;
+}
+
+.what_is_predict_card_bg {
+  background-image: url('../../assets/images/home/what_is_predict/what_is_predict_card_bg2.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.prediction_platform_card_bg {
+  background-image: url('../../assets/images/home/prediction_platform/prediction_platform_card_bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.get_extra_rewards_card_bg {
+  background-image: url('../../assets/images/home/get_extra_rewards/get_extra_rewards_bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+@media screen and (max-width: 768px) {
+  .predict_hero_bg {
+    background-image: url('../../assets/images/home/predict_hero/predict_hero_bg_mobile.webp');
+  }
+  .what_is_predict_card_bg {
+    background-image: url('../../assets/images/home/what_is_predict/what_is_predict_card_bg2_mobile.webp');
+  }
+  .predict_hero_dashboard {
+    background-image: url('../../assets/images/home/predict_hero/predict_hero_mobile.webp');
+  }
+  .prediction_platform_card_bg {
+    background-image: url('../../assets/images/home/prediction_platform/prediction_platform_card_bg_mobile.webp');
+  }
+   
+}
