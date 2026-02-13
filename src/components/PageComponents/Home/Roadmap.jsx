@@ -1,17 +1,13 @@
-import { Check } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from '../../ui/carousel';
-import { CarouselLeftArrow, CarouselRightArrow } from '../../ui/carousel-arrow';
-import { cn } from '../../../lib/utils';
+import { Check } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
+import { CarouselLeftArrow, CarouselRightArrow } from "../../ui/carousel-arrow";
+import { cn } from "../../../lib/utils";
 
-export default function Roadmap({ 
+export default function Roadmap({
   roadmapItems = [],
-  title = 'Roadmap',
-  subtitle = 'Building the world\'s most rewarding decentralised prediction platform',
+  title = "Roadmap",
+  subtitle = "Building the world's most rewarding decentralised prediction platform",
 }) {
   const [api, setApi] = useState();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -25,7 +21,7 @@ export default function Roadmap({
     setCanScrollPrev(api.canScrollPrev());
     setCanScrollNext(api.canScrollNext());
 
-    api.on('select', () => {
+    api.on("select", () => {
       setCanScrollPrev(api.canScrollPrev());
       setCanScrollNext(api.canScrollNext());
     });
@@ -36,14 +32,14 @@ export default function Roadmap({
   }
 
   return (
-    <section className="bg-[#f7fcff] py-12 md:py-[60px]">
+    <section className="bg-[#F7FCFF] py-12 md:py-[60px]">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="flex flex-col gap-[14px] items-center mb-12 md:mb-12">
-          <h2 className="heading-two capitalize text-black text-center">
+          <h2 className="heading-two capitalize text-[#000] text-center">
             {title}
           </h2>
-          <p className="text-black paragraph-regular text-center max-w-4xl">
+          <p className="text-black paragraph-regular !text-[20px] text-center max-w-4xl">
             {subtitle}
           </p>
         </div>
@@ -60,7 +56,10 @@ export default function Roadmap({
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {roadmapItems.map((item) => (
-                <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-full md:basis-[400px]">
+                <CarouselItem
+                  key={item.id}
+                  className="pl-2 md:pl-4 basis-full md:basis-[400px]"
+                >
                   <div className="flex h-[490px] flex-col gap-[30px] rounded-[15px] border border-[#dddddd] bg-white px-4 py-8 md:px-4 md:py-8">
                     {/* Header */}
                     <div className="flex items-center justify-between">
@@ -70,33 +69,40 @@ export default function Roadmap({
                       <div
                         className={cn(
                           "h-[32px] rounded-full px-3 flex items-center justify-center min-w-[100px] ",
-                          item.statusType === 'completed'
+                          item.statusType === "completed"
                             ? "bg-[#0080ED]"
-                            : item.statusType === 'current'
-                            ? "border border-[#0080ED]"
-                            : "border border-[#0080ED]"
+                            : item.statusType === "current"
+                              ? "border border-[#0080ED]"
+                              : "border border-[#0080ED]",
                         )}
                       >
                         <span
                           className={cn(
                             "text-[12px] font-normal leading-[18px] tracking-[0.24px]",
-                            item.statusType === 'completed' ? 'text-white' : 'text-black'
+                            item.statusType === "completed"
+                              ? "text-white"
+                              : "text-black",
                           )}
                         >
                           {item.status}
                         </span>
                       </div>
-                      
                     </div>
                     <hr className="w-full pb-4 border-t border-[#dddddd]" />
                     {/* Items List */}
-                    
-                    <div className="flex flex-col gap-8">
+
+                    <div className="flex flex-col gap-6">
                       {item.items.map((listItem, index) => (
-                        <div key={index} className="flex flex-row gap-3 items-start">
+                        <div
+                          key={index}
+                          className="flex flex-row gap-3 items-start"
+                        >
                           {/* Checkmark */}
                           <div className="mt-[3px] flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-[#0080ED] p-[3px]">
-                            <Check className="h-full w-full text-white" strokeWidth={3} />
+                            <Check
+                              className="h-full w-full text-white"
+                              strokeWidth={3}
+                            />
                           </div>
 
                           {/* Text */}
@@ -106,13 +112,11 @@ export default function Roadmap({
                         </div>
                       ))}
                     </div>
-
-                    
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            
+
             {/* Custom Arrow Buttons */}
             <div className="hidden md:block absolute -left-[70px] top-1/2 -translate-y-1/2">
               <CarouselLeftArrow
