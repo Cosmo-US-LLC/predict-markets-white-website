@@ -61,7 +61,7 @@ const faqData = [
 export default function FrequentlyAskedQuestions() {
   return (
     <section className="bg-white py-12 md:py-20">
-      <div className="max-w-[1280px] mx-auto md:px-4 px-0">
+      <div className="max-w-[1280px] mx-auto md:px-8 px-0">
         {/* Header Section */}
         <div className="flex flex-col gap-4 items-center text-center mb-12 md:mb-16">
           <h2 className="heading-two capitalize text-[#000]">
