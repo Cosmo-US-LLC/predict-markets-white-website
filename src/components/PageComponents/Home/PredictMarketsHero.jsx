@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import FeaturedIn from "./FeaturedIn";
 import FeaturedInSection from "./FeaturedInSection";
+import PresaleDashboard from "./PresaleDashboard";
 import {
   featuredInLogos,
   featuredInSectionConfig,
@@ -11,123 +12,152 @@ import predictMarketsHeroCoin2 from "../../../assets/images/home/predict_hero/co
 import predictMarketsHeroCoin3 from "../../../assets/images/home/predict_hero/coin_3.webp";
 import predictMarketsHeroCoin4 from "../../../assets/images/home/predict_hero/coin_4.webp";
 import predictMarketsHeroCoin5 from "../../../assets/images/home/predict_hero/coin_5.webp";
+import predictHeroBg from "../../../assets/images/home/predict_hero/predict_hero_bg.webp";
+import predictHeroBgMobile from "../../../assets/images/home/predict_hero/predict_hero_bg_mobile.webp";
 
 export default function PredictMarketsHero({
-  title = "Own The Future Of Prediction Markets",
+  title = "Own The Future Of Prediction Markets.",
   description = "$PREDICT powers PredictMarkets, the most rewarding decentralised prediction platform that turns real world events into live on-chain markets and shares platform revenue with token holders.",
   buttonText = "Buy $PREDICT",
   buttonLink = "/presale",
   centerImage,
   featuredInLeftText = "First Hold-To-Earn Token",
   featuredInRightText = "Built on Ethereum",
+  videoUrl,
 }) {
   return (
-    <section className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-white">
-      {/* Floating coins */}
-      <div className="w-full max-w-[1440px] mx-auto relative">
-        <div className="absolute md:top-[10%] top-[11%] md:left-[-3%] left-[-8%] md:w-[150px] md:h-[150px] w-[100px] h-[100px]">
-          <img
-            src={predictMarketsHeroCoin1}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute md:top-[28%] top-[77%] md:left-[20%] left-[23%] md:w-[120px] md:h-[120px] w-[60px] h-[60px]">
-          <img
-            src={predictMarketsHeroCoin2}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute md:top-[16%] top-[22%] md:right-[-1%] right-[-11%] md:w-[150px] md:h-[150px] w-[100px] h-[100px]">
-          <img
-            src={predictMarketsHeroCoin3}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute top-[65%] md:left-[2%] left-[-6%] md:w-[100px] md:h-[100px] w-[60px] h-[60px]">
-          <img
-            src={predictMarketsHeroCoin4}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute md:bottom-[15%] bottom-[1.5%] md:right-0 right-[-2%] md:w-[150px] md:h-[150px] w-[100px] h-[100px]">
-          <img
-            src={predictMarketsHeroCoin5}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </div>
+    <section
+      className="relative w-full overflow-hidden min-h-screen flex items-center justify-center py-12 md:py-20"
+    >
+      {/* Background Image - Mobile */}
+      <div
+        className="md:hidden absolute inset-0 w-full h-full z-0"
+        style={{
+          backgroundImage: `url(${predictHeroBgMobile})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      ></div>
 
-        {/* Main content */}
-        <div className="relative z-10 mx-auto flex w-full max-w-[1280px] flex-col gap-10 px-4 py-12 md:flex-row md:items-start md:justify-between md:px-8 md:py-16">
-          {/* Left column: text, audit, video, featured logos */}
-          <div className="flex w-full flex-col gap-8 md:w-[720px]">
-            {/* Badge */}
-            <FeaturedIn
-              leftText={featuredInLeftText}
-              rightText={featuredInRightText}
-            />
+      {/* Background Image - Desktop */}
+      <div
+        className="hidden md:block absolute inset-0 w-full h-full z-0"
+        style={{
+          backgroundImage: `url(${predictHeroBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      ></div>
 
-            {/* Title + description */}
-            <div className="flex flex-col gap-4">
-              <h1 className="heading-one text-black max-w-[640px]">{title}</h1>
-              <p className="paragraph-regular text-[#4b4b4b] max-w-[700px]">
-                {description}
-              </p>
+      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-8">
+        {/* Two Column Layout */}
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
+          {/* Left Section - Content Area */}
+          <div className="flex-1 w-full lg:max-w-[665px]">
+            {/* Featured In Badge - At Top */}
+            <div className="mb-6">
+              <FeaturedIn
+                leftText={featuredInLeftText}
+                rightText={featuredInRightText}
+              />
             </div>
 
-            {/* Primary CTA */}
-            <Link
-              to={buttonLink}
-              className="btn_secondary mt-2 w-fit !text-[#000]"
-            >
-              {buttonText}
-            </Link>
+            {/* Title */}
+            <h1 className="heading-one text-[#000000] mb-4 text-left">
+              {title}
+            </h1>
 
-            {/* Verified & Audited */}
-            <div className="flex flex-col gap-2 text-sm">
-              <span className="font-semibold text-[#000]">
-                Verified & Audited by
-              </span>
-              <div className="flex h-10 w-[170px] items-center justify-center rounded-[8px] bg-white/10 text-xs text-white">
-                Coinsult
-              </div>
+            {/* Description */}
+            <p className="text-[#000000] !text-start paragraph-regular mb-6 text-left max-w-[564px]">
+              {description}
+            </p>
+
+            {/* Verification Section */}
+            <div className="flex items-start flex-col gap-2 mb-6">
+              <span className=" paragraph-medium !font-[600]">Verified & Audited by</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="166" height="44" viewBox="0 0 166 44" fill="none">
+                  <path d="M60.5077 33.8609C59.0323 33.8609 57.6959 33.6258 56.4985 33.1555C55.3225 32.6638 54.3068 31.937 53.4515 30.975C52.6176 30.0131 51.9761 28.8267 51.5271 27.4158C51.078 25.9836 50.8535 24.3269 50.8535 22.4458C50.8535 20.5646 51.078 18.8972 51.5271 17.4436C51.9761 15.9686 52.6176 14.7395 53.4515 13.7561C54.3068 12.7514 55.3225 11.9926 56.4985 11.4795C57.6959 10.9665 59.0323 10.71 60.5077 10.71C62.5177 10.71 64.1855 11.1375 65.5112 11.9926C66.8369 12.8476 67.8954 14.1409 68.6865 15.8724L65.0622 17.7963C64.7415 16.7916 64.2176 15.99 63.4906 15.3915C62.7636 14.7715 61.7693 14.4616 60.5077 14.4616C58.9254 14.4616 57.6638 14.996 56.723 16.0648C55.8036 17.1337 55.3438 18.63 55.3438 20.5539V24.0811C55.3438 26.0263 55.8036 27.5227 56.723 28.5702C57.6638 29.5962 58.9254 30.1093 60.5077 30.1093C61.7693 30.1093 62.7956 29.7673 63.5868 29.0832C64.3993 28.3992 64.9874 27.5548 65.3509 26.5501L68.7828 28.5702C67.9702 30.2375 66.8904 31.5415 65.5433 32.4821C64.1962 33.4013 62.5177 33.8609 60.5077 33.8609Z" fill="black" />
+                  <path d="M78.1461 33.86C76.9487 33.86 75.8689 33.657 74.9067 33.2508C73.9658 32.8446 73.1533 32.2568 72.4691 31.4872C71.8062 30.7177 71.293 29.7985 70.9295 28.7296C70.566 27.6394 70.3843 26.421 70.3843 25.0742C70.3843 23.7275 70.566 22.5197 70.9295 21.4509C71.293 20.382 71.8062 19.4735 72.4691 18.7253C73.1533 17.9558 73.9658 17.3679 74.9067 16.9618C75.8689 16.5556 76.9487 16.3525 78.1461 16.3525C79.3436 16.3525 80.4234 16.5556 81.3856 16.9618C82.3478 17.3679 83.1603 17.9558 83.8232 18.7253C84.5074 19.4735 85.0313 20.382 85.3948 21.4509C85.7583 22.5197 85.9401 23.7275 85.9401 25.0742C85.9401 26.421 85.7583 27.6394 85.3948 28.7296C85.0313 29.7985 84.5074 30.7177 83.8232 31.4872C83.1603 32.2568 82.3478 32.8446 81.3856 33.2508C80.4234 33.657 79.3436 33.86 78.1461 33.86ZM78.1461 30.5573C79.2366 30.5573 80.0919 30.226 80.712 29.5633C81.3321 28.9006 81.6422 27.928 81.6422 26.6454V23.5351C81.6422 22.2739 81.3321 21.3119 80.712 20.6493C80.0919 19.9866 79.2366 19.6552 78.1461 19.6552C77.077 19.6552 76.2324 19.9866 75.6123 20.6493C74.9922 21.3119 74.6822 22.2739 74.6822 23.5351V26.6454C74.6822 27.928 74.9922 28.9006 75.6123 29.5633C76.2324 30.226 77.077 30.5573 78.1461 30.5573Z" fill="black" />
+                  <path d="M90.9778 14.3013C90.1225 14.3013 89.5024 14.1089 89.1175 13.7241C88.754 13.3393 88.5723 12.8477 88.5723 12.2491V11.6078C88.5723 11.0093 88.754 10.5176 89.1175 10.1328C89.5024 9.74805 90.1225 9.55566 90.9778 9.55566C91.8117 9.55566 92.4211 9.74805 92.806 10.1328C93.1909 10.5176 93.3833 11.0093 93.3833 11.6078V12.2491C93.3833 12.8477 93.1909 13.3393 92.806 13.7241C92.4211 14.1089 91.8117 14.3013 90.9778 14.3013ZM88.9251 16.7382H93.0305V33.4762H88.9251V16.7382Z" fill="black" />
+                  <path d="M97.1367 33.4753V16.7373H101.242V19.527H101.403C101.745 18.6292 102.279 17.881 103.006 17.2824C103.755 16.6625 104.781 16.3525 106.085 16.3525C107.817 16.3525 109.143 16.919 110.062 18.052C110.982 19.1849 111.442 20.7989 111.442 22.8938V33.4753H107.336V23.3106C107.336 22.1136 107.122 21.2157 106.695 20.6172C106.267 20.0186 105.561 19.7194 104.578 19.7194C104.15 19.7194 103.733 19.7835 103.327 19.9118C102.942 20.0186 102.589 20.1897 102.269 20.4248C101.969 20.6386 101.723 20.9165 101.531 21.2585C101.338 21.5791 101.242 21.9639 101.242 22.4128V33.4753H97.1367Z" fill="black" />
+                  <path d="M120.839 33.86C119.235 33.86 117.888 33.5928 116.798 33.0584C115.707 32.5026 114.745 31.7437 113.911 30.7818L116.413 28.3449C117.033 29.0503 117.707 29.6061 118.434 30.0122C119.182 30.4184 120.037 30.6215 120.999 30.6215C121.983 30.6215 122.689 30.4505 123.116 30.1084C123.565 29.7664 123.79 29.2961 123.79 28.6976C123.79 28.2059 123.629 27.8211 123.309 27.5432C123.009 27.244 122.486 27.0409 121.737 26.934L120.069 26.7095C118.252 26.4744 116.862 25.9614 115.9 25.1704C114.959 24.3581 114.488 23.1824 114.488 21.6433C114.488 20.831 114.638 20.1041 114.938 19.4628C115.237 18.8002 115.665 18.2444 116.22 17.7955C116.776 17.3252 117.439 16.9725 118.209 16.7373C119 16.4808 119.877 16.3525 120.839 16.3525C121.652 16.3525 122.368 16.4167 122.988 16.5449C123.629 16.6518 124.207 16.8228 124.72 17.058C125.233 17.2717 125.704 17.5496 126.131 17.8917C126.559 18.2123 126.976 18.5757 127.382 18.9819L124.977 21.3867C124.485 20.8737 123.897 20.4462 123.213 20.1041C122.528 19.7621 121.78 19.5911 120.967 19.5911C120.069 19.5911 119.417 19.7514 119.011 20.0721C118.626 20.3927 118.434 20.8096 118.434 21.3226C118.434 21.8784 118.594 22.3059 118.915 22.6052C119.257 22.8831 119.823 23.0862 120.615 23.2145L122.314 23.4389C125.928 23.9519 127.735 25.5979 127.735 28.3769C127.735 29.1892 127.564 29.9374 127.222 30.6215C126.901 31.2841 126.441 31.8613 125.843 32.353C125.244 32.8233 124.517 33.1974 123.662 33.4753C122.828 33.7318 121.887 33.86 120.839 33.86Z" fill="black" />
+                  <path d="M140.725 30.6866H140.565C140.415 31.1141 140.212 31.5202 139.956 31.905C139.72 32.2684 139.41 32.5998 139.025 32.899C138.662 33.1983 138.213 33.4335 137.678 33.6045C137.165 33.7755 136.566 33.861 135.882 33.861C134.15 33.861 132.825 33.2945 131.905 32.1615C130.986 31.0286 130.526 29.4146 130.526 27.3197V16.7383H134.631V26.9029C134.631 28.0572 134.856 28.9444 135.305 29.5643C135.754 30.1628 136.47 30.4621 137.454 30.4621C137.86 30.4621 138.256 30.4087 138.641 30.3018C139.047 30.1949 139.4 30.0346 139.699 29.8208C139.998 29.5857 140.244 29.3078 140.437 28.9871C140.629 28.6451 140.725 28.2496 140.725 27.8007V16.7383H144.831V33.4762H140.725V30.6866Z" fill="black" />
+                  <path d="M153.039 33.4761C151.628 33.4761 150.591 33.1234 149.928 32.418C149.265 31.7126 148.934 30.7186 148.934 29.436V9.74805H153.039V30.2055H155.252V33.4761H153.039Z" fill="black" />
+                  <path d="M162.792 33.4756C161.381 33.4756 160.301 33.1122 159.552 32.3854C158.825 31.6372 158.462 30.579 158.462 29.2109V20.0083H155.992V16.7376H157.275C157.895 16.7376 158.312 16.5987 158.526 16.3208C158.761 16.0215 158.879 15.5833 158.879 15.0061V12.1523H162.567V16.7376H165.999V20.0083H162.567V30.2049H165.743V33.4756H162.792Z" fill="black" />
+                  <path d="M14.1142 0H43.3326V29.2105C43.3326 32.9528 41.8456 36.5418 39.1987 39.188C36.5518 41.8342 32.9618 43.3208 29.2185 43.3208H0V14.1103C0 10.368 1.48702 6.77901 4.13394 4.13281C6.78086 1.48662 10.3709 0 14.1142 0Z" fill="url(#paint0_linear_1775_3377)" />
+                  <path d="M34.2339 17.047L31.3369 18.3741L29.3031 19.3059L29.2124 19.3467L26.4161 20.6094C26.4161 20.5986 26.4115 20.5877 26.4079 20.5768C26.2428 19.8889 25.9245 19.2472 25.4767 18.6995L25.2183 18.1347L28.0083 16.8566L30.072 15.9111L32.9944 14.5723C33.1564 14.8249 33.3075 15.0832 33.4477 15.3473L34.2112 17.0125L34.2339 17.047Z" fill="white" />
+                  <path d="M34.7086 24.6991C34.4938 25.6125 34.1823 26.5004 33.7792 27.3478L24.7183 25.8013L24.8035 25.3019C25.4645 24.7651 25.9661 24.0579 26.2543 23.2568L34.7086 24.6991Z" fill="white" />
+                  <path d="M18.3761 26.1388L14.7157 28.7305L12.0988 30.5833C11.4741 29.901 10.9225 29.1551 10.4531 28.3579L13.0563 26.5141L14.8852 25.2188L16.7767 23.8799L18.3761 26.1388Z" fill="white" />
+                  <path d="M18.7251 14.7567L17.5935 17.2822L15.936 16.5398L13.8369 15.5997L10.8818 14.2754C11.4204 13.4768 12.045 12.7397 12.7443 12.0771L15.9686 13.5212L18.434 14.6271L18.7251 14.7567Z" fill="white" />
+                  <path d="M31.5718 24.1631C31.1292 25.8812 30.2393 27.4515 28.9924 28.714C27.7456 29.9765 26.1865 30.8863 24.4737 31.3507C22.7609 31.8151 20.9557 31.8176 19.2416 31.3579C17.5276 30.8982 15.9659 29.9927 14.7157 28.7336C14.0633 28.0748 13.505 27.3293 13.0563 26.5181L10.4531 28.3619C11.7891 30.6381 13.7766 32.462 16.1593 33.5983C18.5419 34.7346 21.2105 35.1312 23.8207 34.737C26.431 34.3428 28.8632 33.1758 30.8038 31.3866C32.7444 29.5974 34.1043 27.268 34.7082 24.6988L31.5718 24.1631Z" fill="white" />
+                  <path d="M15.9666 13.5204C17.2367 12.6052 18.7032 11.9994 20.249 11.7511C21.7949 11.5029 23.3774 11.6192 24.8703 12.0907C26.3632 12.5622 27.7253 13.3759 28.848 14.4669C29.9706 15.5579 30.8228 16.896 31.3366 18.3746L34.2336 17.0475C34.2281 17.0339 34.2236 17.0203 34.2181 17.0076L33.4547 15.3424C33.3114 15.0789 33.1603 14.8206 33.0013 14.5674C31.8225 12.7173 30.2018 11.1894 28.2852 10.1216C26.3686 9.05375 24.2163 8.47942 22.0224 8.45038C19.8284 8.42133 17.6617 8.93848 15.7175 9.95521C13.7733 10.972 12.1126 12.4563 10.8853 14.2746L13.8403 15.5989C14.4419 14.8044 15.1585 14.1039 15.9666 13.5204Z" fill="white" />
+                  <path d="M11.9879 19.7411C12.0987 19.1715 12.2583 18.6126 12.4649 18.0704L9.56334 16.7705C8.4213 19.6468 8.32186 22.8318 9.28225 25.7737L12.0351 23.8248C11.7391 22.4812 11.723 21.0911 11.9879 19.7411Z" fill="white" />
+                  <path d="M31.1943 17.9873L29.1968 18.9908L29.1098 19.0352L26.3696 20.4103" fill="white" />
+                  <path d="M16.6451 23.9506L14.8761 25.2034C14.4283 24.3269 14.1514 23.3733 14.0601 22.3933L15.0466 21.6953L16.6451 23.9506Z" fill="white" />
+                  <path d="M17.9759 17.5061L16.8443 20.0315L14.4995 18.9782C14.8184 18.0988 15.294 17.2843 15.9031 16.5742L17.9759 17.5061Z" fill="white" />
+                  <path d="M29.3721 23.7882C28.9449 25.2996 28.0721 26.6473 26.8677 27.6556C25.6632 28.6639 24.1828 29.2861 22.6195 29.4411C21.0562 29.5961 19.4824 29.2767 18.1033 28.5245C16.7242 27.7723 15.6037 26.6222 14.888 25.2241C14.8837 25.2183 14.8804 25.2119 14.878 25.2051C14.1769 23.8268 13.9003 22.2717 14.0832 20.7363C14.266 19.2009 14.9001 17.7542 15.9053 16.579L15.9389 16.5409C16.8503 15.4909 18.0252 14.7027 19.3426 14.2575C20.66 13.8123 22.0723 13.7263 23.4341 14.0082C24.7958 14.2901 26.0578 14.9298 27.09 15.8614C28.1223 16.793 28.8874 17.9829 29.3068 19.3084L29.2161 19.3483L26.4198 20.6101C26.4198 20.5992 26.4152 20.5884 26.4116 20.5775C26.1509 19.4811 25.5042 18.515 24.5898 17.856C23.6754 17.197 22.5542 16.8889 21.4313 16.9881C20.3084 17.0874 19.2588 17.5873 18.4742 18.3965C17.6896 19.2057 17.2224 20.2701 17.1582 21.3953C17.0939 22.5204 17.4368 23.6311 18.1242 24.5243C18.8116 25.4175 19.7975 26.0336 20.9018 26.26C22.0061 26.4864 23.155 26.3079 24.1386 25.7572C25.1221 25.2065 25.8745 24.3203 26.2584 23.2607L29.3721 23.7882Z" fill="white" />
+                  <defs>
+                    <linearGradient id="paint0_linear_1775_3377" x1="0.692741" y1="1.08053" x2="64.1033" y2="63.3342" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#3B916F" />
+                      <stop offset="1" stop-color="#096AA5" />
+                    </linearGradient>
+                  </defs>
+                </svg>
             </div>
 
-            {/* Video placeholder */}
-            <div className="aspect-[702/358] w-full overflow-hidden rounded-[8px] bg-black/30 backdrop-blur-sm flex items-center justify-center">
-              <button
-                type="button"
-                className="flex h-16 w-24 items-center justify-center rounded-[12px] bg-[#ff0000]"
+            {/* Video Placeholder */}
+            <div className="relative w-full aspect-video bg-gray-200 rounded-lg mb-8 overflow-hidden border border-gray-300">
+              <div
+                className="absolute inset-0 flex items-center justify-center"
+                style={{
+                  backgroundImage: `
+                      linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+                      linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+                      linear-gradient(-45deg, transparent 75%, #f0f0f0 75%)
+                    `,
+                  backgroundSize: '20px 20px',
+                  backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+                }}
               >
-                <span className="sr-only">Play video</span>
-              </button>
+                <button className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-red-700 transition-colors shadow-lg hover:scale-110 transform">
+                  <svg
+                    className="w-10 h-10 text-white ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+              {videoUrl && (
+                <iframe
+                  className="w-full h-full"
+                  src={videoUrl}
+                  title="Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              )}
             </div>
 
-            {/* Featured in */}
-            <FeaturedInSection
-              title={featuredInSectionConfig.title}
-              logos={featuredInLogos}
-            />
-          </div>
-
-          {/* Right column: presale card placeholder */}
-          <div className="w-full md:w-[552px]">
-            <div className="relative mx-auto flex h-[872px] max-w-[552px] flex-col items-center rounded-[13.675px] border border-[#d8d8d8] bg-white/95 px-4 py-6 backdrop-blur-md">
-              {/* Live badge */}
-              <div className="absolute -top-3 left-1/2 flex -translate-x-1/2 items-center gap-1 rounded-[4px] bg-[#0080ED] px-2 py-1 text-[12px] font-semibold text-white tracking-[0.24px]">
-                <span className="h-[6px] w-[6px] rounded-full bg-white" />
-                PRESALE IS LIVE
-              </div>
-
-              <div className="mt-6 flex h-full w-full items-center justify-center rounded-[18px] bg-[#f5f7fb] px-4 text-center text-sm text-[#4b4b4b]">
-                Presale dashboard UI will render here.
-              </div>
+            {/* Featured In Section - At Bottom */}
+            <div className="w-full">
+              <FeaturedInSection
+                title={featuredInSectionConfig.title}
+                logos={featuredInLogos}
+              />
             </div>
           </div>
+
+          {/* Right Section - Presale Dashboard */}
+          <div className="w-full lg:max-w-[532px] lg:flex-shrink-0 lg:sticky lg:top-8">
+            <PresaleDashboard />
+          </div>
+
+        
         </div>
       </div>
     </section>

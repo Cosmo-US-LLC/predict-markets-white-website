@@ -1,9 +1,9 @@
-const featureImage1 = "https://www.figma.com/api/mcp/asset/832082e3-55d8-4a6c-8cf6-06b7590fa3a9";
-const featureImage2 = "https://www.figma.com/api/mcp/asset/a18a47f6-c50f-47cf-953e-33a7be2445b1";
-const featureImage3 = "https://www.figma.com/api/mcp/asset/45e4eb1f-7f03-4673-bef3-3fe5057b3ef4";
-const featureImage4 = "https://www.figma.com/api/mcp/asset/7cd96064-8406-4739-9e55-36f96fb69651";
-const featureImage5 = "https://www.figma.com/api/mcp/asset/30c2101e-5570-4621-a332-94976d3e463e";
-const featureImage6 = "https://www.figma.com/api/mcp/asset/6772bfe2-41c6-42c4-ba1d-8afe430a7a23";
+import featureImage1 from "../assets/images/home/predicts_the_feature/predicts_the_feature_image1.webp";
+import featureImage2 from "../assets/images/home/predicts_the_feature/predicts_the_feature_image2.webp";
+import featureImage3 from "../assets/images/home/predicts_the_feature/predicts_the_feature_image3.webp";
+import featureImage4 from "../assets/images/home/predicts_the_feature/predicts_the_feature_image4.webp";
+import featureImage5 from "../assets/images/home/predicts_the_feature/predicts_the_feature_image5.webp";
+import featureImage6 from "../assets/images/home/predicts_the_feature/predicts_the_feature_image6.webp";
 
 export const featuresData = [
   {

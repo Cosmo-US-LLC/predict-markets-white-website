@@ -1,3 +1,8 @@
+import coinImage from "../../../assets/images/home/exclusive_presale_benefits/presale_icon_1.svg";
+import laptopImage from "../../../assets/images/home/exclusive_presale_benefits/presale_icon_2.svg";
+import treasureChestImage from "../../../assets/images/home/exclusive_presale_benefits/presale_icon_3.svg";
+import diamondImage from "../../../assets/images/home/exclusive_presale_benefits/presale_icon_4.svg";
+
 export default function ExclusivePresaleBenefits({
   title = "Exclusive Presale Benefits",
   benefits = [
@@ -10,20 +15,20 @@ export default function ExclusivePresaleBenefits({
     {
       id: 2,
       icon: laptopImage,
-      title: "Priority Access to Platform Features",
-      description: "Early holders receive priority access to key features at launch, including advanced markets and early participation opportunities.",
+      title: "Priority Access To Platform Features",
+      description: "Early holders gain exclusive memberships with priority access to higher APY USDT staking pools and Key Features at launch.",
     },
     {
       id: 3,
       icon: treasureChestImage,
-      title: "Receive up to 40% platform credits",
-      description: "Receive up to 40% in free credits to predict and bet on PredictMarkets, with no conditions or obligations attached.",
+      title: "Receive Up To 40% Platform Credits",
+      description: "Get up to 40% of your purchase value in free credits to place predictions on PredictMarkets, with no strings attached.",
     },
     {
       id: 4,
       icon: diamondImage,
-      title: "$250K giveaway participation",
-      description: "Participate in our 250k giveaway and go all out to win big. This event is exclusively available for presale $PREDICT buyers.",
+      title: "$250K Giveaway Participation",
+      description: "Participate in our $250k giveaway and go all out to win big. This event is exclusively available for presale $PREDICT buyers.",
     },
   ],
 }) {
@@ -35,16 +40,17 @@ export default function ExclusivePresaleBenefits({
     <section className="bg-white py-12 md:py-[60px]">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Title */}
-        <h2 className="heading-two capitalize text-black text-center mb-12 md:mb-[48px]">
+        <h2 className="heading-two mb-8 !text-center">
           {title}
         </h2>
 
         {/* Benefits Grid */}
-        <div className="flex flex-col md:flex-row gap-[10px] items-stretch">
+        <div className="flex flex-col md:flex-row gap-2 items-stretch">
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="flex flex-1 min-w-0 flex-col items-center gap-8 rounded-[20px] border border-[#e5e5e5] bg-white px-4 py-7 shadow-[0_8px_24px_rgba(0,0,0,0.04)]"
+              className="bg-white rounded-lg border-[1px] rounded-[15px] border-[#DDD] flex flex-col 
+              gap-6 items-center px-[10px] py-7 flex-1 min-w-0"
             >
               {/* Icon */}
               <div className="h-[98px] w-[106px] flex items-center justify-center shrink-0">
@@ -60,10 +66,12 @@ export default function ExclusivePresaleBenefits({
 
               {/* Content */}
               <div className="flex flex-col gap-3 items-center text-center w-full">
-                <h3 className="heading-three capitalize text-black">
+                <h3 className="heading-three ">
                   {benefit.title}
                 </h3>
-                <p className="paragraph-regular text-[#4b4b4b]">
+                {/* Divider Line */}
+                <div className="w-full h-px bg-gray-200"></div>
+                <p className="paragraph-regular">
                   {benefit.description}
                 </p>
               </div>

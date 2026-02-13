@@ -128,13 +128,13 @@ export function Home() {
         buyButtonText={marketOpportunityConfig.buyButtonText}
         buyButtonLink={marketOpportunityConfig.buyButtonLink}
       />
-      {/* <WhatSetsUsApart
+      <WhatSetsUsApart
         title={whatSetsUsApartConfig.title}
         description={whatSetsUsApartConfig.description}
         tableData={comparisonTableData}
         platforms={whatSetsUsApartConfig.platforms}
         icons={whatSetsUsApartConfig.icons}
-      /> */}
+      />
       <TokenDetails
         title={tokenDetailsConfig.title}
         subtitle={tokenDetailsConfig.subtitle}

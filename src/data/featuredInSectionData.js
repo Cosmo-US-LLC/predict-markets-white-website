@@ -1,9 +1,9 @@
-import blockonomiLogo from "../assets/images/home/featured_in_section/logo_1.svg";
-import cryptopolitanLogo from "../assets/images/home/featured_in_section/logo_2.svg";
-import coincentralLogo from "../assets/images/home/featured_in_section/logo_3.svg";
-import blockchainreporterLogo from "../assets/images/home/featured_in_section/logo_4.svg";
-import coindooLogo from "../assets/images/home/featured_in_section/logo_5.svg";
-import cryptoEconomyLogo from "../assets/images/home/featured_in_section/logo_6.svg";
+import blockonomiLogo from "../assets/images/home/featured_in_section/fre_icons (1).svg";
+import cryptopolitanLogo from "../assets/images/home/featured_in_section/fre_icons (3).svg";
+import coincentralLogo from "../assets/images/home/featured_in_section/fre_icons (4).svg";
+import blockchainreporterLogo from "../assets/images/home/featured_in_section/fre_icons (2).svg";
+// import coindooLogo from "../assets/images/home/featured_in_section/logo_5.svg";
+// import cryptoEconomyLogo from "../assets/images/home/featured_in_section/logo_6.svg";
 
 // Placeholder logo URLs - replace with actual logo images when available
 export const featuredInLogos = [
@@ -27,16 +27,16 @@ export const featuredInLogos = [
     name: "blockchainreporter.",    
     image: blockchainreporterLogo, // Add logo URL when available
   },
-  {
-    id: 5,
-    name: "coindoo",
-    image: coindooLogo, // Add logo URL when available
-  },
-  {
-    id: 6,
-    name: "CRYPTO ECONOMY",
-    image: cryptoEconomyLogo, // Add logo URL when available
-  },
+  // {
+  //   id: 5,
+  //   name: "coindoo",
+  //   image: coindooLogo, // Add logo URL when available
+  // },
+  // {
+  //   id: 6,
+  //   name: "CRYPTO ECONOMY",
+  //   image: cryptoEconomyLogo, // Add logo URL when available
+  // },
 ];
 
 export const featuredInSectionConfig = {
