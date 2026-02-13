@@ -1,39 +1,39 @@
-import { Link } from 'react-router-dom';
-import { ArrowRight, Send } from 'lucide-react';
-import { cn } from '../../../lib/utils';
-import socialsAwarenessCard1 from '../../../assets/images/home/socials_awareness/socials_awareness_card1.webp';
-import socialsAwarenessCard2 from '../../../assets/images/home/socials_awareness/socials_awareness_card2.webp';
+import { Link } from "react-router-dom";
+import { ArrowRight, Send } from "lucide-react";
+import { cn } from "../../../lib/utils";
+import socialsAwarenessCard1 from "../../../assets/images/home/socials_awareness/socials_awareness_card1.webp";
+import socialsAwarenessCard2 from "../../../assets/images/home/socials_awareness/socials_awareness_card2.webp";
 
 const heroCards = [
   {
-    id: 'whitepaper',
-    title: 'Whitepaper',
-    buttonText: 'Read Here',
+    id: "whitepaper",
+    title: "Whitepaper",
+    buttonText: "Read Here",
     image: socialsAwarenessCard1,
-    link: '/whitepaper',
+    link: "/whitepaper",
   },
   {
-    id: 'how-to-buy',
-    title: 'How to Buy',
-    buttonText: 'Learn More',
+    id: "how-to-buy",
+    title: "How to Buy",
+    buttonText: "Learn More",
     image: socialsAwarenessCard2,
-    link: '/how-to-buy',
+    link: "/how-to-buy",
   },
 ];
 
 const socialCards = [
   {
-    id: 'telegram-chat',
-    title: 'Telegram (Chat)',
-    description: 'Join the conversation',
-    link: 'https://t.me/predictmarkets',
+    id: "telegram-chat",
+    title: "Telegram (Chat)",
+    description: "Join the conversation",
+    link: "https://t.me/predictmarkets",
     icon: Send,
   },
   {
-    id: 'telegram-ann',
-    title: 'Telegram (Announcements)',
-    description: 'Subscribe for regular updates',
-    link: 'https://t.me/predictmarkets_ann',
+    id: "telegram-ann",
+    title: "Telegram (Announcements)",
+    description: "Subscribe for regular updates",
+    link: "https://t.me/predictmarkets_ann",
     icon: Send,
   },
 ];
@@ -42,20 +42,20 @@ export default function SocialsAwareness() {
   return (
     <section className="relative bg-white py-16 md:py-20">
       {/* Background radial gradient */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(0,128,237,0.36)_0,_transparent_55%)] opacity-80" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 top-[20%] bg-[radial-gradient(circle_at_center,_rgba(0,128,237,0.36)_0,_transparent_35%)] opacity-50" />
       {/* Section borders */}
-      <div className="absolute inset-x-0 top-0 border-b border-[#191919]" />
+      {/* <div className="absolute inset-x-0 top-0 border-b border-[#191919]" /> */}
       <div className="absolute inset-x-0 bottom-0 border-b border-[#191919]" />
-      
+
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         <div className="relative z-10 flex flex-col items-start gap-2 md:flex-row md:gap-4">
           {/* Left Side - Image Cards */}
-          <div className="relative z-20 flex flex-col gap-4 flex-1 sm:flex-row">
+          <div className="relative z-20 flex md:flex-row flex-col gap-4 flex-1 w-full">
             {heroCards.map((card) => (
               <Link
                 key={card.id}
                 to={card.link}
-                className="group relative h-[300px] w-full rounded-[12px] md:h-[348px] md:w-[416px]"
+                className="group relative h-[300px] w-full rounded-[12px] md:h-[348px] md:w-[396px]"
               >
                 {/* Background Image with dark overlay */}
                 <div className="relative h-full w-full overflow-hidden rounded-[12px] border border-[#262626] bg-black">
@@ -64,12 +64,12 @@ export default function SocialsAwareness() {
                     alt={card.title}
                     className="h-full w-full object-cover opacity-90"
                     onError={(e) => {
-                      e.target.style.display = 'none';
+                      e.target.style.display = "none";
                     }}
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60" />
                 </div>
-                
+
                 {/* Content */}
                 <div className="absolute left-[20px] bottom-[80px] flex flex-col gap-3 md:bottom-[20px]">
                   <h3 className="capitalize text-white text-[20px] leading-[28px] md:text-[24px] md:font-[600]">
@@ -84,7 +84,7 @@ export default function SocialsAwareness() {
           </div>
 
           {/* Right Side - Social Cards */}
-          <div className="relative z-20 flex w-full flex-col gap-4 md:w-[416px]">
+          <div className="relative z-20 flex w-full flex-col gap-4 md:w-[436px]">
             {socialCards.map((social) => {
               const Icon = social.icon;
               return (
@@ -95,7 +95,7 @@ export default function SocialsAwareness() {
                   {/* Header */}
                   <div className="flex items-center gap-2">
                     <Icon className="h-6 w-6 text-[#0080ED]" />
-                    <h4 className="capitalize text-xl font-medium leading-7 text-black">
+                    <h4 className="capitalize text-[20px] font-medium leading-[28px] text-[#000]">
                       {social.title}
                     </h4>
                   </div>

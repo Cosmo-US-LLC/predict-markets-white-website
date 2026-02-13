@@ -1,46 +1,43 @@
-import { Link } from 'react-router-dom';
-import { Circle } from 'lucide-react';
-import backgroundImage from '../../../assets/images/home/prediction_platform/prediction_platform_bg.webp';
-import liveIndicatorDot from '../../../assets/images/home/prediction_platform/live_dot.webp';
+import { Link } from "react-router-dom";
+import { Circle } from "lucide-react";
+import backgroundImage from "../../../assets/images/home/prediction_platform/prediction_platform_bg_light.webp";
+import liveIndicatorDot from "../../../assets/images/home/prediction_platform/live_dot.webp";
 
-
-export default function PredictionPlatform({ 
-  title = 'The Most Rewarding Prediction Platform',
-  subtitle = 'Buy $PREDICT now and get early access benefits before the public launch begins.',
-  buyButtonText = 'BUY $PREDICT',
-  supportButtonText = '24/7 Live Support Here',
-  buyButtonLink = '/buy',
-  supportButtonLink = '/support',
+export default function PredictionPlatform({
+  title = "The Most Rewarding Prediction Platform",
+  subtitle = "Buy $PREDICT now and get early access benefits before the public launch begins.",
+  buyButtonText = "BUY $PREDICT",
+  supportButtonText = "24/7 Live Support Here",
+  buyButtonLink = "/buy",
+  supportButtonLink = "/support",
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-[#fff]">
       {/* Blurred Background */}
-      <div className="absolute left-1/2 top-[calc(50%+58px)] h-[965px] w-[1448px] -translate-x-1/2 -translate-y-1/2 blur-[16.8px]">
+      <div className="absolute inset-0  w-full ">
         <img
           src={backgroundImage}
           alt="Background"
           className="w-full h-full object-cover"
           onError={(e) => {
-            e.target.style.display = 'none';
+            e.target.style.display = "none";
           }}
         />
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 mx-auto flex min-h-[503px] max-w-[1280px] flex-col items-center justify-center px-4 py-12 md:px-8 md:py-20">
+      <div className="relative z-10 mx-auto flex min-h-[503px] max-w-[1280px]  flex-col items-center justify-center px-4 py-12 md:px-8 md:py-20">
         {/* Card Container */}
-        <div className="relative flex w-full min-h-[503px] items-center justify-center overflow-hidden rounded-[44px] bg-white/95 backdrop-blur-[18.65px]">
-        
-
+        <div className="relative flex w-full min-h-[503px] prediction_platform_card_bg items-center justify-center overflow-hidden rounded-[44px] bg-white/95 backdrop-blur-[18.65px]">
           {/* Content */}
           <div className="relative z-10 flex min-h-[290px] flex-col items-center justify-center gap-[22px] px-4 py-8">
             {/* Title */}
-            <h2 className="heading-two max-w-[1041px] text-center text-black">
+            <h2 className="heading-two max-w-[641px] capitalize text-center text-[#000]">
               {title}
             </h2>
 
             {/* Subtitle */}
-            <p className="paragraph-medium max-w-[939px] text-center text-[20px] text-black">
+            <p className="paragraph-medium max-w-[539px] font-[400] text-center text-[20px] text-[#000]">
               {subtitle}
             </p>
 
@@ -61,8 +58,8 @@ export default function PredictionPlatform({
                   alt=""
                   className="w-[10px] h-[10px] shrink-0"
                   onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'block';
+                    e.target.style.display = "none";
+                    e.target.nextSibling.style.display = "block";
                   }}
                 />
                 <Circle className="w-[10px] h-[10px] fill-green-500 text-green-500 hidden shrink-0" />

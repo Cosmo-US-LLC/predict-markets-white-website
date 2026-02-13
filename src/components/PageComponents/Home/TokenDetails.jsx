@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { Copy } from 'lucide-react';
-import tokenDetailsImageDesktop from "../../../assets/images/home/token_details/token_details_desktop.webp";
+import { useState } from "react";
+import { Copy } from "lucide-react";
+import tokenDetailsImageDesktop from "../../../assets/images/home/token_details/token_details_desktop_light.webp";
 import tokenDetailsImageMobile from "../../../assets/images/home/token_details/token_details_mobile.webp";
 
 export default function TokenDetails({
-  title = 'Token Details',
-  subtitle = 'The token allocation is structured to give early supporters the strongest advantage.',
+  title = "Token Details",
+  subtitle = "The token allocation is structured to give early supporters the strongest advantage.",
   // chartImage,
   details = [],
 }) {
@@ -18,9 +18,7 @@ export default function TokenDetails({
   };
 
   return (
-    <section
-      className="relative overflow-hidden bg-white py-12 px-4 md:py-20 md:px-8 lg:px-[80px]"
-    >
+    <section className="relative overflow-hidden bg-white py-12 px-4 md:py-20 md:px-8 lg:px-[80px]">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-10 md:gap-12">
         {/* Header */}
         <div className="flex flex-col items-center gap-2 text-center">
@@ -35,36 +33,35 @@ export default function TokenDetails({
         {/* Chart (optional) */}
         <div className="mx-auto flex h-[422px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white md:h-[600px]">
           <div className="relative hidden h-[422px] w-full max-w-full md:block">
-            <h4 className="heading-four absolute left-[36.5%] top-[-30px] text-black">
-                  1% Marketing
-                </h4>
-            <h4 className="heading-four absolute left-[53%] top-[-30px] text-black">
-                1% Team
-                </h4>
-            <h4 className="heading-four absolute left-[18%] top-[-2px] text-black">
-                3% Development
-                </h4>
-            <h4 className="heading-four absolute left-[63.5%] top-[29px] text-black">
-                40% Public Sale
-                </h4>
-                <img
-                  src={tokenDetailsImageDesktop}
-                  alt="Token Allocation Chart"
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
-                />
-            <h4 className="heading-four absolute left-[17.5%] top-[98px] max-w-[187px] text-black">
+            <h4 className="heading-four absolute left-[36%] top-[8px] text-black">
+              1% Marketing
+            </h4>
+            <h4 className="heading-four absolute left-[52%] top-[12px] text-black">
+              1% Team
+            </h4>
+            <h4 className="heading-four absolute left-[15.5%] top-[17%] text-black">
+              3% Development
+            </h4>
+            <h4 className="heading-four absolute left-[62%] top-[15%] text-black">
+              40% Public Sale
+            </h4>
+            <img
+              src={tokenDetailsImageDesktop}
+              alt="Token Allocation Chart"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                e.target.style.display = "none";
+              }}
+            />
+            <h4 className="heading-four absolute left-[17%] top-[32%] max-w-[187px] text-black">
               10% Reserved for CEX Listing
             </h4>
-            <h4 className="heading-four absolute bottom-[24%] left-[14.5%] text-black">
+            <h4 className="heading-four absolute bottom-[24%] left-[10.5%] text-black">
               25% Liquidity Pool
             </h4>
-            <h4 className="heading-four absolute bottom-[8%] right-[15%] text-black">
+            <h4 className="heading-four absolute bottom-[21%] right-[15%] text-black">
               20% Staking Rewards
             </h4>
-                
           </div>
           <div className="relative h-[294px] w-full max-w-full md:hidden">
             <p className="paragraph-regular absolute left-[2%] top-[11%] text-black">
@@ -84,7 +81,7 @@ export default function TokenDetails({
               alt="Token Allocation Chart"
               className="h-full w-full object-contain"
               onError={(e) => {
-                e.target.style.display = 'none';
+                e.target.style.display = "none";
               }}
             />
             <p className="paragraph-regular absolute bottom-[16%] left-[2%] max-w-[107px] text-black">
@@ -98,7 +95,7 @@ export default function TokenDetails({
             </p>
           </div>
         </div>
-        
+
         {/* Token details cards grid */}
         {details.length > 0 && (
           <div className="mx-auto flex max-w-full flex-col gap-3 md:grid md:max-w-[1209px] md:grid-cols-3 md:gap-4">
@@ -173,7 +170,7 @@ export default function TokenDetails({
               <div
                 key={item.id}
                 className={`flex flex-col gap-2 rounded-[15px] border border-[#dddddd] bg-white p-3 md:p-5 ${
-                  index === details.length - 6 ? 'md:col-span-3' : ''
+                  index === details.length - 6 ? "md:col-span-3" : ""
                 }`}
               >
                 <span className="text-sm font-normal leading-[22px] tracking-[0.28px] text-[rgba(0,0,0,0.7)]">
@@ -182,7 +179,9 @@ export default function TokenDetails({
                 <div className="flex items-center gap-3">
                   <span
                     className={`leading-6 tracking-[0.32px] text-black ${
-                      item.value.length > 40 ? 'text-[11px] md:text-base font-medium' : 'text-base font-medium'
+                      item.value.length > 40
+                        ? "text-[11px] md:text-base font-medium"
+                        : "text-base font-medium"
                     }`}
                   >
                     {item.value}
@@ -205,8 +204,6 @@ export default function TokenDetails({
             ))}
           </div>
         )}
-
-       
       </div>
     </section>
   );

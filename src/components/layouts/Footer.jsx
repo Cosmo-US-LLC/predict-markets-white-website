@@ -170,7 +170,7 @@ export function Footer() {
 
           {/* Legal Disclaimer Section */}
           <div className="border-t border-b border-black/10 py-[43px]">
-            <p className="text-black text-[12px] md:text-[14px] leading-[18px] md:leading-[22px] tracking-[0.24px] md:tracking-[0.28px] text-left mx-auto">
+            <p className="text-[#000] text-[12px] md:text-[14px] leading-[18px] md:leading-[22px] tracking-[0.28px] md:tracking-[0.28px] text-left mx-auto">
               Cryptocurrency may be unregulated in your jurisdiction, and its
               value can fluctuate, leading to potential gains or losses. Any
               profits might be subject to capital gains or other taxes,

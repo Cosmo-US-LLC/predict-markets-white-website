@@ -1,32 +1,60 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../ui/accordion';
-import { ChevronDown } from 'lucide-react';
-import { cn } from '../../../lib/utils';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../../ui/accordion";
+import { ChevronDown } from "lucide-react";
+import { cn } from "../../../lib/utils";
 
 const faqData = [
   {
-    id: 'what-is-predictmarkets',
-    question: 'What Is PredictMarkets?',
-    answer: 'PredictMarkets is a decentralized platform for predicting real-world events across crypto, politics, sports, technology, economics, culture, and more. Pick the outcome you believe in and take a position. If you\'re right, you earn a payout. Exit at any time or hold until the event settles.',
+    id: "what-is-predict-markets?",
+    question: "What Is PredictMarkets?",
+    answer:
+      "PredictMarkets is a decentralized platform for predicting real-world events across crypto, politics, sports, technology, economics, culture, and more. Pick the outcome you believe in and take a position. If you’re right, you earn a payout. Exit at any time or hold until the event settles.",
   },
   {
-    id: 'what-is-predict-token',
-    question: 'What Is $PREDICT Token?',
-    answer: 'The $PREDICT token is the native utility token of the PredictMarkets platform. It powers the prediction market ecosystem, enabling users to participate in markets, earn rewards, and govern the platform through decentralized decision-making.',
+    id: "what-is-predict-token",
+    question: "What Is $PREDICT Token?",
+    answer:
+      "The $PREDICT token is the native utility token of the PredictMarkets platform. It powers the prediction market ecosystem, enabling users to participate in markets, earn rewards, and govern the platform through decentralized decision-making.",
   },
   {
-    id: 'presale-difference',
-    question: 'What makes the $PREDICT Crypto presale different?',
-    answer: 'The $PREDICT presale offers early access to the platform\'s native token with exclusive benefits, competitive pricing, and a transparent allocation structure. Unlike traditional presales, we prioritize community participation and long-term value creation.',
+    id: "presale-difference",
+    question: "What makes the $PREDICT Crypto presale different?",
+    answer:
+      "The $PREDICT presale offers early access to the platform's native token with exclusive benefits, competitive pricing, and a transparent allocation structure. Unlike traditional presales, we prioritize community participation and long-term value creation.",
   },
   {
-    id: 'presale-growth',
-    question: 'How does the presale support long-term growth?',
-    answer: 'The presale is designed to fund platform development, marketing, and community building initiatives. Funds raised are allocated strategically to ensure sustainable growth, platform security, and ecosystem expansion, creating long-term value for all participants.',
+    id: "presale-growth",
+    question: "How does the presale support long-term growth?",
+    answer:
+      "The presale is designed to fund platform development, marketing, and community building initiatives. Funds raised are allocated strategically to ensure sustainable growth, platform security, and ecosystem expansion, creating long-term value for all participants.",
   },
   {
-    id: 'token-safety',
-    question: 'Are my $PREDICT tokens safe?',
-    answer: 'Yes, $PREDICT tokens are secured through smart contracts audited by leading security firms. We implement industry-standard security measures, including multi-signature wallets, regular security audits, and transparent token allocation. Always store your tokens in a secure wallet and never share your private keys.',
+    id: "token-safety",
+    question: "Are my $PREDICT tokens safe?",
+    answer:
+      "Yes, $PREDICT tokens are secured through smart contracts audited by leading security firms. We implement industry-standard security measures, including multi-signature wallets, regular security audits, and transparent token allocation. Always store your tokens in a secure wallet and never share your private keys.",
+  },
+  {
+    id: "vesting-schedule",
+    question: "Will there be a vesting period?",
+    answer:
+      "There will be a short vesting period, with all tokens fully claimable within 31 days. Tokens are released in stages (10% / 20% / 30% / 50%) to support market stability. Strategic buybacks will be used to support both short-term growth and long-term sustainability.",
+  },
+  {
+    id: "listing-price",
+    question: "What Is the $PREDICT listing price?",
+    answer:
+      "The listing price represents the initial market value of the $PREDICT token when it becomes publicly available. At launch, $PREDICT will be listed at $0.05.",
+  },
+  {
+    id: "launch-date",
+    question: "When will $PREDICT launch?",
+    answer:
+      "The $PREDICT launch is approaching and will take place once the presale is fully sold out. Final timing details will be shared as the presale reaches completion.",
   },
 ];
 
@@ -35,13 +63,12 @@ export default function FrequentlyAskedQuestions() {
     <section className="bg-white py-12 md:py-20">
       <div className="max-w-[1280px] mx-auto md:px-4 px-0">
         {/* Header Section */}
-        <div className="flex flex-col gap-2 items-center text-center mb-12 md:mb-16">
-          <h2 className="heading-two capitalize text-black">
+        <div className="flex flex-col gap-4 items-center text-center mb-12 md:mb-16">
+          <h2 className="heading-two capitalize text-[#000]">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#4b4b4b] paragraph-regular max-w-[812px]">
-            Quick answers to help you understand Predictmarkets, launch timeline,<br />
-            our native token and find the support you need.
+          <p className="text-[#000] paragraph-regular !text-[20px] max-w-[812px]">
+            You may have questions, we have the answers.
           </p>
         </div>
 
@@ -55,7 +82,7 @@ export default function FrequentlyAskedQuestions() {
                 className={cn(
                   "border-b border-[#191919] overflow-hidden bg-transparent",
                   index === 0 && "rounded-t-[16px]",
-                  index === faqData.length - 1 && "rounded-b-[16px] border-b-0"
+                  index === faqData.length - 1 && "rounded-b-[16px] border-b-0",
                 )}
               >
                 <AccordionTrigger className="px-6 py-6 hover:no-underline text-left bg-transparent">
@@ -65,7 +92,7 @@ export default function FrequentlyAskedQuestions() {
                   <ChevronDown className="h-6 w-6 ml-4 shrink-0 text-black transition-transform duration-200 data-[state=open]:rotate-180" />
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="paragraph-regular text-[#4b4b4b]">
+                  <p className="paragraph-regular text-[#000] !text-[20px]">
                     {faq.answer}
                   </p>
                 </AccordionContent>
@@ -74,7 +101,7 @@ export default function FrequentlyAskedQuestions() {
           </Accordion>
         </div>
         {/* Support Section */}
-        <div className="rounded-[16px] border border-[#e5e5e5] bg-white p-6 md:p-8">
+        {/* <div className="rounded-[16px] border border-[#e5e5e5] bg-white p-6 md:p-8">
           <h3 className="mb-4 text-xl font-medium leading-7 capitalize text-black">
             Need help or have questions?
           </h3>
@@ -92,7 +119,7 @@ export default function FrequentlyAskedQuestions() {
               </a>
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
