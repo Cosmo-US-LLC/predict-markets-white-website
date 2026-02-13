@@ -1,7 +1,7 @@
-import step1Image from "../assets/images/home/how_to_buy/how_to_buy_card1.webp";
-import step2Image from "../assets/images/home/how_to_buy/how_to_buy_card2.webp";
-import step3Image from "../assets/images/home/how_to_buy/how_to_buy_card3.webp";
-import step4Image from "../assets/images/home/how_to_buy/how_to_buy_card4.webp";
+import step1Image from "../assets/images/home/how_to_buy/how_to_buy_card4.webp";
+import step2Image from "../assets/images/home/how_to_buy/how_to_buy_card3.webp";
+import step3Image from "../assets/images/home/how_to_buy/how_to_buy_card2.webp";
+import step4Image from "../assets/images/home/how_to_buy/how_to_buy_card1.webp";
 
 export const howToBuySteps = [
   {

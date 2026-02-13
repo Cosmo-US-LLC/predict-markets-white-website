@@ -7,37 +7,32 @@ export default function WhatSetsUsApart({
   platforms = {},
 }) {
   return (
-    <section className="bg-[#020b10] py-12 md:py-20">
+    <section className="bg-white py-12 md:py-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-8 md:gap-10">
         {/* Header */}
         <div className="flex flex-col gap-3 max-w-[868px] text-center mx-auto">
-          <h2 className="text-3xl md:text-[45px] font-medium leading-[53px] tracking-[-2px] capitalize text-[#ffffff]">
+          <h2 className="heading-two">
             {title}
           </h2>
-          <p className="text-[#cacaca] text-base leading-6 tracking-[0.32px]">
+          <p className="paragraph-regular">
             {description}
           </p>
         </div>
 
         {/* Desktop Table */}
         <div className="hidden md:block">
-          <div className="bg-[#0f0f0f] p-6 md:p-8 gradient-border-rounded overflow-x-auto">
+          <div className="bg-white rounded-lg shadow-md overflow-x-auto border border-gray-200">
             <div className="min-w-[972px]">
               {/* Header */}
-              <div className="border-b border-white/20 px-[40px] lg:px-[55px] py-6">
+              <div className=" border-b border-gray-300 px-[40px] lg:px-[55px] py-6">
                 <div className="grid grid-cols-4 gap-4 items-center">
                   <div />
                   {/* PredictMarkets */}
                   <div className="flex flex-col items-center gap-2">
-                    <div className="w-[45px] h-[45px]  ">
-                      
-                        {/* {[...Array(8)].map((_, i) => (
-                          <div key={i} className="w-[7px] h-[6.5px] bg-white rounded-[1px]" />
-                        ))} */}
-                        <img src={platforms?.predictMarkets?.icon} alt="PredictMarkets" className="w-[full] h-[full] object-contain" />
-                      </div>
-                     
-                    <span className="text-white text-base font-medium">
+                    <div className="w-[45px] h-[45px]">
+                      <img src={platforms?.predictMarkets?.icon} alt="PredictMarkets" className="w-full h-full object-contain" />
+                    </div>
+                    <span className="text-[#000] text-base font-medium">
                       {platforms.predictMarkets?.name || 'PredictMarkets'}
                     </span>
                   </div>
@@ -48,7 +43,7 @@ export default function WhatSetsUsApart({
                       alt={platforms.polyMarket?.name || 'PolyMarket'}
                       className="w-[45px] h-[45px] object-contain"
                     />
-                    <span className="text-white text-base font-medium">
+                    <span className="text-[#000] text-base font-medium">
                       {platforms.polyMarket?.name || 'PolyMarket'}
                     </span>
                   </div>
@@ -59,7 +54,7 @@ export default function WhatSetsUsApart({
                       alt={platforms.kalshi?.name || 'Kalshi'}
                       className="w-[45px] h-[45px] object-contain"
                     />
-                    <span className="text-white text-base font-medium">
+                    <span className="text-[#000] text-base font-medium">
                       {platforms.kalshi?.name || 'Kalshi'}
                     </span>
                   </div>
@@ -72,21 +67,27 @@ export default function WhatSetsUsApart({
                   <div
                     key={row.id}
                     className={`grid grid-cols-4 gap-4 items-center py-4 ${
-                      index < tableData.length - 1 ? 'border-b border-white/10' : ''
+                      index % 2 === 0 ? 'bg-white' : ''
+                    } ${
+                      index < tableData.length - 1 ? 'border-b border-gray-200' : ''
                     }`}
                   >
-                    <span className="text-white text-base font-medium">{row.feature}</span>
+                    <span className="text-[#000] text-base font-medium">{row.feature}</span>
                     
                     {/* PredictMarkets */}
                     <div className="flex justify-center">
                       {typeof row.predictMarkets === 'boolean' ? (
                         row.predictMarkets ? (
-                          <Check className="w-[23px] h-[23px] text-[#2104ff]" />
+                          <div className="bg-[#0080ED] rounded-full w-[23px] h-[23px] flex items-center justify-center">
+                            <Check className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                          </div>
                         ) : (
-                          <X className="w-[23px] h-[23px] text-gray-500" />
+                          <div className="bg-gray-600 rounded-full w-[23px] h-[23px] flex items-center justify-center">
+                            <X className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                          </div>
                         )
                       ) : (
-                        <span className="text-white text-base font-semibold">{row.predictMarkets}</span>
+                        <span className="text-[#000] text-base font-semibold">{row.predictMarkets}</span>
                       )}
                     </div>
 
@@ -94,12 +95,16 @@ export default function WhatSetsUsApart({
                     <div className="flex justify-center">
                       {typeof row.polyMarket === 'boolean' ? (
                         row.polyMarket ? (
-                          <Check className="w-[23px] h-[23px] text-[#2104ff]" />
+                          <div className="bg-[#0080ED] rounded-full w-[23px] h-[23px] flex items-center justify-center">
+                            <Check className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                          </div>
                         ) : (
-                          <X className="w-[23px] h-[23px] text-gray-500" />
+                          <div className="bg-gray-600 rounded-full w-[23px] h-[23px] flex items-center justify-center">
+                            <X className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                          </div>
                         )
                       ) : (
-                        <span className="text-white text-base font-semibold">{row.polyMarket}</span>
+                        <span className="text-[#000] text-base font-semibold">{row.polyMarket}</span>
                       )}
                     </div>
 
@@ -107,12 +112,16 @@ export default function WhatSetsUsApart({
                     <div className="flex justify-center">
                       {typeof row.kalshi === 'boolean' ? (
                         row.kalshi ? (
-                          <Check className="w-[23px] h-[23px] text-[#2104ff]" />
+                          <div className="bg-[#0080ED] rounded-full w-[23px] h-[23px] flex items-center justify-center">
+                            <Check className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                          </div>
                         ) : (
-                          <X className="w-[23px] h-[23px] text-gray-500" />
+                          <div className="bg-gray-600 rounded-full w-[23px] h-[23px] flex items-center justify-center">
+                            <X className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                          </div>
                         )
                       ) : (
-                        <span className="text-white text-base font-semibold">{row.kalshi}</span>
+                        <span className="text-[#000] text-base font-semibold">{row.kalshi}</span>
                       )}
                     </div>
                   </div>
@@ -124,22 +133,18 @@ export default function WhatSetsUsApart({
 
         {/* Mobile Table */}
         <div className="md:hidden">
-          <div className="bg-[#0f0f0f] p-4 gradient-border-rounded overflow-x-auto">
+          <div className="bg-white rounded-lg shadow-md overflow-x-auto border border-gray-200">
             <div className="min-w-[332px]">
               {/* Header */}
-              <div className="border-b border-white/20 pb-4 mb-3">
+              <div className=" border-b border-gray-300 pb-4 mb-3">
                 <div className="grid grid-cols-4 gap-2 items-end">
                   <div />
                   {/* PredictMarkets */}
                   <div className="flex flex-col items-center gap-1">
-                    <div className="w-[23px] h-[23px] rounded-[5px] bg-white/10 flex items-center justify-center">
-                      <div className="w-[12px] h-[15px] flex flex-wrap gap-[1px]">
-                        {[...Array(8)].map((_, i) => (
-                          <div key={i} className="w-[3.5px] h-[3.5px] bg-white rounded-[0.5px]" />
-                        ))}
-                      </div>
+                    <div className="w-[23px] h-[23px]">
+                      <img src={platforms?.predictMarkets?.icon} alt="PredictMarkets" className="w-full h-full object-contain" />
                     </div>
-                    <span className="text-white text-[10px] font-medium text-center leading-3">
+                    <span className="text-[#000] text-[10px] font-medium text-center leading-3">
                       {platforms.predictMarkets?.name || 'PredictMarkets'}
                     </span>
                   </div>
@@ -150,7 +155,7 @@ export default function WhatSetsUsApart({
                       alt={platforms.polyMarket?.name || 'PolyMarket'}
                       className="w-[23px] h-[23px] object-contain"
                     />
-                    <span className="text-white text-[10px] font-medium text-center leading-3">
+                    <span className="text-[#000] text-[10px] font-medium text-center leading-3">
                       {platforms.polyMarket?.name || 'PolyMarket'}
                     </span>
                   </div>
@@ -161,7 +166,7 @@ export default function WhatSetsUsApart({
                       alt={platforms.kalshi?.name || 'Kalshi'}
                       className="w-[23px] h-[23px] object-contain"
                     />
-                    <span className="text-white text-[10px] font-medium text-center leading-3">
+                    <span className="text-[#000] text-[10px] font-medium text-center leading-3">
                       {platforms.kalshi?.name || 'Kalshi'}
                     </span>
                   </div>
@@ -174,21 +179,27 @@ export default function WhatSetsUsApart({
                   <div
                     key={row.id}
                     className={`grid grid-cols-4 items-center py-2 ${
-                      index < tableData.length - 1 ? 'border-b border-white/10' : ''
+                      index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                    } ${
+                      index < tableData.length - 1 ? 'border-b border-gray-200' : ''
                     }`}
                   >
-                    <span className="text-white text-[10px] font-medium leading-4">{row.feature}</span>
+                    <span className="text-[#000] text-[10px] font-medium leading-4">{row.feature}</span>
 
                     {/* PredictMarkets */}
                     <div className="flex justify-center">
                       {typeof row.predictMarkets === 'boolean' ? (
                         row.predictMarkets ? (
-                          <Check className="w-[11px] h-[11px] text-[#2104ff]" />
+                          <div className="bg-[#0080ED] rounded-full w-[11px] h-[11px] flex items-center justify-center">
+                            <Check className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                          </div>
                         ) : (
-                          <X className="w-[11px] h-[11px] text-gray-500" />
+                          <div className="bg-gray-600 rounded-full w-[11px] h-[11px] flex items-center justify-center">
+                            <X className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                          </div>
                         )
                       ) : (
-                        <span className="text-white text-[10px] font-semibold">{row.predictMarkets}</span>
+                        <span className="text-[#000] text-[10px] font-semibold">{row.predictMarkets}</span>
                       )}
                     </div>
 
@@ -196,12 +207,16 @@ export default function WhatSetsUsApart({
                     <div className="flex justify-center">
                       {typeof row.polyMarket === 'boolean' ? (
                         row.polyMarket ? (
-                          <Check className="w-[11px] h-[11px] text-[#2104ff]" />
+                          <div className="bg-[#0080ED] rounded-full w-[11px] h-[11px] flex items-center justify-center">
+                            <Check className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                          </div>
                         ) : (
-                          <X className="w-[11px] h-[11px] text-gray-500" />
+                          <div className="bg-gray-600 rounded-full w-[11px] h-[11px] flex items-center justify-center">
+                            <X className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                          </div>
                         )
                       ) : (
-                        <span className="text-white text-[10px] font-semibold">{row.polyMarket}</span>
+                        <span className="text-[#000] text-[10px] font-semibold">{row.polyMarket}</span>
                       )}
                     </div>
 
@@ -209,12 +224,16 @@ export default function WhatSetsUsApart({
                     <div className="flex justify-center">
                       {typeof row.kalshi === 'boolean' ? (
                         row.kalshi ? (
-                          <Check className="w-[11px] h-[11px] text-[#2104ff]" />
+                          <div className="bg-[#0080ED] rounded-full w-[11px] h-[11px] flex items-center justify-center">
+                            <Check className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                          </div>
                         ) : (
-                          <X className="w-[11px] h-[11px] text-gray-500" />
+                          <div className="bg-gray-600 rounded-full w-[11px] h-[11px] flex items-center justify-center">
+                            <X className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                          </div>
                         )
                       ) : (
-                        <span className="text-white text-[10px] font-semibold">{row.kalshi}</span>
+                        <span className="text-[#000] text-[10px] font-semibold">{row.kalshi}</span>
                       )}
                     </div>
                   </div>

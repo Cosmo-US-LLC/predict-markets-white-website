@@ -34,7 +34,6 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-
 @media screen and (max-width: 768px) {
   .predict_hero_bg {
     background-image: url("../../assets/images/home/predict_hero/predict_hero_bg_mobile.webp");
