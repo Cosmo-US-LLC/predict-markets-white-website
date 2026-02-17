@@ -1,37 +1,37 @@
-import { Check, X } from 'lucide-react';
+import { Check, X } from "lucide-react";
 
 export default function WhatSetsUsApart({
-  title = 'What Sets Us Apart',
-  description = 'Prediction markets are growing fast...',
+  title = "What Sets Us Apart",
+  description = "Prediction markets are growing fast...",
   tableData = [],
   platforms = {},
 }) {
   return (
     <section className="bg-white py-12 md:py-20">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-8 md:gap-10"
-       style={{
-        borderRadius: '15px',
-        background: 'radial-gradient(41.18% 41.18% at 50% 58.84%, rgba(0, 128, 237, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%)',
-      }}
+      <div
+        className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-8 md:gap-10"
+        style={{
+          borderRadius: "15px",
+          background:
+            "radial-gradient(41.18% 41.18% at 50% 58.84%, rgba(0, 128, 237, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%)",
+        }}
       >
         {/* Header */}
         <div className="flex flex-col gap-3 max-w-[868px] text-center mx-auto">
-          <h2 className="heading-two">
-            {title}
-          </h2>
-          <p className="paragraph-regular">
+          <h2 className="heading-two">{title}</h2>
+          <p className="paragraph-regular !text-[14px] md:!text-[20px] !font-normal md:leading-6 leading-[22px] md:!tracking-[0.32px] !tracking-[0.28px] text-[#000]">
             {description}
           </p>
         </div>
 
         {/* Desktop Table */}
         <div className="hidden md:block">
-          <div 
+          <div
             className="overflow-x-auto"
             style={{
-              borderRadius: '15px',
-              border: '0.5px solid #DDD',
-              background: 'rgba(255, 255, 255, 0.80)',
+              borderRadius: "15px",
+              border: "0.5px solid #DDD",
+              background: "rgba(255, 255, 255, 0.80)",
             }}
           >
             <div className="min-w-[862px] max-w-[862px] mx-auto">
@@ -42,32 +42,36 @@ export default function WhatSetsUsApart({
                   {/* PredictMarkets */}
                   <div className="py-[40px] flex flex-col items-center gap-2 bg-white">
                     <div className="w-[45px] h-[45px]">
-                      <img src={platforms?.predictMarkets?.icon} alt="PredictMarkets" className="w-full h-full object-contain" />
+                      <img
+                        src={platforms?.predictMarkets?.icon}
+                        alt="PredictMarkets"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <span className="text-[#000] text-base font-medium">
-                      {platforms.predictMarkets?.name || 'PredictMarkets'}
+                      {platforms.predictMarkets?.name || "PredictMarkets"}
                     </span>
                   </div>
                   {/* PolyMarket */}
                   <div className="py-[40px] flex flex-col items-center gap-2">
                     <img
                       src={platforms.polyMarket?.icon}
-                      alt={platforms.polyMarket?.name || 'PolyMarket'}
+                      alt={platforms.polyMarket?.name || "PolyMarket"}
                       className="w-[45px] h-[45px] object-contain"
                     />
                     <span className="text-[#000] text-base font-medium">
-                      {platforms.polyMarket?.name || 'PolyMarket'}
+                      {platforms.polyMarket?.name || "PolyMarket"}
                     </span>
                   </div>
                   {/* Kalshi */}
                   <div className="py-[40px] flex flex-col items-center gap-2">
                     <img
                       src={platforms.kalshi?.icon}
-                      alt={platforms.kalshi?.name || 'Kalshi'}
+                      alt={platforms.kalshi?.name || "Kalshi"}
                       className="w-[45px] h-[45px] object-contain"
                     />
                     <span className="text-[#000] text-base font-medium">
-                      {platforms.kalshi?.name || 'Kalshi'}
+                      {platforms.kalshi?.name || "Kalshi"}
                     </span>
                   </div>
                 </div>
@@ -79,62 +83,92 @@ export default function WhatSetsUsApart({
                   <div
                     key={row.id}
                     className={`grid grid-cols-4 gap-4 items-center !h-[50px] ${
-                      index % 2 === 0 ? '' : ''
+                      index % 2 === 0 ? "" : ""
                     } ${
-                      index < tableData.length - 1 ? 'border-b border-gray-200' : ''
+                      index < tableData.length - 1
+                        ? "border-b border-gray-200"
+                        : ""
                     }`}
                   >
-                    <span className="text-[#000] text-base font-medium">{row.feature}</span>
-                    
+                    <span className="text-[#000] text-base font-medium">
+                      {row.feature}
+                    </span>
+
                     {/* PredictMarkets */}
-                    <div className="flex justify-center items-center !h-[50px] 
-                    bg-white border-b border-gray-200">
-                      {typeof row.predictMarkets === 'boolean' ? (
+                    <div
+                      className="flex justify-center items-center !h-[50px] 
+                    bg-white border-b border-gray-200"
+                    >
+                      {typeof row.predictMarkets === "boolean" ? (
                         row.predictMarkets ? (
                           <div className="bg-[#0080ED] rounded-full w-[23px] h-[23px] flex items-center justify-center">
-                            <Check className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                            <Check
+                              className="w-[14px] h-[14px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         ) : (
                           <div className="bg-gray-600 rounded-full w-[23px] h-[23px] flex items-center justify-center">
-                            <X className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                            <X
+                              className="w-[14px] h-[14px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         )
                       ) : (
-                        <span className="text-[#000] text-base font-semibold">{row.predictMarkets}</span>
+                        <span className="text-[#000] text-base font-semibold">
+                          {row.predictMarkets}
+                        </span>
                       )}
                     </div>
 
                     {/* PolyMarket */}
                     <div className="flex justify-center items-center !h-[50px]">
-                      {typeof row.polyMarket === 'boolean' ? (
+                      {typeof row.polyMarket === "boolean" ? (
                         row.polyMarket ? (
                           <div className="bg-[#0080ED] rounded-full w-[23px] h-[23px] flex items-center justify-center">
-                            <Check className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                            <Check
+                              className="w-[14px] h-[14px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         ) : (
                           <div className="bg-gray-600 rounded-full w-[23px] h-[23px] flex items-center justify-center">
-                            <X className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                            <X
+                              className="w-[14px] h-[14px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         )
                       ) : (
-                        <span className="text-[#000] text-base font-semibold">{row.polyMarket}</span>
+                        <span className="text-[#000] text-base font-semibold">
+                          {row.polyMarket}
+                        </span>
                       )}
                     </div>
 
                     {/* Kalshi */}
                     <div className="flex justify-center">
-                      {typeof row.kalshi === 'boolean' ? (
+                      {typeof row.kalshi === "boolean" ? (
                         row.kalshi ? (
                           <div className="bg-[#0080ED] rounded-full w-[23px] h-[23px] flex items-center justify-center">
-                            <Check className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                            <Check
+                              className="w-[14px] h-[14px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         ) : (
                           <div className="bg-gray-600 rounded-full w-[23px] h-[23px] flex items-center justify-center">
-                            <X className="w-[14px] h-[14px] text-white" strokeWidth={3} />
+                            <X
+                              className="w-[14px] h-[14px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         )
                       ) : (
-                        <span className="text-[#000] text-base font-semibold">{row.kalshi}</span>
+                        <span className="text-[#000] text-base font-semibold">
+                          {row.kalshi}
+                        </span>
                       )}
                     </div>
                   </div>
@@ -146,15 +180,15 @@ export default function WhatSetsUsApart({
 
         {/* Mobile Table */}
         <div className="md:hidden">
-          <div 
+          <div
             className="overflow-x-auto"
             style={{
-              borderRadius: '15px',
-              border: '0.5px solid #DDD',
-              background: 'rgba(255, 255, 255, 0.80)',
+              borderRadius: "15px",
+              border: "0.5px solid #DDD",
+              background: "rgba(255, 255, 255, 0.80)",
             }}
           >
-            <div className="min-w-[332px]">
+            <div className="min-w-[332px] p-2">
               {/* Header */}
               <div className=" border-b border-gray-300 pb-4 mb-3">
                 <div className="grid grid-cols-4 gap-2 items-end">
@@ -162,32 +196,36 @@ export default function WhatSetsUsApart({
                   {/* PredictMarkets */}
                   <div className="flex flex-col items-center gap-1">
                     <div className="w-[23px] h-[23px]">
-                      <img src={platforms?.predictMarkets?.icon} alt="PredictMarkets" className="w-full h-full object-contain" />
+                      <img
+                        src={platforms?.predictMarkets?.icon}
+                        alt="PredictMarkets"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <span className="text-[#000] text-[10px] font-medium text-center leading-3">
-                      {platforms.predictMarkets?.name || 'PredictMarkets'}
+                      {platforms.predictMarkets?.name || "PredictMarkets"}
                     </span>
                   </div>
                   {/* PolyMarket */}
                   <div className="flex flex-col items-center gap-1">
                     <img
                       src={platforms.polyMarket?.icon}
-                      alt={platforms.polyMarket?.name || 'PolyMarket'}
+                      alt={platforms.polyMarket?.name || "PolyMarket"}
                       className="w-[23px] h-[23px] object-contain"
                     />
                     <span className="text-[#000] text-[10px] font-medium text-center leading-3">
-                      {platforms.polyMarket?.name || 'PolyMarket'}
+                      {platforms.polyMarket?.name || "PolyMarket"}
                     </span>
                   </div>
                   {/* Kalshi */}
                   <div className="flex flex-col items-center gap-1">
                     <img
                       src={platforms.kalshi?.icon}
-                      alt={platforms.kalshi?.name || 'Kalshi'}
+                      alt={platforms.kalshi?.name || "Kalshi"}
                       className="w-[23px] h-[23px] object-contain"
                     />
                     <span className="text-[#000] text-[10px] font-medium text-center leading-3">
-                      {platforms.kalshi?.name || 'Kalshi'}
+                      {platforms.kalshi?.name || "Kalshi"}
                     </span>
                   </div>
                 </div>
@@ -198,62 +236,90 @@ export default function WhatSetsUsApart({
                 {tableData.map((row, index) => (
                   <div
                     key={row.id}
-                    className={`grid grid-cols-4 items-center py-2 ${
-                      index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                    className={`grid grid-cols-4 items-center md:py-2 py-1 ${
+                      index % 2 === 0 ? "bg-white" : "bg-gray-50"
                     } ${
-                      index < tableData.length - 1 ? 'border-b border-gray-200' : ''
+                      index < tableData.length - 1
+                        ? "border-b border-gray-200"
+                        : ""
                     }`}
                   >
-                    <span className="text-[#000] text-[10px] font-medium leading-4">{row.feature}</span>
+                    <span className="text-[#000] text-[10px] font-medium leading-4">
+                      {row.feature}
+                    </span>
 
                     {/* PredictMarkets */}
-                    <div className="flex justify-center bg-white">
-                      {typeof row.predictMarkets === 'boolean' ? (
+                    <div className="flex justify-center h-full bg-white items-center">
+                      {typeof row.predictMarkets === "boolean" ? (
                         row.predictMarkets ? (
                           <div className="bg-[#0080ED] rounded-full w-[11px] h-[11px] flex items-center justify-center">
-                            <Check className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                            <Check
+                              className="w-[7px] h-[7px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         ) : (
                           <div className="bg-gray-600 rounded-full w-[11px] h-[11px] flex items-center justify-center">
-                            <X className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                            <X
+                              className="w-[7px] h-[7px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         )
                       ) : (
-                        <span className="text-[#000] text-[10px] font-semibold">{row.predictMarkets}</span>
+                        <span className="text-[#000] text-[10px] font-semibold">
+                          {row.predictMarkets}
+                        </span>
                       )}
                     </div>
 
                     {/* PolyMarket */}
                     <div className="flex justify-center">
-                      {typeof row.polyMarket === 'boolean' ? (
+                      {typeof row.polyMarket === "boolean" ? (
                         row.polyMarket ? (
                           <div className="bg-[#0080ED] rounded-full w-[11px] h-[11px] flex items-center justify-center">
-                            <Check className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                            <Check
+                              className="w-[7px] h-[7px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         ) : (
                           <div className="bg-gray-600 rounded-full w-[11px] h-[11px] flex items-center justify-center">
-                            <X className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                            <X
+                              className="w-[7px] h-[7px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         )
                       ) : (
-                        <span className="text-[#000] text-[10px] font-semibold">{row.polyMarket}</span>
+                        <span className="text-[#000] text-[10px] font-semibold">
+                          {row.polyMarket}
+                        </span>
                       )}
                     </div>
 
                     {/* Kalshi */}
                     <div className="flex justify-center">
-                      {typeof row.kalshi === 'boolean' ? (
+                      {typeof row.kalshi === "boolean" ? (
                         row.kalshi ? (
                           <div className="bg-[#0080ED] rounded-full w-[11px] h-[11px] flex items-center justify-center">
-                            <Check className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                            <Check
+                              className="w-[7px] h-[7px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         ) : (
                           <div className="bg-gray-600 rounded-full w-[11px] h-[11px] flex items-center justify-center">
-                            <X className="w-[7px] h-[7px] text-white" strokeWidth={3} />
+                            <X
+                              className="w-[7px] h-[7px] text-white"
+                              strokeWidth={3}
+                            />
                           </div>
                         )
                       ) : (
-                        <span className="text-[#000] text-[10px] font-semibold">{row.kalshi}</span>
+                        <span className="text-[#000] text-[10px] font-semibold">
+                          {row.kalshi}
+                        </span>
                       )}
                     </div>
                   </div>
