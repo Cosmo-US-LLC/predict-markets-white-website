@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Copy } from "lucide-react";
 import tokenDetailsImageDesktop from "../../../assets/images/home/token_details/token_details_desktop_light.webp";
-import tokenDetailsImageMobile from "../../../assets/images/home/token_details/token_details_mobile.webp";
+import tokenDetailsImageMobile from "../../../assets/images/home/token_details/token_details_desktop_light.webp";
 
 export default function TokenDetails({
   title = "Token Details",
@@ -19,19 +19,19 @@ export default function TokenDetails({
 
   return (
     <section className="relative overflow-hidden bg-white py-12 px-4 md:py-20 md:px-8 lg:px-[80px]">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-10 md:gap-12">
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-6 md:gap-12">
         {/* Header */}
         <div className="flex flex-col items-center gap-2 text-center">
-          <h2 className="text-3xl md:text-[45px] font-medium leading-[53px] tracking-[-2px] capitalize text-black">
+          <h2 className="text-[28px] md:text-[45px] font-medium leading-[53px] tracking-[-2px] capitalize text-black">
             {title}
           </h2>
-          <p className="max-w-[713px] text-base leading-6 tracking-[0.32px] text-[#4b4b4b]">
+          <p className="max-w-[713px] text-[14px] md:text-base font-normal leading-6 tracking-[0.32px] text-[#4b4b4b]">
             {subtitle}
           </p>
         </div>
 
         {/* Chart (optional) */}
-        <div className="mx-auto flex h-[422px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white md:h-[600px]">
+        <div className="mx-auto flex md:h-[422px] h-[200px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white md:h-[600px]">
           <div className="relative hidden h-[422px] w-full max-w-full md:block">
             <h4 className="heading-four absolute left-[36%] top-[8px] text-black">
               1% Marketing
@@ -63,17 +63,17 @@ export default function TokenDetails({
               20% Staking Rewards
             </h4>
           </div>
-          <div className="relative h-[294px] w-full max-w-full md:hidden">
-            <p className="paragraph-regular absolute left-[2%] top-[11%] text-black">
-              3% Development
+          <div className="relative w-full max-w-full md:hidden">
+            <p className="absolute left-[8%] top-[21%] !font-[Helvetica] !text-left text-black !font-[500] !text-[10px] !leading-[10px]">
+              3% <br /> Development
             </p>
-            <p className="paragraph-regular absolute left-[23%] top-[-10%] text-black">
+            <p className="absolute left-[22%] top-[-1%] !font-[Helvetica] !text-left text-black !font-[500] !text-[10px] !leading-[10px]">
               1% Marketing
             </p>
-            <p className="paragraph-regular absolute right-[32%] top-[10%] text-black">
+            <p className="absolute right-[34%] top-[2%] !font-[Helvetica] !text-left text-black !font-[500] !text-[10px] !leading-[10px]">
               1% Team
             </p>
-            <p className="paragraph-regular absolute right-[8%] top-[8%] max-w-[52px] text-black">
+            <p className="absolute right-[4%] top-[8%] max-w-[72px] !font-[Helvetica] !text-left text-black !font-[500] !text-[10px] !leading-[10px]">
               40% Public Sale
             </p>
             <img
@@ -84,13 +84,13 @@ export default function TokenDetails({
                 e.target.style.display = "none";
               }}
             />
-            <p className="paragraph-regular absolute bottom-[16%] left-[2%] max-w-[107px] text-black">
+            <p className="absolute bottom-[28%] left-[6%] max-w-[60px] !font-[Helvetica] !text-left text-black font-[500] !text-[10px] !leading-[10px]">
               10% <br /> Reserved for CEX Listing
             </p>
-            <p className="paragraph-regular absolute bottom-[-9%] left-[8%] max-w-[152px] text-black">
+            <p className="absolute bottom-[4%] left-[8%] max-w-[72px] !font-[Helvetica] !text-left text-black font-[500] !text-[10px] !leading-[10px]">
               25% Liquidity Pool
             </p>
-            <p className="paragraph-regular absolute bottom-[-10%] right-[-1%] max-w-[122px] text-black">
+            <p className="absolute bottom-[2%] right-[10%] max-w-[72px] !font-[Helvetica] !text-left text-black !font-[500] !text-[10px] !leading-[10px]">
               20% Staking Rewards
             </p>
           </div>
@@ -100,17 +100,17 @@ export default function TokenDetails({
         {details.length > 0 && (
           <div className="mx-auto flex max-w-full flex-col gap-3 md:grid md:max-w-[1209px] md:grid-cols-3 md:gap-4">
             {/* Row 1: First 3 cards in 3 columns on mobile */}
-            <div className="grid grid-cols-3 gap-3 md:contents">
+            <div className="grid grid-cols-3 md:gap-3 gap-2 md:contents">
               {details.slice(0, 3).map((item) => (
                 <div
                   key={item.id}
                   className="flex flex-col gap-2 rounded-[15px] border border-[#dddddd] bg-white p-3 md:p-5"
                 >
-                  <span className="text-sm font-normal leading-[22px] tracking-[0.28px] text-[rgba(0,0,0,0.7)]">
+                  <span className="font-normal   text-[rgba(0,0,0,0.7)] md:text-[16px] text-[12px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.24px]">
                     {item.label}
                   </span>
                   <div className="flex items-center gap-3">
-                    <span className="text-base font-medium leading-6 tracking-[0.32px] text-black md:text-base">
+                    <span className="font-medium   text-black md:text-base md:text-[16px] text-[14px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.28px]">
                       {item.value}
                     </span>
                     {item.copyable && (
@@ -133,17 +133,17 @@ export default function TokenDetails({
 
             {/* Row 2: Next 2 cards in 2 columns on mobile */}
             {details.length > 3 && (
-              <div className="grid grid-cols-2 gap-3 w-full md:contents">
+              <div className="grid grid-cols-2 md:gap-3 gap-2 w-full md:contents">
                 {details.slice(3, 5).map((item) => (
                   <div
                     key={item.id}
                     className="flex flex-col gap-2 rounded-[15px] border border-[#dddddd] bg-white p-3 md:p-5"
                   >
-                    <span className="text-sm font-normal leading-[22px] tracking-[0.28px] text-[rgba(0,0,0,0.7)]">
+                    <span className="font-normal text-[rgba(0,0,0,0.7)] md:text-[16px] text-[12px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.24px]">
                       {item.label}
                     </span>
                     <div className="flex items-center gap-3">
-                      <span className="text-base font-medium leading-6 tracking-[0.32px] text-black md:text-base">
+                      <span className="font-medium text-black md:text-[16px] text-[14px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.28px]">
                         {item.value}
                       </span>
                       {item.copyable && (
@@ -173,18 +173,18 @@ export default function TokenDetails({
                   index === details.length - 6 ? "md:col-span-3" : ""
                 }`}
               >
-                <span className="text-sm font-normal leading-[22px] tracking-[0.28px] text-[rgba(0,0,0,0.7)]">
+                <span className="font-normal text-[rgba(0,0,0,0.7)] md:text-[16px] text-[12px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.24px]">
                   {item.label}
                 </span>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center md:gap-3 gap-2">
                   <span
                     className={`leading-6 tracking-[0.32px] text-black ${
                       item.value.length > 40
-                        ? "text-[11px] md:text-base font-medium"
-                        : "text-base font-medium"
+                        ? "text-[14px] md:text-base font-medium"
+                        : "text-base font-semibold"
                     }`}
                   >
-                    {item.value}
+                    {item.valueForMobile ? item.valueForMobile : item.value}
                   </span>
                   {item.copyable && (
                     <button

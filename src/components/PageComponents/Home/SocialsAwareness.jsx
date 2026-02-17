@@ -48,7 +48,7 @@ export default function SocialsAwareness() {
       <div className="absolute inset-x-0 bottom-0 border-b border-[#191919]" />
 
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
-        <div className="relative z-10 flex flex-col items-start gap-2 md:flex-row md:gap-4">
+        <div className="relative z-10 flex flex-col items-start gap-4 md:flex-row md:gap-4">
           {/* Left Side - Image Cards */}
           <div className="relative z-20 flex md:flex-row flex-col gap-4 flex-1 w-full">
             {heroCards.map((card) => (
@@ -71,7 +71,7 @@ export default function SocialsAwareness() {
                 </div>
 
                 {/* Content */}
-                <div className="absolute left-[20px] bottom-[80px] flex flex-col gap-3 md:bottom-[20px]">
+                <div className="absolute left-[20px] flex flex-col gap-3 bottom-[30px] md:bottom-[20px]">
                   <h3 className="capitalize text-white text-[20px] leading-[28px] md:text-[24px] md:font-[600]">
                     {card.title}
                   </h3>
@@ -84,18 +84,18 @@ export default function SocialsAwareness() {
           </div>
 
           {/* Right Side - Social Cards */}
-          <div className="relative z-20 flex w-full flex-col gap-4 md:w-[436px]">
+          <div className="relative z-20 flex w-full flex-col gap-4 w-[400px] md:w-[436px]">
             {socialCards.map((social) => {
               const Icon = social.icon;
               return (
                 <div
                   key={social.id}
-                  className="flex flex-col gap-[54px] rounded-[12px] border border-[#262626] bg-white p-5"
+                  className="flex flex-col md:gap-[54px] gap-[28px] rounded-[12px] border border-[#262626] bg-white p-4"
                 >
                   {/* Header */}
                   <div className="flex items-center gap-2">
                     <Icon className="h-6 w-6 text-[#0080ED]" />
-                    <h4 className="capitalize text-[20px] font-medium leading-[28px] text-[#000]">
+                    <h4 className="capitalize text-[16px] md:text-[20px] font-medium leading-[28px] text-[#000]">
                       {social.title}
                     </h4>
                   </div>
@@ -107,10 +107,10 @@ export default function SocialsAwareness() {
                     rel="noopener noreferrer"
                     className="group flex items-center justify-between rounded-lg bg-[#0080ED] px-4 py-[9px] transition-colors hover:bg-[#0390ff]"
                   >
-                    <span className="text-lg leading-[26px] tracking-[0.36px] text-white">
+                    <span className="text-[14px] md:text-lg leading-[26px] tracking-[0.36px] text-white">
                       {social.description}
                     </span>
-                    <ArrowRight className="h-5 w-5 shrink-0 text-white transition-colors" />
+                    <ArrowRight className="md:h-5 md:w-5 h-4 w-4 shrink-0 text-white transition-colors" />
                   </a>
                 </div>
               );

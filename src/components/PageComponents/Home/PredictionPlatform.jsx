@@ -28,7 +28,7 @@ export default function PredictionPlatform({
       {/* Main Content Container */}
       <div className="relative z-10 mx-auto flex min-h-[503px] max-w-[1280px]  flex-col items-center justify-center px-4 py-12 md:px-8 md:py-20">
         {/* Card Container */}
-        <div className="relative flex w-full min-h-[503px] prediction_platform_card_bg items-center justify-center overflow-hidden rounded-[44px] bg-white/95 backdrop-blur-[18.65px]">
+        <div className="relative flex w-full md:min-h-[503px] min-h-[390px] prediction_platform_card_bg items-center justify-center overflow-hidden rounded-[44px] bg-white/95 backdrop-blur-[18.65px]">
           {/* Content */}
           <div className="relative z-10 flex min-h-[290px] flex-col items-center justify-center gap-[22px] px-4 py-8">
             {/* Title */}
@@ -37,7 +37,7 @@ export default function PredictionPlatform({
             </h2>
 
             {/* Subtitle */}
-            <p className="paragraph-medium max-w-[539px] font-[400] text-center text-[20px] text-[#000]">
+            <p className="paragraph-medium max-w-[539px] font-[400] text-center !text-[14px] md:!text-[20px] text-[#000]">
               {subtitle}
             </p>
 
