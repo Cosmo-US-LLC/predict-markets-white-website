@@ -14,7 +14,9 @@ export default function MarketOpportunity({
     <section className="relative bg-gradient-to-br from-[#E6F2FF] to-white w-full overflow-hidden py-12 md:py-20">
       {/* Main Content Container */}
       <div className="relative z-10 flex items-center justify-center px-4 md:px-8">
-        <div className="bg-white rounded-2xl md:rounded-3xl w-full max-w-[1220px] overflow-hidden flex flex-col lg:flex-row gap-8 md:gap-[18px] items-center px-6 md:px-[80px] py-8 md:py-[32px] shadow-lg">
+        <div className="bg-white rounded-2xl md:rounded-[44px]
+         w-full max-w-[1220px] overflow-hidden flex flex-col lg:flex-row 
+         gap-8 md:gap-[18px] items-center px-6 md:px-[80px] py-8 md:py-[32px] border-[1px] border-[#DDD]">
           {/* Left Side - Chart */}
           <div className="relative md:h-[487px] h-[397px] w-full lg:w-[426px] flex-shrink-0">
             {/* Chart Image */}

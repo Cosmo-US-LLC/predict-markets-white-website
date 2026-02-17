@@ -79,7 +79,7 @@ export default function GetExtraRewards({
           <div className="flex flex-col gap-6 flex-1 max-w-[597px] w-full">
             {/* Slider */}
             <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-4 max-w-[640px] w-full mb-10">
+              <div className="flex flex-col gap-4 max-w-[640px] w-full mb-0">
                 <h2 className="heading-two">
                   {title}
                 </h2>
@@ -87,15 +87,16 @@ export default function GetExtraRewards({
                   {subtitle}
                 </p>
               </div>
-              <div className="flex items-center justify-between w-full">
-                <p className="text-[#000] text-base font-bold leading-6 tracking-[0.32px]">
+            <div>
+            <div className="flex items-center justify-between w-full">
+                <p className="text-[#000] !font-[600] paragraph-medium">
                   {sliderLabel}
                 </p>
-                <p className="text-[#000] text-base font-bold leading-6 tracking-[0.32px] text-right">
+                <p className="text-[#000] !font-[600] paragraph-medium text-right">
                   {formatCurrency(sliderValueState)}
                 </p>
               </div>
-              <div className="relative w-full">
+              <div className="relative w-full mt-3">
                 {/* Slider Track */}
                 <div className="relative w-full h-[18.347px] bg-gray-200 border border-gray-300 rounded-[76.444px] overflow-hidden">
                   {/* Filled Portion */}
@@ -122,6 +123,7 @@ export default function GetExtraRewards({
                 />
               </div>
             </div>
+            </div>
           </div>
 
           {/* Right Side - Carousel with Membership Cards Only */}
@@ -137,7 +139,15 @@ export default function GetExtraRewards({
               <CarouselContent>
                 {membershipCards.map((card, index) => (
                   <CarouselItem key={card.id || index} className="basis-full">
-                    <div className="bg-gray-100 rounded-lg p-6 flex flex-col lg:flex-row gap-6 items-center min-h-[349px] relative overflow-hidden">
+                    <div 
+                      className="p-6 flex flex-col lg:flex-row gap-6 items-center min-h-[349px] relative overflow-hidden"
+                      style={{
+                        borderRadius: '15px',
+                        border: '0.764px solid rgba(255, 255, 255, 0.10)',
+                        background: 'radial-gradient(212.58% 103.8% at 83.43% 21.95%, rgba(255, 255, 255, 0.80) 0%, rgba(222, 222, 222, 0.45) 50.48%, rgba(247, 247, 247, 0.80) 100%)',
+                        backdropFilter: 'blur(7.644444465637207px)',
+                      }}
+                    >
                       <div className="relative z-10 w-full flex flex-col lg:flex-row gap-6 items-center">
                         {/* Left Side - Membership Info */}
                         <div className="flex flex-col gap-5 w-full lg:w-[294px]">
@@ -152,26 +162,8 @@ export default function GetExtraRewards({
                             </p>
                           </div>
 
-                          {/* NFT Card with single image */}
-                          {card.cardImage && (
-                            <div className="bg-gray-800 border border-gray-600 rounded-[15px] h-[174px] w-full relative overflow-hidden shadow-lg">
-                              <div className="absolute inset-0 flex items-center justify-center">
-                                <img
-                                  src={card.cardImage}
-                                  alt={`${card.tier} membership`}
-                                  className="w-full h-full object-contain"
-                                  onError={(e) => {
-                                    e.target.style.display = 'none';
-                                  }}
-                                />
-                              </div>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Right Side - Benefits */}
-                        <div className="flex flex-col gap-3 flex-1 w-full lg:w-[353px]">
-                          {card.benefits && card.benefits.map((benefit, idx) => {
+                         
+                            {card.benefits && card.benefits.map((benefit, idx) => {
                             // Check if benefit is included (first 2 for Bronze, more for higher tiers)
                             // For Bronze: first 2 are included, rest are excluded
                             const isIncluded = card.tier === 'Bronze' ? idx < 2 : 
@@ -180,9 +172,10 @@ export default function GetExtraRewards({
                                               card.tier === 'Diamond' ? idx < 5 : true;
                             
                             return (
-                              <div key={idx} className="flex gap-3 items-center">
+                              <div key={idx} className="flex gap-2 items-center">
                                 <div 
-                                  className="rounded-[3.058px] w-[19.876px] h-[19.876px] flex items-center justify-center shrink-0"
+                                  className="rounded-[3.058px] w-[19.876px] 
+                                  h-[19.876px] flex items-center justify-center shrink-0"
                                   style={{
                                     background: isIncluded ? '#E6F6FF' : 'transparent',
                                     border: isIncluded ? '0.764px solid rgba(255, 255, 255, 0.51)' : '0.764px solid #DDD',
@@ -210,6 +203,24 @@ export default function GetExtraRewards({
                               </div>
                             );
                           })}
+                        </div>
+
+                        {/* Right Side - Benefits */}
+                        <div className="flex flex-col gap-3 flex-1 w-full lg:w-[353px]">
+                        {card.cardImage && (
+                            <div className="bg-gray-800 border border-gray-600 rounded-[15px] h-[174px] w-full relative overflow-hidden shadow-lg">
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <img
+                                  src={card.cardImage}
+                                  alt={`${card.tier} membership`}
+                                  className="w-full h-full object-contain"
+                                  onError={(e) => {
+                                    e.target.style.display = 'none';
+                                  }}
+                                />
+                              </div>
+                            </div>
+                          )}
 
                           {/* Buy Button */}
                           <div className="flex flex-col gap-[18px] items-center mt-4">

@@ -119,7 +119,7 @@ export default function Markets({
                   {/* Content at Bottom */}
                   <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-2 p-4 z-10">
                     <div className={`flex flex-col items-start min-h-[130px] ${isCrypto ? 'text-white' : 'text-[#000]'}`}>
-                      <h3 className="text-[18px] !text-[#fff] md:text-[20px] font-bold md:leading-[28px] leading-[26px] mb-0">
+                      <h3 className="paragraph-regular !font-[Inter] !text-[#fff] !font-[600]">
                         {market.title}
                       </h3>
                       <p className={`text-[12px] !text-[#fff] md:text-[14px] font-normal md:leading-[22px] leading-[20px] mt-1 ${

@@ -14,34 +14,42 @@ export default function WhatIsPredict({
   ],
   buyButtonText = "BUY $PREDICT",
   buyButtonLink = "/buy",
-  secondaryButtonText = "VISIT PLATFORM (BETA)",
+  secondaryButtonText = "Visit Platform (Beta)",
   secondaryButtonLink = "/what-is-predictmarkets",
 }) {
   // Split description into paragraphs
   const descriptionParagraphs = description.split('\n\n');
 
   return (
-    <section id="what-is-predictmarkets" className="relative w-full overflow-hidden flex items-center justify-center px-4 md:px-0 py-12 md:py-16 bg-gradient-to-br from-[#E6F2FF] to-[#F0F8FF]">
+    <section id="what-is-predictmarkets" className="relative w-full overflow-hidden 
+    flex items-center justify-center px-4 md:px-0 py-12 md:py-16 bg-gradient-to-br
+     from-[#E6F2FF] to-[#F0F8FF]">
       {/* Main Card Container */}
-      <div className="relative z-10 bg-white rounded-2xl md:rounded-3xl w-full max-w-[1280px] mx-auto px-6 md:px-12 py-8 md:py-0 flex flex-col md:flex-row gap-8 md:gap-12 items-center shadow-lg">
+      <div className="relative overflow-hidden z-10 bg-white rounded-2xl md:rounded-[44px]
+       w-full max-w-[1280px] mx-auto px-6 md:px-12 py-8 md:py-12 flex
+        flex-col md:flex-row gap-8 md:gap-6 items-center border-[1px] border-[#9C9C9C]">
         {/* Left Content */}
-        <div className="flex-1 flex flex-col gap-6 items-start z-10">
+        <div className="flex flex-col gap-6 items-start z-10 !max-w-[690px] md:min-w-[690px] !w-[100%]">
           {/* Title */}
           <h2 className="heading-two">
             {title}
           </h2>
 
           {/* Description Paragraphs */}
-          <div className="flex flex-col gap-4">
+          <div className="w-full">
             {descriptionParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-[#000] text-sm md:text-base font-normal leading-6 max-w-[500px]">
-                {paragraph}
+              <p key={index} className="!text-start paragraph-regular">
+The $PREDICT token gives holders access to a decentralised prediction market
+ ecosystem, enabling anonymous (no KYC), transparent,
+  and global peer-to-peer predictions on real world events such as elections,
+   sports, news, and much more. <br /><br />
+Holding $PREDICT unlocks real utility and exclusive early advantages across the platform.
               </p>
             ))}
           </div>
 
           {/* Benefits List */}
-          <div className="flex flex-col gap-3 md:gap-4">
+          <div className="flex flex-col gap-3 md:gap-4 w-full">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex gap-3 items-center">
                 {/* Check Icon - Blue */}
@@ -61,9 +69,9 @@ export default function WhatIsPredict({
                   </svg>
                 </div>
                 {/* Benefit Text */}
-                <span className="text-[#000] text-base md:text-lg font-medium">
+                <h4 className="text-[#000] heading-four !leading-[120%]">
                   {benefit}
-                </span>
+                </h4>
               </div>
             ))}
           </div>
@@ -87,23 +95,12 @@ export default function WhatIsPredict({
         </div>
 
         {/* Right Visual Content */}
-        <div className="flex-1 relative w-full h-[400px] md:h-[600px] flex items-center justify-center z-10">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[445px] h-[498px] opacity-30">
-            <img
-              src={ellipseImage}
-              alt=""
-              className="w-full h-full object-contain"
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
-          </div>
-
-          <div className="relative w-full max-w-[547px] h-full flex items-center justify-center">
+        <div className=" w-full z-10 flex items-center justify-center">
+          <div className=" !w-full absolute -bottom-35 -mr-14 flex items-center justify-center !min-w-[720px]  ">
             <img
               src={coinImage}
               alt="PredictMarkets Coin"
-              className="w-full h-full object-contain"
+              className="!w-full max-w-[720px]  h-full object-contain"
               onError={(e) => {
                 e.target.style.display = 'none';
               }}

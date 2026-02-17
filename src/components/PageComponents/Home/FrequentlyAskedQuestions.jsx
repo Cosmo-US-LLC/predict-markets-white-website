@@ -92,7 +92,7 @@ export default function FrequentlyAskedQuestions() {
                   <ChevronDown className="h-6 w-6 ml-4 shrink-0 text-black transition-transform duration-200 data-[state=open]:rotate-180" />
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="paragraph-regular text-[#000] !text-[20px]">
+                  <p className="paragraph-regular !text-start text-[#000] !text-[20px]">
                     {faq.answer}
                   </p>
                 </AccordionContent>
