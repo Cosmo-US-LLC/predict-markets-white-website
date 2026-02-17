@@ -39,7 +39,7 @@ export default function HowItWorks({
             $PREDICT Holders get daily passive USDT staking income
           </h4>
           <h4 className="absolute paragraph-medium top-[76%] text-[#000] left-[63%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Rewards</h4>
-          <h4 className="absolute paragraph-medium top-[53%] -right-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
+          <h4 className="absolute paragraph-medium top-[56%] -right-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
             $PREDICT
           </h4>
         </div>

@@ -8,7 +8,12 @@ export default function WhatSetsUsApart({
 }) {
   return (
     <section className="bg-white py-12 md:py-20">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-8 md:gap-10">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-8 md:gap-10"
+       style={{
+        borderRadius: '15px',
+        background: 'radial-gradient(41.18% 41.18% at 50% 58.84%, rgba(0, 128, 237, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%)',
+      }}
+      >
         {/* Header */}
         <div className="flex flex-col gap-3 max-w-[868px] text-center mx-auto">
           <h2 className="heading-two">
@@ -21,14 +26,21 @@ export default function WhatSetsUsApart({
 
         {/* Desktop Table */}
         <div className="hidden md:block">
-          <div className="bg-white rounded-lg shadow-md overflow-x-auto border border-gray-200">
-            <div className="min-w-[972px]">
+          <div 
+            className="overflow-x-auto"
+            style={{
+              borderRadius: '15px',
+              border: '0.5px solid #DDD',
+              background: 'rgba(255, 255, 255, 0.80)',
+            }}
+          >
+            <div className="min-w-[862px] max-w-[862px] mx-auto">
               {/* Header */}
-              <div className=" border-b border-gray-300 px-[40px] lg:px-[55px] py-6">
+              <div className=" border-b border-gray-300 ">
                 <div className="grid grid-cols-4 gap-4 items-center">
                   <div />
                   {/* PredictMarkets */}
-                  <div className="flex flex-col items-center gap-2">
+                  <div className="py-[40px] flex flex-col items-center gap-2 bg-white">
                     <div className="w-[45px] h-[45px]">
                       <img src={platforms?.predictMarkets?.icon} alt="PredictMarkets" className="w-full h-full object-contain" />
                     </div>
@@ -37,7 +49,7 @@ export default function WhatSetsUsApart({
                     </span>
                   </div>
                   {/* PolyMarket */}
-                  <div className="flex flex-col items-center gap-2">
+                  <div className="py-[40px] flex flex-col items-center gap-2">
                     <img
                       src={platforms.polyMarket?.icon}
                       alt={platforms.polyMarket?.name || 'PolyMarket'}
@@ -48,7 +60,7 @@ export default function WhatSetsUsApart({
                     </span>
                   </div>
                   {/* Kalshi */}
-                  <div className="flex flex-col items-center gap-2">
+                  <div className="py-[40px] flex flex-col items-center gap-2">
                     <img
                       src={platforms.kalshi?.icon}
                       alt={platforms.kalshi?.name || 'Kalshi'}
@@ -62,12 +74,12 @@ export default function WhatSetsUsApart({
               </div>
 
               {/* Body */}
-              <div className="px-[40px] lg:px-[55px]">
+              <div className="">
                 {tableData.map((row, index) => (
                   <div
                     key={row.id}
-                    className={`grid grid-cols-4 gap-4 items-center py-4 ${
-                      index % 2 === 0 ? 'bg-white' : ''
+                    className={`grid grid-cols-4 gap-4 items-center !h-[50px] ${
+                      index % 2 === 0 ? '' : ''
                     } ${
                       index < tableData.length - 1 ? 'border-b border-gray-200' : ''
                     }`}
@@ -75,7 +87,8 @@ export default function WhatSetsUsApart({
                     <span className="text-[#000] text-base font-medium">{row.feature}</span>
                     
                     {/* PredictMarkets */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-center items-center !h-[50px] 
+                    bg-white border-b border-gray-200">
                       {typeof row.predictMarkets === 'boolean' ? (
                         row.predictMarkets ? (
                           <div className="bg-[#0080ED] rounded-full w-[23px] h-[23px] flex items-center justify-center">
@@ -92,7 +105,7 @@ export default function WhatSetsUsApart({
                     </div>
 
                     {/* PolyMarket */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-center items-center !h-[50px]">
                       {typeof row.polyMarket === 'boolean' ? (
                         row.polyMarket ? (
                           <div className="bg-[#0080ED] rounded-full w-[23px] h-[23px] flex items-center justify-center">
@@ -133,7 +146,14 @@ export default function WhatSetsUsApart({
 
         {/* Mobile Table */}
         <div className="md:hidden">
-          <div className="bg-white rounded-lg shadow-md overflow-x-auto border border-gray-200">
+          <div 
+            className="overflow-x-auto"
+            style={{
+              borderRadius: '15px',
+              border: '0.5px solid #DDD',
+              background: 'rgba(255, 255, 255, 0.80)',
+            }}
+          >
             <div className="min-w-[332px]">
               {/* Header */}
               <div className=" border-b border-gray-300 pb-4 mb-3">
@@ -187,7 +207,7 @@ export default function WhatSetsUsApart({
                     <span className="text-[#000] text-[10px] font-medium leading-4">{row.feature}</span>
 
                     {/* PredictMarkets */}
-                    <div className="flex justify-center">
+                    <div className="flex justify-center bg-white">
                       {typeof row.predictMarkets === 'boolean' ? (
                         row.predictMarkets ? (
                           <div className="bg-[#0080ED] rounded-full w-[11px] h-[11px] flex items-center justify-center">

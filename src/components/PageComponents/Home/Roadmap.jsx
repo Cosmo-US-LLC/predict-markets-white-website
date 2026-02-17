@@ -106,7 +106,7 @@ export default function Roadmap({
                           </div>
 
                           {/* Text */}
-                          <div className="paragraph-regular max-w-[280px] text-[16px] text-black">
+                          <div className="paragraph-regular !text-start max-w-[280px] text-[16px] text-black">
                             {listItem}
                           </div>
                         </div>

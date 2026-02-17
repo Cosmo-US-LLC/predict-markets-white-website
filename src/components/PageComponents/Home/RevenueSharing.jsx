@@ -31,10 +31,10 @@ export default function RevenueSharing({
       <div className="relative z-10 bg-white overflow-hidden 
       rounded-2xl md:rounded-3xl w-full max-w-[1280px] 
       mx-auto px-6 md:px-12 py-8 md:py-12 flex flex-col lg:flex-row 
-      md:gap-12 gap-8 items-center ">
+      md:gap-12 gap-8 items-center border-[1px] border-[#DDD]">
         
         {/* Left Content */}
-        <div className="flex flex-col gap-6 items-start z-10 flex-1">
+        <div className="flex flex-col gap-6 items-start z-10 flex-1 !w-full max-w-[690px] md:min-w-[690px] ">
           {/* Title */}
           <h2 className="heading-two">
             {title}
@@ -59,9 +59,13 @@ export default function RevenueSharing({
         </div>
 
         {/* Right Visual Content */}
-        <div className="flex relative w-full md:w-[511px] md:h-[464px] h-[340px] items-center justify-center z-10">
+        <div className="flex  w-full  items-center justify-center z-10">
           {/* Coins Background (Blurred) */}
-          <div className="rotate-[-13.18deg] absolute md:left-[-0px] left-[-40px] md:top-[13px] top-[50px] md:w-[600.38px] w-[400px] md:h-[600px] h-[380px] blur-[15.163px] opacity-47 flex items-center justify-center pointer-events-none">
+          <div className="rotate-[-13.18deg] md:!min-w-[750px] 
+          absolute md:right-[-60px] right-[-40px] md:top-[13px] top-[50px]  md:min-w-[630.38px] max-w-[650.38px]
+           w-full
+           blur-[15.163px] opacity-47 flex items-center 
+           ustify-center pointer-events-none">
      
               <img
                 src={coinsImage}
@@ -75,8 +79,8 @@ export default function RevenueSharing({
           
 
           {/* Coins Foreground */}
-          <div className="absolute md:left-[-0px] left-[-40px] md:top-[-6px] top-[50px]
-           md:w-[600px] w-[400px] md:h-[600px] h-[380px] pointer-events-none">
+          <div className="absolute md:right-[-40px] right-[-40px] md:top-[-50px] top-[50px]
+           md:min-w-[650.38px] max-w-[650.38px] pointer-events-none">
             <img
               src={coinsImage}
               alt=""
@@ -88,7 +92,7 @@ export default function RevenueSharing({
           </div>
 
           {/* Blue Sphere with Revenue Text */}
-          <div className="absolute md:left-[200.65px] left-[90px] md:top-[190.9px] top-[170px]
+          <div className="absolute md:right-[180.65px] right-[100px] md:top-[200.9px] top-[170px]
            bg-[#0080ED]  rounded-[124.901px] md:w-[200.803px] w-[140px] md:h-[200.803px] h-[140px] flex flex-col items-center justify-center py-[32.896px] shadow-[inset_0px_4.112px_30.429px_0px_rgba(0,0,0,0.85)] z-1">
             <h4 className="text-white md:text-[30px] text-[20px] font-medium leading-[32.896px] text-center">
               {revenuePercentage.includes('Daily') ? (

@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
+import bnbIcon from "../../../assets/images/logo/wallet-coins/coins (1).svg";
+import ethIcon from "../../../assets/images/logo/wallet-coins/coins (2).svg";
+import solIcon from "../../../assets/images/logo/wallet-coins/coins (3).svg";
+import usdtIcon from "../../../assets/images/logo/wallet-coins/coins (4).svg";
+import usdcIcon from "../../../assets/images/logo/wallet-coins/coins (5).svg";
 
 export default function PresaleDashboard({
   presaleAmount = "$11,756,398.80",
@@ -56,8 +61,7 @@ export default function PresaleDashboard({
       id: "eth",
       name: "ETH",
       network: "ERC-20",
-      iconBg: "bg-blue-500",
-      iconText: "Ξ",
+      iconSrc: ethIcon,
       selected: false,
       networks: ["ERC-20", "BEP-20"]
     },
@@ -65,8 +69,7 @@ export default function PresaleDashboard({
       id: "bnb",
       name: "BNB",
       network: "BEP-20",
-      iconBg: "bg-yellow-500",
-      iconText: "BNB",
+      iconSrc: bnbIcon,
       selected: false,
       networks: ["BEP-20", "ERC-20"]
     },
@@ -74,8 +77,7 @@ export default function PresaleDashboard({
       id: "usdt",
       name: "USDT",
       network: "ERC-20",
-      iconBg: "bg-teal-500",
-      iconText: "T",
+      iconSrc: usdtIcon,
       selected: true,
       networks: ["ERC-20", "BEP-20", "TRC-20"]
     },
@@ -83,8 +85,7 @@ export default function PresaleDashboard({
       id: "usdc",
       name: "USDC",
       network: "ERC-20",
-      iconBg: "bg-blue-600",
-      iconText: "C",
+      iconSrc: usdcIcon,
       selected: false,
       networks: ["ERC-20", "BEP-20"]
     },
@@ -92,8 +93,7 @@ export default function PresaleDashboard({
       id: "sol",
       name: "SOL",
       network: "SOLANA",
-      iconBg: "bg-black",
-      iconText: "S",
+      iconSrc: solIcon,
       selected: false,
       networks: ["SOLANA", "SPL", "Wrapped SOL"]
     },
@@ -101,8 +101,7 @@ export default function PresaleDashboard({
       id: "more",
       name: "More",
       network: "",
-      iconBg: "",
-      iconText: "",
+      iconSrc: null,
       selected: false,
       networks: []
     },
@@ -149,10 +148,11 @@ export default function PresaleDashboard({
   }, [openDropdownId]);
 
   return (
-    <div className="relative w-full max-w-[100%] mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-8">
+    <div className="relative w-full max-w-[100%] mx-auto bg-white rounded-[13.675px] border border-[#D8D8D8] shadow-xl py-[15px] 
+    px-[30px] md:px-[60px] py-[30px]">
       {/* Step 1: Presale Live Banner - Positioned at top of card with relative positioning */}
       <div className="relative flex items-center justify-center mb-4 -mt-10">
-        <div className="bg-[#0080ED] text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase flex items-center gap-2">
+        <div className="bg-[#0080ED] text-white px-4 py-1.5 rounded-[4px] !text-[12px] font-[Inter] font-[600] uppercase flex items-center gap-2">
           {/* Bullet point: white circle with blue dot inside */}
           <div className="w-2 h-2 bg-white rounded-full flex items-center justify-center flex-shrink-0">
             <div className="w-1 h-1 bg-[#0080ED] rounded-full"></div>
@@ -162,7 +162,7 @@ export default function PresaleDashboard({
       </div>
 
       {/* Step 2: Navigation Tabs - Parent container with border */}
-      <div className="flex items-center justify-center gap-1 mb-6 p-1 border  border-gray-800 
+      <div className="flex items-center justify-center gap-[1px] mb-6 p-1 border  border-gray-800 
       rounded-[100px] ">
         {tabs.map((tab) => {
           const IconComponent = tab.icon;
@@ -170,9 +170,9 @@ export default function PresaleDashboard({
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center justify-center gap-1.5 px-2 py-2.5 !text-black 
-                !text-[12px] font-[Inter] rounded-[100px] transition-all duration-200 min-w-[70px] flex-1 ${activeTab === tab.id
-                  ? "bg-gray-50 text-black shadow-sm "
+              className={`flex items-center justify-center  !text-black 
+                !text-[12px] font-[Inter] rounded-[100px] px-[5px] py-2 gap-[2px] transition-all duration-200 min-w-[70px] flex-1 ${activeTab === tab.id
+                  ? "bg-gray-50 text-black   shadow-sm "
                   : "bg-transparent text-black hover:text-black "
                 }`}
             >
@@ -181,7 +181,7 @@ export default function PresaleDashboard({
                 <IconComponent />
               </span>
               {/* Label */}
-              <span className={`text-[10px] font-medium leading-tight text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
+              <span className={`text-[10px] font-[400] font-[Inter] leading-tight text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
                 }`}>
                 {tab.label}
               </span>
@@ -192,7 +192,8 @@ export default function PresaleDashboard({
 
       {/* Presale Progress */}
       <div className="mb-4 px-[16px] pt-[20px] pb-[10px] bg-[#F5F5F5] rounded-[8px]">
-        <div className="heading-two !text-center !font-[600] mb-2">{presaleAmount}</div>
+        <h2 className="heading-two !text-center mb-2 !font-[500] 
+        !font-[Helvetica Neue Medium Extended]">{presaleAmount}</h2>
         <div className="text-[14px] text-[#7B7B7B] mb-2">
           {softcapPercentage}% of softcap raised
         </div>
@@ -206,9 +207,9 @@ export default function PresaleDashboard({
         </div>
         <div className="flex justify-between items-center text-[14px]  mb-1">
           <span></span>
-          <span className="font-medium text-gray-500"> {softcapTarget}</span>
+          <h5 className="font-medium text-gray-500"> {softcapTarget}</h5>
         </div>
-        <div className="text-[14px] text-black text-center">{holdersCount} Holders</div>
+        <h5 className="text-[14px] text-black text-center">{holdersCount} Holders</h5>
       </div>
 
       {/* Payment Options */}
@@ -248,23 +249,25 @@ export default function PresaleDashboard({
                 }}
                 className={`w-full flex items-center gap-2 px-2 py-1 
                   rounded-lg border transition-colors text-left min-h-[48px] ${selectedPayment.includes(option.name)
-                    ? "border-gray-200 bg-gray-50"
-                    : "border-gray-200 hover:bg-gray-50 bg-white"
+                    ? "border-gray-200 bg-white"
+                    : "border-gray-200 bg-gray-50 hover:bg-gray-50 "
                   }`}
               >
-                {/* Coin Icon - Circular with colored background */}
-                {option.id !== "more" && option.iconBg && (
-                  <div className={`${option.iconBg} w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0`}>
-                    <span className="text-white text-xs font-bold">{option.iconText}</span>
-                  </div>
+                {/* Coin Icon */}
+                {option.id !== "more" && option.iconSrc && (
+                  <img 
+                    src={option.iconSrc} 
+                    alt={option.name} 
+                    className="w-6 h-6 flex-shrink-0"
+                  />
                 )}
 
                 {/* Text Content */}
                 <div className="flex-1 min-w-0 flex flex-col justify-center">
-                  <div className="font-bold text-[12px] text-gray-800 leading-tight">
+                  <div className="font-bold text-[14px] text-gray-800 leading-tight">
                     {option.name}
                   </div>
-                  <div className="text-[10px] text-gray-500 leading-tight mt-0.5">
+                  <div className="text-[12px] text-gray-500 leading-tight mt-0.5">
                     {selectedPayment.includes(option.name)
                       ? selectedPayment.split(" ").slice(1).join(" ") || option.network
                       : option.network
@@ -274,10 +277,25 @@ export default function PresaleDashboard({
 
                 {/* Dropdown Arrow */}
                 {option.id !== "more" && (
-                  <ChevronDown
-                    className={`w-3 h-3 text-gray-400 flex-shrink-0 transition-transform ${openDropdownId === option.id ? "rotate-180" : ""
-                      }`}
-                  />
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="15" 
+                    height="8" 
+                    viewBox="0 0 15 8" 
+                    fill="none"
+                    className={`transition-transform duration-200 ${
+                      openDropdownId === option.id ? "rotate-180" : ""
+                    }`}
+                  >
+                    <path 
+                      d="M14.3696 0.636719L8.71715 6.28921C8.0496 6.95676 6.95725 6.95676 6.2897 6.28921L0.637207 0.636719" 
+                      stroke="black" 
+                      strokeWidth="1.27411" 
+                      strokeMiterlimit="10" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 )}
               </button>
 
@@ -297,10 +315,12 @@ export default function PresaleDashboard({
                         }`}
                     >
                       {/* Coin Icon in Dropdown */}
-                      {option.iconBg && (
-                        <div className={`${option.iconBg} w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0`}>
-                          <span className="text-white text-[10px] font-bold">{option.iconText}</span>
-                        </div>
+                      {option.iconSrc && (
+                        <img 
+                          src={option.iconSrc} 
+                          alt={option.name} 
+                          className="w-6 h-6 flex-shrink-0"
+                        />
                       )}
                       <div className="flex-1 min-w-0 text-left">
                         <div className="font-medium text-[12px] text-left">{option.name}</div>
@@ -321,16 +341,16 @@ export default function PresaleDashboard({
       </div>
 
       {/* Price Information */}
-      <div className="bg-gray-50 rounded-lg px-4 py-2 mb-2">
+      <div className="bg-gray-50 rounded-lg px-4 py-2.5 mb-3">
         <div className="flex justify-center space-x-2 items-center text-sm">
           <div className="flex items-center gap-2">
-            <span className="text-gray-600 !font-[600]">Presale Price = </span>
-            <span className="font-semibold text-[#0080ED]">{presalePrice}</span>
+            <span className="text-black text-[14px] !font-[600]">Presale Price = </span>
+            <span className="font-semibold text-[14px] font-bold text-[#0080ED]">{presalePrice}</span>
           </div>
           <div className="w-px h-4 bg-gray-800 !font-[600]"></div>
           <div className="flex items-center gap-2">
-            <span className="text-gray-600 !font-[600]">Listing Price = </span>
-            <span className="font-semibold text-[#0080ED]">{listingPrice}</span>
+            <span className="text-black text-[14px] !font-[600]">Listing Price = </span>
+            <span className="font-semibold text-[14px] font-bold text-[#0080ED]">{listingPrice}</span>
           </div>
         </div>
       </div>
@@ -347,14 +367,16 @@ export default function PresaleDashboard({
               type="text"
               value={youPayAmount}
               readOnly
-              className="flex-1 text-[16px] font-semibold max-w-[70%] !w-full  text-black bg-transparent border-none outline-none px-4 py-3"
+              className="flex-1 text-[16px] font-[Inter] font-[500] max-w-[70%] !w-full  text-black bg-transparent border-none outline-none px-4 py-3"
             />
             <div className="flex items-center gap-2 px-3 py-2 w-[30%] border-l border-gray-200 bg-white">
               {/* Dynamic Payment Icon */}
-              {selectedPaymentOption.iconBg && (
-                <div className={`${selectedPaymentOption.iconBg} w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0`}>
-                  <span className="text-white text-sm font-bold">{selectedPaymentOption.iconText}</span>
-                </div>
+              {selectedPaymentOption.iconSrc && (
+                <img 
+                  src={selectedPaymentOption.iconSrc} 
+                  alt={selectedPaymentOption.name} 
+                  className="w-8 h-8 flex-shrink-0"
+                />
               )}
               <div className="flex flex-col">
                 <span className="text-sm font-bold text-gray-800 leading-tight">{selectedPaymentOption.name}</span>
