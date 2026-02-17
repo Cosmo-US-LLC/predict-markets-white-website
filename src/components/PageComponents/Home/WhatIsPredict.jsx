@@ -27,7 +27,7 @@ export default function WhatIsPredict({
       {/* Main Card Container */}
       <div className="relative overflow-hidden z-10 bg-white rounded-2xl md:rounded-[44px]
        w-full max-w-[1280px] mx-auto px-6 md:px-12 py-8 md:py-12 flex
-        flex-col md:flex-row gap-8 md:gap-6 items-center border-[1px] border-[#9C9C9C]">
+        flex-col md:flex-row gap-2 md:gap-6 items-center border-[1px] border-[#9C9C9C]">
         {/* Left Content */}
         <div className="flex flex-col gap-6 items-start z-10 !max-w-[690px] md:min-w-[690px] !w-[100%]">
           {/* Title */}
@@ -96,11 +96,12 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
 
         {/* Right Visual Content */}
         <div className=" w-full z-10 flex items-center justify-center">
-          <div className=" !w-full absolute -bottom-35 -mr-14 flex items-center justify-center !min-w-[720px]  ">
+          <div className=" !w-full md:absolute -bottom-35 md:-mr-14 flex items-center 
+          justify-center md:!min-w-[720px]  ">
             <img
               src={coinImage}
               alt="PredictMarkets Coin"
-              className="!w-full max-w-[720px]  h-full object-contain"
+              className="!w-full md:max-w-[720px]  h-full object-contain"
               onError={(e) => {
                 e.target.style.display = 'none';
               }}

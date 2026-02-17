@@ -347,10 +347,29 @@ h6 {
   }
   .paragraph-regular {
     font-family: Inter;
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 24px !important;  
     letter-spacing: 0.28px;
   }
+  .paragraph-medium {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;  
+  letter-spacing: 0.36px;
+font-family: Inter;
+
+}
+
+/* Mobile gradient text for hero title */
+@media (max-width: 767px) {
+  .hero-title-gradient {
+    background: linear-gradient(180deg, #0080ED -30.28%, #2E2E2E 89.98%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 }

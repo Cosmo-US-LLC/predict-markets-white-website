@@ -80,10 +80,10 @@ export default function GetExtraRewards({
             {/* Slider */}
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4 max-w-[640px] w-full mb-0">
-                <h2 className="heading-two">
+                <h2 className="heading-two max-md:!text-center">
                   {title}
                 </h2>
-                <p className="paragraph-regular !text-start">
+                <p className="paragraph-regular md:!text-start !text-center">
                   {subtitle}
                 </p>
               </div>
@@ -140,9 +140,9 @@ export default function GetExtraRewards({
                 {membershipCards.map((card, index) => (
                   <CarouselItem key={card.id || index} className="basis-full">
                     <div 
-                      className="p-6 flex flex-col lg:flex-row gap-6 items-center min-h-[349px] relative overflow-hidden"
+                      className="md:p-6 max-md:px-[16px] max-md:py-[20px] flex rounded-[12px] md:rounded-[15px] flex-col
+                       lg:flex-row gap-6 items-center min-h-[349px] relative overflow-hidden"
                       style={{
-                        borderRadius: '15px',
                         border: '0.764px solid rgba(255, 255, 255, 0.10)',
                         background: 'radial-gradient(212.58% 103.8% at 83.43% 21.95%, rgba(255, 255, 255, 0.80) 0%, rgba(222, 222, 222, 0.45) 50.48%, rgba(247, 247, 247, 0.80) 100%)',
                         backdropFilter: 'blur(7.644444465637207px)',
@@ -150,17 +150,32 @@ export default function GetExtraRewards({
                     >
                       <div className="relative z-10 w-full flex flex-col lg:flex-row gap-6 items-center">
                         {/* Left Side - Membership Info */}
-                        <div className="flex flex-col gap-5 w-full lg:w-[294px]">
+                        <div className="flex flex-col md:gap-5 gap-3 w-full lg:w-[294px]">
                           <div className="flex flex-col gap-2.5">
                             <h3 className="heading-three !text-start">
-                              {card.tier}
-                              <br />
-                              MEMBERSHIP
+                              {card.tier} <br className="max-md:hidden" />MEMBERSHIP
                             </h3>
                             <p className="text-[#000] text-base font-normal leading-[1.4] tracking-[0.32px]">
                               When you buy $PREDICT for {formatCurrency(card.minAmount)}
                             </p>
                           </div>
+
+                          {card.cardImage && (
+                            <div className="md:hidden mt-2 mb-2 block rounded-[15px] min-h-[224px] w-full 
+                            relative overflow-hidden ">
+                              <div className="absolute inset-0 flex items-center 
+                              justify-center w-full ">
+                                <img
+                                  src={card.cardImage}
+                                  alt={`${card.tier} membership`}
+                                  className="w-full h-full object-contain rounded-[15px]"
+                                  onError={(e) => {
+                                    e.target.style.display = 'none';
+                                  }}
+                                />
+                              </div>
+                            </div>
+                          )}
 
                          
                             {card.benefits && card.benefits.map((benefit, idx) => {
@@ -172,7 +187,7 @@ export default function GetExtraRewards({
                                               card.tier === 'Diamond' ? idx < 5 : true;
                             
                             return (
-                              <div key={idx} className="flex gap-2 items-center">
+                              <div key={idx} className="flex gap-1 max-md:gap-2 items-center">
                                 <div 
                                   className="rounded-[3.058px] w-[19.876px] 
                                   h-[19.876px] flex items-center justify-center shrink-0"
@@ -208,7 +223,7 @@ export default function GetExtraRewards({
                         {/* Right Side - Benefits */}
                         <div className="flex flex-col gap-3 flex-1 w-full lg:w-[353px]">
                         {card.cardImage && (
-                            <div className="bg-gray-800 border border-gray-600 rounded-[15px] h-[174px] w-full relative overflow-hidden shadow-lg">
+                            <div className="bg-gray-800 hidden md:block border border-gray-600 rounded-[15px] h-[174px] w-full relative overflow-hidden shadow-lg">
                               <div className="absolute inset-0 flex items-center justify-center">
                                 <img
                                   src={card.cardImage}

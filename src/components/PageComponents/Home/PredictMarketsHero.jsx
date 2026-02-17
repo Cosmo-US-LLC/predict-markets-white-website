@@ -31,7 +31,7 @@ export default function PredictMarketsHero({
     >
       {/* Background Image - Mobile */}
       <div
-        className="md:hidden absolute inset-0 w-full h-full z-0"
+        className="md:hidden absolute inset-0 w-full h-full z-0 "
         style={{
           backgroundImage: `url(${predictHeroBgMobile})`,
           backgroundSize: 'cover',
@@ -65,17 +65,17 @@ export default function PredictMarketsHero({
             </div>
 
             {/* Title */}
-            <h1 className="heading-one text-[#000000] mb-4 text-left">
+            <h1 className="heading-one text-[#000000] mb-4 md:text-left text-center hero-title-gradient">
               {title}
             </h1>
 
             {/* Description */}
-            <p className="text-[#000000] !text-start paragraph-regular mb-6 text-left max-w-[564px]">
+            <p className="text-[#000000] md:!text-start paragraph-regular mb-6 !text-center max-w-[564px]">
               {description}
             </p>
 
             {/* Verification Section */}
-            <div className="flex items-start flex-col gap-2 mb-6">
+            <div className="md:flex hidden items-start flex-col gap-2 mb-6 ">
               <span className=" paragraph-medium !font-[600]">Verified & Audited by</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="166" height="44" viewBox="0 0 166 44" fill="none">
                   <path d="M60.5077 33.8609C59.0323 33.8609 57.6959 33.6258 56.4985 33.1555C55.3225 32.6638 54.3068 31.937 53.4515 30.975C52.6176 30.0131 51.9761 28.8267 51.5271 27.4158C51.078 25.9836 50.8535 24.3269 50.8535 22.4458C50.8535 20.5646 51.078 18.8972 51.5271 17.4436C51.9761 15.9686 52.6176 14.7395 53.4515 13.7561C54.3068 12.7514 55.3225 11.9926 56.4985 11.4795C57.6959 10.9665 59.0323 10.71 60.5077 10.71C62.5177 10.71 64.1855 11.1375 65.5112 11.9926C66.8369 12.8476 67.8954 14.1409 68.6865 15.8724L65.0622 17.7963C64.7415 16.7916 64.2176 15.99 63.4906 15.3915C62.7636 14.7715 61.7693 14.4616 60.5077 14.4616C58.9254 14.4616 57.6638 14.996 56.723 16.0648C55.8036 17.1337 55.3438 18.63 55.3438 20.5539V24.0811C55.3438 26.0263 55.8036 27.5227 56.723 28.5702C57.6638 29.5962 58.9254 30.1093 60.5077 30.1093C61.7693 30.1093 62.7956 29.7673 63.5868 29.0832C64.3993 28.3992 64.9874 27.5548 65.3509 26.5501L68.7828 28.5702C67.9702 30.2375 66.8904 31.5415 65.5433 32.4821C64.1962 33.4013 62.5177 33.8609 60.5077 33.8609Z" fill="black" />

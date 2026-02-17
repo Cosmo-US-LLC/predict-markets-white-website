@@ -45,12 +45,12 @@ export default function ExclusivePresaleBenefits({
         </h2>
 
         {/* Benefits Grid */}
-        <div className="flex flex-col md:flex-row gap-2 items-stretch">
+        <div className="flex flex-col md:flex-row md:gap-2 gap-4 items-stretch">
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="bg-white rounded-lg border-[1px] rounded-[15px] border-[#DDD] flex flex-col 
-              gap-6 items-center px-[10px] py-7 flex-1 min-w-0"
+              className="md:bg-white bg-[#FAF9F9] rounded-[12px] border-[1px] md:rounded-[15px] border-[#DDD] flex flex-col 
+              gap-6 items-center md:px-[10px] px-[16px] md:py-7 py-[28px] flex-1 min-w-0"
             >
               {/* Icon */}
               <div className="h-[98px] w-[106px] flex items-center justify-center shrink-0">
@@ -65,7 +65,7 @@ export default function ExclusivePresaleBenefits({
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-3 items-center text-center w-full">
+              <div className="flex flex-col gap-3 items-center text-center w-full max-md:max-w-[290px] mx-auto">
                 <h3 className="heading-three ">
                   {benefit.title}
                 </h3>

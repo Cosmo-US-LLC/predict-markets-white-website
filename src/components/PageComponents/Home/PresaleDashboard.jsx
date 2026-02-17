@@ -149,7 +149,7 @@ export default function PresaleDashboard({
 
   return (
     <div className="relative w-full max-w-[100%] mx-auto bg-white rounded-[13.675px] border border-[#D8D8D8] shadow-xl py-[15px] 
-    px-[30px] md:px-[60px] py-[30px]">
+    px-[10px] md:px-[60px] py-[25px] md:py-[30px]">
       {/* Step 1: Presale Live Banner - Positioned at top of card with relative positioning */}
       <div className="relative flex items-center justify-center mb-4 -mt-10">
         <div className="bg-[#0080ED] text-white px-4 py-1.5 rounded-[4px] !text-[12px] font-[Inter] font-[600] uppercase flex items-center gap-2">
@@ -171,7 +171,7 @@ export default function PresaleDashboard({
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center justify-center  !text-black 
-                !text-[12px] font-[Inter] rounded-[100px] px-[5px] py-2 gap-[2px] transition-all duration-200 min-w-[70px] flex-1 ${activeTab === tab.id
+                md:!text-[12px] !text-[7px] font-[Inter] rounded-[100px] px-[2px] md:px-[5px] py-2 gap-[2px] transition-all duration-200 min-w-[70px] flex-1 ${activeTab === tab.id
                   ? "bg-gray-50 text-black   shadow-sm "
                   : "bg-transparent text-black hover:text-black "
                 }`}
@@ -181,7 +181,7 @@ export default function PresaleDashboard({
                 <IconComponent />
               </span>
               {/* Label */}
-              <span className={`text-[10px] font-[400] font-[Inter] leading-tight text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
+              <span className={`md:text-[10px] !text-[7px]  font-[400] font-[Inter] leading-tight text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
                 }`}>
                 {tab.label}
               </span>
@@ -258,16 +258,16 @@ export default function PresaleDashboard({
                   <img 
                     src={option.iconSrc} 
                     alt={option.name} 
-                    className="w-6 h-6 flex-shrink-0"
+                    className="md:w-6 md:h-6 w-4 h-4 flex-shrink-0"
                   />
                 )}
 
                 {/* Text Content */}
                 <div className="flex-1 min-w-0 flex flex-col justify-center">
-                  <div className="font-bold text-[14px] text-gray-800 leading-tight">
+                  <div className="font-bold text-[12px] md:text-[14px] text-gray-800 leading-tight">
                     {option.name}
                   </div>
-                  <div className="text-[12px] text-gray-500 leading-tight mt-0.5">
+                  <div className="md:text-[12px] text-[10px]  text-gray-500 leading-tight mt-0.5">
                     {selectedPayment.includes(option.name)
                       ? selectedPayment.split(" ").slice(1).join(" ") || option.network
                       : option.network
@@ -283,7 +283,7 @@ export default function PresaleDashboard({
                     height="8" 
                     viewBox="0 0 15 8" 
                     fill="none"
-                    className={`transition-transform duration-200 ${
+                    className={`transition-transform duration-200 max-md:w-[10px] max-md:h-[8px] ${
                       openDropdownId === option.id ? "rotate-180" : ""
                     }`}
                   >
@@ -344,13 +344,13 @@ export default function PresaleDashboard({
       <div className="bg-gray-50 rounded-lg px-4 py-2.5 mb-3">
         <div className="flex justify-center space-x-2 items-center text-sm">
           <div className="flex items-center gap-2">
-            <span className="text-black text-[14px] !font-[600]">Presale Price = </span>
-            <span className="font-semibold text-[14px] font-bold text-[#0080ED]">{presalePrice}</span>
+            <span className="text-black text-[12px] md:text-[14px] !font-[600]">Presale Price = </span>
+            <span className="font-semibold text-[12px] md:text-[14px] font-bold text-[#0080ED]">{presalePrice}</span>
           </div>
           <div className="w-px h-4 bg-gray-800 !font-[600]"></div>
           <div className="flex items-center gap-2">
-            <span className="text-black text-[14px] !font-[600]">Listing Price = </span>
-            <span className="font-semibold text-[14px] font-bold text-[#0080ED]">{listingPrice}</span>
+            <span className="text-black text-[12px] md:text-[14px] !font-[600]">Listing Price = </span>
+            <span className="font-semibold text-[12px] md:text-[14px] font-bold text-[#0080ED]">{listingPrice}</span>
           </div>
         </div>
       </div>
@@ -375,12 +375,12 @@ export default function PresaleDashboard({
                 <img 
                   src={selectedPaymentOption.iconSrc} 
                   alt={selectedPaymentOption.name} 
-                  className="w-8 h-8 flex-shrink-0"
+                  className="md:w-8 md:h-8 w-5 h-5 flex-shrink-0"
                 />
               )}
               <div className="flex flex-col">
-                <span className="text-sm font-bold text-gray-800 leading-tight">{selectedPaymentOption.name}</span>
-                <span className="text-xs text-gray-600 leading-tight">{selectedPaymentOption.network}</span>
+                <span className="md:text-sm text-[12px] font-bold text-gray-800 leading-tight">{selectedPaymentOption.name}</span>
+                <span className="md:text-xs text-[10px] text-gray-600 leading-tight">{selectedPaymentOption.network}</span>
               </div>
             </div>
           </div>
@@ -401,9 +401,9 @@ export default function PresaleDashboard({
               readOnly
               className="flex-1 text-[16px] font-semibold max-w-[70%] text-black bg-transparent border-none outline-none px-4 py-3"
             />
-            <div className="flex items-center gap-2 px-3 py-2 w-[30%] border-l border-gray-200 bg-white">
+            <div className="flex items-center gap-2 px-2 py-1 w-[30%] border-l border-gray-200 bg-white">
               {/* PREDICT Icon - Square blue with 3x3 grid of white squares */}
-              <div className="bg-[#0080ED] w-8 h-8 rounded flex items-center justify-center flex-shrink-0 p-1.5">
+              <div className="bg-[#0080ED] md:w-8 md:h-8 w-5 h-5 rounded flex items-center justify-center flex-shrink-0 p-1">
                 <div className="grid grid-cols-3 gap-0.5 w-full h-full">
                   {[...Array(9)].map((_, i) => (
                     <div key={i} className="bg-white rounded-[1px]"></div>
@@ -411,7 +411,7 @@ export default function PresaleDashboard({
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="text-sm font-bold text-gray-800 leading-tight">PREDICT</span>
+                <span className="md:text-sm text-[12px] font-bold text-gray-800 leading-tight">PREDICT</span>
               </div>
             </div>
           </div>
