@@ -190,9 +190,10 @@ export default function WhatSetsUsApart({
           >
             <div className="min-w-[332px] p-2">
               {/* Header */}
-              <div className=" border-b border-gray-300 pb-4 mb-3">
-                <div className="grid grid-cols-4 gap-2 items-end">
+              <div className="border-b border-gray-300 pb-4 mb-3 relative">
+                <div className="grid grid-cols-4 gap-2 items-end bg-[#f9fbff] rounded-[10px] px-2 pt-2 pb-3">
                   <div />
+                  <div className="absolute top-0 left-[25.5%] border border-[#0080ED] bg-[#FFFFFFC2] flex items-center justify-center min-h-[450px] w-[82px] z-1 rounded-[8px]"></div>
                   {/* PredictMarkets */}
                   <div className="flex flex-col items-center gap-1">
                     <div className="w-[23px] h-[23px]">
@@ -202,7 +203,7 @@ export default function WhatSetsUsApart({
                         className="w-full h-full object-contain"
                       />
                     </div>
-                    <span className="text-[#000] text-[10px] font-medium text-center leading-3">
+                    <span className="text-[#000] text-[10px] relative z-10 font-medium text-center leading-3">
                       {platforms.predictMarkets?.name || "PredictMarkets"}
                     </span>
                   </div>
@@ -232,13 +233,11 @@ export default function WhatSetsUsApart({
               </div>
 
               {/* Body */}
-              <div className="space-y-2">
+              <div className="space-y-0 md:space-y-2">
                 {tableData.map((row, index) => (
                   <div
                     key={row.id}
-                    className={`grid grid-cols-4 items-center md:py-2 py-1 ${
-                      index % 2 === 0 ? "bg-white" : "bg-gray-50"
-                    } ${
+                    className={`grid grid-cols-4 items-center md:py-2 py-2 bg-white ${
                       index < tableData.length - 1
                         ? "border-b border-gray-200"
                         : ""
@@ -249,17 +248,17 @@ export default function WhatSetsUsApart({
                     </span>
 
                     {/* PredictMarkets */}
-                    <div className="flex justify-center h-full bg-white items-center">
+                    <div className="flex justify-center h-full bg-white items-center ">
                       {typeof row.predictMarkets === "boolean" ? (
                         row.predictMarkets ? (
-                          <div className="bg-[#0080ED] rounded-full w-[11px] h-[11px] flex items-center justify-center">
+                          <div className="bg-[#0080ED] rounded-full relative z-10 w-[11px] h-[11px] flex items-center justify-center">
                             <Check
                               className="w-[7px] h-[7px] text-white"
                               strokeWidth={3}
                             />
                           </div>
                         ) : (
-                          <div className="bg-gray-600 rounded-full w-[11px] h-[11px] flex items-center justify-center">
+                          <div className="bg-gray-600 rounded-full relative z-10 w-[11px] h-[11px] flex items-center justify-center">
                             <X
                               className="w-[7px] h-[7px] text-white"
                               strokeWidth={3}
@@ -267,7 +266,7 @@ export default function WhatSetsUsApart({
                           </div>
                         )
                       ) : (
-                        <span className="text-[#000] text-[10px] font-semibold">
+                        <span className="text-[#000] text-[10px] relative z-10 font-semibold">
                           {row.predictMarkets}
                         </span>
                       )}
