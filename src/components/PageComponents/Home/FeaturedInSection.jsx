@@ -8,20 +8,20 @@ export default function FeaturedInSection({
 
   return (
     
-      <div className="w-full max-w-[1280px] py-8 md:py-3 mx-auto">
+      <div className="w-full max-w-[1280px] py-0 md:py-3 mx-auto">
         <div 
-          className="rounded-[15px] border-[0.5px] border-white flex flex-col md:flex-row gap-4 items-center justify-center md:justify-start px-4 py-6"
+          className="rounded-[15px] border-[0.5px] border-white flex flex-row md:flex-row gap-4 items-center justify-center md:justify-start px-4 py-6"
           style={{
             background: 'rgba(245, 245, 245, 0.26)'
           }}
         >
           {/* Title */}
-          <p className="text-black text-[18px] md:text-lg font-bold leading-6 tracking-[0.32px] whitespace-nowrap shrink-0">
+          <p className="text-black text-[10px] md:text-lg font-bold leading-6 tracking-[0.32px] whitespace-nowrap shrink-0">
             {title}
           </p>
 
           {/* Logos */}
-          <div className="flex items-center justify-center gap-6 flex-1">
+          <div className="flex items-center justify-center gap-2 md:gap-6 flex-1">
             {logos.map((logo, index) => (
               <div
                 key={logo.id || index}

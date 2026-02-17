@@ -20,7 +20,8 @@ export default function MarketOpportunity({
           {/* Left Side - Chart */}
           <div className="relative md:h-[487px] h-[397px] w-full lg:w-[426px] flex-shrink-0">
             {/* Chart Image */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 md:w-[389px] md:h-[351px] w-[289px] h-[251px]">
+            <div className="absolute md:left-0  left-[3%] top-1/2 
+            -translate-y-1/2 md:w-[389px] md:h-[351px] w-[100%] max-md:!mx-auto h-[251px] ">
               <img
                 src={chartImage}
                 alt="Market Opportunity Chart"
@@ -33,20 +34,20 @@ export default function MarketOpportunity({
 
             {/* Market 2026 Label - Top */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center text-[#000] w-full">
-              <p className="text-base font-medium leading-6 tracking-[0.32px] mb-0.5">
+              <p className="md:text-base text-[12px] font-medium md:leading-6 leading-[15px] tracking-[0.32px] mb-0.5">
                 {market2026?.label || 'Prediction Marketplaces in 2026'}
               </p>
-              <p className="text-base font-bold leading-6 tracking-[0.32px] h-[21px]">
+              <p className="md:text-base text-[12px] font-bold md:leading-6 leading-[15px] tracking-[0.32px] h-[21px]">
                 {market2026?.value || 'Currently Valued at $20B+'}
               </p>
             </div>
 
             {/* Market 2030 Label - Bottom */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center text-[#000] w-full">
-              <p className="text-base font-medium leading-6 tracking-[0.32px] mb-0.5 whitespace-pre-line">
+              <p className="md:text-base text-[12px] font-medium md:leading-6 leading-[15px] tracking-[0.32px] mb-0.5 whitespace-pre-line">
                 {market2030?.label || 'Prediction Marketplaces in 2030\nExpected by Industry Experts'}
               </p>
-              <p className="text-base font-bold leading-6 tracking-[0.32px] h-[21px]">
+              <p className="md:text-base text-[12px] font-bold md:leading-6 leading-[15px] tracking-[0.32px] h-[21px]">
                 {market2030?.value || 'Valued above $200B+'}
               </p>
             </div>
@@ -56,10 +57,10 @@ export default function MarketOpportunity({
           <div className="flex flex-col gap-8 md:gap-12 flex-1 max-w-[628px]">
             {/* Text Content */}
             <div className="flex flex-col gap-4 text-center md:text-left">
-              <h2 className="heading-two text-[#000] font-bold">
+              <h2 className="heading-two text-[#000] max-md:max-w-[200px] mx-auto max-md:!text-center font-bold">
                 {title}
               </h2>
-              <div className="text-[#000] paragraph-regular !text-start whitespace-pre-line">
+              <div className="text-[#000] paragraph-regular !text-center md:!text-start whitespace-pre-line">
                  {description}
               </div>
             </div>
@@ -68,7 +69,7 @@ export default function MarketOpportunity({
             <div className='flex justify-center md:justify-start'>
               <Link
                 to={buyButtonLink}
-                className="btn_primary w-[232px] h-[50px] flex items-center justify-center"
+                className="btn_primary w-full md:w-[232px] h-[50px] flex items-center justify-center"
               >
                 {buyButtonText}
               </Link>

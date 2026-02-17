@@ -6,12 +6,11 @@ export default function HowItWorks({
   subtitle = "PredictMarkets is a decentralised platform where users predict real world events. Every prediction generates fees that directly benefit the $PREDICT ecosystem through daily buybacks, token burns, and revenue sharing with holders, supporting long term token value growth.",
 }) {
   return (
-    <section className="relative w-full bg-[#F7FCFF] py-12 md:py-16">
+    <section className="relative w-full md:bg-[#F7FCFF] py-0 md:py-16">
       <div 
-        className="w-[90%] md:max-w-[1280px] mx-auto px-4 md:px-8 py-12 md:py-16 flex flex-col gap-12"
+        className="w-full md:w-[90%] max-md:!border-none md:border-[0.5px] md:border-[#DDD] md:rounded-[44px] !rounded-0 md:max-w-[1280px] 
+        mx-auto px-4 md:px-8 py-16 md:py-16 flex flex-col gap-12"
         style={{
-          borderRadius: '44px',
-          border: '0.5px solid #DDD',
           background: 'radial-gradient(48.25% 48.25% at 50% 50%, rgba(0, 128, 237, 0.00) 0%, rgba(0, 128, 237, 0.11) 100%), #FFF'
         }}
       >
@@ -44,8 +43,8 @@ export default function HowItWorks({
           </h4>
         </div>
 
-        <div className="relative w-[300px] h-full md:hidden">
-          <h4 className="absolute top-[14.5%] left-[23.5%] max-w-[160px] z-10 text-center text-[#000] text-[14px] font-medium leading-[18px] w-full whitespace-pre-wrap">
+        <div className="relative flex justify-center h-full md:hidden">
+          {/* <h4 className="absolute top-[14.5%] left-[23.5%] max-w-[160px] z-10 text-center text-[#000] text-[14px] font-medium leading-[18px] w-full whitespace-pre-wrap">
             PredictMarkets generates daily revenue from trading fees
           </h4>
           <h4 className="absolute top-[21%] left-[86.5%] max-w-[60px] z-10 text-center text-[#000] text-[14px] font-medium leading-[18px] w-full whitespace-pre-wrap">
@@ -66,7 +65,8 @@ export default function HowItWorks({
           </h4>
           <h4 className="absolute top-[46%] -right-[2%] z-10 max-w-[100px] text-center text-[#000] text-[13px] font-medium leading-[18px] w-full whitespace-pre-wrap">
             $PREDICT
-          </h4>
+          </h4> */}
+          <img src={howItWorksBgMobile} alt="How It Works" className="w-full h-full object-cover" />
         </div>
 
 
