@@ -61,7 +61,7 @@ const faqData = [
 export default function FrequentlyAskedQuestions() {
   return (
     <section className="bg-white py-12 md:py-20">
-      <div className="max-w-[1280px] mx-auto md:px-8 px-0">
+      <div className="max-w-[1280px] mx-auto md:px-8 px-4">
         {/* Header Section */}
         <div className="flex flex-col gap-4 items-center text-center mb-12 md:mb-16">
           <h2 className="heading-two capitalize text-[#000]">
@@ -86,13 +86,13 @@ export default function FrequentlyAskedQuestions() {
                 )}
               >
                 <AccordionTrigger className="px-6 py-6 hover:no-underline text-left bg-transparent">
-                  <h4 className="heading-four capitalize flex-1 text-left text-black">
+                  <h4 className="heading-four !text-[14px] md:!text-[20px] capitalize flex-1 text-left text-black">
                     {faq.question}
                   </h4>
                   <ChevronDown className="h-6 w-6 ml-4 shrink-0 text-black transition-transform duration-200 data-[state=open]:rotate-180" />
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="paragraph-regular !text-start text-[#000] !text-[20px]">
+                  <p className="paragraph-regular !text-[14px] md:!text-[20px] !text-start text-[#000]">
                     {faq.answer}
                   </p>
                 </AccordionContent>

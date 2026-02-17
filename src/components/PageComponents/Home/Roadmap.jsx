@@ -35,11 +35,11 @@ export default function Roadmap({
     <section className="bg-[#F7FCFF] py-12 md:py-[60px]">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Header Section */}
-        <div className="flex flex-col gap-[14px] items-center mb-12 md:mb-12">
+        <div className="flex flex-col gap-[14px] items-center mb-8 md:mb-12">
           <h2 className="heading-two capitalize text-[#000] text-center">
             {title}
           </h2>
-          <p className="text-black paragraph-regular !text-[20px] text-center max-w-4xl">
+          <p className="text-black paragraph-regular text-[14px] md:!text-[20px] text-center max-w-4xl">
             {subtitle}
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function Roadmap({
                   key={item.id}
                   className="pl-2 md:pl-4 basis-full md:basis-[400px]"
                 >
-                  <div className="flex h-[490px] flex-col gap-[30px] rounded-[15px] border border-[#dddddd] bg-white px-4 py-8 md:px-4 md:py-8">
+                  <div className="flex md:h-[490px] h-[470px] flex-col gap-[30px] rounded-[15px] border border-[#dddddd] bg-white px-4 py-8 md:px-4 md:py-8">
                     {/* Header */}
                     <div className="flex items-center justify-between">
                       <h3 className="heading-three capitalize whitespace-pre-line text-black">
@@ -106,7 +106,7 @@ export default function Roadmap({
                           </div>
 
                           {/* Text */}
-                          <div className="paragraph-regular !text-start max-w-[280px] text-[16px] text-black">
+                          <div className="paragraph-regular !text-start max-w-[280px] !text-[16px] text-black">
                             {listItem}
                           </div>
                         </div>

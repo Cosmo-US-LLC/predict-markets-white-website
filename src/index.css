@@ -3,24 +3,27 @@
 @import "./assets/style/imageLink.css";
 /* Font Face Declarations */
 @font-face {
-  font-family: 'Helvetica Neue Medium Extended';
-  src: url('./assets/fonts/HELVETICA NEUE MEDIUM EXTENDED.OTF') format('opentype');
+  font-family: "Helvetica Neue Medium Extended";
+  src: url("./assets/fonts/HELVETICA NEUE MEDIUM EXTENDED.OTF")
+    format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,14 +36,35 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Heading Styles - Use Helvetica Neue Medium Extended */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica Neue Medium Extended', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif !important;
 }
 
 .heading-one {
@@ -55,44 +79,42 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 45px;
   font-style: normal;
   font-weight: 500;
-  line-height: 53px;  
+  line-height: 53px;
   letter-spacing: -2px;
 }
 .heading-three {
   font-size: 24px;
   font-style: normal;
   font-weight: 500 !important;
-  line-height: 32px;  
+  line-height: 32px;
   letter-spacing: 0.48px;
 }
 .heading-four {
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: 28px;  
+  line-height: 28px;
   letter-spacing: 0.4px;
 }
 
-
 .paragraph-regular {
   color: #000;
-text-align: center;
-/* Paragraph Text 20/Regular */
-font-family: Inter;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: 28px; /* 140% */
-letter-spacing: 0.4px;
+  text-align: center;
+  /* Paragraph Text 20/Regular */
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 140% */
+  letter-spacing: 0.4px;
 }
 .paragraph-medium {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 22px;  
+  line-height: 22px;
   letter-spacing: 0.36px;
-font-family: Inter;
-
+  font-family: Inter;
 }
 
 .gradient-border-rounded {
@@ -108,8 +130,8 @@ font-family: Inter;
   padding: 0.6px; /* border thickness */
   border-radius: inherit;
   /* background-color: #ffffff; */
-  background: radial-gradient(circle, #2104FF 0%, #FFFFFF 50%, #2104FF 100%);
-  -webkit-mask: 
+  background: radial-gradient(circle, #2104ff 0%, #ffffff 50%, #2104ff 100%);
+  -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -118,16 +140,13 @@ font-family: Inter;
 
 .radial-dark-glow {
   background:
-    radial-gradient(50% 50% at 50% 50%,
-      rgba(33, 4, 255, 0.30) 0%,
-      rgba(33, 4, 255, 0.00) 100%
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(33, 4, 255, 0.3) 0%,
+      rgba(33, 4, 255, 0) 100%
     ),
-    #020B10;
+    #020b10;
 }
-
-
-
-
 
 /* Button Classes */
 .btn_primary {
@@ -138,16 +157,23 @@ font-family: Inter;
   align-items: center;
   gap: 10px;
   border-radius: 100px;
-  background: #0080ED;
-  color: #FFF;
+  background: #0080ed;
+  color: #fff;
   text-align: center;
-  font-family: "Helvetica Neue Medium Extended", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
   text-transform: uppercase;
-  box-shadow: 0 -1.529px 3.058px 0 #F5E99C inset, 0 1.529px 3.058px 0 #F5E99C inset;
+  box-shadow:
+    0 -1.529px 3.058px 0 #f5e99c inset,
+    0 1.529px 3.058px 0 #f5e99c inset;
   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
   border: none;
   cursor: pointer;
@@ -155,22 +181,22 @@ font-family: Inter;
 }
 
 .btn_primary::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: 152.889px;
-  background: linear-gradient(0deg, #0080ED 0%, #0080ED 100%);
+  background: linear-gradient(0deg, #0080ed 0%, #0080ed 100%);
   filter: blur(7.644444465637207px);
   z-index: -1;
 }
 
 .btn_primary:hover {
-  background: #0080ED;
+  background: #0080ed;
   transform: translateY(-1px);
 }
 
 .btn_primary:active {
-  background: #0080ED;
+  background: #0080ed;
   transform: translateY(0);
 }
 
@@ -181,12 +207,26 @@ font-family: Inter;
   align-items: center;
   gap: 10px;
   border-radius: 100px;
-  background: linear-gradient(274deg, rgba(255, 255, 255, 0.20) 0.85%, rgba(255, 255, 255, 0.10) 50.43%, rgba(255, 255, 255, 0.20) 100.01%);
-  box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset, 0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.50) inset, 0 3px 1.5px -1.5px rgba(0, 0, 0, 0.20), 0 0 1.2px 3px rgba(255, 255, 255, 0.20) inset;
+  background: linear-gradient(
+    274deg,
+    rgba(255, 255, 255, 0.2) 0.85%,
+    rgba(255, 255, 255, 0.1) 50.43%,
+    rgba(255, 255, 255, 0.2) 100.01%
+  );
+  box-shadow:
+    0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset,
+    0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.5) inset,
+    0 3px 1.5px -1.5px rgba(0, 0, 0, 0.2),
+    0 0 1.2px 3px rgba(255, 255, 255, 0.2) inset;
   backdrop-filter: blur(0.75px);
-  color: #FFF;
+  color: #fff;
   text-align: center;
-  font-family: "Helvetica Neue Medium Extended", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -198,28 +238,51 @@ font-family: Inter;
 }
 
 .btn_secondary:hover {
-  background: linear-gradient(274deg, rgba(255, 255, 255, 0.25) 0.85%, rgba(255, 255, 255, 0.15) 50.43%, rgba(255, 255, 255, 0.25) 100.01%);
-  box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset, 0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.60) inset, 0 3px 1.5px -1.5px rgba(0, 0, 0, 0.20), 0 0 1.2px 3px rgba(255, 255, 255, 0.30) inset;
+  background: linear-gradient(
+    274deg,
+    rgba(255, 255, 255, 0.25) 0.85%,
+    rgba(255, 255, 255, 0.15) 50.43%,
+    rgba(255, 255, 255, 0.25) 100.01%
+  );
+  box-shadow:
+    0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset,
+    0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.6) inset,
+    0 3px 1.5px -1.5px rgba(0, 0, 0, 0.2),
+    0 0 1.2px 3px rgba(255, 255, 255, 0.3) inset;
   transform: translateY(-1px);
 }
 
 .btn_secondary:active {
-  background: linear-gradient(274deg, rgba(255, 255, 255, 0.15) 0.85%, rgba(255, 255, 255, 0.05) 50.43%, rgba(255, 255, 255, 0.15) 100.01%);
-  box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset, 0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.40) inset, 0 2px 1px -1px rgba(0, 0, 0, 0.25), 0 0 1px 2px rgba(255, 255, 255, 0.15) inset;
+  background: linear-gradient(
+    274deg,
+    rgba(255, 255, 255, 0.15) 0.85%,
+    rgba(255, 255, 255, 0.05) 50.43%,
+    rgba(255, 255, 255, 0.15) 100.01%
+  );
+  box-shadow:
+    0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset,
+    0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.4) inset,
+    0 2px 1px -1px rgba(0, 0, 0, 0.25),
+    0 0 1px 2px rgba(255, 255, 255, 0.15) inset;
   transform: translateY(0);
 }
 
 .btn_outline {
-  display: flex; 
+  display: flex;
   padding: 12px 24px;
   justify-content: center;
   align-items: center;
   border-radius: 126.923px;
-  border: 1px solid #FFF;
-  background: rgba(0, 0, 0, 0.00);
-  color: #FFF;
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
   text-align: center;
-  font-family: "Helvetica Neue Medium Extended", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -231,7 +294,7 @@ font-family: Inter;
 
 .btn_outline:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: #FFF;
+  border-color: #fff;
   transform: translateY(-1px);
 }
 
@@ -240,45 +303,46 @@ font-family: Inter;
   transform: translateY(0);
 }
 
- 
 /* Tailwind Font Family Configuration for Tailwind CSS 4 */
 @theme {
-  --font-heading: 'Helvetica Neue Medium Extended', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
-  
+  --font-heading:
+    "Helvetica Neue Medium Extended", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-body:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+
   --font-family-heading: var(--font-heading);
   --font-family-body: var(--font-body);
 }
-
-
 
 @media screen and (max-width: 768px) {
   .heading-one {
     font-size: 40px;
     font-style: normal;
     font-weight: 500;
-    line-height: 48px;  
+    line-height: 48px;
     letter-spacing: -2px;
   }
   .heading-two {
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
-    line-height: 34px;  
+    line-height: 34px;
     letter-spacing: -2px;
   }
   .heading-three {
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 28px;  
+    line-height: 28px;
     letter-spacing: 0.32px;
   }
   .heading-four {
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 24px;  
+    line-height: 24px;
     letter-spacing: 0.32px;
   }
   .paragraph-regular {
@@ -286,7 +350,7 @@ font-family: Inter;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px;  
+    line-height: 22px;
     letter-spacing: 0.28px;
   }
 }
