@@ -40,7 +40,7 @@ const socialCards = [
 
 export default function SocialsAwareness() {
   return (
-    <section className="relative bg-white py-16 md:py-20">
+    <section className="relative bg-white pb-16 md:pb-20">
       {/* Background radial gradient */}
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 top-[20%] bg-[radial-gradient(circle_at_center,_rgba(0,128,237,0.36)_0,_transparent_35%)] opacity-50" />
       {/* Section borders */}

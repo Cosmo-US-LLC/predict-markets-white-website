@@ -6,6 +6,8 @@ export default function FeaturedInSection({
     return null;
   }
 
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos];
+
   return (
     
       <div className="w-full max-w-[1280px] py-0 md:py-3 mx-auto">
@@ -20,31 +22,30 @@ export default function FeaturedInSection({
             {title}
           </p>
 
-          {/* Logos */}
-          <div className="flex items-center justify-center gap-2 md:gap-6 flex-1">
-            {logos.map((logo, index) => (
-              <div
-                key={logo.id || index}
-                className="flex items-center justify-center h-8 md:h-10 
-                "
-              >
-                {logo.image ? (
-                  <img
-                    src={logo.image}
-                    alt={logo.name || `Logo ${index + 1}`}
-                    className=" object-cover"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                    }}
-                  />
-                ) : logo.name ? (
-                  <span className="text-black text-sm md:text-base font-bold">
-                    {logo.name}
-                  </span>
-                ) : null}
-              </div>
-            ))}
-          </div>
+          {/* Logos - Using marquee for smooth infinite scroll */}
+         <div className="overflow-hidden w-full">
+  <div className="flex items-center gap-6 animate-marquee whitespace-nowrap">
+    {duplicatedLogos.map((logo, index) => (
+      <div
+        key={logo.id || index}
+        className="flex items-center justify-center h-8 md:h-10 shrink-0"
+      >
+        {logo.image ? (
+          <img
+            src={logo.image}
+            alt={logo.name || `Logo ${index + 1}`}
+            className="object-cover"
+          />
+        ) : (
+          <span className="text-black text-sm md:text-base font-bold">
+            {logo.name}
+          </span>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
       </div>
      

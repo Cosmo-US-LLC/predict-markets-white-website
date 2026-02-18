@@ -7,7 +7,7 @@ export default function FeaturedIn({
   logo = ethereumLogo,
 }) {
   return (
-    <div className="flex items-center justify-start w-full mb-6">
+    <div className="flex items-center md:justify-start justify-center w-full mb-6">
       <div className="bg-white flex gap-2 items-center px-4 py-1.5 rounded-[40px]">
         <p className=" paragraph-medium max-md:!text-[12px] !font-[600] whitespace-nowrap">
           {leftText}

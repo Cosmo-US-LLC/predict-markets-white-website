@@ -34,7 +34,7 @@ export default function WhatSetsUsApart({
               background: "rgba(255, 255, 255, 0.80)",
             }}
           >
-            <div className="min-w-[862px] max-w-[862px] mx-auto">
+            <div className="min-w-[862px] max-w-[862px] mx-auto pb-8">
               {/* Header */}
               <div className=" border-b border-gray-300 ">
                 <div className="grid grid-cols-4 gap-4 items-center">
@@ -96,8 +96,8 @@ export default function WhatSetsUsApart({
 
                     {/* PredictMarkets */}
                     <div
-                      className="flex justify-center items-center !h-[50px] 
-                    bg-white border-b border-gray-200"
+                      className={`flex justify-center items-center !h-[50px] 
+                    bg-white ${index < tableData.length - 1 ? "border-b border-gray-200" : ""}`}
                     >
                       {typeof row.predictMarkets === "boolean" ? (
                         row.predictMarkets ? (
