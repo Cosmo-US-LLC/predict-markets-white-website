@@ -27,7 +27,7 @@ export default function PredictMarketsHero({
 }) {
   return (
     <section
-      className="relative w-full overflow-hidden min-h-screen flex items-center justify-center py-12 md:py-20"
+      className="relative bg-[#fff] w-full overflow-hidden min-h-screen flex items-center justify-center py-12 md:py-14"
     >
       {/* Background Image - Mobile */}
       <div
@@ -37,6 +37,7 @@ export default function PredictMarketsHero({
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
+          height: '770px',
         }}
       ></div>
 
@@ -144,7 +145,7 @@ export default function PredictMarketsHero({
             </div>
 
             {/* Featured In Section - At Bottom */}
-            <div className="w-full">
+            <div className="w-full max-md:pb-12">
               <FeaturedInSection
                 title={featuredInSectionConfig.title}
                 logos={featuredInLogos}

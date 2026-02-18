@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @import "./assets/style/imageLink.css";
+@import "./assets/style/animation.css";
 /* Font Face Declarations */
 @font-face {
   font-family: "Helvetica Neue Medium Extended";
@@ -149,6 +150,32 @@ h6 {
 }
 
 /* Button Classes */
+.btn_primary_nav {
+  position: relative;
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  background: #0080ed;
+  color: #fff;
+  text-align: center;
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
 .btn_primary {
   position: relative;
   display: flex;
@@ -186,7 +213,7 @@ h6 {
   inset: 0;
   border-radius: 152.889px;
   background: linear-gradient(0deg, #0080ed 0%, #0080ed 100%);
-  filter: blur(7.644444465637207px);
+  filter: blur(1.644444465637207px);
   z-index: -1;
 }
 
@@ -372,4 +399,17 @@ font-family: Inter;
     -webkit-text-fill-color: transparent;
   }
 }
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
 }

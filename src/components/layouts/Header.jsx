@@ -39,7 +39,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full bg-white border-b border-[#e5e5e5]">
       <div className="flex w-full max-w-[1280px] mx-auto px-4 md:px-8 py-3 items-center justify-between gap-4">
         {/* Logo Section */}
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <img 
             src={logoImage} 
             alt="PredictMarkets" 
@@ -54,7 +54,7 @@ export function Header() {
               <a
                 key={link.path}
                 href={link.path}
-                className="hover:opacity-80 transition-opacity whitespace-nowrap"
+                className="hover:opacity-80 transition-opacity whitespace-nowrap !text-[16px] !font-[Inter] !font-[600]"
                 onClick={(e) => {
                   e.preventDefault();
                   const element = document.getElementById(link.scrollId);
@@ -69,7 +69,7 @@ export function Header() {
               <Link
                 key={link.path}
                 to={link.path}
-                className="hover:opacity-80 transition-opacity whitespace-nowrap"
+                className="hover:opacity-80 transition-opacity whitespace-nowrap !text-[16px] !font-[Inter] !font-[600]"
               >
                 {link.label}
               </Link>
@@ -104,7 +104,7 @@ export function Header() {
           {/* Buy Button */}
           <Button
             asChild
-            className="btn_primary"
+            className="btn_primary_nav"
           >
             <Link to="/buy">BUY $PREDICT</Link>
           </Button>
@@ -134,7 +134,7 @@ export function Header() {
               </SheetClose>
               <div className="flex flex-col gap-6 mt-8">
                 {/* Mobile Logo */}
-                <Link to="/" className="flex items-center mb-4">
+                <Link to="/" className="flex items-center mb-4" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                   <img 
                     src={logoImage} 
                     alt="PredictMarkets" 

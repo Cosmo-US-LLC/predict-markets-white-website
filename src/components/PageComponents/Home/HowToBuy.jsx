@@ -165,7 +165,7 @@ export default function HowToBuy({
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col gap-4 justify-center items-center">
+        <div className="flex md:flex-row flex-col gap-4 justify-center items-center">
           <Link
             to={buyButtonLink}
             className="btn_primary w-full sm:w-[232px] flex items-center justify-center shadow-md"
@@ -174,7 +174,7 @@ export default function HowToBuy({
           </Link>
           <Link
             to="/support"
-            className="bg-white border max-md:text-center border-gray-300 text-[#000] rounded-full px-6 py-3 text-sm font-bold hover:bg-gray-50 transition-colors w-full sm:w-auto shadow-md"
+            className="bg-white border max-md:text-center border-gray-300 text-[#000] rounded-full px-[60px] py-3 text-sm font-bold hover:bg-gray-50 transition-colors w-full sm:w-auto shadow-md"
           >
             NEED SUPPORT?
           </Link>

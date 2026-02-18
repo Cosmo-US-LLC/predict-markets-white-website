@@ -62,7 +62,7 @@ export default function RevenueSharing({
         <div className="flex max-md:relative max-md:h-[360px] max-md:!mx-auto max-md:w-[340px] w-full  items-center justify-center z-10">
           {/* Coins Background (Blurred) */}
           <div className="rotate-[-13.18deg] md:!min-w-[750px] 
-          absolute md:right-[-60px] right-[4px] md:top-[13px] top-[12px]  md:min-w-[0px] 
+          absolute md:right-[-100px] right-[4px] md:top-[0px] top-[12px]  md:min-w-[0px] 
           md:max-w-[650.38px] w-full max-md:max-h-[300px]
            blur-[15.163px] opacity-47 flex items-center 
            ustify-center pointer-events-none">
@@ -79,7 +79,7 @@ export default function RevenueSharing({
           
 
           {/* Coins Foreground */}
-          <div className="absolute max-md:z-[9] md:right-[-40px] right-[4px] md:top-[-50px] top-[12px]
+          <div className="absolute max-md:z-[9] md:right-[-40px] right-[4px] md:top-[-30px] top-[12px]
            md:min-w-[650.38px] md:max-w-[650.38px] max-md:!max-h-[200px] w-full pointer-events-none">
             <img
               src={coinsImage}
@@ -92,7 +92,7 @@ export default function RevenueSharing({
           </div>
 
           {/* Blue Sphere with Revenue Text */}
-          <div className="absolute md:right-[180.65px] right-[100px] md:top-[200.9px] !top-[126px]
+          <div className="absolute md:right-[180.65px] right-[100px] md:!top-[210.9px] !top-[126px]
            bg-[#0080ED]  rounded-[124.901px] md:w-[200.803px] w-[140px] md:h-[200.803px] h-[140px] flex flex-col items-center justify-center py-[32.896px] shadow-[inset_0px_4.112px_30.429px_0px_rgba(0,0,0,0.85)] z-1">
             <h4 className="text-white md:text-[30px] text-[18px] font-medium leading-[24px] md:leading-[32.896px] text-center">
               {revenuePercentage.includes('Daily') ? (

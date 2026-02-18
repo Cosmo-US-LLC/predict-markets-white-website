@@ -6,6 +6,7 @@ import ethIcon from "../../../assets/images/logo/wallet-coins/coins (2).svg";
 import solIcon from "../../../assets/images/logo/wallet-coins/coins (3).svg";
 import usdtIcon from "../../../assets/images/logo/wallet-coins/coins (4).svg";
 import usdcIcon from "../../../assets/images/logo/wallet-coins/coins (5).svg";
+import prdicon from "../../../assets/images/logo/wallet-coins/Icon.svg";
 
 export default function PresaleDashboard({
   presaleAmount = "$11,756,398.80",
@@ -154,7 +155,7 @@ export default function PresaleDashboard({
       <div className="relative flex items-center justify-center mb-4 -mt-10">
         <div className="bg-[#0080ED] text-white px-4 py-1.5 rounded-[4px] !text-[12px] font-[Inter] font-[600] uppercase flex items-center gap-2">
           {/* Bullet point: white circle with blue dot inside */}
-          <div className="w-2 h-2 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+          <div className="w-2 h-2 bg-white rounded-full flex items-center justify-center flex-shrink-0" style={{ animation: 'blink 1.5s ease-in-out infinite' }}>
             <div className="w-1 h-1 bg-[#0080ED] rounded-full"></div>
           </div>
           <span>PRESALE IS LIVE</span>
@@ -162,16 +163,16 @@ export default function PresaleDashboard({
       </div>
 
       {/* Step 2: Navigation Tabs - Parent container with border */}
-      <div className="flex items-center justify-center gap-[1px] mb-6 p-1 border  border-gray-800 
+      <div className="flex items-center justify-between mb-6 p-1 border  border-gray-800 
       rounded-[100px] ">
-        {tabs.map((tab) => {
+        {tabs.map((tab, index) => {
           const IconComponent = tab.icon;
           return (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center justify-center  !text-black 
-                md:!text-[12px] !text-[7px] font-[Inter] rounded-[100px] px-[2px] md:px-[5px] py-2 gap-[2px] transition-all duration-200 min-w-[70px] flex-1 ${activeTab === tab.id
+              className={`flex !items-center justify-center  !text-black 
+                md:!text-[12px] !text-[7px] font-[Inter] rounded-[100px] px-[2px] md:px-[2px] py-2 gap-[2px]  transition-all duration-200 w-auto max-md:gap-[2px] flex-1 ${index === 0 ? 'md:min-w-[100px] md:max-w-[114px]' : 'md:max-w-[94px]'} ${activeTab === tab.id
                   ? "bg-gray-50 text-black   shadow-sm "
                   : "bg-transparent text-black hover:text-black "
                 }`}
@@ -181,7 +182,7 @@ export default function PresaleDashboard({
                 <IconComponent />
               </span>
               {/* Label */}
-              <span className={`md:text-[10px] !text-[7px]  font-[400] font-[Inter] leading-tight text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
+              <span className={`md:!text-[12px] max-md:pt-1 !text-[7px]  !font-[400] font-[Inter] leading-tight text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
                 }`}>
                 {tab.label}
               </span>
@@ -403,12 +404,8 @@ export default function PresaleDashboard({
             />
             <div className="flex items-center gap-2 px-2 py-1 w-[30%] border-l border-gray-200 bg-white">
               {/* PREDICT Icon - Square blue with 3x3 grid of white squares */}
-              <div className="bg-[#0080ED] md:w-8 md:h-8 w-5 h-5 rounded flex items-center justify-center flex-shrink-0 p-1">
-                <div className="grid grid-cols-3 gap-0.5 w-full h-full">
-                  {[...Array(9)].map((_, i) => (
-                    <div key={i} className="bg-white rounded-[1px]"></div>
-                  ))}
-                </div>
+              <div className="">
+                <img src={prdicon} alt="" />
               </div>
               <div className="flex flex-col">
                 <span className="md:text-sm text-[12px] font-bold text-gray-800 leading-tight">PREDICT</span>
