@@ -66,7 +66,7 @@ export default function PredictMarketsHero({
             </div>
 
             {/* Title */}
-            <h1 className="heading-one text-[#000000] mb-4 md:text-left text-center hero-title-gradient">
+            <h1 className="heading-one max-md:max-w-[360px] max-md:mx-auto text-[#000000] mb-4 md:text-left text-center hero-title-gradient">
               {title}
             </h1>
 

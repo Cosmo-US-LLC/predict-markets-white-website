@@ -9,6 +9,6 @@ export const whatIsPredictConfig = {
   ],
   buyButtonText: "BUY $PREDICT",
   buyButtonLink: "/buy",
-  secondaryButtonText: "Visit PredictMarkets (Beta)",
+  secondaryButtonText: "Visit Platform (Beta)",
   secondaryButtonLink: "/what-is-predictmarkets",
 };

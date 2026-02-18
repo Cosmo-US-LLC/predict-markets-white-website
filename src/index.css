@@ -226,7 +226,14 @@ h6 {
   background: #0080ed;
   transform: translateY(0);
 }
-
+.Helvetica{
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
 .btn_secondary {
   display: flex;
   padding: 20px 48px;

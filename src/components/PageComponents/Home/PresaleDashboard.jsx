@@ -96,7 +96,7 @@ export default function PresaleDashboard({
       network: "SOLANA",
       iconSrc: solIcon,
       selected: false,
-      networks: ["SOLANA", "SPL", "Wrapped SOL"]
+      networks: ["SOLANA", "SPL", "Wrapped"]
     },
     {
       id: "more",
@@ -128,25 +128,7 @@ export default function PresaleDashboard({
 
   const selectedPaymentOption = getSelectedPaymentOption();
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      Object.keys(dropdownRefs.current).forEach((key) => {
-        const ref = dropdownRefs.current[key];
-        if (ref && !ref.contains(event.target)) {
-          setOpenDropdownId(null);
-        }
-      });
-    };
 
-    if (openDropdownId) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [openDropdownId]);
 
   return (
     <div className="relative w-full max-w-[100%] mx-auto bg-white rounded-[13.675px] border border-[#D8D8D8] shadow-xl py-[15px] 
@@ -156,7 +138,7 @@ export default function PresaleDashboard({
         <div className="bg-[#0080ED] text-white px-4 py-1.5 rounded-[4px] !text-[12px] font-[Inter] font-[600] uppercase flex items-center gap-2">
           {/* Bullet point: white circle with blue dot inside */}
           <div className="w-2 h-2 bg-white rounded-full flex items-center justify-center flex-shrink-0" style={{ animation: 'blink 1.5s ease-in-out infinite' }}>
-            <div className="w-1 h-1 bg-[#0080ED] rounded-full"></div>
+            {/* <div className="w-1 h-1 bg-[#0080ED] rounded-full"></div> */}
           </div>
           <span>PRESALE IS LIVE</span>
         </div>
@@ -173,7 +155,7 @@ export default function PresaleDashboard({
               onClick={() => setActiveTab(tab.id)}
               className={`flex !items-center justify-center  !text-black 
                 md:!text-[12px] !text-[7px] font-[Inter] rounded-[100px] px-[2px] md:px-[2px] py-2 gap-[2px]  transition-all duration-200 w-auto max-md:gap-[2px] flex-1 ${index === 0 ? 'md:min-w-[100px] md:max-w-[114px]' : 'md:max-w-[94px]'} ${activeTab === tab.id
-                  ? "bg-gray-50 text-black   shadow-sm "
+                  ? "bg-[#B0B0B01F] text-black "
                   : "bg-transparent text-black hover:text-black "
                 }`}
             >
@@ -242,16 +224,21 @@ export default function PresaleDashboard({
                   if (option.id === "more") {
                     // Handle more options
                   } else {
-                    // Always update the selected payment when clicking a button
-                    setSelectedPayment(`${option.name} ${option.network}`);
+                    // Only update selected payment if this option is not already selected
+                    if (!selectedPayment.includes(option.name)) {
+                      setSelectedPayment(`${option.name} ${option.network}`);
+                    }
                     // Toggle dropdown
                     setOpenDropdownId(openDropdownId === option.id ? null : option.id);
                   }
                 }}
                 className={`w-full flex items-center gap-2 px-2 py-1 
-                  rounded-lg border transition-colors text-left min-h-[48px] ${selectedPayment.includes(option.name)
-                    ? "border-gray-200 bg-white"
-                    : "border-gray-200 bg-gray-50 hover:bg-gray-50 "
+                  rounded-lg border transition-colors text-left min-h-[48px] ${
+                    openDropdownId === option.id
+                      ? "border-gray-300 bg-blue-50"
+                      : selectedPayment.includes(option.name)
+                      ? "border-gray-200 bg-white"
+                      : "border-gray-200 bg-gray-50 hover:bg-gray-50"
                   }`}
               >
                 {/* Coin Icon */}
@@ -302,15 +289,22 @@ export default function PresaleDashboard({
 
               {/* Dropdown Menu */}
               {openDropdownId === option.id && option.id !== "more" && option.networks && option.networks.length > 1 && (
-                <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden">
-                  {option.networks.map((network) => (
+                <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {option.networks.map((network) => {
+                    // Check if this network matches the currently selected payment
+                    const isCurrentlySelected = selectedPayment === `${option.name} ${network}`;
+                    return (
                     <button
                       key={network}
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
                         setSelectedPayment(`${option.name} ${network}`);
                         setOpenDropdownId(null);
                       }}
-                      className={`w-full flex items-center gap-2 px-3 py-1 text-left text-sm hover:bg-gray-50 transition-colors ${selectedPayment === `${option.name} ${network}`
+                      className={`w-full flex items-center gap-2 px-3 py-2 text-left text-sm hover:bg-gray-50 transition-colors ${isCurrentlySelected
                           ? "bg-blue-50 text-[#0080ED] font-semibold"
                           : "text-gray-700"
                         }`}
@@ -325,7 +319,7 @@ export default function PresaleDashboard({
                       )}
                       <div className="flex-1 min-w-0 text-left">
                         <div className="font-medium text-[12px] text-left">{option.name}</div>
-                        <div className={`text-[10px] mt-0.5 text-left ${selectedPayment === `${option.name} ${network}`
+                        <div className={`text-[10px] mt-0.5 text-left ${isCurrentlySelected
                             ? "text-[#0080ED]"
                             : "text-gray-500"
                           }`}>
@@ -333,7 +327,8 @@ export default function PresaleDashboard({
                         </div>
                       </div>
                     </button>
-                  ))}
+                    );
+                  })}
                 </div>
               )}
             </div>
@@ -342,7 +337,7 @@ export default function PresaleDashboard({
       </div>
 
       {/* Price Information */}
-      <div className="bg-gray-50 rounded-lg px-4 py-2.5 mb-3">
+      <div className="bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-3">
         <div className="flex justify-center space-x-2 items-center text-sm">
           <div className="flex items-center gap-2">
             <span className="text-black text-[12px] md:text-[14px] !font-[600]">Presale Price = </span>
@@ -370,7 +365,7 @@ export default function PresaleDashboard({
               readOnly
               className="flex-1 text-[16px] font-[Inter] font-[500] max-w-[70%] !w-full  text-black bg-transparent border-none outline-none px-4 py-3"
             />
-            <div className="flex items-center gap-2 px-3 py-2 w-[30%] border-l border-gray-200 bg-white">
+            <div className="flex items-center gap-2 px-3 py-2 w-[30%] border-l border-gray-200 bg-transparent">
               {/* Dynamic Payment Icon */}
               {selectedPaymentOption.iconSrc && (
                 <img 
@@ -402,7 +397,7 @@ export default function PresaleDashboard({
               readOnly
               className="flex-1 text-[16px] font-semibold max-w-[70%] text-black bg-transparent border-none outline-none px-4 py-3"
             />
-            <div className="flex items-center gap-2 px-2 py-1 w-[30%] border-l border-gray-200 bg-white">
+            <div className="flex items-center gap-2 px-2 py-3 w-[30%] border-l border-gray-200 bg-transparent">
               {/* PREDICT Icon - Square blue with 3x3 grid of white squares */}
               <div className="">
                 <img src={prdicon} alt="" />

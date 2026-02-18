@@ -70,8 +70,10 @@ export default function PredictsTheFeatures({
   }, [api]);
 
   return (
-    <section className="w-full bg-white py-12 md:py-[84px]">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-12 items-center">
+    <section className="w-full relative bg-white py-12 md:py-[84px]">
+      <div style={{background: "radial-gradient(29.62% 41.65% at 50% 58.4%, rgba(0, 128, 237, 0.36) 0%, rgba(0, 128, 237, 0.00) 100%)"}} className="absolute top-0 left-0 w-full h-full z-0"></div>
+      <div className="max-w-[1280px] relative z-[9] mx-auto px-4 md:px-8 flex flex-col gap-12 items-center"
+      >
         {/* Header */}
         <div className="flex flex-col gap-2 md:gap-[8px] items-center text-center max-w-[834px]">
           <h2 className="heading-two text-[#000]  max-w-[800px]">
@@ -142,11 +144,11 @@ export default function PredictsTheFeatures({
         </div>
 
         {/* Desktop / Tablet: Grid - 2 rows, 3 columns */}
-        <div className="hidden md:grid grid-cols-3 gap-6 w-full">
+        <div className="hidden md:grid grid-cols-3 gap-[16px] w-full">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col gap-3 md:gap-[12px] pb-6 md:pb-[24px] pt-4 md:pt-[16px] px-4 md:px-[16px]"
+              className="bg-white rounded-[15px] border-[1px] border-[#DDD] overflow-hidden flex flex-col gap-3 md:gap-[12px] pb-6 md:pb-[24px] pt-4 md:pt-[16px] px-4 md:px-[16px]"
             >
               {/* Image */}
               <div className="h-[152px] relative rounded-[15px] overflow-hidden">
