@@ -79,7 +79,7 @@ export default function Markets({
 
         {/* Carousel */}
         <div className="overflow-hidden w-full" ref={emblaRef}>
-          <div className="flex gap-4">
+          <div className="flex gap-2">
             {markets.map((market) => {
               // Check if this is the Cryptocurrency card (needs dark theme)
               const isCrypto = market.title.toLowerCase() === 'cryptocurrency';

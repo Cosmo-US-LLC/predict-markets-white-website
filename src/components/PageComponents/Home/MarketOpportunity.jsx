@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { scrollToWallet } from '../../../lib/utils';
 
 export default function MarketOpportunity({
   title = 'Huge Market Opportunity',
@@ -8,10 +8,22 @@ export default function MarketOpportunity({
   market2026,
   market2030,
   buyButtonText = 'BUY $PREDICT',
-  buyButtonLink = '/buy',
+  buyButtonLink = '#wallet',
 }) {
   return (
-    <section className="relative bg-gradient-to-br from-[#E6F2FF] to-white w-full overflow-hidden py-12 md:py-20">
+    <section className="relative w-full overflow-hidden py-12 md:py-20">
+      {/* Background Image */}
+      {backgroundImage && (
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        />
+      )}
       {/* Main Content Container */}
       <div className="relative z-10 flex items-center justify-center px-4 md:px-8">
         <div className="bg-white rounded-2xl md:rounded-[44px]
@@ -33,9 +45,9 @@ export default function MarketOpportunity({
             </div>
 
             {/* Market 2026 Label - Top */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center text-[#000] w-full">
+            <div className="absolute top-0 left-[65%] -translate-x-1/2 text-center text-[#000] w-full">
               <p className="md:text-base text-[12px] font-medium md:leading-6 leading-[15px] tracking-[0.32px] mb-0.5">
-                {market2026?.label || 'Prediction Marketplaces in 2026'}
+                {market2026?.label || 'Prediction Marketplaces in 2026 '}
               </p>
               <p className="md:text-base text-[12px] font-bold md:leading-6 leading-[15px] tracking-[0.32px] h-[21px]">
                 {market2026?.value || 'Currently Valued at $20B+'}
@@ -43,7 +55,7 @@ export default function MarketOpportunity({
             </div>
 
             {/* Market 2030 Label - Bottom */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-center text-[#000] w-full">
+            <div className="absolute bottom-0 left-[30%] -translate-x-1/2 text-center text-[#000] w-full">
               <p className="md:text-base text-[12px] font-medium md:leading-6 leading-[15px] tracking-[0.32px] mb-0.5 whitespace-pre-line">
                 {market2030?.label || 'Prediction Marketplaces in 2030\nExpected by Industry Experts'}
               </p>
@@ -67,12 +79,12 @@ export default function MarketOpportunity({
 
             {/* Buy Button */}
             <div className='flex justify-center md:justify-start'>
-              <Link
-                to={buyButtonLink}
-                className="btn_primary w-full md:w-[232px] h-[50px] flex items-center justify-center"
+                <button
+                onClick={scrollToWallet}
+                className="btn_primary w-full md:w-[282px]  flex items-center justify-center"
               >
                 {buyButtonText}
-              </Link>
+              </button>
             </div>
           </div>
         </div>

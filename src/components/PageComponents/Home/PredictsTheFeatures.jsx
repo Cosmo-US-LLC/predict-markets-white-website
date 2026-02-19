@@ -116,7 +116,7 @@ export default function PredictsTheFeatures({
                       <h4 className="heading-four">
                         {feature.title}
                       </h4>
-                      <p className=" paragraph-regular max-md:!text-[14px] max-md:!text-start w-full">
+                      <p className=" paragraph-regular md:!text-[16px] max-md:!text-[14px] max-md:!text-start w-full">
                         {feature.description}
                       </p>
                     </div>
@@ -167,7 +167,7 @@ export default function PredictsTheFeatures({
                 <h4 className="heading-four w-full">
                   {feature.title}
                 </h4>
-                <p className="paragraph-regular !text-start w-full">
+                <p className="paragraph-regular !text-[16px] !leading-[150%] !text-start w-full">
                   {feature.description}
                 </p>
               </div>

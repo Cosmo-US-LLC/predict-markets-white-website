@@ -75,7 +75,7 @@ export default function SocialsAwareness() {
                   <h3 className="capitalize text-white text-[20px] leading-[28px] md:text-[24px] md:font-[600]">
                     {card.title}
                   </h3>
-                  <button className="btn_primary w-[170px] md:w-[200px]">
+                  <button className="btn_primary !px-0 py-[20px] w-[170px] md:w-[200px]">
                     {card.buttonText}
                   </button>
                 </div>

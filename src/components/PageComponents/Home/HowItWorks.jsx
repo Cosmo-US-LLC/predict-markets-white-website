@@ -9,7 +9,7 @@ export default function HowItWorks({
     <section className="relative w-full md:bg-[#F7FCFF] py-0 md:py-16">
       <div 
         className="w-full md:w-[90%] max-md:!border-none md:border-[0.5px] md:border-[#DDD] md:rounded-[44px] !rounded-0 md:max-w-[1280px] 
-        mx-auto px-4 md:px-8 py-16 md:py-16 flex flex-col gap-12"
+        mx-auto px-4 md:px-8 py-16 md:py-12 flex flex-col md:gap-6 gap-8"
         style={{
           background: 'radial-gradient(48.25% 48.25% at 50% 50%, rgba(0, 128, 237, 0.00) 0%, rgba(0, 128, 237, 0.11) 100%), #FFF'
         }}
@@ -24,23 +24,23 @@ export default function HowItWorks({
         </div>
 
         {/* Flow Diagram Container */}
-        <div className="relative w-full max-md:hidden">
-          <h4 className="absolute paragraph-medium top-[22%] left-[38%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
+        <div className="relative w-full max-w-[807px] mx-auto max-md:hidden">
+          {/* <h4 className="absolute paragraph-medium top-[22%] left-[38%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
             PredictMarkets generates daily revenue from  trading fees
           </h4>
           <h4 className="absolute paragraph-medium top-[20%] text-[#000] left-[63%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">Buys back</h4>
           <h4 className="absolute paragraph-medium top-[55%] left-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
             $PREDICT  Price Goes Up
           </h4>
-          <h4 className="absolute paragraph-medium top-[47%] text-[#000] left-[54%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Burns</h4>
+          <h4 className="absolute paragraph-medium top-[47%] text-[#000] left-[54%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Burns</h4> */}
           <img src={howItWorksBg} alt="How It Works" className="w-full h-full object-cover" />
-          <h4 className="absolute paragraph-medium bottom-[4%] left-[38%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
+          {/* <h4 className="absolute paragraph-medium bottom-[4%] left-[38%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
             $PREDICT Holders get daily passive USDT staking income
           </h4>
           <h4 className="absolute paragraph-medium top-[76%] text-[#000] left-[63%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Rewards</h4>
           <h4 className="absolute paragraph-medium top-[56%] -right-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
             $PREDICT
-          </h4>
+          </h4> */}
         </div>
 
         <div className="relative flex justify-center h-full md:hidden">

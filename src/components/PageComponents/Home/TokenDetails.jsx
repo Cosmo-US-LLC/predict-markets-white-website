@@ -25,13 +25,13 @@ export default function TokenDetails({
           <h2 className="text-[28px] md:text-[45px] font-medium leading-[53px] tracking-[-2px] capitalize text-black">
             {title}
           </h2>
-          <p className="max-w-[713px] text-[14px] md:text-base font-normal leading-6 tracking-[0.32px] text-[#4b4b4b]">
+          <p className="max-w-[813px] paragraph-regular">
             {subtitle}
           </p>
         </div>
 
         {/* Chart (optional) */}
-        <div className="mx-auto flex md:h-[422px] h-[200px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white md:h-[600px]">
+        <div className="mx-auto flex md:h-[442px] h-[200px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white ">
           <div className="relative hidden h-[422px] w-full max-w-full md:block">
             <h4 className="heading-four absolute left-[36%] top-[8px] text-black">
               1% Marketing
@@ -110,17 +110,27 @@ export default function TokenDetails({
                     {item.label}
                   </span>
                   <div className="flex items-center gap-3">
-                    <span className="font-medium   text-black md:text-base md:text-[16px] text-[14px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.28px]">
+                    <span className="font-medium  text-black md:text-[18px] text-[14px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.28px]">
                       {item.value}
                     </span>
                     {item.copyable && (
                       <button
                         type="button"
                         onClick={() => handleCopy(item.id, item.value)}
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded border border-[#0080ED] text-[#0080ED] transition-colors hover:bg-[#0080ED] hover:text-white"
+                        className="cursor-pointer"
                         aria-label="Copy address"
                       >
-                        <Copy className="w-4 h-4" />
+                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <g clip-path="url(#clip0_1775_4604)">
+    <path d="M15.3584 14.1001C15.3584 15.1284 14.5249 15.9619 13.4966 15.9619H6.04932C5.02106 15.9619 4.1875 15.1284 4.1875 14.1001V6.65283C4.1875 5.62458 5.02106 4.79102 6.04932 4.79102H13.4966C14.5249 4.79102 15.3584 5.62458 15.3584 6.65283V14.1001Z" fill="#0080ED"/>
+    <path d="M10.3054 3.39429C10.5264 3.39429 10.7054 3.21521 10.7054 2.99429V2.92884C10.7054 1.90058 9.8719 0.601563 8.84366 0.601563L1.86182 0.601562C0.833564 0.601562 7.75875e-07 1.43513 6.87875e-07 2.46338L0 10.3761C-8.8e-08 11.4043 0.833564 12.2379 1.86182 12.2379H2.39272C2.61364 12.2379 2.79272 12.0588 2.79272 11.8379V6.65247C2.79272 4.85303 4.25147 3.39429 6.05091 3.39429H10.3054Z" fill="#0080ED"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_1775_4604">
+      <rect width="16" height="16" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
                       </button>
                     )}
                   </div>
@@ -143,17 +153,27 @@ export default function TokenDetails({
                       {item.label}
                     </span>
                     <div className="flex items-center gap-3">
-                      <span className="font-medium text-black md:text-[16px] text-[14px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.28px]">
+                      <span className="font-medium font-[Inter] text-black md:text-[18px] text-[14px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.28px]">
                         {item.value}
                       </span>
                       {item.copyable && (
                         <button
                           type="button"
                           onClick={() => handleCopy(item.id, item.value)}
-                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded border border-[#0080ED] text-[#0080ED] transition-colors hover:bg-[#0080ED] hover:text-white"
+                          className="cursor-pointe"
                           aria-label="Copy address"
                         >
-                          <Copy className="w-4 h-4" />
+                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <g clip-path="url(#clip0_1775_4604)">
+    <path d="M15.3584 14.1001C15.3584 15.1284 14.5249 15.9619 13.4966 15.9619H6.04932C5.02106 15.9619 4.1875 15.1284 4.1875 14.1001V6.65283C4.1875 5.62458 5.02106 4.79102 6.04932 4.79102H13.4966C14.5249 4.79102 15.3584 5.62458 15.3584 6.65283V14.1001Z" fill="#0080ED"/>
+    <path d="M10.3054 3.39429C10.5264 3.39429 10.7054 3.21521 10.7054 2.99429V2.92884C10.7054 1.90058 9.8719 0.601563 8.84366 0.601563L1.86182 0.601562C0.833564 0.601562 7.75875e-07 1.43513 6.87875e-07 2.46338L0 10.3761C-8.8e-08 11.4043 0.833564 12.2379 1.86182 12.2379H2.39272C2.61364 12.2379 2.79272 12.0588 2.79272 11.8379V6.65247C2.79272 4.85303 4.25147 3.39429 6.05091 3.39429H10.3054Z" fill="#0080ED"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_1775_4604">
+      <rect width="16" height="16" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
                         </button>
                       )}
                     </div>
@@ -190,10 +210,20 @@ export default function TokenDetails({
                     <button
                       type="button"
                       onClick={() => handleCopy(item.id, item.value)}
-                      className="flex h-8 w-8 shrink-0 items-center justify-center rounded border border-[#0080ED] text-[#0080ED] transition-colors hover:bg-[#0080ED] hover:text-white"
+                      className="cursor-pointer"
                       aria-label="Copy address"
                     >
-                      <Copy className="w-4 h-4" />
+                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <g clip-path="url(#clip0_1775_4604)">
+    <path d="M15.3584 14.1001C15.3584 15.1284 14.5249 15.9619 13.4966 15.9619H6.04932C5.02106 15.9619 4.1875 15.1284 4.1875 14.1001V6.65283C4.1875 5.62458 5.02106 4.79102 6.04932 4.79102H13.4966C14.5249 4.79102 15.3584 5.62458 15.3584 6.65283V14.1001Z" fill="#0080ED"/>
+    <path d="M10.3054 3.39429C10.5264 3.39429 10.7054 3.21521 10.7054 2.99429V2.92884C10.7054 1.90058 9.8719 0.601563 8.84366 0.601563L1.86182 0.601562C0.833564 0.601562 7.75875e-07 1.43513 6.87875e-07 2.46338L0 10.3761C-8.8e-08 11.4043 0.833564 12.2379 1.86182 12.2379H2.39272C2.61364 12.2379 2.79272 12.0588 2.79272 11.8379V6.65247C2.79272 4.85303 4.25147 3.39429 6.05091 3.39429H10.3054Z" fill="#0080ED"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_1775_4604">
+      <rect width="16" height="16" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
                     </button>
                   )}
                 </div>

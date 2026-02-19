@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Circle } from "lucide-react";
+import { scrollToWallet } from "../../../lib/utils";
 import backgroundImage from "../../../assets/images/home/prediction_platform/prediction_platform_bg_light.webp";
 import liveIndicatorDot from "../../../assets/images/home/prediction_platform/live_dot.webp";
 
@@ -8,7 +9,7 @@ export default function PredictionPlatform({
   subtitle = "Buy $PREDICT now and get early access benefits before the public launch begins.",
   buyButtonText = "BUY $PREDICT",
   supportButtonText = "24/7 Live Support Here",
-  buyButtonLink = "/buy",
+  buyButtonLink = "#wallet",
   supportButtonLink = "/support",
 }) {
   return (
@@ -37,21 +38,21 @@ export default function PredictionPlatform({
             </h2>
 
             {/* Subtitle */}
-            <p className="paragraph-medium max-w-[539px] font-[400] text-center !text-[14px] md:!text-[20px] text-[#000]">
+            <p className="paragraph-regular max-w-[539px] font-[400] text-center !text-[14px] md:!text-[20px] text-[#000]">
               {subtitle}
             </p>
 
             {/* Buttons */}
             <div className="flex flex-col items-center justify-center gap-[16px] pt-[2px] sm:flex-row">
-              <Link
-                to={buyButtonLink}
-                className="btn_primary w-[231px] text-sm md:text-base"
+              <button
+                onClick={scrollToWallet}
+                className="btn_primary w-[231px] !px-1 "
               >
                 {buyButtonText}
-              </Link>
+              </button>
               <Link
                 to={supportButtonLink}
-                className="flex h-[44px] items-center justify-center gap-2.5 rounded-full border border-black bg-transparent px-[13px] py-4 transition-colors hover:bg-black/5"
+                className="flex items-center !text-[18px] justify-center gap-2.5 rounded-full border border-black bg-transparent px-[13px] py-[20px] transition-colors hover:bg-black/5"
               >
                 <img
                   src={liveIndicatorDot}
@@ -63,8 +64,7 @@ export default function PredictionPlatform({
                   }}
                 />
                 <Circle className="w-[10px] h-[10px] fill-green-500 text-green-500 hidden shrink-0" />
-                <span className="whitespace-nowrap text-base font-medium leading-6 capitalize text-black">
-                  {supportButtonText}
+                <span className="whitespace-nowrap text-base font-medium leading-6 capitalize text-black" dangerouslySetInnerHTML={{ __html: supportButtonText }}>
                 </span>
               </Link>
             </div>

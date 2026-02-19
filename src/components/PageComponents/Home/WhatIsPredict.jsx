@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { scrollToWallet } from '../../../lib/utils';
 import coinImage from "../../../assets/images/home/what_is_predict/what_is_predict_coin_image2.webp";
 import ellipseImage from "../../../assets/images/home/what_is_predict/what_is_predict_ellipse.png";
+import { Link } from 'react-router-dom';
 
 
 export default function WhatIsPredict({
@@ -13,7 +14,7 @@ export default function WhatIsPredict({
     "Weekly Bonuses And Free Games",
   ],
   buyButtonText = "BUY $PREDICT",
-  buyButtonLink = "/buy",
+  buyButtonLink = "#wallet",
   secondaryButtonText = "Visit Platform (Beta)",
   secondaryButtonLink = "/what-is-predictmarkets",
 }) {
@@ -38,7 +39,7 @@ export default function WhatIsPredict({
           {/* Description Paragraphs */}
           <div className="w-full">
             {descriptionParagraphs.map((paragraph, index) => (
-              <p key={index} className="!text-start max-w-[661px] paragraph-regular">
+              <p key={index} className="!text-start md:!text-[18px] max-w-[661px] paragraph-regular">
 The $PREDICT token gives holders access to a decentralised prediction market
  ecosystem, enabling anonymous (no KYC), transparent,
   and global peer-to-peer predictions on real world events such as elections,
@@ -69,7 +70,7 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
                   </svg>
                 </div>
                 {/* Benefit Text */}
-                <h4 className="text-[#000] !leading-[120%] capitalize heading-four !leading-[120%]">
+                <h4 className="text-[#000] md:!text-[20px] !leading-[120%] capitalize heading-four !leading-[120%]">
                   {benefit}
                 </h4>
               </div>
@@ -78,12 +79,12 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
 
           {/* Buttons */}
           <div className='flex flex-col md:flex-row gap-4 w-full md:w-auto'>
-            <Link
-              to={buyButtonLink}
+            <button
+              onClick={scrollToWallet}
               className="btn_primary flex items-center !px-[65px] justify-center"
             >
               {buyButtonText}
-            </Link>
+            </button>
 
             <Link
               to={secondaryButtonLink}

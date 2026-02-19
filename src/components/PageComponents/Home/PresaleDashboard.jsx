@@ -82,30 +82,6 @@ export default function PresaleDashboard({
       selected: true,
       networks: ["ERC-20", "BEP-20", "TRC-20"]
     },
-    {
-      id: "usdc",
-      name: "USDC",
-      network: "ERC-20",
-      iconSrc: usdcIcon,
-      selected: false,
-      networks: ["ERC-20", "BEP-20"]
-    },
-    {
-      id: "sol",
-      name: "SOL",
-      network: "SOLANA",
-      iconSrc: solIcon,
-      selected: false,
-      networks: ["SOLANA", "SPL", "Wrapped"]
-    },
-    {
-      id: "more",
-      name: "More",
-      network: "",
-      iconSrc: null,
-      selected: false,
-      networks: []
-    },
   ];
 
   // Get selected payment option details
@@ -132,9 +108,9 @@ export default function PresaleDashboard({
 
   return (
     <div className="relative w-full max-w-[100%] mx-auto bg-white rounded-[13.675px] border border-[#D8D8D8] shadow-xl py-[15px] 
-    px-[10px] md:px-[60px] py-[25px] md:py-[30px]">
+    px-[10px] md:px-[60px] py-[25px] md:py-[24px]">
       {/* Step 1: Presale Live Banner - Positioned at top of card with relative positioning */}
-      <div className="relative flex items-center justify-center mb-4 -mt-10">
+      <div className="flex items-center justify-center mb-4 absolute top-[-15px] left-1/2 transform -translate-x-1/2">
         <div className="bg-[#0080ED] text-white px-4 py-1.5 rounded-[4px] !text-[12px] font-[Inter] font-[600] uppercase flex items-center gap-2">
           {/* Bullet point: white circle with blue dot inside */}
           <div className="w-2 h-2 bg-white rounded-full flex items-center justify-center flex-shrink-0" style={{ animation: 'blink 1.5s ease-in-out infinite' }}>
@@ -145,7 +121,7 @@ export default function PresaleDashboard({
       </div>
 
       {/* Step 2: Navigation Tabs - Parent container with border */}
-      <div className="flex items-center justify-between mb-6 p-1 border  border-gray-800 
+      <div className="flex items-center justify-between mb-[15px] p-1 gap-2 border  border-gray-800 
       rounded-[100px] ">
         {tabs.map((tab, index) => {
           const IconComponent = tab.icon;
@@ -154,7 +130,10 @@ export default function PresaleDashboard({
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex !items-center justify-center  !text-black 
-                md:!text-[12px] !text-[7px] font-[Inter] rounded-[100px] px-[2px] md:px-[2px] py-2 gap-[2px]  transition-all duration-200 w-auto max-md:gap-[2px] flex-1 ${index === 0 ? 'md:min-w-[100px] md:max-w-[114px]' : 'md:max-w-[94px]'} ${activeTab === tab.id
+                md:!text-[12px] !text-[7px] font-[Inter] rounded-[100px]
+                 px-[2px] md:px-[10px] py-2 gap-[2px]  transition-all 
+                 duration-200 w-auto max-md:gap-[2px] flex-1 
+                 ${index === 0 ? 'md:!min-w-[125px] md:!max-w-[125px]' : ''} ${activeTab === tab.id
                   ? "bg-[#B0B0B01F] text-black "
                   : "bg-transparent text-black hover:text-black "
                 }`}
@@ -164,7 +143,9 @@ export default function PresaleDashboard({
                 <IconComponent />
               </span>
               {/* Label */}
-              <span className={`md:!text-[12px] max-md:pt-1 !text-[7px]  !font-[400] font-[Inter] leading-tight text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
+              <span className={`md:!text-[12px] max-md:pt-1 !text-[7px]  
+              !font-[400] font-[Inter] leading-tight 
+              text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
                 }`}>
                 {tab.label}
               </span>
@@ -174,30 +155,36 @@ export default function PresaleDashboard({
       </div>
 
       {/* Presale Progress */}
-      <div className="mb-4 px-[16px] pt-[20px] pb-[10px] bg-[#F5F5F5] rounded-[8px]">
-        <h2 className="heading-two !text-center mb-2 !font-[500] 
+      <div className="mb-[8px] px-[16px] py-[8px] bg-[#F5F5F5] rounded-[8px]"
+      style={{
+        border:"1px solid rgba(0, 0, 0, 0.10)"
+      }}
+      >
+        <h2 className="heading-two md:!text-[32px] !leading-[100%] !text-center mb-2 !font-[500] 
         !font-[Helvetica Neue Medium Extended]">{presaleAmount}</h2>
-        <div className="text-[14px] text-[#7B7B7B] mb-2">
-          {softcapPercentage}% of softcap raised
-        </div>
-        <div className="relative w-full bg-gray-200 rounded-full h-3 mb-3">
+       
+        <div className="relative w-full bg-gray-200 rounded-full h-[10px] mb-3">
           <div
             className="bg-[#0080ED] h-3 rounded-full transition-all duration-300 relative"
             style={{ width: `${softcapPercentage}%` }}
           >
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-gray-700"></div>
+            {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-gray-700"></div> */}
           </div>
         </div>
-        <div className="flex justify-between items-center text-[14px]  mb-1">
-          <span></span>
-          <h5 className="font-medium text-gray-500"> {softcapTarget}</h5>
+        <div className="flex justify-between p-[5px] items-center text-[14px]  mb-1 border-[1px] border-[#D4D4D4]"
+        >
+           <div className="text-[12px] !font-[700] font-[Inter] text-[#7B7B7B]">
+          {softcapPercentage}% of softcap raised
         </div>
-        <h5 className="text-[14px] text-black text-center">{holdersCount} Holders</h5>
+             <h5 className="text-[12px] !font-[700] !font-[Inter] text-[#7B7B7B] text-center">{holdersCount} Holders</h5>
+          <h5 className="text-[12px] !font-[700] !font-[Inter] text-[#7B7B7B]"> {softcapTarget}</h5>
+        </div>
+     
       </div>
 
       {/* Payment Options */}
-      <div className="mb-3 ">
-        <div className="flex bg-[#F5F5F5] justify-center py-[6px] roundedd-[8px] items-center gap-2 mb-3">
+      <div className="mb-[10px] ">
+        {/* <div className="flex bg-[#F5F5F5] justify-center py-[6px] roundedd-[8px] items-center gap-2 mb-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="34" height="18" viewBox="0 0 34 18" fill="none">
             <rect width="33.1579" height="18" rx="2.52907" fill="white" />
             <path d="M14.2318 5.37109L12.9877 12.6373H14.9775L16.2226 5.37109H14.2318ZM11.3193 5.37924L9.37045 10.3346L9.16267 9.58638C8.77833 8.68485 7.68722 7.39011 6.40625 6.57415L8.18825 12.6337L10.2937 12.6302L13.4273 5.37772L11.3193 5.37924Z" fill="black" />
@@ -211,7 +198,7 @@ export default function PresaleDashboard({
           <div className=" ">
             <span className="!text-[14px] !font-[700] !font-[Inter]">CARD</span>
           </div>
-        </div>
+        </div> */}
         <div className="grid grid-cols-3 gap-2">
           {paymentOptions.map((option) => (
             <div
@@ -233,7 +220,7 @@ export default function PresaleDashboard({
                   }
                 }}
                 className={`w-full flex items-center gap-2 px-2 py-1 
-                  rounded-lg border transition-colors text-left min-h-[48px] ${
+                  rounded-lg border transition-colors text-left min-h-[40px] ${
                     openDropdownId === option.id
                       ? "border-gray-300 bg-blue-50"
                       : selectedPayment.includes(option.name)
@@ -252,10 +239,10 @@ export default function PresaleDashboard({
 
                 {/* Text Content */}
                 <div className="flex-1 min-w-0 flex flex-col justify-center">
-                  <div className="font-bold text-[12px] md:text-[14px] text-gray-800 leading-tight">
+                  <div className="font-bold text-[12px] leading-[13px] md:text-[12px] text-gray-800 ">
                     {option.name}
                   </div>
-                  <div className="md:text-[12px] text-[10px]  text-gray-500 leading-tight mt-0.5">
+                  <div className="md:text-[12px] text-[10px]  text-gray-500  leading-[13px]">
                     {selectedPayment.includes(option.name)
                       ? selectedPayment.split(" ").slice(1).join(" ") || option.network
                       : option.network
@@ -304,7 +291,7 @@ export default function PresaleDashboard({
                         setSelectedPayment(`${option.name} ${network}`);
                         setOpenDropdownId(null);
                       }}
-                      className={`w-full flex items-center gap-2 px-3 py-2 text-left text-sm hover:bg-gray-50 transition-colors ${isCurrentlySelected
+                      className={`w-full flex items-center gap-2 px-3 py-1/2 text-left text-sm hover:bg-gray-50 transition-colors ${isCurrentlySelected
                           ? "bg-blue-50 text-[#0080ED] font-semibold"
                           : "text-gray-700"
                         }`}
@@ -337,33 +324,33 @@ export default function PresaleDashboard({
       </div>
 
       {/* Price Information */}
-      <div className="bg-[#F2F2F2] rounded-lg px-4 py-2.5 mb-3">
+      <div className="bg-[#F7F7F7] rounded-[4px] border-[1px] border-[#D4D4D4] px-4 py-[5px] mb-[15px]">
         <div className="flex justify-center space-x-2 items-center text-sm">
           <div className="flex items-center gap-2">
-            <span className="text-black text-[12px] md:text-[14px] !font-[600]">Presale Price = </span>
-            <span className="font-semibold text-[12px] md:text-[14px] font-bold text-[#0080ED]">{presalePrice}</span>
+            <span className="text-black text-[12px] md:text-[12px] !font-[600]">Presale Price = </span>
+            <span className="font-semibold text-[12px] md:text-[12px] font-bold text-[#0080ED]">{presalePrice}</span>
           </div>
           <div className="w-px h-4 bg-gray-800 !font-[600]"></div>
           <div className="flex items-center gap-2">
-            <span className="text-black text-[12px] md:text-[14px] !font-[600]">Listing Price = </span>
-            <span className="font-semibold text-[12px] md:text-[14px] font-bold text-[#0080ED]">{listingPrice}</span>
+            <span className="text-black text-[12px] md:text-[12px] !font-[600]">Listing Price = </span>
+            <span className="font-semibold text-[12px] md:text-[12px] font-bold text-[#0080ED]">{listingPrice}</span>
           </div>
         </div>
       </div>
 
       {/* Purchase Input Fields */}
-      <div className="mb-6 space-y-4">
+      <div className="mb-[20px] space-y-[12px]">
         {/* You Pay Input */}
         <div>
-          <label className="block text-sm font-bold text-gray-800 mb-2">
+          <label className="block text-sm font-bold text-gray-800 mb-1">
             You Pay {selectedPaymentOption.name}
           </label>
-          <div className="flex items-center gap-0 border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
+          <div className="flex  md:h-[46px] items-center gap-0 border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
             <input
               type="text"
               value={youPayAmount}
               readOnly
-              className="flex-1 text-[16px] font-[Inter] font-[500] max-w-[70%] !w-full  text-black bg-transparent border-none outline-none px-4 py-3"
+              className="flex-1 text-[16px] font-[Inter] font-[500] max-w-[70%] !w-full  text-black bg-transparent border-none outline-none px-4 py-2.5"
             />
             <div className="flex items-center gap-2 px-3 py-2 w-[30%] border-l border-gray-200 bg-transparent">
               {/* Dynamic Payment Icon */}
@@ -384,18 +371,18 @@ export default function PresaleDashboard({
 
         {/* You Receive Input */}
         <div>
-          <label className="block text-sm font-bold text-gray-800 mb-2">
+          <label className="block text-sm font-bold text-gray-800 mb-1">
             You Receive PREDICT +{" "}
             <Link to="/nft" className="text-[#0080ED] hover:underline">
               Bronze NFT
             </Link>
           </label>
-          <div className="flex items-center gap-0 border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
+          <div className="flex items-center gap-0 border border-gray-200 rounded-lg bg-gray-50 md:h-[46px] overflow-hidden">
             <input
               type="text"
               value={youReceiveAmount}
               readOnly
-              className="flex-1 text-[16px] font-semibold max-w-[70%] text-black bg-transparent border-none outline-none px-4 py-3"
+              className="flex-1 text-[16px] font-semibold max-w-[70%] text-black bg-transparent border-none outline-none px-4 py-2.5 "
             />
             <div className="flex items-center gap-2 px-2 py-3 w-[30%] border-l border-gray-200 bg-transparent">
               {/* PREDICT Icon - Square blue with 3x3 grid of white squares */}
@@ -411,38 +398,31 @@ export default function PresaleDashboard({
       </div>
 
       {/* Connect Wallet Button */}
-      <button className="w-full  btn_primary text-white !py-[21px] !text-[18px]
+      <button className="w-full  btn_primary text-white !py-[16px] !text-[18px]
        rounded-full font-medium  uppercase mb-4 hover:bg-[#0066cc] transition-colors">
         CONNECT WALLET
       </button>
 
-      {/* Additional Links */}
-      <div className="flex items-center justify-center gap-4 text-xs text-gray-600 mb-2">
+      {/* Special Bonus */}
+      <div className="text-center text-[12px] text-gray-600 bg-[#F2F2F2] p-[6px] rounded-[8px] border border-gray-100">
+        <span className="font-semibold text-[#0080ED]">Special Bonus:</span> Get 20% more PREDICT tokens <br /> with the code{" "}
+        <span className="font-semibold text-[#000]">{bonusCode}</span>{" "}
+        (valid for a limited time only).
+      </div>
+        <div className="flex items-center justify-center gap-4 text-xs text-gray-600 mt-[15px]">
         <Link to="/bonus-code" className="flex items-center gap-1 hover:text-[#0080ED] transition-colors">
           <span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="10" viewBox="0 0 13 10" fill="none">
   <path d="M11.7337 3.38023C11.1251 3.04883 10.307 2.81039 9.40625 2.69828V2.29688C9.40625 1.63406 8.88234 1.03359 7.92969 0.605391C7.06344 0.214922 5.91719 0 4.70312 0C3.48906 0 2.34281 0.214922 1.47656 0.605391C0.523906 1.03359 0 1.63406 0 2.29688V4.48438C0 5.14719 0.523906 5.74766 1.47656 6.17586C2.05023 6.43398 2.74586 6.61336 3.5 6.70797V7.10938C3.5 7.77219 4.02391 8.37266 4.97656 8.80086C5.84281 9.19133 6.98906 9.40625 8.20312 9.40625C9.41719 9.40625 10.5634 9.19133 11.4297 8.80086C12.3807 8.37266 12.9062 7.77219 12.9062 7.10938V4.92188C12.9062 4.33945 12.4901 3.79203 11.7337 3.38023ZM11.4198 3.95664C11.9552 4.24813 12.25 4.59375 12.25 4.92188C12.25 5.69789 10.588 6.5625 8.20312 6.5625C7.81532 6.56272 7.4279 6.53825 7.0432 6.48922C7.34635 6.40784 7.64274 6.30307 7.92969 6.17586C8.8807 5.74766 9.40625 5.14719 9.40625 4.48438V3.35945C10.1938 3.465 10.8992 3.67281 11.4198 3.95664ZM5.36812 6.10203C5.15375 6.1168 4.93062 6.125 4.70312 6.125C4.41328 6.125 4.13438 6.11188 3.8675 6.08836C3.86077 6.08773 3.854 6.08773 3.84727 6.08836C3.65148 6.07031 3.46445 6.04625 3.28125 6.01727V4.49094C3.75206 4.55991 4.22729 4.59428 4.70312 4.59375C5.17896 4.59428 5.65419 4.55991 6.125 4.49094V6.01562C5.88766 6.05336 5.63773 6.08234 5.37633 6.10094L5.36812 6.10203ZM8.75 3.49398V4.48438C8.75 5.00609 7.99805 5.56719 6.78125 5.87945V4.3668C7.17533 4.27783 7.55992 4.1511 7.92969 3.98836C8.22381 3.86062 8.49966 3.69438 8.75 3.49398ZM4.70312 0.65625C7.08805 0.65625 8.75 1.52086 8.75 2.29688C8.75 3.07289 7.08805 3.9375 4.70312 3.9375C2.3182 3.9375 0.65625 3.07289 0.65625 2.29688C0.65625 1.52086 2.3182 0.65625 4.70312 0.65625ZM0.65625 4.48438V3.49398C0.906712 3.69361 1.18256 3.85912 1.47656 3.98617C1.84633 4.14891 2.23092 4.27564 2.625 4.36461V5.87727C1.4082 5.56719 0.65625 5.00609 0.65625 4.48438ZM4.15625 7.10938V6.76594C4.33672 6.77578 4.51883 6.78125 4.70312 6.78125C4.91859 6.78125 5.13115 6.77451 5.34078 6.76102C5.59728 6.85359 5.85917 6.93047 6.125 6.99125V8.50445C4.9082 8.19219 4.15625 7.63109 4.15625 7.10938ZM6.78125 8.64062V7.11484C7.25203 7.18419 7.72726 7.21891 8.20312 7.21875C8.67896 7.21928 9.15419 7.18491 9.625 7.11594V8.64062C8.68269 8.78646 7.72356 8.78646 6.78125 8.64062ZM10.2812 8.50445V6.9918C10.6753 6.90283 11.0599 6.7761 11.4297 6.61336C11.7237 6.4863 11.9995 6.3208 12.25 6.12117V7.10938C12.25 7.63109 11.498 8.19219 10.2812 8.50445Z" fill="black"/>
 </svg></span>
-          <span className="text-[12px] underline font-[Inter]">Bonus Code</span>
+          <span className="text-[12px] text-[#000] underline font-[Inter]">Bonus Code</span>
         </Link>
         <Link to="/#how-to-buy" className="flex items-center gap-1 hover:text-[#0080ED] transition-colors">
           <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none">
   <path d="M12.5962 6.40172C12.4334 6.27646 12.2439 6.19043 12.0424 6.15031C11.841 6.11019 11.633 6.11706 11.4346 6.17039L9.14648 6.69649C9.19972 6.47161 9.20136 6.23759 9.15129 6.01199C9.10122 5.78638 9.00074 5.57504 8.85738 5.39379C8.71401 5.21254 8.53148 5.0661 8.32346 4.96543C8.11545 4.86476 7.88734 4.81248 7.65625 4.8125H4.91859C4.68869 4.81192 4.46094 4.85691 4.24853 4.94486C4.03611 5.03282 3.84322 5.16199 3.68102 5.32492L2.44398 6.5625H0.875C0.642936 6.5625 0.420376 6.65469 0.256282 6.81878C0.0921872 6.98288 0 7.20544 0 7.4375L0 9.625C0 9.85707 0.0921872 10.0796 0.256282 10.2437C0.420376 10.4078 0.642936 10.5 0.875 10.5H6.5625C6.59827 10.5 6.6339 10.4956 6.66859 10.4869L10.1686 9.61188C10.1909 9.60655 10.2127 9.59923 10.2337 9.59L12.3594 8.68547L12.3834 8.67453C12.5877 8.57245 12.7627 8.42003 12.8918 8.23165C13.0209 8.04327 13.0999 7.82512 13.1214 7.59775C13.1429 7.37038 13.1062 7.14128 13.0147 6.93204C12.9232 6.72279 12.7799 6.54029 12.5984 6.40172H12.5962ZM0.875 7.4375H2.1875V9.625H0.875V7.4375ZM12.0001 7.88649L9.92195 8.77133L6.50781 9.625H3.0625V7.18102L4.30008 5.94399C4.38103 5.86238 4.47741 5.79768 4.58359 5.75365C4.68977 5.70962 4.80365 5.68713 4.91859 5.6875H7.65625C7.8303 5.6875 7.99722 5.75664 8.12029 5.87971C8.24336 6.00278 8.3125 6.1697 8.3125 6.34375C8.3125 6.5178 8.24336 6.68472 8.12029 6.80779C7.99722 6.93086 7.8303 7 7.65625 7H6.125C6.00897 7 5.89769 7.04609 5.81564 7.12814C5.73359 7.21019 5.6875 7.32147 5.6875 7.4375C5.6875 7.55353 5.73359 7.66481 5.81564 7.74686C5.89769 7.82891 6.00897 7.875 6.125 7.875H7.875C7.90793 7.87492 7.94075 7.87125 7.97289 7.86406L11.637 7.02133L11.6539 7.01695C11.7658 6.9859 11.8851 6.99731 11.9891 7.04899C12.093 7.10067 12.1742 7.18896 12.217 7.29688C12.2597 7.4048 12.2611 7.52472 12.2207 7.63357C12.1804 7.74242 12.1012 7.8325 11.9984 7.88649H12.0001ZM8.96875 3.9375C9.07684 3.93762 9.18476 3.92884 9.29141 3.91125C9.41136 4.26756 9.63084 4.58208 9.92388 4.81761C10.2169 5.05314 10.5713 5.19984 10.9451 5.24036C11.3188 5.28089 11.6964 5.21354 12.0331 5.04628C12.3698 4.87902 12.6516 4.61885 12.8451 4.29653C13.0387 3.9742 13.1359 3.6032 13.1252 3.22738C13.1146 2.85157 12.9966 2.48666 12.7851 2.1758C12.5736 1.86493 12.2776 1.62111 11.932 1.47317C11.5863 1.32522 11.2056 1.27934 10.8347 1.34094C10.7192 0.997635 10.5112 0.692852 10.2336 0.460129C9.95609 0.227406 9.61971 0.0757657 9.26152 0.0218958C8.90334 -0.031974 8.53723 0.0140149 8.2035 0.154802C7.86977 0.295588 7.58134 0.525715 7.36997 0.819856C7.15859 1.114 7.03246 1.46075 7.00545 1.82196C6.97845 2.18316 7.05161 2.54482 7.21689 2.86712C7.38217 3.18942 7.63317 3.45988 7.94226 3.64873C8.25134 3.83759 8.60654 3.93751 8.96875 3.9375ZM12.25 3.28125C12.25 3.49757 12.1859 3.70904 12.0657 3.88891C11.9455 4.06877 11.7747 4.20896 11.5748 4.29174C11.375 4.37453 11.155 4.39619 10.9429 4.35398C10.7307 4.31178 10.5358 4.20761 10.3829 4.05465C10.2299 3.90169 10.1257 3.7068 10.0835 3.49463C10.0413 3.28246 10.063 3.06255 10.1458 2.86269C10.2285 2.66283 10.3687 2.49201 10.5486 2.37183C10.7285 2.25165 10.9399 2.1875 11.1562 2.1875C11.4463 2.1875 11.7245 2.30273 11.9296 2.50785C12.1348 2.71297 12.25 2.99117 12.25 3.28125ZM8.96875 0.875001C9.20735 0.87512 9.43937 0.953262 9.62944 1.09751C9.8195 1.24176 9.95718 1.44421 10.0215 1.67399C9.79741 1.83165 9.60872 2.03434 9.46746 2.2691C9.32621 2.50386 9.23551 2.76552 9.20117 3.03734C9.12479 3.05385 9.04689 3.06228 8.96875 3.0625C8.67867 3.0625 8.40047 2.94727 8.19535 2.74215C7.99023 2.53703 7.875 2.25883 7.875 1.96875C7.875 1.67867 7.99023 1.40047 8.19535 1.19535C8.40047 0.990235 8.67867 0.875001 8.96875 0.875001Z" fill="black"/>
 </svg></span>
-          <span className="text-[12px] underline font-[Inter]">How to Buy</span>
+          <span className="text-[12px] text-[#000] underline font-[Inter]">How to Buy</span>
         </Link>
-        <Link to="/referral" className="flex items-center gap-1 hover:text-[#0080ED] transition-colors">
-          <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
-  <path d="M7.57812 3.50065L8.74479 2.33398C9.32812 1.75065 10.4948 1.75065 11.0781 2.33398L11.6615 2.91732C12.2448 3.50065 12.2448 4.66732 11.6615 5.25065L8.74479 8.16732C8.16146 8.75065 6.99479 8.75065 6.41146 8.16732M6.41146 10.5007L5.24479 11.6673C4.66146 12.2507 3.49479 12.2507 2.91146 11.6673L2.32812 11.084C1.74479 10.5007 1.74479 9.33398 2.32812 8.75065L5.24479 5.83398C5.82812 5.25065 6.99479 5.25065 7.57812 5.83398" stroke="black" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
-          <span className="text-[12px] underline font-[Inter]">10% Referral Link</span>
-        </Link>
-      </div>
-
-      {/* Special Bonus */}
-      <div className="text-center text-[12px] text-gray-600 bg-[#F2F2F2] p-2 rounded-[8px] border border-gray-100">
-        <span className="font-semibold text-[#0080ED]">Special Bonus:</span> Get 20% more PREDICT tokens <br /> with the code{" "}
-        <span className="font-semibold text-[#000]">{bonusCode}</span>{" "}
-        (valid for a limited time only).
+      
       </div>
     </div>
   );
