@@ -12,8 +12,18 @@ const quickLinks = [
     isHash: true,
     scrollId: "how-to-buy",
   },
-  { label: "Roadmap", path: "/roadmap" },
-  { label: "Token Allocation", path: "/token-allocation" },
+  { 
+    label: "Roadmap", 
+    path: "/#roadmap", 
+    isHash: true, 
+    scrollId: "roadmap" 
+  },
+  { 
+    label: "Token Allocation", 
+    path: "/#token-allocation", 
+    isHash: true, 
+    scrollId: "token-allocation" 
+  },
   {
     label: "What is PredictMarkets",
     path: "/#what-is-predictmarkets",
@@ -70,7 +80,7 @@ export function Footer() {
 
             {/* Menu (Quick Links) */}
             <div className="flex flex-col gap-4 max-w-[200px]">
-              <h3 className="text-[#000] flex flex-row items-center gap-2 md:text-[20px] text-[18px] font-semibold md:!leading-[28px] !leading-[26px] md:tracking-[0.4px] !tracking-[0.36px]">
+              <h3 className="text-[#000] flex flex-row items-center gap-2 md:text-[20px] text-[18px] font-semibold md:!leading-[28px] !font-[Inter] !leading-[26px] md:tracking-[0.4px] !tracking-[0.36px]">
                 <div className="h-[8px] w-[8px] rounded-full bg-[#000]"></div>
                 <span>Menu</span>
               </h3>
@@ -109,7 +119,7 @@ export function Footer() {
 
             {/* Legal (Docs) */}
             <div className="flex flex-col md:gap-4 gap-2 max-w-[197px]">
-              <h3 className="text-[#000] flex flex-row items-center gap-2 md:text-[20px] text-[18px] font-semibold md:!leading-[28px] !leading-[26px] md:tracking-[0.4px] !tracking-[0.36px]">
+              <h3 className="text-[#000] flex flex-row items-center gap-2 md:text-[20px] !font-[Inter] text-[18px] font-semibold md:!leading-[28px] !leading-[26px] md:tracking-[0.4px] !tracking-[0.36px]">
                 <div className="h-[8px] w-[8px] rounded-full bg-[#000]"></div>
                 <span>Legal</span>
               </h3>
@@ -129,7 +139,7 @@ export function Footer() {
             {/* Join Our Socials */}
             <div className="flex flex-col gap-[16px] max-w-[216px] pt-[5px]">
               <div className="flex flex-col gap-4">
-                <h3 className="text-black !text-[18px] md:!text-[20px] font-semibold !leading-[26px] md:!leading-[28px] tracking-[0.36px] md:tracking-[0.4px]">
+                <h3 className="text-black !font-[Inter] !text-[18px] md:!text-[20px] font-semibold !leading-[26px] md:!leading-[28px] tracking-[0.36px] md:tracking-[0.4px]">
                   Join Our Socials
                 </h3>
                 <div className="flex items-center gap-4">

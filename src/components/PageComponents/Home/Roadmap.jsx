@@ -60,7 +60,7 @@ export default function Roadmap({
                   key={item.id}
                   className="pl-2 md:pl-4 basis-full md:basis-[400px]"
                 >
-                  <div className="flex md:h-[490px] h-[470px] flex-col gap-[30px] rounded-[15px] border border-[#dddddd] bg-white px-4 py-8 md:px-4 md:py-8">
+                  <div className="flex md:h-[498px] h-[470px] flex-col gap-[20px] rounded-[15px] border border-[#dddddd] bg-white px-4 py-8 md:px-4 md:py-8">
                     {/* Header */}
                     <div className="flex items-center justify-between">
                       <h3 className="heading-three capitalize whitespace-pre-line text-black">
@@ -88,26 +88,32 @@ export default function Roadmap({
                         </span>
                       </div>
                     </div>
-                    <hr className="w-full pb-4 border-t border-[#dddddd]" />
+                    <hr className="w-full pb-0 border-t border-[#dddddd]" />
                     {/* Items List */}
 
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col ">
                       {item.items.map((listItem, index) => (
                         <div
                           key={index}
-                          className="flex flex-row gap-3 items-start"
+                          className={cn("flex flex-row gap-3 items-start py-[17px]", index !== item.items.length - 1 && "border-b border-[#dddddd]")}
                         >
-                          {/* Checkmark */}
-                          <div className="mt-[3px] flex h-[20px] w-[20px] shrink-0 items-center justify-center rounded-full bg-[#0080ED] p-[3px]">
-                            <Check
-                              className="h-full w-full text-white"
-                              strokeWidth={3}
-                            />
+                          {/* Checkmark or Empty */}
+                          <div className="mt-[3px]">
+                            {listItem.iconcheck ? (
+                              <div className="flex h-[15px] w-[15px] shrink-0 items-center justify-center rounded-full bg-[#0080ED] p-[3px]">
+                                <Check
+                                  className="h-full w-full text-white"
+                                  strokeWidth={3}
+                                />
+                              </div>
+                            ) : (
+                              <div className="bg-[#fff] rounded-full h-[15px] w-[15px] border-[1px] border-[#0080ED]" />
+                            )}
                           </div>
 
                           {/* Text */}
-                          <div className="paragraph-regular !text-start max-w-[280px] !text-[16px] text-black">
-                            {listItem}
+                          <div className=" !text-start max-w-[280px] !text-[16px] text-black">
+                            {listItem.text}
                           </div>
                         </div>
                       ))}

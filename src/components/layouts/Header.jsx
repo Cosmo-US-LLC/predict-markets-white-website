@@ -5,6 +5,8 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from '../ui/sheet';
 import { Button } from '../ui/button';
 import { cn } from '../../lib/utils';
 import logoImage from '../../assets/images/logo/P_logo.svg';
+import { scrollToWallet } from '../../lib/utils';
+
 
 const navLinks = [
   { label: 'What is PredictMarkets?', path: '/#what-is-predictmarkets', isHash: true, scrollId: 'what-is-predictmarkets' },
@@ -37,6 +39,24 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-[#e5e5e5]">
+       <div 
+        className="md:h-[40px] h-[28px] bg-[#B9E6FE] flex items-center justify-center cursor-pointer hover:bg-[#A8DFFE] transition-colors"
+        onClick={scrollToWallet}
+      >
+        <p 
+          className="text-[#0B4A6F] text-center"
+          style={{
+            fontFamily: 'Inter',
+            fontSize: '12px',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '18px',
+            letterSpacing: '0.24px',
+          }}
+        >
+          <span className="underline font-[600]">Click here</span> to enter the $PREDICT Presale
+        </p>
+      </div>
       <div className="flex w-full max-w-[1280px] mx-auto px-4 md:px-8 py-3 items-center justify-between gap-4">
         {/* Logo Section */}
         <Link to="/" className="flex items-center" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>

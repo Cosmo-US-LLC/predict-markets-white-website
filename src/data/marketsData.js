@@ -19,7 +19,7 @@ export const marketsData = [
   {
     id: 1,
     title: "Cryptocurrency",
-    description: "Forecasts covering major digital assets like Bitcoin and ETH, leading altcoins, DeFi, Layer 2 ecosystems, and key news across the entire crypto market.",
+    description: "Predictions covering major digital assets like Bitcoin and ETH, leading altcoins, and key news across the entire crypto market. ",
     image: cryptoImage,
     iconBackground: marketIcon1,
     // iconImage: marketIcon1,
@@ -37,7 +37,7 @@ export const marketsData = [
   {
     id: 3,
     title: "Sports",
-    description: "Championship winners, match results, and standout players across soccer, football, hockey, basketball, tennis, combat sports, esports, and racing.",
+    description: "Championship winners and match results across soccer, football, hockey, basketball, tennis, combat sports, esports, and racing.",
     image: sportsImage,
     iconBackground: marketIcon4,
     // iconImage: marketIcon4,
@@ -64,7 +64,7 @@ export const marketsData = [
   {
     id: 6,
     title: "Technology",
-    description: "AI advances, hardware and product launches, major tech earnings, and the milestones shaping the tech industry.",
+    description: "Prediction markets focused on the most talked-about events shaping global attention right now.",
     image: techImage,
     iconBackground: marketIcon6,
     // iconImage: marketIcon6,

@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { scrollToWallet } from '../../../lib/utils';
 import coinImage from "../../../assets/images/home/what_is_predict/what_is_predict_coin_image2.webp";
 import ellipseImage from "../../../assets/images/home/what_is_predict/what_is_predict_ellipse.png";
+import { Link } from 'react-router-dom';
 
 
 export default function WhatIsPredict({
@@ -13,7 +14,7 @@ export default function WhatIsPredict({
     "Weekly Bonuses And Free Games",
   ],
   buyButtonText = "BUY $PREDICT",
-  buyButtonLink = "/buy",
+  buyButtonLink = "#wallet",
   secondaryButtonText = "Visit Platform (Beta)",
   secondaryButtonLink = "/what-is-predictmarkets",
 }) {
@@ -38,7 +39,7 @@ export default function WhatIsPredict({
           {/* Description Paragraphs */}
           <div className="w-full">
             {descriptionParagraphs.map((paragraph, index) => (
-              <p key={index} className="!text-start paragraph-regular">
+              <p key={index} className="!text-start md:!text-[18px] max-w-[661px] paragraph-regular">
 The $PREDICT token gives holders access to a decentralised prediction market
  ecosystem, enabling anonymous (no KYC), transparent,
   and global peer-to-peer predictions on real world events such as elections,
@@ -69,7 +70,7 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
                   </svg>
                 </div>
                 {/* Benefit Text */}
-                <h4 className="text-[#000] heading-four !leading-[120%]">
+                <h4 className="text-[#000] md:!text-[20px] !leading-[120%] capitalize heading-four !leading-[120%]">
                   {benefit}
                 </h4>
               </div>
@@ -78,16 +79,16 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
 
           {/* Buttons */}
           <div className='flex flex-col md:flex-row gap-4 w-full md:w-auto'>
-            <Link
-              to={buyButtonLink}
-              className="btn_primary flex items-center justify-center"
+            <button
+              onClick={scrollToWallet}
+              className="btn_primary flex items-center !px-[65px] justify-center"
             >
               {buyButtonText}
-            </Link>
+            </button>
 
             <Link
               to={secondaryButtonLink}
-              className="flex items-center justify-center px-6 py-3 rounded-full border-2 border-[#000] bg-white text-[#000] text-sm md:text-base font-medium uppercase hover:bg-gray-50 transition-colors"
+              className="Helvetica flex items-center justify-center px-[10px] py-3 rounded-full border-[1px] border-[#000] bg-white text-[#000]  md:text-[18px] font-[500] uppercase hover:bg-gray-50 transition-colors "
             >
               {secondaryButtonText}
             </Link>
@@ -96,7 +97,7 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
 
         {/* Right Visual Content */}
         <div className=" w-full z-10 flex items-center justify-center">
-          <div className=" !w-full md:absolute -bottom-35 md:-mr-14 flex items-center 
+          <div className=" !w-full md:absolute -bottom-30 md:-mr-8 flex items-center 
           justify-center md:!min-w-[720px]  ">
             <img
               src={coinImage}

@@ -4,7 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../../ui/accordion";
-import { ChevronDown } from "lucide-react";
 import { cn } from "../../../lib/utils";
 
 const faqData = [
@@ -85,11 +84,14 @@ export default function FrequentlyAskedQuestions() {
                   index === faqData.length - 1 && "rounded-b-[16px] border-b-0",
                 )}
               >
-                <AccordionTrigger className="px-6 py-6 hover:no-underline text-left bg-transparent">
+                <AccordionTrigger className="px-6 py-6 hover:no-underline text-left bg-transparent group">
                   <h4 className="heading-four !text-[14px] md:!text-[20px] capitalize flex-1 text-left text-black">
                     {faq.question}
                   </h4>
-                  <ChevronDown className="h-6 w-6 ml-4 shrink-0 text-black transition-transform duration-200 data-[state=open]:rotate-180" />
+                  <span className="ml-4 shrink-0 text-black font-normal !text-[26px] !text-[#0080ED] leading-none">
+                    <span className="group-data-[state=open]:hidden">+</span>
+                    <span className="hidden group-data-[state=open]:inline">−</span>
+                  </span>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-0">
                   <p className="paragraph-regular !text-[14px] md:!text-[20px] !text-start text-[#000]">

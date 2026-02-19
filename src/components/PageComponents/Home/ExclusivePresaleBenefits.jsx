@@ -10,7 +10,7 @@ export default function ExclusivePresaleBenefits({
       id: 1,
       icon: coinImage,
       title: "Lowest Entry Price Before Launch",
-      description: "During the presale, you can buy $PREDICT at its lowest price before it launches on centralised and decentralised exchanges.",
+      description: "Dur",
     },
     {
       id: 2,
@@ -53,11 +53,11 @@ export default function ExclusivePresaleBenefits({
               gap-6 items-center md:px-[10px] px-[16px] md:py-7 py-[28px] flex-1 min-w-0"
             >
               {/* Icon */}
-              <div className="h-[98px] w-[106px] flex items-center justify-center shrink-0">
+              <div className=" flex items-center justify-center min-h-[100px]">
                 <img
                   src={benefit.icon}
                   alt=""
-                  className="w-full h-full object-contain"
+                  className=""
                   onError={(e) => {
                     e.target.style.display = 'none';
                   }}
@@ -66,12 +66,12 @@ export default function ExclusivePresaleBenefits({
 
               {/* Content */}
               <div className="flex flex-col gap-3 items-center text-center w-full max-md:max-w-[290px] mx-auto">
-                <h3 className="heading-three ">
+                <h3 className="heading-four !leading-[140%] capitalize">
                   {benefit.title}
                 </h3>
                 {/* Divider Line */}
-                <div className="w-full h-px bg-gray-200"></div>
-                <p className="paragraph-regular">
+                <div className="h-px bg-[#DFDFDF] w-[90%] mx-auto"></div>
+                <p className="paragraph-regular md:!text-[16px] !leading-[150%]">
                   {benefit.description}
                 </p>
               </div>

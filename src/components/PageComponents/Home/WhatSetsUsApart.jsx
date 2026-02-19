@@ -17,7 +17,7 @@ export default function WhatSetsUsApart({
         }}
       >
         {/* Header */}
-        <div className="flex flex-col gap-3 max-w-[868px] text-center mx-auto">
+        <div className="flex flex-col gap-3 max-w-[970px] text-center mx-auto">
           <h2 className="heading-two">{title}</h2>
           <p className="paragraph-regular !text-[14px] md:!text-[20px] !font-normal md:leading-6 leading-[22px] md:!tracking-[0.32px] !tracking-[0.28px] text-[#000]">
             {description}
@@ -40,7 +40,7 @@ export default function WhatSetsUsApart({
                 <div className="grid grid-cols-4 gap-4 items-center">
                   <div />
                   {/* PredictMarkets */}
-                  <div className="py-[40px] flex flex-col items-center gap-2 bg-white">
+                  <div className="pt-[40px] pb-[20px] flex flex-col items-center gap-2 bg-white">
                     <div className="w-[45px] h-[45px]">
                       <img
                         src={platforms?.predictMarkets?.icon}
@@ -53,7 +53,7 @@ export default function WhatSetsUsApart({
                     </span>
                   </div>
                   {/* PolyMarket */}
-                  <div className="py-[40px] flex flex-col items-center gap-2">
+                  <div className="pt-[40px] pb-[20px] flex flex-col items-center gap-2">
                     <img
                       src={platforms.polyMarket?.icon}
                       alt={platforms.polyMarket?.name || "PolyMarket"}
@@ -64,7 +64,7 @@ export default function WhatSetsUsApart({
                     </span>
                   </div>
                   {/* Kalshi */}
-                  <div className="py-[40px] flex flex-col items-center gap-2">
+                  <div className="pt-[40px] pb-[20px] flex flex-col items-center gap-2">
                     <img
                       src={platforms.kalshi?.icon}
                       alt={platforms.kalshi?.name || "Kalshi"}
@@ -93,7 +93,7 @@ export default function WhatSetsUsApart({
                     <span className="text-[#000] text-base font-medium">
                       {row.feature}
                     </span>
-
+                    
                     {/* PredictMarkets */}
                     <div
                       className={`flex justify-center items-center !h-[50px] 
