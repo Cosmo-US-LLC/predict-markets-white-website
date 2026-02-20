@@ -1,21 +1,21 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { scrollToWallet } from '../../../lib/utils';
-import { cn } from '../../../lib/utils';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { scrollToWallet } from "../../../lib/utils";
+import { cn } from "../../../lib/utils";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '../../ui/carousel';
+} from "../../ui/carousel";
 
 export default function HowToBuy({
   steps = [],
-  title = 'How to Buy',
-  subtitle = 'Follow the guide below to purchase $PREDICT during the presale. The process supports both crypto and card payments and is designed to be quick, secure, and easy to follow.',
-  buyButtonText = 'BUY $PREDICT',
-  buyButtonLink = '#wallet',
+  title = "How to Buy",
+  subtitle = "Follow the guide below to purchase $PREDICT during the presale. The process supports both crypto and card payments and is designed to be quick, secure, and easy to follow.",
+  buyButtonText = "BUY $PREDICT",
+  buyButtonLink = "#wallet",
 }) {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
@@ -37,20 +37,22 @@ export default function HowToBuy({
   }
 
   return (
-    <section 
+    <section
       id="how-to-buy"
       className="bg-white py-12 md:py-20 relative overflow-hidden"
     >
-       <div style={{background: "radial-gradient(29.62% 41.65% at 50% 58.4%, rgba(0, 128, 237, 0.36) 0%, rgba(0, 128, 237, 0.00) 100%)"}} className="absolute top-0 left-0 w-full h-full z-0"></div>
+      <div
+        style={{
+          background:
+            "radial-gradient(29.62% 41.65% at 50% 58.4%, rgba(0, 128, 237, 0.36) 0%, rgba(0, 128, 237, 0.00) 100%)",
+        }}
+        className="absolute top-0 left-0 w-full h-full z-0"
+      ></div>
       <div className="max-w-[1280px] mx-auto px-4 md:px-8 relative z-10">
         {/* Header Section */}
         <div className="flex flex-col gap-[9px] items-center text-center mb-12 md:mb-12">
-          <h2 className="heading-two">
-            {title}
-          </h2>
-          <p className="paragraph-regular max-w-[933px]">
-            {subtitle}
-          </p>
+          <h2 className="heading-two">{title}</h2>
+          <p className="paragraph-regular max-w-[933px]">{subtitle}</p>
         </div>
 
         {/* Mobile Carousel */}
@@ -66,16 +68,18 @@ export default function HowToBuy({
             <CarouselContent className="-ml-3">
               {steps.map((step) => (
                 <CarouselItem key={step.id} className="pl-3">
-                  <div className="bg-white rounded-[10px] border-[1px] border-[#DDD] 
-                  p-4 flex flex-col gap-4 min-h-[343px]">
+                  <div
+                    className="bg-white rounded-[10px] border-[1px] border-[#DDD] 
+                  p-4 flex flex-col gap-4 min-h-[303px]"
+                  >
                     {/* Image Container */}
-                    <div className="h-[160px] rounded-[15px] overflow-hidden relative bg-gray-100">
+                    <div className="rounded-[15px] overflow-hidden relative bg-gray-100">
                       <img
                         src={step.image}
                         alt={step.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-fill"
                         onError={(e) => {
-                          e.target.style.display = 'none';
+                          e.target.style.display = "none";
                         }}
                       />
                     </div>
@@ -83,18 +87,18 @@ export default function HowToBuy({
                     {/* Text Content */}
                     <div className="flex flex-col gap-3">
                       {/* Step Indicator */}
-                     <div className="flex items-center gap-2">
-                     <div className="bg-white border border-[#0080ED] rounded-full px-3 py-[3px] w-fit">
-                        <span className="text-[#000] text-[12px] !leading-[12px] !font-medium">
-                          {step.stepNumber}
-                        </span>
-                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="bg-white border border-[#0080ED] rounded-full px-3 py-[3px] w-[64px]">
+                          <span className="text-[#000] text-[12px] !leading-[12px] !font-medium">
+                            {step.stepNumber}
+                          </span>
+                        </div>
 
-                      {/* Heading */}
-                      <h3 className="text-[#000] !font-[500]">
-                        {step.title}
-                      </h3>
-                     </div>
+                        {/* Heading */}
+                        <h3 className="text-[#000] !font-[500]">
+                          {step.title}
+                        </h3>
+                      </div>
 
                       {/* Description */}
                       <p className="text-[#000] text-sm leading-[22px] tracking-[0.28px]">
@@ -138,7 +142,7 @@ export default function HowToBuy({
                   alt={step.title}
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.target.style.display = 'none';
+                    e.target.style.display = "none";
                   }}
                 />
               </div>

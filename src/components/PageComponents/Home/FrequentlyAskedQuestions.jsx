@@ -62,13 +62,15 @@ export default function FrequentlyAskedQuestions() {
     <section className="bg-white py-12 md:py-20">
       <div className="max-w-[1280px] mx-auto md:px-8 px-4">
         {/* Header Section */}
-        <div className="flex flex-col gap-4 items-center text-center mb-12 md:mb-16">
+        <div className="flex flex-col md:gap-4 gap-3 items-center text-center mb-1 md:mb-16">
           <h2 className="heading-two capitalize text-[#000]">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#000] paragraph-regular !text-[20px] max-w-[812px]">
-            You may have questions, we have the answers.
+          <p className="text-[#000] paragraph-regular  md:!text-[20px] !text-[14px] max-w-[812px]">
+            You may have questions, <br className="md:hidden" /> we have the
+            answers.
           </p>
+          <div className="w-full my-5 md:my-0 h-[0.5px] bg-black/20 z-10 md:hidden"></div>
         </div>
 
         {/* FAQ Accordion */}
@@ -90,11 +92,13 @@ export default function FrequentlyAskedQuestions() {
                   </h4>
                   <span className="ml-4 shrink-0 text-black font-normal !text-[26px] !text-[#0080ED] leading-none">
                     <span className="group-data-[state=open]:hidden">+</span>
-                    <span className="hidden group-data-[state=open]:inline">−</span>
+                    <span className="hidden group-data-[state=open]:inline">
+                      −
+                    </span>
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="paragraph-regular !text-[14px] md:!text-[20px] !text-start text-[#000]">
+                  <p className="paragraph-regular !leading-[22px] md:!leading-[28px] !text-[12px] md:!text-[20px] !text-start text-[#000]">
                     {faq.answer}
                   </p>
                 </AccordionContent>

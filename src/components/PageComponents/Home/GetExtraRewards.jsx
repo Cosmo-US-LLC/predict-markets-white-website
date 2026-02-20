@@ -82,7 +82,7 @@ export default function GetExtraRewards({
           <div className="flex flex-col gap-6 flex-1 max-w-[597px] w-full">
             {/* Slider */}
             <div className="flex flex-col gap-10">
-              <div className="flex flex-col gap-8 max-w-[640px] w-full mb-0">
+              <div className="flex flex-col gap-8 md:max-w-[640px] max-w-[370px] w-full mb-0">
                 <h2 className="heading-two max-md:!text-center">{title}</h2>
                 <p className="paragraph-regular md:!text-start !text-center">
                   {subtitle}
@@ -93,7 +93,7 @@ export default function GetExtraRewards({
                   <p className="text-[#000] !font-[600] paragraph-medium">
                     {sliderLabel}
                   </p>
-                  <p className="text-[#000] !font-[600] paragraph-medium text-right">
+                  <p className="text-[#006AC6] !font-[600] paragraph-medium text-right">
                     {formatCurrency(sliderValueState)}
                   </p>
                 </div>
@@ -211,42 +211,77 @@ export default function GetExtraRewards({
                                   >
                                     {isIncluded ? (
                                       <>
-                                     <div className="p-[2px] bg-[#fff] rounded-[3.058px]">
-   <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="16"
-                                          height="16"
-                                          viewBox="0 0 16 16"
-                                          fill="none"
-                                        >
-                                          <path
-                                            d="M6.63362 12.7521C6.63183 12.7521 6.62974 12.7521 6.62795 12.7521C6.55389 12.7506 6.48402 12.7189 6.43385 12.6646L1.31386 7.09726C1.22607 7.00171 1.21801 6.85778 1.29475 6.75296C1.3715 6.64845 1.51125 6.61262 1.6289 6.66756L6.315 8.86176C6.35442 8.88027 6.401 8.87131 6.43116 8.83996L13.5793 1.36901C13.6761 1.26778 13.8343 1.25673 13.9442 1.34392C14.0541 1.43112 14.0795 1.58759 14.0027 1.70494L6.89222 12.5977C6.88207 12.6135 6.87012 12.6278 6.85698 12.6413L6.82563 12.6726C6.77457 12.7234 6.70529 12.7521 6.63362 12.7521Z"
-                                            fill="#0080ED"
-                                          />
-                                        </svg>
-                                     </div>
+                                        <div className="p-[2px] bg-[#fff] rounded-[3.058px]">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 16 16"
+                                            fill="none"
+                                          >
+                                            <path
+                                              d="M6.63362 12.7521C6.63183 12.7521 6.62974 12.7521 6.62795 12.7521C6.55389 12.7506 6.48402 12.7189 6.43385 12.6646L1.31386 7.09726C1.22607 7.00171 1.21801 6.85778 1.29475 6.75296C1.3715 6.64845 1.51125 6.61262 1.6289 6.66756L6.315 8.86176C6.35442 8.88027 6.401 8.87131 6.43116 8.83996L13.5793 1.36901C13.6761 1.26778 13.8343 1.25673 13.9442 1.34392C14.0541 1.43112 14.0795 1.58759 14.0027 1.70494L6.89222 12.5977C6.88207 12.6135 6.87012 12.6278 6.85698 12.6413L6.82563 12.6726C6.77457 12.7234 6.70529 12.7521 6.63362 12.7521Z"
+                                              fill="#0080ED"
+                                            />
+                                          </svg>
+                                        </div>
                                       </>
                                     ) : (
-                                    <>
-                                   <div className="bg-[#fff] rounded-[3.058px]">
-                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M6.10156 13.1169L13.1736 6.04688M6.10156 6.04688L13.1736 13.1169" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-                                   </div>
-                                    </>
+                                      <>
+                                        <div className="bg-[#fff] rounded-[3.058px]">
+                                          <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 20 20"
+                                            fill="none"
+                                          >
+                                            <path
+                                              d="M6.10156 13.1169L13.1736 6.04688M6.10156 6.04688L13.1736 13.1169"
+                                              stroke="black"
+                                              stroke-width="1.5"
+                                              stroke-linecap="round"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </>
                                     )}
                                   </div>
                                   <div className="flex gap-1 items-start flex-1">
                                     <h5 className="text-[#000] text-[14px] font-medium leading-[1.1]">
                                       {benefit}
                                     </h5>
-                                   <div className="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-<path d="M7.64453 4.93701V8.28146" stroke="black" stroke-width="1.14667" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M13.429 5.4659V9.82321C13.429 10.5367 13.0468 11.1992 12.4288 11.5623L8.64484 13.7474C8.02691 14.1041 7.26245 14.1041 6.63816 13.7474L2.85416 11.5623C2.23623 11.2056 1.854 10.5431 1.854 9.82321V5.4659C1.854 4.75241 2.23623 4.08987 2.85416 3.72676L6.63816 1.54173C7.25608 1.18498 8.02054 1.18498 8.64484 1.54173L12.4288 3.72676C13.0468 4.08987 13.429 4.74604 13.429 5.4659Z" stroke="black" stroke-width="1.14667" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7.64453 10.3201V10.3838" stroke="black" stroke-width="1.52889" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-                                   </div>
+                                    <div className="">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M7.64453 4.93701V8.28146"
+                                          stroke="black"
+                                          stroke-width="1.14667"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M13.429 5.4659V9.82321C13.429 10.5367 13.0468 11.1992 12.4288 11.5623L8.64484 13.7474C8.02691 14.1041 7.26245 14.1041 6.63816 13.7474L2.85416 11.5623C2.23623 11.2056 1.854 10.5431 1.854 9.82321V5.4659C1.854 4.75241 2.23623 4.08987 2.85416 3.72676L6.63816 1.54173C7.25608 1.18498 8.02054 1.18498 8.64484 1.54173L12.4288 3.72676C13.0468 4.08987 13.429 4.74604 13.429 5.4659Z"
+                                          stroke="black"
+                                          stroke-width="1.14667"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M7.64453 10.3201V10.3838"
+                                          stroke="black"
+                                          stroke-width="1.52889"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
                                   </div>
                                 </div>
                               );
