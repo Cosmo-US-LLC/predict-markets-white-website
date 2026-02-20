@@ -180,7 +180,7 @@ export default function HowToBuy({
           </button>
           <Link
             to="/support"
-            className="btn_secondary !max-w-[285px] md:!py-[21px] md:!px-[3px] !w-full sm:w-auto "
+            className="btn_secondary md:!max-w-[285px] max-w-[100%] md:!py-[21px] md:!px-[3px] !w-full sm:w-auto "
           >
             Need Support?
           </Link>

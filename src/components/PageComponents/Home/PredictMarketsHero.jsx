@@ -30,7 +30,7 @@ export default function PredictMarketsHero({
   return (
     <section
       id="wallet"
-      className="relative bg-[#fff] w-full overflow-hidden min-h-screen flex items-center justify-center py-12 md:pt-6 md:pb-6"
+      className="relative bg-[#fff] max-md:border-b-[1px] max-md:border-[#ddd] w-full overflow-hidden min-h-screen flex items-center justify-center py-12 md:pt-6 md:pb-6"
     >
       {/* Background Image - Mobile */}
       <div

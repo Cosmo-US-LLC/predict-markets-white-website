@@ -76,7 +76,7 @@ export default function PredictsTheFeatures({
       >
         {/* Header */}
         <div className="flex flex-col gap-2 md:gap-[8px] items-center text-center max-w-[834px]">
-          <h2 className="heading-two text-[#000]  max-w-[800px]">
+          <h2 className="heading-two text-[#000]  md:max-w-[800px] max-w-[300px]">
              {title}
           </h2>
           <p className="text-[#000] paragraph-regular">

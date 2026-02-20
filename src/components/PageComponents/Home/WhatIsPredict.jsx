@@ -96,9 +96,9 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
         </div>
 
         {/* Right Visual Content */}
-        <div className=" w-full z-10 flex items-center justify-center">
-          <div className=" !w-full md:absolute -bottom-30 md:-mr-8 flex items-center 
-          justify-center md:!min-w-[720px]  ">
+        <div className=" w-full z-10 flex items-center max-md:h-[420px] justify-center">
+          <div className=" !w-full md:absolute absolute -bottom-3  md:-bottom-30 md:-mr-8 flex items-center 
+          justify-center md:!min-w-[720px] min-w-[460px] ">
             <img
               src={coinImage}
               alt="PredictMarkets Coin"

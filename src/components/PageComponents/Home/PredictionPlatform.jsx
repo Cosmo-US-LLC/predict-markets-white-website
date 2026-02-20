@@ -55,16 +55,19 @@ export default function PredictionPlatform({
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col items-center justify-center gap-[16px] pt-[2px] sm:flex-row">
+            <div className="flex flex-col items-center justify-center
+             gap-[16px] pt-[2px] sm:flex-row max-md:w-[80%]">
               <button
                 onClick={scrollToWallet}
-                className="btn_primary w-[221px] !px-1 "
+                className="btn_primary !w-full md:w-[221px] !px-1 "
               >
                 {buyButtonText}
               </button>
               <Link
                 to={supportButtonLink}
-                className="flex w-[221px] items-center md:!text-[18px] !text-[14px] justify-center gap-2.5 rounded-full border border-black bg-transparent px-[13px] py-[20px] transition-colors hover:bg-black/5"
+                className="flex md:w-[221px] !w-full items-center md:!text-[18px] !text-[18px]
+                 justify-center gap-2.5 rounded-full border border-black bg-transparent 
+                 md:px-[13px] py-[12px] md:py-[20px] transition-colors hover:bg-black/5"
               >
                 <img
                   src={liveIndicatorDot}
@@ -77,7 +80,7 @@ export default function PredictionPlatform({
                 />
                 <Circle className="w-[10px] h-[10px] fill-green-500 text-green-500 hidden shrink-0" />
                 <span
-                  className="whitespace-nowrap md:text-base !text-[14px] font-medium leading-6 capitalize text-black"
+                  className="whitespace-nowrap md:text-base !text-[18px] font-medium leading-6 capitalize text-black"
                   dangerouslySetInnerHTML={{ __html: supportButtonText }}
                 ></span>
               </Link>
