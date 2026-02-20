@@ -34,13 +34,13 @@ export default function WhatSetsUsApart({
               background: "rgba(255, 255, 255, 0.80)",
             }}
           >
-            <div className="min-w-[862px] max-w-[862px] mx-auto pb-8">
+            <div className="min-w-[862px] pt-6 max-w-[862px] mx-auto pb-8">
               {/* Header */}
               <div className=" border-b border-gray-300 ">
                 <div className="grid grid-cols-4 gap-4 items-center">
                   <div />
                   {/* PredictMarkets */}
-                  <div className="pt-[40px] pb-[20px] flex flex-col items-center gap-2 bg-white">
+                  <div className="pt-[40px] rounded-t-[15px] border  !border-b-[0px] border-gray-300 pb-[20px] flex flex-col items-center gap-2 bg-white">
                     <div className="w-[45px] h-[45px]">
                       <img
                         src={platforms?.predictMarkets?.icon}
@@ -97,7 +97,7 @@ export default function WhatSetsUsApart({
                     {/* PredictMarkets */}
                     <div
                       className={`flex justify-center items-center !h-[50px] 
-                    bg-white ${index < tableData.length - 1 ? "border-b border-gray-200" : ""}`}
+                    bg-white ${index < tableData.length - 1 ? "border  !border-t-[0px] border-gray-300" : "border  !border-t-[0px] border-gray-300 rounded-b-[15px]"}`}
                     >
                       {typeof row.predictMarkets === "boolean" ? (
                         row.predictMarkets ? (

@@ -43,8 +43,7 @@ export default function MarketOpportunity({
         <div
           className="bg-white rounded-2xl md:rounded-[44px]
          w-full max-w-[1220px] overflow-hidden flex flex-col lg:flex-row 
-         gap-8 md:gap-[18px] items-center px-6 md:px-[80px] py-8 md:py-[32px] border-[1px] border-[#DDD]"
-        >
+         gap-8 md:gap-[12px] items-center px-6 md:px-[80px] py-8 md:py-[32px] border-[1px] border-[#DDD]">
           {/* Left Side - Chart */}
           <div className="relative md:h-[487px] h-[377px] w-full lg:w-[426px] flex-shrink-0">
             {/* Chart Image */}
@@ -84,7 +83,7 @@ export default function MarketOpportunity({
           <div className="w-full h-[0.5px] bg-black/20 z-10 md:hidden"></div>
 
           {/* Right Side - Content */}
-          <div className="flex flex-col gap-8 md:gap-12 flex-1 max-w-[628px]">
+          <div className="flex flex-col md:border-l-[1px] md:border-[#ddd] md:pl-[30px] gap-8 md:gap-12 flex-1 max-w-[628px]">
             {/* Text Content */}
             <div className="flex flex-col gap-4 text-center md:text-left">
               <h2 className="heading-two text-[#000] max-md:max-w-[200px] mx-auto max-md:!text-center font-bold">

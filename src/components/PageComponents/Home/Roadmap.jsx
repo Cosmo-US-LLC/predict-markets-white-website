@@ -32,7 +32,7 @@ export default function Roadmap({
   }
 
   return (
-    <section className="bg-[#F7FCFF] py-12 md:py-[60px]">
+    <section id="roadmap" className="bg-[#F7FCFF] py-12 md:py-[60px]">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="flex flex-col gap-[14px] items-center mb-8 md:mb-12">
