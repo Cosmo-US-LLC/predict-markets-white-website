@@ -3,6 +3,8 @@ import { ArrowRight, Send } from "lucide-react";
 import { cn } from "../../../lib/utils";
 import socialsAwarenessCard1 from "../../../assets/images/home/socials_awareness/socials_awareness_card1.webp";
 import socialsAwarenessCard2 from "../../../assets/images/home/socials_awareness/socials_awareness_card2.webp";
+import socialsAwarenessMobileCard1 from "../../../assets/images/home/socials_awareness/socials_awareness_mobile_card1.webp";
+import socialsAwarenessMobileCard2 from "../../../assets/images/home/socials_awareness/socials_awareness_mobile_card2.webp";
 
 const heroCards = [
   {
@@ -10,6 +12,7 @@ const heroCards = [
     title: "Whitepaper",
     buttonText: "Read Here",
     image: socialsAwarenessCard1,
+    mobileImage: socialsAwarenessMobileCard1,
     link: "/whitepaper",
   },
   {
@@ -17,6 +20,7 @@ const heroCards = [
     title: "How to Buy",
     buttonText: "Learn More",
     image: socialsAwarenessCard2,
+    mobileImage: socialsAwarenessMobileCard2,
     link: "/how-to-buy",
   },
 ];
@@ -62,7 +66,15 @@ export default function SocialsAwareness() {
                   <img
                     src={card.image}
                     alt={card.title}
-                    className="h-full w-full object-cover opacity-90"
+                    className="h-full w-full object-cover opacity-90 max-md:hidden"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                    }}
+                  />
+                  <img
+                    src={card.mobileImage}
+                    alt={card.title}
+                    className="h-full w-full object-cover opacity-90 md:hidden"
                     onError={(e) => {
                       e.target.style.display = "none";
                     }}

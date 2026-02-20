@@ -16,19 +16,22 @@ export default function ExclusivePresaleBenefits({
       id: 2,
       icon: laptopImage,
       title: "Priority Access To Platform Features",
-      description: "Early holders gain exclusive memberships with priority access to higher APY USDT staking pools and Key Features at launch.",
+      description:
+        "Early holders gain exclusive memberships with priority access to higher APY USDT staking pools and Key Features at launch.",
     },
     {
       id: 3,
       icon: treasureChestImage,
       title: "Receive Up To 40% Platform Credits",
-      description: "Get up to 40% of your purchase value in free credits to place predictions on PredictMarkets, with no strings attached.",
+      description:
+        "Get up to 40% of your purchase value in free credits to place predictions on PredictMarkets, with no strings attached.",
     },
     {
       id: 4,
       icon: diamondImage,
       title: "$250K Giveaway Participation",
-      description: "Participate in our $250k giveaway and go all out to win big. This event is exclusively available for presale $PREDICT buyers.",
+      description:
+        "Participate in our $250k giveaway and go all out to win big. This event is exclusively available for presale $PREDICT buyers.",
     },
   ],
 }) {
@@ -40,7 +43,7 @@ export default function ExclusivePresaleBenefits({
     <section className="bg-white py-12 md:py-[60px]">
       <div className="max-w-[1280px] mx-auto px-4 md:px-8">
         {/* Title */}
-        <h2 className="heading-two mb-8 !text-center">
+        <h2 className="heading-two mb-8 md:max-w-[700px] max-w-[240px] mx-auto !text-center">
           {title}
         </h2>
 
@@ -59,14 +62,14 @@ export default function ExclusivePresaleBenefits({
                   alt=""
                   className=""
                   onError={(e) => {
-                    e.target.style.display = 'none';
+                    e.target.style.display = "none";
                   }}
                 />
               </div>
 
               {/* Content */}
               <div className="flex flex-col gap-3 items-center text-center w-full max-md:max-w-[290px] mx-auto">
-                <h3 className="heading-four !leading-[140%] capitalize">
+                <h3 className="heading-four md:max-w-[290px] max-w-[190px] !leading-[140%] capitalize">
                   {benefit.title}
                 </h3>
                 {/* Divider Line */}

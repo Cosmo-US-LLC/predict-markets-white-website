@@ -45,7 +45,7 @@ export default function Roadmap({
         </div>
 
         {/* Carousel */}
-        <div className="relative">
+        <div className="relative flex flex-col gap-4 md:gap-0">
           <Carousel
             setApi={setApi}
             opts={{
@@ -58,12 +58,12 @@ export default function Roadmap({
               {roadmapItems.map((item) => (
                 <CarouselItem
                   key={item.id}
-                  className="pl-2 md:pl-4 basis-full md:basis-[400px]"
+                  className="pl-2 md:pl-4 basis-[350px] md:basis-[400px]"
                 >
-                  <div className="flex md:h-[498px] h-[470px] flex-col gap-[20px] rounded-[15px] border border-[#dddddd] bg-white px-4 py-8 md:px-4 md:py-8">
+                  <div className="flex md:h-[498px] h-[450px] flex-col md:gap-[20px] gap-[12px] rounded-[15px] border border-[#dddddd] bg-white px-4 py-4 md:px-4 md:py-8">
                     {/* Header */}
                     <div className="flex items-center justify-between">
-                      <h3 className="heading-three capitalize whitespace-pre-line text-black">
+                      <h3 className="heading-three !text-[24px] capitalize whitespace-pre-line text-black">
                         {item.title}
                       </h3>
                       <div
@@ -78,7 +78,7 @@ export default function Roadmap({
                       >
                         <span
                           className={cn(
-                            "text-[12px] font-normal leading-[18px] tracking-[0.24px]",
+                            "text-[14px] font-normal leading-[18px] tracking-[0.24px]",
                             item.statusType === "completed"
                               ? "text-white"
                               : "text-black",
@@ -88,14 +88,18 @@ export default function Roadmap({
                         </span>
                       </div>
                     </div>
-                    <hr className="w-full pb-0 border-t border-[#dddddd]" />
+                    <hr className="w-full mt-2 pb-0 border-t border-[#dddddd]" />
                     {/* Items List */}
 
-                    <div className="flex flex-col ">
+                    <div className="flex flex-col">
                       {item.items.map((listItem, index) => (
                         <div
                           key={index}
-                          className={cn("flex flex-row gap-3 items-start py-[17px]", index !== item.items.length - 1 && "border-b border-[#dddddd]")}
+                          className={cn(
+                            "flex flex-row gap-3 items-start md:py-[17px] py-[14px]",
+                            index !== item.items.length - 1 &&
+                              "border-b border-[#dddddd]",
+                          )}
                         >
                           {/* Checkmark or Empty */}
                           <div className="mt-[3px]">
@@ -123,7 +127,7 @@ export default function Roadmap({
               ))}
             </CarouselContent>
 
-            {/* Custom Arrow Buttons */}
+            {/* Desktop: Arrow Buttons on sides */}
             <div className="hidden md:block absolute -left-[70px] top-1/2 -translate-y-1/2">
               <CarouselLeftArrow
                 onClick={() => api?.scrollPrev()}
@@ -137,6 +141,18 @@ export default function Roadmap({
               />
             </div>
           </Carousel>
+
+          {/* Mobile: Arrow Buttons below the card */}
+          <div className="flex md:hidden items-center justify-center gap-4 pt-2">
+            <CarouselLeftArrow
+              onClick={() => api?.scrollPrev()}
+              disabled={!canScrollPrev}
+            />
+            <CarouselRightArrow
+              onClick={() => api?.scrollNext()}
+              disabled={!canScrollNext}
+            />
+          </div>
         </div>
       </div>
     </section>

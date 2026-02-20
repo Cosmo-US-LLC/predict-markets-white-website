@@ -12,17 +12,17 @@ const quickLinks = [
     isHash: true,
     scrollId: "how-to-buy",
   },
-  { 
-    label: "Roadmap", 
-    path: "/#roadmap", 
-    isHash: true, 
-    scrollId: "roadmap" 
+  {
+    label: "Roadmap",
+    path: "/#roadmap",
+    isHash: true,
+    scrollId: "roadmap",
   },
-  { 
-    label: "Token Allocation", 
-    path: "/#token-allocation", 
-    isHash: true, 
-    scrollId: "token-allocation" 
+  {
+    label: "Token Allocation",
+    path: "/#token-allocation",
+    isHash: true,
+    scrollId: "token-allocation",
   },
   {
     label: "What is PredictMarkets",
@@ -213,14 +213,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Section - Copyright and Cookie Management */}
-        <div className="flex flex-col md:flex-row items-center justify-between md:gap-4 gap-2 text-[14px] md:text-base text-center md:text-left leading-[22px] md:leading-6 tracking-[0.28px] md:tracking-[0.32px] text-black">
+        <div className="flex flex-col md:flex-row items-center justify-between md:gap-4 gap-2 text-[14px] md:text-base text-center md:text-center leading-[22px] md:leading-6 tracking-[0.28px] md:tracking-[0.32px] text-black">
           <p>
             Copyright {currentYear}. PredictMarkets,{" "}
             <br className="md:hidden" /> All Rights Reserved.
           </p>
           <Link
             to="/cookie-management"
-            className="hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity max-md:hidden"
           >
             Cookie Management
           </Link>

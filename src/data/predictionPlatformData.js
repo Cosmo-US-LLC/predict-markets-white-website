@@ -3,7 +3,7 @@ export const predictionPlatformConfig = {
   subtitle:
     "Buy $PREDICT now and get early access benefits before the public launch begins.",
   buyButtonText: "BUY $PREDICT",
-  supportButtonText: "24/7 Live Support <u>Here</u>",
+  supportButtonText: "24/7 Live Support <u>here</u>",
   buyButtonLink: "#wallet",
   supportButtonLink: "/support",
 };
