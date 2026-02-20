@@ -150,37 +150,9 @@ font-family: Inter;
     #020b10;
 }
 
-/* Button Classes */
-.btn_primary_nav {
-  position: relative;
-  display: flex;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 100px;
-  background: #0080ed;
-  color: #fff;
-  text-align: center;
-  font-family:
-    "Helvetica Neue Medium Extended",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
 .btn_primary {
   padding: 20px 60px;
  position: relative;
-  border-radius: 152.889px;
    color: #fff;
   text-align: center;
   font-family:
@@ -190,14 +162,14 @@ font-family: Inter;
     "Segoe UI",
     sans-serif;
   font-size: 18px;
+   border-radius: 100px;
+  background: #0080ed;
   border: none;
   cursor: pointer;
-  background: transparent;
   outline: none;
-   filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.btn_primary::before {
+/* .btn_primary::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -205,8 +177,8 @@ font-family: Inter;
   background: linear-gradient(0deg, #0080ED 0%, #0080ED 100%);
   filter: blur(7.644444px);
   z-index: -1;
-}
-.btn_primary::after {
+} */
+/* .btn_primary::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -216,7 +188,7 @@ font-family: Inter;
     0 -1.529px 3.058px 0 #F5E99C inset,
     0 1.529px 3.058px 0 #F5E99C inset;
   z-index: 1;
-}
+} */
 
 .btn_primary:hover {
   background: #0080ed;

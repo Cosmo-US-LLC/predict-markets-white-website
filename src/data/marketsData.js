@@ -64,7 +64,7 @@ export const marketsData = [
   {
     id: 6,
     title: "Technology",
-    description: "Prediction markets focused on the most talked-about events shaping global attention right now.",
+    description: "AI advances, hardware and product launches, major tech earnings, and the milestones shaping the tech industry.",
     image: techImage,
     iconBackground: marketIcon6,
     // iconImage: marketIcon6,
