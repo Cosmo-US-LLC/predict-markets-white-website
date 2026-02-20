@@ -18,8 +18,12 @@ export default function TokenDetails({
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-12 px-4 md:py-20 md:px-8 lg:px-[80px]">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-6 md:gap-12">
+    <section id="tokenomics" className="relative overflow-hidden bg-white py-12 px-4 md:py-20 md:px-8 lg:px-[80px]
+    ">
+
+      <div className="max-w-[1280px] mx-auto flex flex-col gap-6 md:gap-12"
+      
+      >
         {/* Header */}
         <div className="flex flex-col items-center gap-2 text-center">
           <h2 className="text-[28px] md:text-[45px] font-medium leading-[53px] tracking-[-2px] capitalize text-black">
@@ -31,7 +35,13 @@ export default function TokenDetails({
         </div>
 
         {/* Chart (optional) */}
-        <div className="mx-auto flex md:h-[442px] h-[200px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white ">
+        <div className="mx-auto flex md:h-[442px] h-[200px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white "
+         style={{
+          borderRadius: "15px",
+          background:
+            "radial-gradient(41.18% 41.18% at 50% 58.84%, rgba(0, 128, 237, 0.50) 0%, rgba(255, 255, 255, 0.50) 70%)",
+        }}
+        >
           <div className="relative hidden h-[422px] w-full max-w-full md:block">
             <h4 className="heading-four absolute left-[36%] top-[8px] text-black">
               1% Marketing
@@ -193,15 +203,15 @@ export default function TokenDetails({
                   index === details.length - 6 ? "md:col-span-3" : ""
                 }`}
               >
-                <span className="font-normal text-[rgba(0,0,0,0.7)] md:text-[16px] text-[12px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.24px]">
+                <span className="font-normal text-[rgba(0,0,0,0.7)] md:text-[18px] text-[12px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.24px]">
                   {item.label}
                 </span>
                 <div className="flex items-center md:gap-3 gap-2">
                   <span
                     className={`leading-6 tracking-[0.32px] text-black ${
                       item.value.length > 40
-                        ? "text-[14px] md:text-base font-medium"
-                        : "text-base font-semibold"
+                        ? "text-[14px] md:text-[18px]  font-medium"
+                        : "md:text-[18px]  font-semibold"
                     }`}
                   >
                     {item.valueForMobile ? item.valueForMobile : item.value}

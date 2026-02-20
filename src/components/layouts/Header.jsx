@@ -11,8 +11,7 @@ import { scrollToWallet } from '../../lib/utils';
 const navLinks = [
   { label: 'What is PredictMarkets?', path: '/#what-is-predictmarkets', isHash: true, scrollId: 'what-is-predictmarkets' },
   { label: 'How to Buy', path: '/#how-to-buy', isHash: true, scrollId: 'how-to-buy' },
-  { label: 'Whitepaper', path: '/whitepaper' },
-  { label: 'Referral', path: '/referral' },
+  { label: 'Tokenomics', path: '/#tokenomics', isHash: true, scrollId: 'tokenomics' },
   { label: 'Win $250K', path: '/win-250k' },
 ];
 
@@ -79,7 +78,12 @@ export function Header() {
                   e.preventDefault();
                   const element = document.getElementById(link.scrollId);
                   if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const offset = 80;
+                    const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: 'smooth',
+                    });
                   }
                 }}
               >
@@ -174,7 +178,12 @@ export function Header() {
                             e.preventDefault();
                             const element = document.getElementById(link.scrollId);
                             if (element) {
-                              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              const offset = 80;
+                              const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;
+                              window.scrollTo({
+                                top: elementPosition,
+                                behavior: 'smooth',
+                              });
                             }
                           }}
                         >

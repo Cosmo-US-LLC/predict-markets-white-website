@@ -18,11 +18,11 @@ const quickLinks = [
     isHash: true,
     scrollId: "roadmap",
   },
-  {
-    label: "Token Allocation",
-    path: "/#token-allocation",
-    isHash: true,
-    scrollId: "token-allocation",
+  { 
+    label: "Token Allocation", 
+    path: "/#tokenomics", 
+    isHash: true, 
+    scrollId: "tokenomics" 
   },
   {
     label: "What is PredictMarkets",
@@ -95,9 +95,11 @@ export function Footer() {
                         e.preventDefault();
                         const element = document.getElementById(link.scrollId);
                         if (element) {
-                          element.scrollIntoView({
+                          const offset = 80;
+                          const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;
+                          window.scrollTo({
+                            top: elementPosition,
                             behavior: "smooth",
-                            block: "start",
                           });
                         }
                       }}
