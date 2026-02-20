@@ -373,7 +373,7 @@ export default function PresaleDashboard({
         <div>
           <label className="block text-sm font-bold text-gray-800 mb-1">
             You Receive PREDICT +{" "}
-            <Link to="/nft" className="text-[#0080ED] hover:underline">
+            <Link to="" className="text-[#0080ED] underline">
               Bronze NFT
             </Link>
           </label>

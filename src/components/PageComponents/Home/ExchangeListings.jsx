@@ -26,7 +26,7 @@ export default function ExchangeListings({
                 src={exchange.logo}
                 alt={exchange.name}
                 className={`w-auto object-contain ${
-                  index === 0 ? "h-6 md:h-10" : "h-6 md:h-12"
+                  index === 0 ? "h-6 md:h-10" : "h-[60px] md:h-12"
                 }`}
                 onError={(e) => {
                   e.target.style.display = 'none';

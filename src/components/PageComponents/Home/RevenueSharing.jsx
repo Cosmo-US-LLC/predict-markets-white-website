@@ -15,7 +15,7 @@ export default function RevenueSharing({
 
   return (
     <section className="relative w-full overflow-hidden bg-[#FAF9F9] md:bg-white  
-    py-12 md:py-[60px] flex items-center justify-center px-2 md:px-0">
+    py-12 md:py-[60px] flex items-center justify-center px-4 md:px-0">
       {/* Background Image */}
       <div className="absolute md:block hidden w-full h-full">
         <img
@@ -37,8 +37,11 @@ export default function RevenueSharing({
         {/* Left Content */}
         <div className="flex flex-col gap-6 items-start z-10 flex-1 !w-full max-w-[690px] md:min-w-[690px] ">
           {/* Title */}
-          <h2 className="heading-two max-md:text-center">
+          <h2 className="heading-two flex max-md:hidden max-md:text-center">
             {title}
+          </h2>
+          <h2 className="heading-two max-md:flex hidden max-md:text-center">
+          Revolutionary Revenue Sharing System
           </h2>
 
           {/* Description - Split into paragraphs */}
@@ -80,8 +83,9 @@ export default function RevenueSharing({
           
 
           {/* Coins Foreground */}
-          <div className="absolute max-md:z-[9] md:right-[-80px] right-[4px] md:top-[-0px] top-[12px]
-           md:min-w-[600.38px] md:max-w-[600.38px] max-md:!max-h-[200px] w-full pointer-events-none">
+          <div className="absolute max-md:z-[9] md:right-[-80px] right-[-25px] md:top-[-0px]
+          top-[-20px]
+           md:min-w-[600.38px] md:max-w-[600.38px] max-md:min-w-[400px] max-md:!max-h-[200px] w-full pointer-events-none">
             <img
               src={coinsImage}
               alt=""

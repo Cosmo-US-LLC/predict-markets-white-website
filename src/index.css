@@ -356,6 +356,12 @@ text-transform: capitalize !important;
 font-family: Inter;
 
 }
+.btn_secondary{
+  padding: 12px 24px !important;
+}
+.btn_primary {
+  padding: 12px 24px !important;
+}
 
 /* Mobile gradient text for hero title */
 @media (max-width: 767px) {

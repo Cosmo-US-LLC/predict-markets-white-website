@@ -25,47 +25,49 @@ export default function HowItWorks({
 
         {/* Flow Diagram Container */}
         <div className="relative w-full max-w-[807px] mx-auto max-md:hidden">
-          {/* <h4 className="absolute paragraph-medium top-[22%] left-[38%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
+          <h4 className="absolute paragraph-medium top-[21%] left-[35%] z-10 max-w-[250px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
             PredictMarkets generates daily revenue from  trading fees
           </h4>
-          <h4 className="absolute paragraph-medium top-[20%] text-[#000] left-[63%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">Buys back</h4>
-          <h4 className="absolute paragraph-medium top-[55%] left-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
+          <h4 className="absolute paragraph-medium top-[20%] text-[#000] left-[74%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">Buys back</h4>
+          <h4 className="absolute paragraph-medium top-[55%] left-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
             $PREDICT  Price Goes Up
           </h4>
-          <h4 className="absolute paragraph-medium top-[47%] text-[#000] left-[54%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Burns</h4> */}
+          <h4 className="absolute paragraph-medium top-[45%] text-[#000] left-[47%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Burns</h4>
           <img src={howItWorksBg} alt="How It Works" className="w-full h-full object-cover" />
-          {/* <h4 className="absolute paragraph-medium bottom-[4%] left-[38%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
+          <h4 className="absolute paragraph-medium bottom-[4%] left-[35%] z-10 max-w-[250px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
             $PREDICT Holders get daily passive USDT staking income
           </h4>
-          <h4 className="absolute paragraph-medium top-[76%] text-[#000] left-[63%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Rewards</h4>
-          <h4 className="absolute paragraph-medium top-[56%] -right-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:text-[20px] font-medium leading-[28px] w-full whitespace-pre-wrap">
+          <h4 className="absolute paragraph-medium top-[76%] text-[#000] left-[60%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Rewards</h4>
+          <h4 className="absolute paragraph-medium top-[56%] -right-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
             $PREDICT
-          </h4> */}
+          </h4>
         </div>
 
-        <div className="relative flex justify-center h-full md:hidden">
-          {/* <h4 className="absolute top-[14.5%] left-[23.5%] max-w-[160px] z-10 text-center text-[#000] text-[14px] font-medium leading-[18px] w-full whitespace-pre-wrap">
+        <div className="relative max-w-[370px] mx-auto flex justify-center h-full md:hidden">
+          <h4 className="absolute top-[17.5%] left-[30.5%] max-w-[160px] z-10 text-center text-[#000] text-[10px] font-medium leading-[130%] w-full whitespace-pre-wrap">
             PredictMarkets generates daily revenue from trading fees
           </h4>
-          <h4 className="absolute top-[21%] left-[86.5%] max-w-[60px] z-10 text-center text-[#000] text-[14px] font-medium leading-[18px] w-full whitespace-pre-wrap">
+          <h4 className="absolute top-[30%] left-[86.5%] max-w-[60px] z-10 text-center text-[#000] text-[10px] font-medium leading-[130%] w-full whitespace-pre-wrap">
             Buys back
           </h4>
-          <h4 className="absolute top-[47%] left-[2%] z-10 max-w-[80px] text-center text-[#000] text-[13px] font-medium leading-[18px] w-full whitespace-pre-wrap">
+          <h4 className="absolute top-[55%] left-[2%] z-10 max-w-[80px] text-center text-[#000] 
+          text-[10px] font-medium leading-[130%] w-full whitespace-pre-wrap">
             $PREDICT Price Goes Up
           </h4>
-          <h4 className="absolute top-[57%] left-[35.5%] max-w-[90px] z-10 text-center text-[#000] text-[14px] font-medium leading-[18px] w-full whitespace-pre-wrap">
+          <h4 className="absolute top-[47%] left-[51.5%] max-w-[90px] z-10 text-center text-[#000] text-[10px] font-medium leading-[130%] w-full whitespace-pre-wrap">
             50% Burns
           </h4>
-          <img src={howItWorksBgMobile} alt="How It Works" className="w-full h-full object-cover" />
-          <h4 className="absolute bottom-[6%] left-[28.5%] z-10 max-w-[130px] text-center text-[#000] text-[13px] font-medium leading-[18px] w-full whitespace-pre-wrap">
+          {/* <img src={howItWorksBgMobile} alt="How It Works" className="w-full h-full object-cover" /> */}
+          <h4 className="absolute bottom-[4%] left-[31.5%] z-10 max-w-[130px] 
+          text-center text-[#000] text-[10px] font-medium leading-[130%] w-full whitespace-pre-wrap">
             $PREDICT Holders get daily passive USDT staking income
           </h4>
-          <h4 className="absolute bottom-[32%] left-[61.5%] text-right max-w-[60px] z-10 text-[#000] text-[14px] font-medium leading-[18px] w-full whitespace-pre-wrap">
+          <h4 className="absolute bottom-[30%] left-[69.5%] text-right max-w-[60px] z-10 text-[#000] text-[10px] font-medium leading-[130%] w-full whitespace-pre-wrap">
             50% Rewards
           </h4>
-          <h4 className="absolute top-[46%] -right-[2%] z-10 max-w-[100px] text-center text-[#000] text-[13px] font-medium leading-[18px] w-full whitespace-pre-wrap">
+          <h4 className="absolute top-[53%] -right-[2%] z-10 max-w-[100px] text-center text-[#000] text-[10px] font-medium leading-[18px] w-full whitespace-pre-wrap">
             $PREDICT
-          </h4> */}
+          </h4>
           <img src={howItWorksBgMobile} alt="How It Works" className="w-full h-full object-cover" />
         </div>
 
