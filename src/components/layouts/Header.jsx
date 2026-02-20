@@ -124,7 +124,7 @@ export function Header() {
           {/* Buy Button */}
           <Button
             asChild
-            className="btn_primary_nav"
+            className="btn_primary !px-[24px] !text-[16px] !py-[12px]"
           >
             <Link to="/buy">BUY $PREDICT</Link>
           </Button>
