@@ -48,7 +48,7 @@ export default function Markets({
 
   return (
     <section className="w-full bg-[#F7FCFF] py-12 md:py-[60px]">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-12">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-2 flex flex-col gap-12">
         {/* Header */}
         <div className="flex items-start justify-between w-full">
           <h2 className="heading-two">

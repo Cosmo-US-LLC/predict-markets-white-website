@@ -116,11 +116,11 @@ export default function TokenDetails({
                   key={item.id}
                   className="flex flex-col gap-2 rounded-[15px] border border-[#dddddd] bg-white p-3 md:p-5"
                 >
-                  <span className="font-normal   text-[rgba(0,0,0,0.7)] md:text-[16px] text-[12px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.24px]">
+                  <span className="font-normal   text-[rgba(0,0,0,0.7)] md:text-[16px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.24px]">
                     {item.label}
                   </span>
                   <div className="flex items-center gap-3">
-                    <span className="font-medium  text-black md:text-[18px] text-[14px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.28px]">
+                    <span className="font-medium  text-black md:text-[18px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.28px]">
                       {item.value}
                     </span>
                     {item.copyable && (
@@ -159,11 +159,11 @@ export default function TokenDetails({
                     key={item.id}
                     className="flex flex-col gap-2 rounded-[15px] border border-[#dddddd] bg-white p-3 md:p-5"
                   >
-                    <span className="font-normal text-[rgba(0,0,0,0.7)] md:text-[16px] text-[12px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.24px]">
+                    <span className="font-normal text-[rgba(0,0,0,0.7)] md:text-[16px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.24px]">
                       {item.label}
                     </span>
                     <div className="flex items-center gap-3">
-                      <span className="font-medium font-[Inter] text-black md:text-[18px] text-[14px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.28px]">
+                      <span className="font-medium font-[Inter] text-black md:text-[18px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.28px]">
                         {item.value}
                       </span>
                       {item.copyable && (
@@ -203,14 +203,14 @@ export default function TokenDetails({
                   index === details.length - 6 ? "md:col-span-3" : ""
                 }`}
               >
-                <span className="font-normal text-[rgba(0,0,0,0.7)] md:text-[18px] text-[12px] md:leading-[24px] leading-[22px] md:tracking-[0.32px] tracking-[0.24px]">
+                <span className="font-normal text-[rgba(0,0,0,0.7)] md:text-[18px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.24px]">
                   {item.label}
                 </span>
                 <div className="flex items-center md:gap-3 gap-2">
                   <span
                     className={`leading-6 tracking-[0.32px] text-black ${
                       item.value.length > 40
-                        ? "text-[14px] md:text-[18px]  font-medium"
+                        ? "text-[12px] md:text-[18px]  font-medium"
                         : "md:text-[18px]  font-semibold"
                     }`}
                   >

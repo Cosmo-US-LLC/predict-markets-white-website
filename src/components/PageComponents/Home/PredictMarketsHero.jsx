@@ -30,7 +30,7 @@ export default function PredictMarketsHero({
   return (
     <section
       id="wallet"
-      className="relative bg-[#fff] max-md:border-b-[1px] max-md:border-[#ddd] w-full overflow-hidden min-h-screen flex items-center justify-center py-12 md:pt-6 md:pb-6"
+      className="relative bg-[#fff] max-md:border-b-[1px] max-md:border-[#ddd] w-full overflow-hidden min-h-screen flex items-center predict_hero_bg justify-center py-12 md:pt-6 md:pb-6"
     >
       {/* Background Image - Mobile */}
       <div
@@ -40,26 +40,26 @@ export default function PredictMarketsHero({
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          height: '770px',
+          height: '750px',
         }}
       ></div>
 
       {/* Background Image - Desktop */}
-      <div
-        className="hidden md:block absolute inset-0 w-full h-full z-0"
+      {/* <div
+        className="hidden md:block absolute bottom-0 inset-0 w-full h-full z-0"
         style={{
           backgroundImage: `url(${predictHeroBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
-      ></div>
+      ></div> */}
 
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-8">
+      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-2">
         {/* Two Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 ">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-2 ">
           {/* Left Section - Content Area */}
-          <div className="flex-1 w-full lg:max-w-[665px]">
+          <div className="flex-1 w-full lg:">
           {/* Featured In Badge - At Top */}
             <div className="mb-3">
           <FeaturedIn
@@ -74,12 +74,12 @@ export default function PredictMarketsHero({
             </h1>
 
             {/* Description */}
-            <p className="text-[#000000] md:!text-start paragraph-regular mb-4 md:!text-[16px] !leading-[150%] !text-center max-w-[564px]">
+            <p className="text-[#000000] md:!text-start paragraph-regular mb-4 md:!text-[16px] !leading-[150%] !text-center ">
               {description}
             </p>
 
             {/* Verification Section */}
-            <div className="md:flex hidden items-start flex-col gap-2 mb-4 ">
+            {/* <div className="md:flex hidden items-start flex-col gap-2 mb-4 ">
               <span className=" paragraph-medium !leading-[100%] !font-[600]">Verified & Audited by</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="166" height="44" viewBox="0 0 166 44" fill="none">
   <path d="M60.5074 33.8611C59.032 33.8611 57.6956 33.6259 56.4982 33.1556C55.3222 32.664 54.3065 31.9372 53.4512 30.9752C52.6173 30.0133 51.9758 28.8269 51.5268 27.416C51.0777 25.9838 50.8532 24.3271 50.8532 22.4459C50.8532 20.5648 51.0777 18.8974 51.5268 17.4438C51.9758 15.9688 52.6173 14.7396 53.4512 13.7563C54.3065 12.7516 55.3222 11.9927 56.4982 11.4797C57.6956 10.9667 59.032 10.7101 60.5074 10.7101C62.5174 10.7101 64.1852 11.1377 65.5109 11.9927C66.8366 12.8478 67.8951 14.1411 68.6862 15.8726L65.0619 17.7965C64.7412 16.7918 64.2173 15.9902 63.4903 15.3916C62.7633 14.7717 61.769 14.4617 60.5074 14.4617C58.9251 14.4617 57.6635 14.9962 56.7227 16.065C55.8033 17.1338 55.3435 18.6302 55.3435 20.5541V24.0813C55.3435 26.0265 55.8033 27.5229 56.7227 28.5704C57.6635 29.5964 58.9251 30.1095 60.5074 30.1095C61.769 30.1095 62.7953 29.7674 63.5865 29.0834C64.399 28.3993 64.987 27.555 65.3506 26.5503L68.7824 28.5704C67.9699 30.2377 66.8901 31.5417 65.543 32.4823C64.1959 33.4015 62.5174 33.8611 60.5074 33.8611Z" fill="black"/>
@@ -109,10 +109,10 @@ export default function PredictMarketsHero({
     </linearGradient>
   </defs>
 </svg>
-          </div>
+          </div> */}
 
             {/* Video Placeholder */}
-            <div className="relative bg-gray-200 rounded-lg mb-3 overflow-hidden border border-gray-300" style={{width: '528px', height: '269px', maxWidth: '100%'}}>
+            <div className="relative bg-gray-200 rounded-lg mb-3 md:mt-[30px] overflow-hidden border border-gray-300" style={{width: '528px', height: '269px', maxWidth: '100%'}}>
               <div
                 className="absolute inset-0 flex items-center justify-center"
                 style={{
@@ -148,7 +148,7 @@ export default function PredictMarketsHero({
             </div>
 
           {/* Featured In Section - At Bottom */}
-            <div className="w-full max-md:pb-12">
+            <div className="w-full max-w-[528px] max-md:pb-12">
             <FeaturedInSection
               title={featuredInSectionConfig.title}
               logos={featuredInLogos}
@@ -157,7 +157,7 @@ export default function PredictMarketsHero({
           </div>
 
           {/* Right Section - Presale Dashboard */}
-          <div className="w-full lg:max-w-[532px] lg:flex-shrink-0 lg:sticky lg:top-8">
+          <div className="w-full lg:max-w-[465px] lg:flex-shrink-0 lg:sticky lg:top-8">
             <PresaleDashboard />
           </div>
 

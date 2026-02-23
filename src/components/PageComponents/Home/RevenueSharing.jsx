@@ -47,7 +47,7 @@ export default function RevenueSharing({
           {/* Description - Split into paragraphs */}
           <div className="flex flex-col gap-4">
             {descriptionParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-[#000] text-base max-md:!text-center md:text-lg font-normal leading-6 max-w-[600px]">
+              <p key={index} className="text-[#000] text-base max-md:!text-center md:!text-[16px] font-normal leading-6 max-w-[600px]">
                 {paragraph}
               </p>
             ))}
@@ -63,7 +63,7 @@ export default function RevenueSharing({
         </div>
 
         {/* Right Visual Content */}
-        <div className="flex max-md:relative max-md:h-[360px] max-md:!mx-auto max-md:w-[340px] w-full  items-center justify-center z-10">
+        <div className="flex max-md:relative max-md:h-[390px] max-md:!mx-auto max-md:w-[340px] w-full  items-center justify-center z-10">
           {/* Coins Background (Blurred) */}
           <div className="rotate-[-13.18deg] md:!min-w-[750px] 
           absolute md:right-[-240px] right-[4px] md:top-[-20px] top-[12px]  md:min-w-[0px] 

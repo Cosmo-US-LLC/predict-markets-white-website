@@ -6,7 +6,7 @@ export default function HowItWorks({
   subtitle = "PredictMarkets is a decentralised platform where users predict real world events. Every prediction generates fees that directly benefit the $PREDICT ecosystem through daily buybacks, token burns, and revenue sharing with holders, supporting long term token value growth.",
 }) {
   return (
-    <section className="relative w-full md:bg-[#F7FCFF] py-0 md:py-16">
+    <section className="relative w-full md:bg-[#F7FCFF] py-0 md:py-16" id="how-it-works">
       <div 
         className="w-full md:w-[90%] max-md:!border-none md:border-[0.5px] md:border-[#DDD] md:rounded-[44px] !rounded-0 md:max-w-[1280px] 
         mx-auto px-4 md:px-8 py-16 md:py-12 flex flex-col md:gap-6 gap-8"
@@ -29,8 +29,8 @@ export default function HowItWorks({
             PredictMarkets generates daily revenue from  trading fees
           </h4>
           <h4 className="absolute paragraph-medium top-[20%] text-[#000] left-[74%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">Buys back</h4>
-          <h4 className="absolute paragraph-medium top-[55%] left-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
-            $PREDICT  Price Goes Up
+          <h4 className="absolute paragraph-medium top-[53%] left-[-5%] z-10 max-w-[300px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
+            $PREDICT <br /> Price Goes Up
           </h4>
           <h4 className="absolute paragraph-medium top-[45%] text-[#000] left-[47%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Burns</h4>
           <img src={howItWorksBg} alt="How It Works" className="w-full h-full object-cover" />
@@ -38,7 +38,7 @@ export default function HowItWorks({
             $PREDICT Holders get daily passive USDT staking income
           </h4>
           <h4 className="absolute paragraph-medium top-[76%] text-[#000] left-[60%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Rewards</h4>
-          <h4 className="absolute paragraph-medium top-[56%] -right-[1%] z-10 max-w-[300px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
+          <h4 className="absolute paragraph-medium top-[56%] -right-[5%] z-10 max-w-[300px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
             $PREDICT
           </h4>
         </div>

@@ -59,7 +59,7 @@ export default function PredictionPlatform({
              gap-[16px] pt-[2px] sm:flex-row max-md:w-[80%]">
               <button
                 onClick={scrollToWallet}
-                className="btn_primary !w-full md:w-[221px] !px-1 "
+                className="btn_primary !w-full md:w-[100%] md:!px-[65px] "
               >
                 {buyButtonText}
               </button>
@@ -67,7 +67,7 @@ export default function PredictionPlatform({
                 to={supportButtonLink}
                 className="flex md:w-[221px] !w-full items-center md:!text-[18px] !text-[18px]
                  justify-center gap-2.5 rounded-full border border-black bg-transparent 
-                 md:px-[13px] py-[12px] md:py-[20px] transition-colors hover:bg-black/5"
+                 md:!px-[15px] py-[12px] md:py-[20px] transition-colors hover:bg-black/5"
               >
                 <img
                   src={liveIndicatorDot}

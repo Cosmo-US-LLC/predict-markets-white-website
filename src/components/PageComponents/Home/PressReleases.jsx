@@ -8,7 +8,7 @@ export default function PressReleases({
 
   return (
     <section className="bg-[#020b10] py-12 md:py-20 ">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-2">
         {/* Header Section */}
         <div className="flex flex-col gap-[48px] items-center mb-12 md:mb-12">
           <h2 className="heading-two capitalize bg-gradient-to-t from-[#b2ddff] to-white bg-clip-text text-transparent text-center">

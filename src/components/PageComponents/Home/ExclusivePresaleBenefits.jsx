@@ -40,8 +40,8 @@ export default function ExclusivePresaleBenefits({
   }
 
   return (
-    <section className="bg-white py-12 md:py-[60px]">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
+    <section className="bg-white py-12 md:py-[60px]" id="presale-benefits">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-2">
         {/* Title */}
         <h2 className="heading-two mb-8 md:max-w-[700px] max-w-[240px] mx-auto !text-center">
           {title}
