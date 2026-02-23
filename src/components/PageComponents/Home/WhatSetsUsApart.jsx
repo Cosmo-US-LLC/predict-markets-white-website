@@ -9,7 +9,7 @@ export default function WhatSetsUsApart({
   return (
     <section className="bg-white py-12 md:py-20">
       <div
-        className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-8 md:gap-10"
+        className="max-w-[1280px] mx-auto px-4 md:px-2 flex flex-col gap-8 md:gap-10"
         style={{
           borderRadius: "15px",
           background:

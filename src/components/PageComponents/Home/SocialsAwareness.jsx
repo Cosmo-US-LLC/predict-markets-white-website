@@ -51,7 +51,7 @@ export default function SocialsAwareness() {
       {/* <div className="absolute inset-x-0 top-0 border-b border-[#191919]" /> */}
       <div className="absolute inset-x-0 bottom-0 border-b border-[#191919]" />
 
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-2">
         <div className="relative z-10 flex flex-col items-start gap-4 md:flex-row md:gap-4">
           {/* Left Side - Image Cards */}
           <div className="relative z-20 flex md:flex-row flex-col gap-4 flex-1 w-full">

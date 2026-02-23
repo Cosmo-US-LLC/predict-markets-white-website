@@ -8,7 +8,7 @@ export const howToBuySteps = [
     id: 'step-1',
     stepNumber: 'Step 1',
     title: 'Connect Your Wallet',
-    description: 'Click Connect Wallet and link your decentralized wallet like MetaMask, Trust Wallet, Phantom, or any other supported wallet in seconds.',
+    description: 'Click Connect Wallet and link your decentralized wallet like MetaMask, Trust Wallet, Phantom, or any other supported \n\ wallet in seconds.',
     image: step1Image,
   },
   {
@@ -22,7 +22,7 @@ export const howToBuySteps = [
     id: 'step-3',
     stepNumber: 'Step 3',
     title: 'Confirm the Transaction',
-    description: 'Set the amount you want to use to purchase PREDICT, click Buy Now, and confirm the purchase in your wallet.',
+    description: 'Set the amount you want to use to purchase PREDICT, \n\ click Buy Now, and confirm the purchase in your wallet.',
     image: step3Image,
   },
   {

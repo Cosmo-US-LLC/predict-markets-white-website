@@ -4,7 +4,7 @@ export default function ExchangeListings({
 }) {
   return (
     <section className="w-full bg-white md:bg-[#F7FCFF] py-12 md:py-[84px]">
-      <div className="w-full max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-6 md:gap-12 items-center">
+      <div className="w-full max-w-[1280px] mx-auto px-4 md:px-2 flex flex-col gap-6 md:gap-12 items-center">
         {/* Title */}
         <h2 className="heading-two text-center max-w-[520px] md:max-w-[840px] text-[#000] font-bold leading-[1.15]">
           {title.split('\n').map((line, index) => (

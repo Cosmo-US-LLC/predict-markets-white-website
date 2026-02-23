@@ -88,8 +88,10 @@ export function Header() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileLanguageOpen, setIsMobileLanguageOpen] = useState(false);
+  const [headerHeight, setHeaderHeight] = useState(0);
   const languageRef = useRef(null);
   const mobileLanguageRef = useRef(null);
+  const headerRef = useRef(null);
 
   // Close language dropdown when clicking outside
   useEffect(() => {
@@ -110,6 +112,18 @@ export function Header() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isLanguageOpen, isMobileLanguageOpen]);
+
+  // Calculate header height
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+    };
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+    return () => window.removeEventListener('resize', updateHeaderHeight);
+  }, []);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -142,9 +156,9 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-[#e5e5e5]">
+    <header ref={headerRef} className="sticky top-0 z-[101] w-full bg-white border-b border-[#e5e5e5]">
       <div
-        className="md:h-[40px] h-[28px] bg-[#B9E6FE] flex items-center justify-center cursor-pointer hover:bg-[#A8DFFE] transition-colors"
+        className="h-[40px] bg-[#B9E6FE] flex items-center justify-center cursor-pointer hover:bg-[#A8DFFE] transition-colors relative z-[102]"
         onClick={scrollToWallet}
       >
         <p
@@ -162,7 +176,7 @@ export function Header() {
           $PREDICT Presale
         </p>
       </div>
-      <div className="flex w-full max-w-[1280px] mx-auto px-4 md:px-8 py-3 items-center justify-between gap-4">
+      <div className="flex w-full max-w-[1280px] mx-auto px-4 md:px-2 py-3 items-center justify-between gap-4 relative z-[102] bg-white">
         <button
           variant="ghost"
           size="icon"
@@ -239,7 +253,7 @@ export function Header() {
         {/* Right Section - Language & Button */}
         <div className="flex items-center gap-[7px]">
           {/* Language Selector - Desktop */}
-          <div
+          {/* <div
             ref={languageRef}
             className="hidden md:flex items-center relative"
           >
@@ -266,7 +280,7 @@ export function Header() {
                 </button>
               </div>
             )}
-          </div>
+          </div> */}
 
           {/* Buy Button */}
           <Button
@@ -279,12 +293,12 @@ export function Header() {
             asChild
             className="btn_primary  flex md:!hidden !px-[24px] !text-[14px] !py-[12px]"
           >
-            <Link to="">BUY Now</Link>
+            <Link to="">Buy Now</Link>
           </Button>
         </div>
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-[100] overflow-y-auto">
+          <div className="md:hidden fixed inset-0 z-[100] overflow-y-auto" style={{ top: `${headerHeight}px` }}>
             {/* Background Image */}
             <div
               className="absolute inset-0 w-full h-full z-0"
@@ -298,7 +312,7 @@ export function Header() {
             ></div>
             
             {/* Menu Card */}
-            <div className="relative z-10 min-h-screen flex flex-col justify-center items-center px-4 ">
+            <div className="relative z-10 min-h-[90vh] flex flex-col justify-center items-center px-4 ">
               {/* Menu Card Container */}
               <div 
                 className="w-full max-w-[90%]  backdrop-blur-md rounded-[12px] p-6 !pt-4 flex flex-col
@@ -340,7 +354,7 @@ export function Header() {
 
                 {/* Language Selector */}
               </div>
-                <div
+                {/* <div
                   ref={mobileLanguageRef}
                   className="flex items-center mt-4 justify-center relative"
                 >
@@ -367,7 +381,7 @@ export function Header() {
                       </button>
                     </div>
                   )}
-                </div>
+                </div> */}
 
               {/* Join Our Socials Section */}
               <div className="w-full max-w-[90%] mt-3 flex flex-col items-center gap-4">

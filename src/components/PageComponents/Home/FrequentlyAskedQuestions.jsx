@@ -59,7 +59,7 @@ const faqData = [
 
 export default function FrequentlyAskedQuestions() {
   return (
-    <section className="bg-white py-12 md:py-20">
+    <section className="bg-white py-12 md:py-20" id="faq">
       <div className="max-w-[1280px] mx-auto md:px-8 px-4">
         {/* Header Section */}
         <div className="flex flex-col md:gap-4 gap-3 items-center text-center mb-1 md:mb-16">

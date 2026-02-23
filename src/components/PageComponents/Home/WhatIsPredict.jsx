@@ -39,7 +39,7 @@ export default function WhatIsPredict({
           {/* Description Paragraphs */}
           <div className="w-full">
             {descriptionParagraphs.map((paragraph, index) => (
-              <p key={index} className="!text-start md:!text-[18px] max-w-[661px] paragraph-regular">
+              <p key={index} className="!text-start md:!text-[16px] max-w-[661px] paragraph-regular">
 The $PREDICT token gives holders access to a decentralised prediction market
  ecosystem, enabling anonymous (no KYC), transparent,
   and global peer-to-peer predictions on real world events such as elections,

@@ -76,7 +76,7 @@ export default function GetExtraRewards({
 
   return (
     <section className="bg-[#F7FCFF] py-12 md:py-[60px]">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-2">
         <div className="flex flex-col lg:flex-row gap-10 items-start">
           {/* Left Side - Static Slider Section */}
           <div className="flex flex-col gap-6 flex-1 max-w-[597px] w-full">

@@ -6,7 +6,6 @@ export default function FeaturedInSection({
     return null;
   }
 
-  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos];
 
   return (
     
@@ -23,28 +22,84 @@ export default function FeaturedInSection({
           </p>
 
           {/* Logos - Using marquee for smooth infinite scroll */}
-         <div className="overflow-hidden w-full">
-  <div className="flex items-center gap-6 animate-marquee whitespace-nowrap">
-    {duplicatedLogos.map((logo, index) => (
-      <div
-        key={logo.id || index}
-        className="flex items-center justify-center h-8 md:h-10 shrink-0"
-      >
-        {logo.image ? (
-          <img
-            src={logo.image}
-            alt={logo.name || `Logo ${index + 1}`}
-            className="object-cover"
-          />
-        ) : (
-          <span className="text-black text-sm md:text-base font-bold">
-            {logo.name}
-          </span>
-        )}
-      </div>
-    ))}
-  </div>
-</div>
+          <div className="overflow-hidden w-full relative">
+            <div className="flex items-center gap-6 animate-marquee w-[5000px] whitespace-nowrap">
+              {/* First set of logos */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`logo-1-${logo.id || index}`}
+                  className="flex items-center justify-center h-6 md:h-8 shrink-0"
+                >
+                  {logo.image ? (
+                    <img
+                      src={logo.image}
+                      alt={logo.name || `Logo ${index + 1}`}
+                      className="object-cover h-full w-auto max-w-full"
+                    />
+                  ) : (
+                    <span className="text-black text-sm md:text-base font-bold">
+                      {logo.name}
+                    </span>
+                  )}
+                </div>
+              ))}
+              {/* Duplicate set for seamless loop */}
+              {logos.map((logo, index) => (
+                <div
+                  key={`logo-2-${logo.id || index}`}
+                  className="flex items-center justify-center h-6 md:h-8 shrink-0"
+                >
+                  {logo.image ? (
+                    <img
+                      src={logo.image}
+                      alt={logo.name || `Logo ${index + 1}`}
+                      className="object-cover h-full w-auto max-w-full"
+                    />
+                  ) : (
+                    <span className="text-black text-sm md:text-base font-bold">
+                      {logo.name}
+                    </span>
+                  )}
+                </div>
+              ))}
+               {logos.map((logo, index) => (
+                <div
+                  key={`logo-3-${logo.id || index}`}
+                  className="flex items-center justify-center h-6 md:h-8 shrink-0"
+                >
+                  {logo.image ? (
+                    <img
+                      src={logo.image}
+                      alt={logo.name || `Logo ${index + 1}`}
+                      className="object-cover h-full w-auto max-w-full"
+                    />
+                  ) : (
+                    <span className="text-black text-sm md:text-base font-bold">
+                      {logo.name}
+                    </span>
+                  )}
+                </div>
+              ))}
+               {logos.map((logo, index) => (
+                <div
+                  key={`logo-4-${logo.id || index}`}
+                  className="flex items-center justify-center h-6 md:h-8 shrink-0"
+                >
+                  {logo.image ? (
+                    <img
+                      src={logo.image}
+                      alt={logo.name || `Logo ${index + 1}`}
+                      className="object-cover h-full w-auto max-w-full"
+                    />
+                  ) : (
+                    <span className="text-black text-sm md:text-base font-bold">
+                      {logo.name}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
 
         </div>
       </div>

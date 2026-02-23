@@ -48,7 +48,7 @@ export default function HowToBuy({
         }}
         className="absolute top-0 left-0 w-full h-full z-0"
       ></div>
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8 relative z-10">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-2 relative z-10">
         {/* Header Section */}
         <div className="flex flex-col gap-[9px] items-center text-center mb-12 md:mb-12">
           <h2 className="heading-two">{title}</h2>
@@ -162,7 +162,7 @@ export default function HowToBuy({
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-700 text-base leading-6 tracking-[0.32px] whitespace-pre-line">
+                <p className="text-gray-700 text-[18px] leading-[150%] tracking-[0.32px] whitespace-pre-line">
                   {step.description}
                 </p>
               </div>

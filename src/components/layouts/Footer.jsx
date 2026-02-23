@@ -58,7 +58,7 @@ export function Footer() {
 
   return (
     <footer className="bg-white text-black">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8 py-[50px]">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-2 py-[50px]">
         {/* Main Content Section */}
         <div className="flex flex-col gap-[24px] md:gap-[42px] mb-[30px] md:mb-[42px]">
           {/* Top Section - Four Columns */}

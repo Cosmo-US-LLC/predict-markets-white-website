@@ -53,7 +53,7 @@ export default function PresaleDashboard({
   const tabs = [
     { id: "buy", label: "Buy $PREDICT", icon: BuyIcon },
     { id: "dashboard", label: "Dashboard", icon: DashboardIcon },
-    { id: "stake", label: "Stake", icon: StakeIcon },
+    // { id: "stake", label: "Stake", icon: StakeIcon },
     { id: "history", label: "History", icon: HistoryIcon },
   ];
 
@@ -80,7 +80,7 @@ export default function PresaleDashboard({
       network: "ERC-20",
       iconSrc: usdtIcon,
       selected: true,
-      networks: ["ERC-20", "BEP-20", "TRC-20"]
+      networks: ["ERC-20", "BEP-20"]
     },
   ];
 
@@ -108,7 +108,7 @@ export default function PresaleDashboard({
 
   return (
     <div className="relative w-full max-w-[100%] mx-auto bg-white rounded-[13.675px] border border-[#D8D8D8] shadow-xl py-[15px] 
-    px-[10px] md:px-[60px] py-[25px] md:py-[24px]">
+    px-[10px] md:px-[44px] py-[25px] md:py-[24px]">
       {/* Step 1: Presale Live Banner - Positioned at top of card with relative positioning */}
       <div className="flex items-center justify-center mb-4 absolute top-[-15px] left-1/2 transform -translate-x-1/2">
         <div className="bg-[#0080ED] text-white px-4 py-1.5 rounded-[4px] !text-[12px] font-[Inter] font-[600] uppercase flex items-center gap-2">
@@ -171,13 +171,16 @@ export default function PresaleDashboard({
             {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-gray-700"></div> */}
           </div>
         </div>
-        <div className="flex justify-between p-[5px] items-center text-[14px]  mb-1 border-[1px] border-[#D4D4D4]"
+        <div className="flex justify-between p-[5px] !pb-0 items-center text-[14px] !border-l-[0px] !border-r-[0px]  !border-b-[0px] mb-1 border-[1px] border-[#D4D4D4]"
         >
-           <div className="text-[12px] !font-[700] font-[Inter] text-[#7B7B7B]">
+           <div className="text-[10px] !font-[700] font-[Inter] text-[#7B7B7B]">
           {softcapPercentage}% of softcap raised
         </div>
-             <h5 className="text-[12px] !font-[700] !font-[Inter] text-[#7B7B7B] text-center">{holdersCount} Holders</h5>
-          <h5 className="text-[12px] !font-[700] !font-[Inter] text-[#7B7B7B]"> {softcapTarget}</h5>
+        <div className="border-l-[1px] h-[10px] border-[#D4D4D4]"></div>
+             <h5 className="text-[10px] !font-[700] !font-[Inter] text-[#7B7B7B] text-center">{holdersCount} Holders</h5>
+        <div className="border-l-[1px] h-[10px] border-[#D4D4D4]"></div>
+
+          <h5 className="text-[10px] !font-[700] !font-[Inter] text-[#7B7B7B]"> {softcapTarget}</h5>
         </div>
      
       </div>
@@ -200,126 +203,135 @@ export default function PresaleDashboard({
           </div>
         </div> */}
         <div className="grid grid-cols-3 gap-2">
-          {paymentOptions.map((option) => (
-            <div
-              key={option.id}
-              ref={(el) => (dropdownRefs.current[option.id] = el)}
-              className="relative"
-            >
-              <button
-                onClick={() => {
-                  if (option.id === "more") {
-                    // Handle more options
-                  } else {
-                    // Only update selected payment if this option is not already selected
-                    if (!selectedPayment.includes(option.name)) {
-                      setSelectedPayment(`${option.name} ${option.network}`);
-                    }
-                    // Toggle dropdown
-                    setOpenDropdownId(openDropdownId === option.id ? null : option.id);
-                  }
-                }}
-                className={`w-full flex items-center gap-2 px-2 py-1 
-                  rounded-lg border transition-colors text-left min-h-[40px] ${
-                    openDropdownId === option.id
-                      ? "border-gray-300 bg-blue-50"
-                      : selectedPayment.includes(option.name)
-                      ? "border-gray-200 bg-white"
-                      : "border-gray-200 bg-gray-50 hover:bg-gray-50"
-                  }`}
+          {paymentOptions.map((option, index) => {
+            const isLastItem = index === paymentOptions.length - 1;
+            const hasDropdown = isLastItem && option.networks && option.networks.length > 1;
+            
+            return (
+              <div
+                key={option.id}
+                ref={(el) => (dropdownRefs.current[option.id] = el)}
+                className="relative"
               >
-                {/* Coin Icon */}
-                {option.id !== "more" && option.iconSrc && (
-                  <img 
-                    src={option.iconSrc} 
-                    alt={option.name} 
-                    className="md:w-6 md:h-6 w-4 h-4 flex-shrink-0"
-                  />
-                )}
-
-                {/* Text Content */}
-                <div className="flex-1 min-w-0 flex flex-col justify-center">
-                  <div className="font-bold text-[12px] leading-[13px] md:text-[12px] text-gray-800 ">
-                    {option.name}
-                  </div>
-                  <div className="md:text-[12px] text-[10px]  text-gray-500  leading-[13px]">
-                    {selectedPayment.includes(option.name)
-                      ? selectedPayment.split(" ").slice(1).join(" ") || option.network
-                      : option.network
+                <button
+                  onClick={() => {
+                    if (option.id === "more") {
+                      // Handle more options
+                    } else if (hasDropdown) {
+                      // Only update selected payment if this option is not already selected
+                      if (!selectedPayment.includes(option.name)) {
+                        setSelectedPayment(`${option.name} ${option.network}`);
+                      }
+                      // Toggle dropdown only for last item
+                      setOpenDropdownId(openDropdownId === option.id ? null : option.id);
+                    } else {
+                      // For first and second items, just select the payment directly
+                      setSelectedPayment(`${option.name} ${option.network}`);
+                      setOpenDropdownId(null);
                     }
-                  </div>
-                </div>
-
-                {/* Dropdown Arrow */}
-                {option.id !== "more" && (
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="15" 
-                    height="8" 
-                    viewBox="0 0 15 8" 
-                    fill="none"
-                    className={`transition-transform duration-200 max-md:w-[10px] max-md:h-[8px] ${
-                      openDropdownId === option.id ? "rotate-180" : ""
+                  }}
+                  className={`w-full flex items-center gap-2 px-2 py-1 
+                    rounded-lg border transition-colors text-left min-h-[40px] ${
+                      openDropdownId === option.id
+                        ? "border-gray-300 bg-blue-50"
+                        : selectedPayment.includes(option.name)
+                        ? "border-gray-200 bg-white"
+                        : "border-gray-200 bg-gray-50 hover:bg-gray-50"
                     }`}
-                  >
-                    <path 
-                      d="M14.3696 0.636719L8.71715 6.28921C8.0496 6.95676 6.95725 6.95676 6.2897 6.28921L0.637207 0.636719" 
-                      stroke="black" 
-                      strokeWidth="1.27411" 
-                      strokeMiterlimit="10" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                )}
-              </button>
-
-              {/* Dropdown Menu */}
-              {openDropdownId === option.id && option.id !== "more" && option.networks && option.networks.length > 1 && (
-                <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden"
-                  onClick={(e) => e.stopPropagation()}
                 >
-                  {option.networks.map((network) => {
-                    // Check if this network matches the currently selected payment
-                    const isCurrentlySelected = selectedPayment === `${option.name} ${network}`;
-                    return (
-                    <button
-                      key={network}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setSelectedPayment(`${option.name} ${network}`);
-                        setOpenDropdownId(null);
-                      }}
-                      className={`w-full flex items-center gap-2 px-3 py-1/2 text-left text-sm hover:bg-gray-50 transition-colors ${isCurrentlySelected
-                          ? "bg-blue-50 text-[#0080ED] font-semibold"
-                          : "text-gray-700"
-                        }`}
+                  {/* Coin Icon */}
+                  {option.id !== "more" && option.iconSrc && (
+                    <img 
+                      src={option.iconSrc} 
+                      alt={option.name} 
+                      className="md:w-6 md:h-6 w-4 h-4 flex-shrink-0"
+                    />
+                  )}
+
+                  {/* Text Content */}
+                  <div className="flex-1 min-w-0 flex flex-col justify-center">
+                    <div className="font-bold text-[12px] leading-[13px] md:text-[12px] text-gray-800 ">
+                      {option.name}
+                    </div>
+                    <div className="md:text-[12px] text-[10px]  text-gray-500  leading-[13px]">
+                      {selectedPayment.includes(option.name)
+                        ? selectedPayment.split(" ").slice(1).join(" ") || option.network
+                        : option.network
+                      }
+                    </div>
+                  </div>
+
+                  {/* Dropdown Arrow - Only show for last item */}
+                  {hasDropdown && (
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="15" 
+                      height="8" 
+                      viewBox="0 0 15 8" 
+                      fill="none"
+                      className={`transition-transform duration-200 max-md:w-[10px] max-md:h-[8px] ${
+                        openDropdownId === option.id ? "rotate-180" : ""
+                      }`}
                     >
-                      {/* Coin Icon in Dropdown */}
-                      {option.iconSrc && (
-                        <img 
-                          src={option.iconSrc} 
-                          alt={option.name} 
-                          className="w-6 h-6 flex-shrink-0"
-                        />
-                      )}
-                      <div className="flex-1 min-w-0 text-left">
-                        <div className="font-medium text-[12px] text-left">{option.name}</div>
-                        <div className={`text-[10px] mt-0.5 text-left ${isCurrentlySelected
-                            ? "text-[#0080ED]"
-                            : "text-gray-500"
-                          }`}>
-                          {network}
+                      <path 
+                        d="M14.3696 0.636719L8.71715 6.28921C8.0496 6.95676 6.95725 6.95676 6.2897 6.28921L0.637207 0.636719" 
+                        stroke="black" 
+                        strokeWidth="1.27411" 
+                        strokeMiterlimit="10" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
+                </button>
+
+                {/* Dropdown Menu - Only show for last item */}
+                {hasDropdown && openDropdownId === option.id && (
+                  <div className="absolute top-full left-0 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {option.networks.map((network) => {
+                      // Check if this network matches the currently selected payment
+                      const isCurrentlySelected = selectedPayment === `${option.name} ${network}`;
+                      return (
+                      <button
+                        key={network}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setSelectedPayment(`${option.name} ${network}`);
+                          setOpenDropdownId(null);
+                        }}
+                        className={`w-full flex items-center gap-2 px-3 py-1/2 text-left text-sm hover:bg-gray-50 transition-colors ${isCurrentlySelected
+                            ? "bg-blue-50 text-[#0080ED] font-semibold"
+                            : "text-gray-700"
+                          }`}
+                      >
+                        {/* Coin Icon in Dropdown */}
+                        {option.iconSrc && (
+                          <img 
+                            src={option.iconSrc} 
+                            alt={option.name} 
+                            className="w-6 h-6 flex-shrink-0"
+                          />
+                        )}
+                        <div className="flex-1 min-w-0 text-left">
+                          <div className="font-medium text-[12px] text-left">{option.name}</div>
+                          <div className={`text-[10px] mt-0.5 text-left ${isCurrentlySelected
+                              ? "text-[#0080ED]"
+                              : "text-gray-500"
+                            }`}>
+                            {network}
+                          </div>
                         </div>
-                      </div>
-                    </button>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
-          ))}
+                      </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
 

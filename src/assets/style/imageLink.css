@@ -1,7 +1,7 @@
 .predict_hero_bg {
   background-image: url("../../assets/images/home/predict_hero/predict_hero_bg.webp");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   min-height: 100%;
 }
