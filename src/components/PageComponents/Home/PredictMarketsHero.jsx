@@ -30,7 +30,7 @@ export default function PredictMarketsHero({
   return (
     <section
       id="wallet"
-      className="relative bg-[#fff] max-md:border-b-[1px] max-md:border-[#ddd] w-full overflow-hidden min-h-screen flex items-center predict_hero_bg justify-center py-12 md:pt-6 md:pb-6"
+      className="relative bg-[#fff] max-md:border-b-[1px] max-md:border-[#ddd] w-full overflow-hidden min-h-screen flex items-center predict_hero_bg justify-center py-12 md:pt-10 md:pb-6"
     >
       {/* Background Image - Mobile */}
       <div
@@ -74,7 +74,7 @@ export default function PredictMarketsHero({
             </h1>
 
             {/* Description */}
-            <p className="text-[#000000] md:!text-start paragraph-regular mb-4 md:!text-[16px] !leading-[150%] !text-center ">
+            <p className="text-[#000000] md:!text-start paragraph-regular mb-4 md:!text-[16px] !leading-[150%] !text-center max-w-[550px]">
               {description}
             </p>
 
@@ -112,7 +112,7 @@ export default function PredictMarketsHero({
           </div> */}
 
             {/* Video Placeholder */}
-            <div className="relative bg-gray-200 rounded-lg mb-3 md:mt-[30px] overflow-hidden border border-gray-300" style={{width: '528px', height: '269px', maxWidth: '100%'}}>
+            <div className="relative bg-gray-200 rounded-lg mb-3 md:mt-[30px] overflow-hidden border border-gray-300" style={{width: '550px', height: '269px', maxWidth: '100%'}}>
               <div
                 className="absolute inset-0 flex items-center justify-center"
                 style={{
@@ -148,7 +148,7 @@ export default function PredictMarketsHero({
             </div>
 
           {/* Featured In Section - At Bottom */}
-            <div className="w-full max-w-[528px] max-md:pb-12">
+            <div className="w-full max-w-[550px] max-md:pb-12">
             <FeaturedInSection
               title={featuredInSectionConfig.title}
               logos={featuredInLogos}

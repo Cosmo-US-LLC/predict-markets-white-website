@@ -8,7 +8,7 @@ import infoIcon from "../../../assets/images/home/get_extra_rewards/infoIcon.web
 
 export default function GetExtraRewards({
   title = "Get Bonus Rewards Starting From $1,000",
-  subtitle = "Get more $PREDICT and unlock higher rewards by joining the Elite PREDICT Members Club. Access starts from $1,000 and is available only during the presale.",
+  subtitle = "Get more $PREDICT and unlock higher rewards by joining the Elite PREDICT Members Club. Access starts from $1,000 \n and is available only during the presale.",
   sliderLabel = "How much do you want to spend?",
   sliderValue = "$56,256",
   sliderMin = 1000,
@@ -82,9 +82,9 @@ export default function GetExtraRewards({
           <div className="flex flex-col gap-6 flex-1 max-w-[597px] w-full">
             {/* Slider */}
             <div className="flex flex-col gap-10">
-              <div className="flex flex-col gap-8 md:max-w-[640px] max-w-[370px] w-full mb-0">
+              <div className="flex flex-col  max-md:!items-center gap-8 md:max-w-[640px] max-w-[370px]  max-md:mx-auto w-full mb-0">
                 <h2 className="heading-two max-md:!text-center">{title}</h2>
-                <p className="paragraph-regular md:!text-start !text-center">
+                <p className="paragraph-regular md:!text-start max-md:w-[365px] mx-auto !text-center md:whitespace-pre-line">
                   {subtitle}
                 </p>
               </div>
@@ -141,8 +141,8 @@ export default function GetExtraRewards({
                 {membershipCards.map((card, index) => (
                   <CarouselItem key={card.id || index} className="basis-full">
                     <div
-                      className="md:p-6 max-md:px-[16px] max-md:py-[20px] flex rounded-[12px] md:rounded-[15px] flex-col
-                       lg:flex-row gap-6 items-center min-h-[349px] relative overflow-hidden"
+                      className="md:px-6 md:py-2 max-md:px-[16px] max-md:py-[20px] flex rounded-[12px] md:rounded-[15px] flex-col
+                       lg:flex-row gap-6 items-center md:min-h-[320px] min-h-[349px] relative overflow-hidden"
                       style={{
                         border: "0.764px solid rgba(255, 255, 255, 0.10)",
                         background:
@@ -291,7 +291,7 @@ export default function GetExtraRewards({
                         {/* Right Side - Benefits */}
                         <div className="flex flex-col gap-3 flex-1 w-full lg:w-[353px]">
                           {card.cardImage && (
-                            <div className="bg-gray-800 hidden md:block border border-gray-600 rounded-[15px] h-[174px] w-full relative overflow-hidden shadow-lg">
+                            <div className="hidden md:block b h-[155px] w-full relative overflow-hidden ">
                               <div className="absolute inset-0 flex items-center justify-center">
                                 <img
                                   src={card.cardImage}
@@ -309,11 +309,11 @@ export default function GetExtraRewards({
                           <div className="flex flex-col gap-[18px] items-center mt-2">
                             <button
                               onClick={scrollToWallet}
-                              className="btn_primary w-full max-w-[361.711px] h-[52.988px] flex items-center justify-center"
+                              className="btn_primary w-full max-w-[251.711px] !px-0 h-[52.988px] flex items-center justify-center"
                             >
                               {buyButtonText}
                             </button>
-                            <p className="text-[#000] text-sm md:text-[14px] font-normal leading-[157.143%] text-center tracking-[-0.14px]">
+                            <p className="text-[#000] max-md:max-w-[280px] !text-[12px] md:text-[14px] font-normal leading-[157.143%] text-center tracking-[-0.14px]">
                               {disclaimer}
                             </p>
                           </div>

@@ -47,7 +47,7 @@ export default function RevenueSharing({
           {/* Description - Split into paragraphs */}
           <div className="flex flex-col gap-4">
             {descriptionParagraphs.map((paragraph, index) => (
-              <p key={index} className="text-[#000] text-base max-md:!text-center md:!text-[16px] font-normal leading-6 max-w-[600px]">
+              <p key={index} className="text-[#000] text-base max-md:!text-center md:!text-[16px] font-normal leading-6 max-w-[550px]">
                 {paragraph}
               </p>
             ))}

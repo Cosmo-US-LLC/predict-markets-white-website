@@ -30,7 +30,7 @@ export default function WhatIsPredict({
        w-full max-w-[1280px] mx-auto px-6 md:px-12 py-8 md:py-12 flex
         flex-col md:flex-row gap-2 md:gap-6 items-center border-[1px] border-[#9C9C9C]">
         {/* Left Content */}
-        <div className="flex flex-col gap-6 items-start z-10 !max-w-[690px] md:min-w-[690px] !w-[100%]">
+        <div className="flex flex-col gap-6 items-start z-10 !max-w-[500px] md:min-w-[500px] !w-[100%]">
           {/* Title */}
           <h2 className="heading-two">
             {title}
@@ -70,7 +70,7 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
                   </svg>
                 </div>
                 {/* Benefit Text */}
-                <h4 className="text-[#000] md:!text-[18px] !leading-[120%] capitalize heading-four !leading-[120%]">
+                <h4 className="text-[#000] !text-[16px] md:!text-[16px] !leading-[120%] capitalize heading-four !leading-[120%]">
                   {benefit}
                 </h4>
               </div>
@@ -81,7 +81,7 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
           <div className='flex flex-col md:flex-row gap-4 w-full md:w-auto'>
             <button
               onClick={scrollToWallet}
-              className="btn_primary flex items-center !px-[65px] justify-center"
+              className="btn_primary flex items-center !px-[25px] justify-center"
             >
               {buyButtonText}
             </button>
@@ -97,12 +97,12 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
 
         {/* Right Visual Content */}
         <div className=" w-full z-10 flex items-center max-md:h-[420px] justify-center">
-          <div className=" !w-full md:absolute absolute -bottom-3  md:-bottom-30 md:-mr-8 flex items-center 
-          justify-center md:!min-w-[720px] min-w-[460px] ">
+          <div className=" !w-full md:absolute absolute -bottom-6  md:-bottom-30 md:-mr-8 flex items-center 
+          justify-center md:!min-w-[700px] min-w-[480px] ">
             <img
               src={coinImage}
               alt="PredictMarkets Coin"
-              className="!w-full md:max-w-[720px]  h-full object-contain"
+              className="!w-full md:max-w-[700px]  h-full object-contain"
               onError={(e) => {
                 e.target.style.display = 'none';
               }}

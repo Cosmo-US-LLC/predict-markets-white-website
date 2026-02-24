@@ -69,7 +69,7 @@ export default function ExclusivePresaleBenefits({
 
               {/* Content */}
               <div className="flex flex-col gap-3 items-center text-center w-full max-md:max-w-[290px] mx-auto">
-                <h3 className="heading-four md:max-w-[290px] max-w-[190px] !leading-[140%] capitalize">
+                <h3 className="heading-four max-md:!text-[17px] md:max-w-[290px] max-w-[190px] !leading-[140%] capitalize">
                   {benefit.title}
                 </h3>
                 {/* Divider Line */}

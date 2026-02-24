@@ -54,7 +54,7 @@ import { predictMarketsHeroConfig } from "../data/predictMarketsHeroData";
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-[#020b10]">
+    <div className="min-h-screen">
       <PredictMarketsHero
         title={predictMarketsHeroConfig.title}
         description={predictMarketsHeroConfig.description}
