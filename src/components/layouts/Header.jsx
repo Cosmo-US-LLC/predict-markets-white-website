@@ -181,7 +181,10 @@ export function Header() {
           variant="ghost"
           size="icon"
           className="md:hidden cursor-pointer flex lg:hidden"
-          onClick={() => setIsMobileMenuOpen(true)}
+         onClick={(e) => {
+    e.stopPropagation(); // Prevents the click from reaching parent elements
+    setIsMobileMenuOpen((prev) => !prev);
+  }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -287,7 +290,7 @@ export function Header() {
             asChild
             className="btn_primary  flex max-md:!hidden !px-[24px] !text-[16px] !py-[12px]"
           >
-            <Link to="">BUY $PREDICT</Link>
+            <Link to="">Connect Wallet</Link>
           </Button>
           <Button
             asChild
@@ -312,7 +315,7 @@ export function Header() {
             ></div>
             
             {/* Menu Card */}
-            <div className="relative z-10 min-h-[90vh] flex flex-col justify-center items-center px-4 ">
+            <div className="relative z-10 min-h-[70vh] flex flex-col justify-start pt-4 items-center px-4 ">
               {/* Menu Card Container */}
               <div 
                 className="w-full max-w-[90%]  backdrop-blur-md rounded-[12px] p-6 !pt-4 flex flex-col
@@ -333,10 +336,6 @@ export function Header() {
                     <X className="w-5 h-5 text-black" />
                   </button>
                 </div>
-
-                {/* Menu Heading */}
-                <h2 className="text-center text-[24px] max-w-[250px] w-full mx-auto 
-                font-semibold text-black pb-3 border-b border-[#000]">Menu</h2>
 
                 {/* Navigation Links */}
                 <nav className="flex flex-col gap-[11px]">

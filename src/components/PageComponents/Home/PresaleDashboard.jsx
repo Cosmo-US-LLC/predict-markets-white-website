@@ -130,9 +130,9 @@ export default function PresaleDashboard({
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex !items-center justify-center  !text-black 
-                md:!text-[12px] !text-[7px] font-[Inter] rounded-[100px]
+                md:!text-[12px] !text-[11px] font-[Inter] rounded-[100px]
                  px-[2px] md:px-[10px] py-2 gap-[2px]  transition-all 
-                 duration-200 w-auto max-md:gap-[2px] flex-1 
+                 duration-200 w-auto max-md:gap-[5px] flex-1 
                  ${index === 0 ? 'md:!min-w-[125px] md:!max-w-[125px]' : ''} ${activeTab === tab.id
                   ? "bg-[#B0B0B01F] text-black "
                   : "bg-transparent text-black hover:text-black "
@@ -143,7 +143,7 @@ export default function PresaleDashboard({
                 <IconComponent />
               </span>
               {/* Label */}
-              <span className={`md:!text-[12px] max-md:pt-1 !text-[7px]  
+              <span className={`md:!text-[12px] !text-[10px]  
               !font-[400] font-[Inter] leading-tight 
               text-center ${activeTab === tab.id ? "text-black" : "text-gray-700"
                 }`}>

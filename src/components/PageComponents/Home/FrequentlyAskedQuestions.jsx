@@ -59,14 +59,14 @@ const faqData = [
 
 export default function FrequentlyAskedQuestions() {
   return (
-    <section className="bg-white py-12 md:py-20" id="faq">
+    <section className="bg-white py-12 max-md:!pb-0 md:py-20" id="faq">
       <div className="max-w-[1280px] mx-auto md:px-8 px-4">
         {/* Header Section */}
         <div className="flex flex-col md:gap-4 gap-3 items-center text-center mb-1 md:mb-16">
           <h2 className="heading-two capitalize text-[#000]">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#000] paragraph-regular  md:!text-[20px] !text-[14px] max-w-[812px]">
+          <p className="text-[#000] paragraph-regular  md:!text-[20px] !text-[16px] max-w-[812px]">
             You may have questions, <br className="md:hidden" /> we have the
             answers.
           </p>

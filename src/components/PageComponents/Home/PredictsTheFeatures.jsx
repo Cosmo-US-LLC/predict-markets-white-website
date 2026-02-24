@@ -98,9 +98,9 @@ export default function PredictsTheFeatures({
             <CarouselContent>
               {features.map((feature) => (
                 <CarouselItem key={feature.id} className="basis-[85%]">
-                  <div className="bg-white min-h-[320px] rounded-[10px] border border-[#DDD] flex flex-col items-center gap-[20px] w-[320px] max-w-full pt-[10px] pr-[10px] pb-[16px] pl-[10px]">
+                  <div className="bg-white min-h-[423px] rounded-[10px] border border-[#DDD] flex flex-col items-center gap-[20px] w-[320px] max-w-full pt-[10px] pr-[10px] pb-[16px] pl-[10px]">
                     {/* Image */}
-                    <div className="h-[152px] relative rounded-[15px] overflow-hidden">
+                    <div className="h-[220px] relative rounded-[15px] overflow-hidden">
                       <img
                         src={feature.image}
                         alt={feature.title}
@@ -151,7 +151,7 @@ export default function PredictsTheFeatures({
               className="bg-white rounded-[15px] border-[1px] border-[#DDD] overflow-hidden flex flex-col gap-3 md:gap-[12px] pb-6 md:pb-[24px] pt-4 md:pt-[16px] px-4 md:px-[16px]"
             >
               {/* Image */}
-              <div className="h-[152px] relative rounded-[15px] overflow-hidden">
+              <div className="h-[152px]  relative rounded-[15px] overflow-hidden">
                 <img
                   src={feature.image}
                   alt={feature.title}

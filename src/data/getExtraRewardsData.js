@@ -90,7 +90,7 @@ export const membershipCards = [
 
 export const getExtraRewardsConfig = {
   title: "Get Bonus Rewards Starting From $1,000",
-  subtitle: "Get more $PREDICT and unlock higher rewards by joining the Elite PREDICT Members Club. Access starts from $1,000 and is available only during the presale.",
+  subtitle: "Get more $PREDICT and unlock higher rewards by joining the Elite PREDICT Members Club. Access starts from $1,000 \n and is available only during the presale.",
   sliderLabel: "How much do you want to spend?",
   sliderMin: 1000,
   sliderMax: 100000,

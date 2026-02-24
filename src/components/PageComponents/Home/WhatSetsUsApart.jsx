@@ -181,21 +181,21 @@ export default function WhatSetsUsApart({
         {/* Mobile Table */}
         <div className="md:hidden">
           <div
-            className="overflow-x-auto"
+            className="overflow-x-hidden"
             style={{
               borderRadius: "15px",
               border: "0.5px solid #DDD",
-              background: "rgba(255, 255, 255, 0.80)",
+              // background: "rgba(255, 255, 255, 0.80)",
             }}
           >
-            <div className="min-w-[332px] p-2">
+            <div className="min-w-[332px] min-h-[490px] p-2">
               {/* Header */}
               <div className="border-b border-gray-300 pb-4 mb-3 relative">
-                <div className="grid grid-cols-4 gap-2 items-end bg-[#f9fbff] rounded-[10px] px-2 pb-3">
+                <div className="grid grid-cols-4 gap-2 items-end rounded-[10px] px-2 pb-3">
                   <div />
-                  <div className="absolute top-[-4px] left-[25.5%] border border-[#0080ED] bg-[#FFFFFFC2] flex items-center justify-center min-h-[470px] w-[82px] z-1 rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"></div>
+                  <div className="absolute top-[-4px] left-[25.8%] border border-[#0080ED] bg-[#FFF] flex items-center justify-center min-h-[478px] w-[82px] z-1 rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"></div>
                   {/* PredictMarkets */}
-                  <div className="flex flex-col items-center gap-1">
+                  <div className="flex flex-col relative z-[99] items-center gap-1">
                     <div className="w-[23px] h-[23px]">
                       <img
                         src={platforms?.predictMarkets?.icon}
@@ -237,7 +237,7 @@ export default function WhatSetsUsApart({
                 {tableData.map((row, index) => (
                   <div
                     key={row.id}
-                    className={`grid grid-cols-4 items-center md:py-2 py-2 bg-white ${
+                    className={`grid grid-cols-4 items-center md:py-2 py-2  ${
                       index < tableData.length - 1
                         ? "border-b border-gray-200"
                         : ""
@@ -248,7 +248,7 @@ export default function WhatSetsUsApart({
                     </span>
 
                     {/* PredictMarkets */}
-                    <div className="flex justify-center h-full bg-white items-center ">
+                    <div className="flex justify-center h-full  items-center ">
                       {typeof row.predictMarkets === "boolean" ? (
                         row.predictMarkets ? (
                           <div className="bg-[#0080ED] rounded-full relative z-10 w-[11px] h-[11px] flex items-center justify-center">

@@ -26,7 +26,7 @@ export default function HowItWorks({
         {/* Flow Diagram Container */}
         <div className="relative w-full max-w-[807px] mx-auto max-md:hidden">
           <h4 className="absolute paragraph-medium top-[21%] left-[35%] z-10 max-w-[250px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
-            PredictMarkets generates daily revenue from  trading fees
+            PredictMarkets generates daily revenue from trading fees
           </h4>
           <h4 className="absolute paragraph-medium top-[20%] text-[#000] left-[74%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">Buys back</h4>
           <h4 className="absolute paragraph-medium top-[53%] left-[-5%] z-10 max-w-[300px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">

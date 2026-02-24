@@ -35,7 +35,7 @@ export default function TokenDetails({
         </div>
 
         {/* Chart (optional) */}
-        <div className="mx-auto flex md:h-[442px] h-[200px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white "
+        <div className="mx-auto flex md:h-[462px] h-[222px] w-full max-w-[1209px] items-center justify-center rounded-[15px] border border-[#dddddd] bg-white "
          style={{
           borderRadius: "15px",
           background:
@@ -43,33 +43,33 @@ export default function TokenDetails({
         }}
         >
           <div className="relative hidden h-[422px] w-full max-w-full md:block">
-            <h4 className="heading-four absolute left-[36%] top-[8px] text-black">
+            <h4 className="heading-four md:!text-[14px] md:!leading-[150%] absolute left-[36%] top-[12px] text-black">
               1% Marketing
             </h4>
-            <h4 className="heading-four absolute left-[52%] top-[12px] text-black">
+            <h4 className="heading-four md:!text-[14px] md:!leading-[150%] absolute left-[52%] top-[13px] text-black">
               1% Team
             </h4>
-            <h4 className="heading-four absolute left-[15.5%] top-[17%] text-black">
+            <h4 className="heading-four md:!text-[14px] md:!leading-[150%] absolute left-[15.5%] top-[20%] text-black">
               3% Development
             </h4>
-            <h4 className="heading-four absolute left-[62%] top-[15%] text-black">
+            <h4 className="heading-four md:!text-[14px] md:!leading-[150%] absolute left-[62%] top-[18%] text-black">
               40% Public Sale
             </h4>
             <img
               src={tokenDetailsImageDesktop}
               alt="Token Allocation Chart"
-              className="w-full h-full object-contain"
+              className="w-full h-full min-h-[460px] object-contain"
               onError={(e) => {
                 e.target.style.display = "none";
               }}
             />
-            <h4 className="heading-four absolute left-[17%] top-[32%] max-w-[187px] text-black">
+            <h4 className="heading-four md:!text-[14px] md:!leading-[150%] absolute left-[17%] top-[38%] max-w-[187px] text-black">
               10% Reserved for CEX Listing
             </h4>
-            <h4 className="heading-four absolute bottom-[24%] left-[10.5%] text-black">
+            <h4 className="heading-four md:!text-[14px] md:!leading-[150%] absolute bottom-[20%] left-[10.5%] text-black">
               25% Liquidity Pool
             </h4>
-            <h4 className="heading-four absolute bottom-[21%] right-[15%] text-black">
+            <h4 className="heading-four md:!text-[14px] md:!leading-[150%] absolute bottom-[16%] right-[15%] text-black">
               20% Staking Rewards
             </h4>
           </div>
@@ -89,15 +89,15 @@ export default function TokenDetails({
             <img
               src={tokenDetailsImageMobile}
               alt="Token Allocation Chart"
-              className="h-full w-full object-contain"
+              className="h-full w-full min-h-[175px]"
               onError={(e) => {
                 e.target.style.display = "none";
               }}
             />
-            <p className="absolute bottom-[28%] left-[6%] max-w-[60px] !font-[Helvetica] !text-left text-black font-[500] !text-[10px] !leading-[10px]">
+            <p className="absolute bottom-[28%] left-[6%] max-w-[60px] !font-[Helvetica] !text-left text-black !font-[500] !text-[10px] !leading-[10px]">
               10% <br /> Reserved for CEX Listing
             </p>
-            <p className="absolute bottom-[4%] left-[8%] max-w-[72px] !font-[Helvetica] !text-left text-black font-[500] !text-[10px] !leading-[10px]">
+            <p className="absolute bottom-[4%] left-[8%] max-w-[72px] !font-[Helvetica] !text-left text-black !font-[500] !text-[10px] !leading-[10px]">
               25% Liquidity Pool
             </p>
             <p className="absolute bottom-[2%] right-[10%] max-w-[72px] !font-[Helvetica] !text-left text-black !font-[500] !text-[10px] !leading-[10px]">
@@ -120,7 +120,7 @@ export default function TokenDetails({
                     {item.label}
                   </span>
                   <div className="flex items-center gap-3">
-                    <span className="font-medium  text-black md:text-[18px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.28px]">
+                    <span className="font-medium max-md:w-[72px] text-black md:text-[18px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.28px]">
                       {item.value}
                     </span>
                     {item.copyable && (
@@ -163,7 +163,7 @@ export default function TokenDetails({
                       {item.label}
                     </span>
                     <div className="flex items-center gap-3">
-                      <span className="font-medium font-[Inter] text-black md:text-[18px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.28px]">
+                      <span className="font-medium font-[Inter] text-black md:text-[18px] !text-[12px] md:leading-[24px]  leading-[15px] md:tracking-[0.32px] tracking-[0.28px]">
                         {item.value}
                       </span>
                       {item.copyable && (
@@ -211,7 +211,7 @@ export default function TokenDetails({
                     className={`leading-6 tracking-[0.32px] text-black ${
                       item.value.length > 40
                         ? "text-[12px] md:text-[18px]  font-medium"
-                        : "md:text-[18px]  font-semibold"
+                        : "md:text-[18px] !text-[12px] font-semibold"
                     }`}
                   >
                     {item.valueForMobile ? item.valueForMobile : item.value}
