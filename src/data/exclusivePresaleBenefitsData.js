@@ -1,4 +1,4 @@
-import coinImage from "../assets/images/home/exclusive_presale_benefits/presale_icon (3).svg";
+import coinImage from "../assets/images/home/exclusive_presale_benefits/presale_icon_1.webp";
 import laptopImage from "../assets/images/home/exclusive_presale_benefits/presale_icon (4).svg";
 import treasureChestImage from "../assets/images/home/exclusive_presale_benefits/presale_icon (1).svg";
 import diamondImage from "../assets/images/home/exclusive_presale_benefits/presale_icon (2).svg";

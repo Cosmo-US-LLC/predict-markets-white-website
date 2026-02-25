@@ -33,7 +33,7 @@ export default function HowItWorks({
             $PREDICT <br /> Price Goes Up
           </h4>
           <h4 className="absolute paragraph-medium top-[45%] text-[#000] left-[47%] z-10 max-w-[300px] text-center text-[16px] font-medium leading-[28px] w-full whitespace-pre-wrap">50% Burns</h4>
-          <img src={howItWorksBg} alt="How It Works" className="w-full h-full object-cover" />
+          <img src={howItWorksBg} alt="How It Works" className="object-cover min-h-[500px]" />
           <h4 className="absolute paragraph-medium bottom-[4%] left-[35%] z-10 max-w-[250px] text-center text-[#000] text-base md:!text-[14px] font-medium leading-[140%] w-full whitespace-pre-wrap">
             $PREDICT Holders get daily passive USDT staking income
           </h4>

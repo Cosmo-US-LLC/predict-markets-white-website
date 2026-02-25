@@ -40,7 +40,7 @@ export default function PredictMarketsHero({
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          height: '750px',
+          height: '50%',
         }}
       ></div>
 
@@ -57,7 +57,7 @@ export default function PredictMarketsHero({
 
       <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-2">
         {/* Two Column Layout */}
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-2 ">
+        <div className="flex flex-col lg:flex-row gap-0 lg:gap-2 ">
           {/* Left Section - Content Area */}
           <div className="flex-1 w-full lg:">
           {/* Featured In Badge - At Top */}
@@ -148,7 +148,7 @@ export default function PredictMarketsHero({
             </div>
 
           {/* Featured In Section - At Bottom */}
-            <div className="w-full max-w-[550px] max-md:pb-12">
+            <div className="w-full max-w-[550px] max-md:pb-26">
             <FeaturedInSection
               title={featuredInSectionConfig.title}
               logos={featuredInLogos}

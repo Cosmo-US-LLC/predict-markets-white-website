@@ -56,11 +56,11 @@ export default function ExclusivePresaleBenefits({
               gap-6 items-center md:px-[10px] px-[16px] md:py-7 py-[28px] flex-1 min-w-0"
             >
               {/* Icon */}
-              <div className=" flex items-center justify-center min-h-[100px]">
+              <div className=" flex items-center justify-center h-[100px]  object-cover min-h-[100px]">
                 <img
                   src={benefit.icon}
                   alt=""
-                  className=""
+                  className="max-h-[105px]"
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}

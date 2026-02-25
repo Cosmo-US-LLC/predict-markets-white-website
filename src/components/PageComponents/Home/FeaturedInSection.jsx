@@ -28,7 +28,7 @@ export default function FeaturedInSection({
               {logos.map((logo, index) => (
                 <div
                   key={`logo-1-${logo.id || index}`}
-                  className="flex items-center justify-center h-6 md:h-8 shrink-0"
+                  className="flex items-center justify-center h-6 md:h-6 shrink-0"
                 >
                   {logo.image ? (
                     <img
@@ -47,7 +47,7 @@ export default function FeaturedInSection({
               {logos.map((logo, index) => (
                 <div
                   key={`logo-2-${logo.id || index}`}
-                  className="flex items-center justify-center h-6 md:h-8 shrink-0"
+                  className="flex items-center justify-center h-6 md:h-6 shrink-0"
                 >
                   {logo.image ? (
                     <img
@@ -65,7 +65,7 @@ export default function FeaturedInSection({
                {logos.map((logo, index) => (
                 <div
                   key={`logo-3-${logo.id || index}`}
-                  className="flex items-center justify-center h-6 md:h-8 shrink-0"
+                  className="flex items-center justify-center h-6 md:h-6 shrink-0"
                 >
                   {logo.image ? (
                     <img
@@ -83,7 +83,7 @@ export default function FeaturedInSection({
                {logos.map((logo, index) => (
                 <div
                   key={`logo-4-${logo.id || index}`}
-                  className="flex items-center justify-center h-6 md:h-8 shrink-0"
+                  className="flex items-center justify-center h-6 md:h-6 shrink-0"
                 >
                   {logo.image ? (
                     <img

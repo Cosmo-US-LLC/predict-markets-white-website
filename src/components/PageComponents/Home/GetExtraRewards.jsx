@@ -84,7 +84,7 @@ export default function GetExtraRewards({
             <div className="flex flex-col gap-10">
               <div className="flex flex-col  max-md:!items-center gap-8 md:max-w-[640px] max-w-[370px]  max-md:mx-auto w-full mb-0">
                 <h2 className="heading-two max-md:!text-center">{title}</h2>
-                <p className="paragraph-regular md:!text-start max-md:w-[365px] mx-auto !text-center md:whitespace-pre-line">
+                <p className="paragraph-regular md:!text-start max-md:max-w-[355px] mx-auto !text-center md:whitespace-pre-line">
                   {subtitle}
                 </p>
               </div>

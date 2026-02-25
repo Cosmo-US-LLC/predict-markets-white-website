@@ -190,8 +190,8 @@ export default function WhatSetsUsApart({
           >
             <div className="min-w-[332px] min-h-[490px] p-2">
               {/* Header */}
-              <div className="border-b border-gray-300 pb-4 mb-3 relative">
-                <div className="grid grid-cols-4 gap-2 items-end rounded-[10px] px-2 pb-3">
+              <div className="border-b border-gray-300 md:pb-4 pb-2 md:mb-3 relative">
+                <div className="grid grid-cols-4 gap-2 items-end rounded-[10px] px-2 md:pb-3 pb-0">
                   <div />
                   <div className="absolute top-[-4px] left-[25.8%] border border-[#0080ED] bg-[#FFF] flex items-center justify-center min-h-[478px] w-[82px] z-1 rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"></div>
                   {/* PredictMarkets */}
