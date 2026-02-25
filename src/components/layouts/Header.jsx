@@ -191,6 +191,9 @@ export function Header() {
             width="20"
             height="20"
             viewBox="0 0 20 20"
+            className={`transition-transform duration-300 ${
+      isMobileMenuOpen ? "rotate-180" : ""
+    }`}
             fill="none"
           >
             <path

@@ -60,7 +60,7 @@ export default function Roadmap({
                   key={item.id}
                   className="pl-2 md:pl-4 basis-[350px] md:basis-[400px]"
                 >
-                  <div className="flex md:h-[510px] h-[510px] flex-col md:gap-[20px] gap-[12px] rounded-[15px] border border-[#dddddd] bg-white px-4 py-4 md:px-4 md:py-8">
+                  <div className="flex md:h-[510px] h-[510px] flex-col rounded-[15px] border border-[#dddddd] bg-white px-4 py-4 md:px-4 md:py-8">
                     {/* Header */}
                     <div className="flex items-center justify-between">
                       <h3 className="heading-three !text-[24px] capitalize whitespace-pre-line text-black">
@@ -88,7 +88,7 @@ export default function Roadmap({
                         </span>
                       </div>
                     </div>
-                    <hr className="w-full mt-2 pb-0 border-t border-[#dddddd]" />
+                    <hr className="w-full md:mt-[20px] mt-[10px] pb-0 border-t border-[#dddddd]" />
                     {/* Items List */}
 
                     <div className="flex flex-col">
