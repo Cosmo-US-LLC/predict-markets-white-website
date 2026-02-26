@@ -191,13 +191,14 @@ export function Header() {
             width="20"
             height="20"
             viewBox="0 0 20 20"
-            className={`transition-transform duration-300 ${
-      isMobileMenuOpen ? "rotate-180" : ""
-    }`}
+            className="transition-all duration-300"
             fill="none"
           >
             <path
-              d="M3.3335 5H16.6668M3.3335 10H16.6668M3.3335 15H9.16683"
+              d={isMobileMenuOpen 
+                ? "M3.3335 5H16.6668M3.3335 10H16.6668M10.8335 15H16.6668"
+                : "M3.3335 5H16.6668M3.3335 10H16.6668M3.3335 15H9.16683"
+              }
               stroke="black"
               strokeWidth="1.5"
               strokeLinecap="round"
@@ -291,7 +292,7 @@ export function Header() {
           {/* Buy Button */}
           <Button
             asChild
-            className="btn_primary  flex max-md:!hidden !px-[24px] !text-[16px] !py-[12px]"
+            className="btn_primary  flex max-md:!hidden !rounded-[8px] !px-[24px] !text-[16px] !py-[12px]"
           >
             <Link to="">Connect Wallet</Link>
           </Button>

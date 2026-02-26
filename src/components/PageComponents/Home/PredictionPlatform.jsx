@@ -65,9 +65,9 @@ export default function PredictionPlatform({
               </button>
               <Link
                 to={supportButtonLink}
-                className="flex md:w-[221px] !w-full items-center md:!text-[18px] !text-[18px]
+                className="flex md:w-[221px] !w-full btn_secondary items-center 
                  justify-center gap-2.5 rounded-full border border-black bg-transparent 
-                 md:!px-[15px] py-[12px] md:py-[20px] transition-colors hover:bg-black/5"
+                 md:!px-[15px]  transition-colors hover:bg-black/5"
               >
                 <img
                   src={liveIndicatorDot}
@@ -80,7 +80,7 @@ export default function PredictionPlatform({
                 />
                 <Circle className="w-[10px] h-[10px] fill-green-500 text-green-500 hidden shrink-0" />
                 <span
-                  className="whitespace-nowrap md:text-base !text-[18px] font-medium leading-6 capitalize text-black"
+                  className="whitespace-nowrap  !text-[16px] font-medium leading-6 capitalize text-black"
                   dangerouslySetInnerHTML={{ __html: supportButtonText }}
                 ></span>
               </Link>

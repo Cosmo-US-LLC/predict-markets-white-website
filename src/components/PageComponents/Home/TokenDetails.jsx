@@ -34,7 +34,7 @@ if (reorderedDetails.length >= 6) {
       >
         {/* Header */}
         <div className="flex flex-col items-center gap-2 text-center">
-          <h2 className="text-[28px] md:text-[45px] font-medium leading-[53px] tracking-[-2px] capitalize text-black">
+          <h2 className="heading-two font-medium leading-[53px] tracking-[-2px] capitalize text-black">
             {title}
           </h2>
           <p className="max-w-[813px] paragraph-regular">
@@ -211,10 +211,10 @@ if (reorderedDetails.length >= 6) {
                   index === details.length - 6 ? "md:col-span-3" : ""
                 }`}
               >
-                <span className="font-normal text-[rgba(0,0,0,0.7)] md:!text-[18px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.24px]">
+                <span className="font-normal text-[rgba(0,0,0,0.7)] md:!text-[16px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.24px]">
                   {item.label}
                 </span>
-                <div className="flex flex-col items-start md:gap-3 gap-2">
+                <div className="flex  items-center md:gap-3 gap-2">
                   <span
                     className={`md:leading-6 tracking-[0.32px] text-black ${
                       item.value.length > 40
@@ -348,7 +348,7 @@ if (reorderedDetails.length >= 6) {
                   index === details.length - 6 ? "md:col-span-3" : ""
                 }`}
               >
-                <span className="font-normal text-[rgba(0,0,0,0.7)] md:!text-[18px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.24px]">
+                <span className="font-normal text-[rgba(0,0,0,0.7)] md:!text-[16px] text-[12px] md:leading-[24px] leading-[15px] md:tracking-[0.32px] tracking-[0.24px]">
                   {item.label}
                 </span>
                 <div className="flex items-center md:gap-3 gap-2">

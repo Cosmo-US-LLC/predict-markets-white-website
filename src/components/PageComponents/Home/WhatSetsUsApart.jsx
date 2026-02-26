@@ -19,7 +19,7 @@ export default function WhatSetsUsApart({
         {/* Header */}
         <div className="flex flex-col gap-3 max-w-[970px] text-center mx-auto">
           <h2 className="heading-two">{title}</h2>
-          <p className="paragraph-regular !text-[14px] md:!text-[20px] !font-normal md:leading-6 leading-[22px] md:!tracking-[0.32px] !tracking-[0.28px] text-[#000]">
+          <p className="paragraph-regular !text-[14px] md:!text-[16px] !font-normal md:leading-6 leading-[22px] md:!tracking-[0.32px] !tracking-[0.28px] text-[#000]">
             {description}
           </p>
         </div>
@@ -188,12 +188,13 @@ export default function WhatSetsUsApart({
               // background: "rgba(255, 255, 255, 0.80)",
             }}
           >
-            <div className="min-w-[332px] min-h-[490px] p-2">
+            <div className="min-w-[332px] min-h-[440px] p-2">
               {/* Header */}
               <div className="border-b border-gray-300 md:pb-4 pb-2 md:mb-3 relative">
                 <div className="grid grid-cols-4 gap-2 items-end rounded-[10px] px-2 md:pb-3 pb-0">
                   <div />
-                  <div className="absolute top-[-4px] left-[25.8%] border border-[#0080ED] bg-[#FFF] flex items-center justify-center min-h-[478px] w-[82px] z-1 rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"></div>
+                  <div className="absolute top-[-4px] left-[25.8%] border 
+                  border-[#0080ED] bg-[#FFF] flex items-center justify-center min-h-[420px] w-[85px] z-1 rounded-[8px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)]"></div>
                   {/* PredictMarkets */}
                   <div className="flex flex-col relative z-[99] items-center gap-1">
                     <div className="w-[23px] h-[23px]">
