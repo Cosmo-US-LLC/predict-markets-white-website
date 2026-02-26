@@ -17,7 +17,7 @@ export default function FeaturedInSection({
           }}
         >
           {/* Title */}
-          <p className="text-black text-[10px] md:text-[16px] font-bold leading-6 tracking-[0.32px] whitespace-nowrap shrink-0">
+          <p className="text-black text-[12px] md:text-[16px] font-bold leading-6 tracking-[0.32px] whitespace-nowrap shrink-0">
             {title}
           </p>
 

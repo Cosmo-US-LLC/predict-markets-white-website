@@ -1,5 +1,5 @@
 import howItWorksBg from "../../../assets/images/home/how_does_work/how_does_work_image.webp";
-import howItWorksBgMobile from "../../../assets/images/home/how_does_work/how_does_work_mobile_image.webp";
+import howItWorksBgMobile from "../../../assets/images/home/how_does_work/how_does_work_mobile_image.png";
 
 export default function HowItWorks({
   title = "How Does It Work?",
@@ -68,7 +68,7 @@ export default function HowItWorks({
           <h4 className="absolute top-[53%] -right-[2%] z-10 max-w-[100px] text-center text-[#000] text-[10px] font-medium leading-[18px] w-full whitespace-pre-wrap">
             $PREDICT
           </h4>
-          <img src={howItWorksBgMobile} alt="How It Works" className="w-full h-full object-cover" />
+          <img src={howItWorksBgMobile} alt="How It Works" className="w-[350px] h-[350px] object-cover" />
         </div>
 
 

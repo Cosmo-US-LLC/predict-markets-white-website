@@ -89,7 +89,7 @@ export default function MarketOpportunity({
               <h2 className="heading-two text-[#000] max-md:max-w-[200px] mx-auto max-md:!text-center font-bold">
                 {title}
               </h2>
-              <div className="text-[#000] paragraph-regular !text-center md:!text-start whitespace-pre-line">
+              <div className="text-[#000] paragraph-regular md:!text-[14px] !text-center md:!text-start whitespace-pre-line">
                 {description}
               </div>
             </div>

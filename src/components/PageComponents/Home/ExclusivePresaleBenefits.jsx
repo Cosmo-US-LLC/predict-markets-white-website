@@ -68,13 +68,13 @@ export default function ExclusivePresaleBenefits({
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-3 items-center text-center w-full max-md:max-w-[290px] mx-auto">
+              <div className="flex flex-col md:px-[10px] gap-3 items-center text-center w-full max-md:max-w-[290px] mx-auto">
                 <h3 className="heading-four max-md:!text-[17px] md:max-w-[290px] max-w-[190px] !leading-[140%] capitalize">
                   {benefit.title}
                 </h3>
                 {/* Divider Line */}
                 <div className="h-px bg-[#DFDFDF] w-[90%] mx-auto"></div>
-                <p className="paragraph-regular md:!text-[16px] !leading-[150%]">
+                <p className="paragraph-regular md:!text-[14px] !leading-[150%]">
                   {benefit.description}
                 </p>
               </div>

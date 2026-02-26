@@ -70,7 +70,7 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
                   </svg>
                 </div>
                 {/* Benefit Text */}
-                <h4 className="text-[#000] !text-[16px] md:!text-[16px] !leading-[120%] capitalize heading-four !leading-[120%]">
+                <h4 className="text-[#000] !text-[16px] md:!text-[14px] !leading-[120%] capitalize heading-four !leading-[120%]">
                   {benefit}
                 </h4>
               </div>
@@ -88,7 +88,8 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
 
             <Link
               to={secondaryButtonLink}
-              className="Helvetica flex items-center justify-center px-[10px] py-3 rounded-full border-[1px] border-[#000] bg-white text-[#000]  md:text-[18px] font-[500] uppercase hover:bg-gray-50 transition-colors "
+              className="Helvetica flex items-center justify-center px-[14px] py-[12px] 
+              rounded-[8px] border-[1px] border-[#000] bg-white text-[#000]  md:text-[16px] font-[500] uppercase hover:bg-gray-50 transition-colors "
             >
               {secondaryButtonText}
             </Link>

@@ -174,13 +174,13 @@ export default function HowToBuy({
         <div className="flex md:flex-row flex-col gap-4 justify-center items-center">
           <button
             onClick={scrollToWallet}
-            className="btn_primary w-full sm:w-[285px] md:py-[21px] md:px-[63px] flex items-center justify-center shadow-md"
+            className="btn_primary w-full sm:w-[285px] md:py-[12px] md:px-[63px] flex items-center justify-center shadow-md"
           >
             {buyButtonText}
           </button>
           <Link
             to="/support"
-            className="btn_secondary md:!max-w-[285px] max-w-[100%] md:!py-[21px] md:!px-[3px] !w-full sm:w-auto "
+            className="btn_secondary md:!max-w-[285px] max-w-[100%] md:!py-[12px] md:!px-[3px] !w-full sm:w-auto "
           >
             Need Support?
           </Link>
