@@ -123,7 +123,7 @@ export default function Markets({
                       !text-[#fff] !font-[600] max-md:mb-2">
                         {market.title}
                       </h3>
-                      <p className={`text-[16px] !text-[#fff] md:text-[14px] font-normal 
+                      <p className={`text-[16px] !text-[#fff] md:text-[16px] font-normal 
                       md:leading-[22px] leading-[24px] mt-1 ${
                         isCrypto ? 'text-white/90' : 'text-[#000]'
                       }`}>

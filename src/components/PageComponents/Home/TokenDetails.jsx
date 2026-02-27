@@ -37,7 +37,7 @@ if (reorderedDetails.length >= 6) {
           <h2 className="heading-two font-medium leading-[53px] tracking-[-2px] capitalize text-black">
             {title}
           </h2>
-          <p className="max-w-[813px] paragraph-regular">
+          <p className="max-w-[813px] md:!text-[18px] paragraph-regular">
             {subtitle}
           </p>
         </div>

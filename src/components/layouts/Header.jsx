@@ -159,7 +159,6 @@ export function Header() {
     <header ref={headerRef} className="sticky top-0 z-[101] w-full bg-white border-b border-[#e5e5e5]">
       <div
         className="h-[40px] bg-[#B9E6FE] flex items-center justify-center cursor-pointer hover:bg-[#A8DFFE] transition-colors relative z-[102]"
-        onClick={scrollToWallet}
       >
         <p
           className="text-[#0B4A6F] text-center"
@@ -172,7 +171,7 @@ export function Header() {
             letterSpacing: "0.24px",
           }}
         >
-          <span className="underline font-[600]">Click here</span> to enter the
+          <span className="underline font-[600]" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Click here</span> to enter the
           $PREDICT Presale
         </p>
       </div>
@@ -294,13 +293,13 @@ export function Header() {
             asChild
             className="btn_primary  flex max-md:!hidden !rounded-[8px] !px-[24px] !text-[16px] !py-[12px]"
           >
-            <Link to="">Connect Wallet</Link>
+            <Link to=""   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Connect Wallet</Link>
           </Button>
           <Button
             asChild
             className="btn_primary  flex md:!hidden !px-[24px] !text-[14px] !py-[12px]"
           >
-            <Link to="">Buy Now</Link>
+            <Link to=""   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Buy Now</Link>
           </Button>
         </div>
         {/* Mobile Menu Overlay */}

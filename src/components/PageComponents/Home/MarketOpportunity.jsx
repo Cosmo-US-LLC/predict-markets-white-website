@@ -86,10 +86,10 @@ export default function MarketOpportunity({
           <div className="flex flex-col md:border-l-[1px] md:border-[#ddd] md:pl-[30px] gap-8 md:gap-12 flex-1 max-w-[628px]">
             {/* Text Content */}
             <div className="flex flex-col gap-4 text-center md:text-left">
-              <h2 className="heading-two text-[#000] max-md:max-w-[200px] mx-auto max-md:!text-center font-bold">
+              <h2 className="heading-two text-[#000] max-md:max-w-[200px] max-md:mx-auto max-md:!text-center font-bold">
                 {title}
               </h2>
-              <div className="text-[#000] paragraph-regular md:!text-[14px] !text-center md:!text-start whitespace-pre-line">
+              <div className="text-[#000] paragraph-regular  !text-center md:!text-start whitespace-pre-line">
                 {description}
               </div>
             </div>

@@ -40,17 +40,17 @@ const docsLinks = [
 ];
 
 const socialLinks = [
-  { icon: xLogo, href: "https://x.com/predictmarkets", label: "X (Twitter)" },
+  { icon: xLogo, href: "https://x.com/Prediction_eth", label: "X (Twitter)" },
   {
     icon: telegramLogo,
-    href: "https://t.me/predictmarkets",
+    href: "https://t.me/predict_markets_chat",
     label: "Telegram",
   },
-  {
-    icon: instagramLogo,
-    href: "https://www.instagram.com/predictmarkets",
-    label: "Instagram",
-  },
+  // {
+  //   icon: instagramLogo,
+  //   href: "https://www.instagram.com/predictmarkets",
+  //   label: "Instagram",
+  // },
 ];
 
 export function Footer() {

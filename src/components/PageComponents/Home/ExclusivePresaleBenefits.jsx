@@ -74,7 +74,7 @@ export default function ExclusivePresaleBenefits({
                 </h3>
                 {/* Divider Line */}
                 <div className="h-px bg-[#DFDFDF] w-[90%] mx-auto"></div>
-                <p className="paragraph-regular md:!text-[14px] !leading-[150%]">
+                <p className="paragraph-regular md:!text-[16px] !leading-[150%]">
                   {benefit.description}
                 </p>
               </div>
