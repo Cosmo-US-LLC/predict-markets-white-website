@@ -1,3 +1,8 @@
+import coinImage from "../../../assets/images/home/exclusive_presale_benefits/presale_icon (1).svg";
+import laptopImage from "../../../assets/images/home/exclusive_presale_benefits/presale_icon (2).svg";
+import treasureChestImage from "../../../assets/images/home/exclusive_presale_benefits/presale_icon (3).svg";
+import diamondImage from "../../../assets/images/home/exclusive_presale_benefits/presale_icon (4).svg";
+
 export default function ExclusivePresaleBenefits({
   title = "Exclusive Presale Benefits",
   benefits = [
@@ -5,25 +10,28 @@ export default function ExclusivePresaleBenefits({
       id: 1,
       icon: coinImage,
       title: "Lowest Entry Price Before Launch",
-      description: "During the presale, you can buy $PREDICT at its lowest price before it launches on centralised and decentralised exchanges.",
+      description: "Dur",
     },
     {
       id: 2,
       icon: laptopImage,
-      title: "Priority Access to Platform Features",
-      description: "Early holders receive priority access to key features at launch, including advanced markets and early participation opportunities.",
+      title: "Priority Access To Platform Features",
+      description:
+        "Early holders gain exclusive memberships with priority access to higher APY USDT staking pools and Key Features at launch.",
     },
     {
       id: 3,
       icon: treasureChestImage,
-      title: "Receive up to 40% platform credits",
-      description: "Receive up to 40% in free credits to predict and bet on PredictMarkets, with no conditions or obligations attached.",
+      title: "Receive Up To 40% Platform Credits",
+      description:
+        "Get up to 40% of your purchase value in free credits to place predictions on PredictMarkets, with no strings attached.",
     },
     {
       id: 4,
       icon: diamondImage,
-      title: "$250K giveaway participation",
-      description: "Participate in our 250k giveaway and go all out to win big. This event is exclusively available for presale $PREDICT buyers.",
+      title: "$250K Giveaway Participation",
+      description:
+        "Participate in our $250k giveaway and go all out to win big. This event is exclusively available for presale $PREDICT buyers.",
     },
   ],
 }) {
@@ -32,38 +40,41 @@ export default function ExclusivePresaleBenefits({
   }
 
   return (
-    <section className="bg-white py-12 md:py-[60px]">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8">
+    <section className="bg-white py-12 md:py-[60px]" id="presale-benefits">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-2">
         {/* Title */}
-        <h2 className="heading-two capitalize text-black text-center mb-12 md:mb-[48px]">
+        <h2 className="heading-two mb-8 md:max-w-[700px] max-w-[240px] mx-auto !text-center">
           {title}
         </h2>
 
         {/* Benefits Grid */}
-        <div className="flex flex-col md:flex-row gap-[10px] items-stretch">
+        <div className="flex flex-col md:flex-row md:gap-2 gap-4 items-stretch">
           {benefits.map((benefit) => (
             <div
               key={benefit.id}
-              className="flex flex-1 min-w-0 flex-col items-center gap-8 rounded-[20px] border border-[#e5e5e5] bg-white px-4 py-7 shadow-[0_8px_24px_rgba(0,0,0,0.04)]"
+              className="md:bg-white bg-[#FAF9F9] rounded-[12px] border-[1px] md:rounded-[15px] border-[#DDD] flex flex-col 
+              gap-6 items-center md:px-[10px] px-[16px] md:py-7 py-[28px] flex-1 min-w-0"
             >
               {/* Icon */}
-              <div className="h-[98px] w-[106px] flex items-center justify-center shrink-0">
+              <div className=" flex items-center justify-center h-[100px]  object-cover min-h-[100px]">
                 <img
                   src={benefit.icon}
                   alt=""
-                  className="w-full h-full object-contain"
+                  className="max-h-[105px]"
                   onError={(e) => {
-                    e.target.style.display = 'none';
+                    e.target.style.display = "none";
                   }}
                 />
               </div>
 
               {/* Content */}
-              <div className="flex flex-col gap-3 items-center text-center w-full">
-                <h3 className="heading-three capitalize text-black">
+              <div className="flex flex-col md:px-[10px] gap-3 items-center text-center w-full max-md:max-w-[290px] mx-auto">
+                <h3 className="heading-four max-md:!text-[17px] md:max-w-[290px] max-w-[190px] !leading-[140%] capitalize">
                   {benefit.title}
                 </h3>
-                <p className="paragraph-regular text-[#4b4b4b]">
+                {/* Divider Line */}
+                <div className="h-px bg-[#DFDFDF] w-[90%] mx-auto"></div>
+                <p className="paragraph-regular md:!text-[14px] !leading-[150%]">
                   {benefit.description}
                 </p>
               </div>

@@ -8,7 +8,7 @@ export const whatIsPredictConfig = {
     "Weekly bonuses and free games",
   ],
   buyButtonText: "BUY $PREDICT",
-  buyButtonLink: "/buy",
-  secondaryButtonText: "Visit PredictMarkets (Beta)",
+  buyButtonLink: "#wallet",
+  secondaryButtonText: "Visit Platform (Beta)",
   secondaryButtonLink: "/what-is-predictmarkets",
 };

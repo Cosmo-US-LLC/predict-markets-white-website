@@ -1,26 +1,30 @@
 @import "tailwindcss";
 
 @import "./assets/style/imageLink.css";
+@import "./assets/style/animation.css";
 /* Font Face Declarations */
 @font-face {
-  font-family: 'Helvetica Neue Medium Extended';
-  src: url('./assets/fonts/HELVETICA NEUE MEDIUM EXTENDED.OTF') format('opentype');
+  font-family: "Helvetica Neue Medium Extended";
+  src: url("./assets/fonts/HELVETICA NEUE MEDIUM EXTENDED.OTF")
+    format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter';
-  src: url('./assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype-variations');
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf")
+    format("truetype-variations");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -33,34 +37,57 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Heading Styles - Use Helvetica Neue Medium Extended */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica Neue Medium Extended', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif !important;
 }
 
 .heading-one {
   font-size: 60px;
   font-style: normal;
   font-weight: 500;
-  line-height: 68px;  
+  line-height: 68px; /* 113.333% */
   letter-spacing: -1px;
+  text-transform: capitalize;
 }
 .heading-two {
-  font-size: 45px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: 53px;  
   letter-spacing: -2px;
+  text-transform: capitalize;
 }
 .heading-three {
   font-size: 24px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 500 !important;
   line-height: 32px;  
   letter-spacing: 0.48px;
 }
@@ -73,17 +100,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .paragraph-regular {
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;  
-  letter-spacing: 0.32px;
+  color: #000;
+text-align: center;
+/* Paragraph Text 20/Regular */
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px; /* 140% */
+letter-spacing: 0.4px;
 }
 .paragraph-medium {
   font-style: normal;
   font-weight: 400;
-  line-height: 26px;  
+  font-size: 16px;
+  line-height: 22px;  
   letter-spacing: 0.36px;
+font-family: Inter;
 }
 
 .gradient-border-rounded {
@@ -99,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.6px; /* border thickness */
   border-radius: inherit;
   /* background-color: #ffffff; */
-  background: radial-gradient(circle, #2104FF 0%, #FFFFFF 50%, #2104FF 100%);
+  background: radial-gradient(circle, #2104ff 0%, #ffffff 50%, #2104ff 100%);
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -109,81 +142,121 @@ h1, h2, h3, h4, h5, h6 {
 
 .radial-dark-glow {
   background:
-    radial-gradient(50% 50% at 50% 50%,
-      rgba(33, 4, 255, 0.30) 0%,
-      rgba(33, 4, 255, 0.00) 100%
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(33, 4, 255, 0.3) 0%,
+      rgba(33, 4, 255, 0) 100%
     ),
-    #020B10;
+    #020b10;
 }
 
-
-
-
-
-/* Button Classes */
 .btn_primary {
-  display: flex;
-  padding: 12px 24px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 100px;
-  background: #2104FF;
-  color: #FFF;
+  padding: 12px 60px;
+ position: relative;
+   color: #fff;
   text-align: center;
-  font-family: "Helvetica Neue Medium Extended", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  text-transform: uppercase;
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+   border-radius: 8px !important;
+  background: #0080ed;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  outline: none;
 }
 
+/* .btn_primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 152.889px;
+  background: linear-gradient(0deg, #0080ED 0%, #0080ED 100%);
+  filter: blur(7.644444px);
+  z-index: -1;
+} */
+/* .btn_primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 152.889px;
+  background: rgba(0, 0, 0, 0);
+  box-shadow: 
+    0 -1.529px 3.058px 0 #F5E99C inset,
+    0 1.529px 3.058px 0 #F5E99C inset;
+  z-index: 1;
+} */
+
 .btn_primary:hover {
-  background: #1a03cc;
+  background: #0080ed;
   transform: translateY(-1px);
 }
 
 .btn_primary:active {
-  background: #1502a6;
+  background: #0080ed;
   transform: translateY(0);
 }
-
+.Helvetica{
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
 .btn_secondary {
   display: flex;
-  padding: 20px 48px;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 100px;
-  background: linear-gradient(274deg, rgba(255, 255, 255, 0.20) 0.85%, rgba(255, 255, 255, 0.10) 50.43%, rgba(255, 255, 255, 0.20) 100.01%);
-  box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset, 0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.50) inset, 0 3px 1.5px -1.5px rgba(0, 0, 0, 0.20), 0 0 1.2px 3px rgba(255, 255, 255, 0.20) inset;
-  backdrop-filter: blur(0.75px);
-  color: #FFF;
-  text-align: center;
-  font-family: "Helvetica Neue Medium Extended", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 16px;
+  padding: 12px 60px;
+border-radius: 8px !important;
+border: 1px solid #000;
+background: rgba(0, 0, 0, 0.00);
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+color: #000;
+text-align: center !important;
+font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px;
-  text-transform: capitalize;
-  border: none;
+text-transform: capitalize !important;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .btn_secondary:hover {
-  background: linear-gradient(274deg, rgba(255, 255, 255, 0.25) 0.85%, rgba(255, 255, 255, 0.15) 50.43%, rgba(255, 255, 255, 0.25) 100.01%);
-  box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset, 0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.60) inset, 0 3px 1.5px -1.5px rgba(0, 0, 0, 0.20), 0 0 1.2px 3px rgba(255, 255, 255, 0.30) inset;
+  background: linear-gradient(
+    274deg,
+    rgba(255, 255, 255, 0.25) 0.85%,
+    rgba(255, 255, 255, 0.15) 50.43%,
+    rgba(255, 255, 255, 0.25) 100.01%
+  );
+  box-shadow:
+    0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset,
+    0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.6) inset,
+    0 3px 1.5px -1.5px rgba(0, 0, 0, 0.2),
+    0 0 1.2px 3px rgba(255, 255, 255, 0.3) inset;
   transform: translateY(-1px);
 }
 
 .btn_secondary:active {
-  background: linear-gradient(274deg, rgba(255, 255, 255, 0.15) 0.85%, rgba(255, 255, 255, 0.05) 50.43%, rgba(255, 255, 255, 0.15) 100.01%);
-  box-shadow: 0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset, 0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.40) inset, 0 2px 1px -1px rgba(0, 0, 0, 0.25), 0 0 1px 2px rgba(255, 255, 255, 0.15) inset;
+  background: linear-gradient(
+    274deg,
+    rgba(255, 255, 255, 0.15) 0.85%,
+    rgba(255, 255, 255, 0.05) 50.43%,
+    rgba(255, 255, 255, 0.15) 100.01%
+  );
+  box-shadow:
+    0 1.5px 1.5px 0 rgba(0, 0, 0, 0.05) inset,
+    0 -1.5px 1.5px 0 rgba(255, 255, 255, 0.4) inset,
+    0 2px 1px -1px rgba(0, 0, 0, 0.25),
+    0 0 1px 2px rgba(255, 255, 255, 0.15) inset;
   transform: translateY(0);
 }
 
@@ -192,12 +265,17 @@ h1, h2, h3, h4, h5, h6 {
   padding: 12px 24px;
   justify-content: center;
   align-items: center;
-  border-radius: 126.923px;
-  border: 1px solid #FFF;
-  background: rgba(0, 0, 0, 0.00);
-  color: #FFF;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0);
+  color: #fff;
   text-align: center;
-  font-family: "Helvetica Neue Medium Extended", -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family:
+    "Helvetica Neue Medium Extended",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -209,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn_outline:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: #FFF;
+  border-color: #fff;
   transform: translateY(-1px);
 }
 
@@ -217,18 +295,19 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.05);
   transform: translateY(0);
 }
-
  
 /* Tailwind Font Family Configuration for Tailwind CSS 4 */
 @theme {
-  --font-heading: 'Helvetica Neue Medium Extended', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', sans-serif;
+  --font-heading:
+    "Helvetica Neue Medium Extended", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-body:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
   
   --font-family-heading: var(--font-heading);
   --font-family-body: var(--font-body);
 }
-
-
 
 @media screen and (max-width: 768px) {
   .heading-one {
@@ -261,10 +340,49 @@ h1, h2, h3, h4, h5, h6 {
   }
   .paragraph-regular {
     font-family: Inter;
-    font-size: 14px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 22px;  
+    line-height: 24px !important;  
     letter-spacing: 0.28px;
   }
+  .paragraph-medium {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;  
+  letter-spacing: 0.36px;
+font-family: Inter;
+
+}
+.btn_secondary{
+  padding: 12px 24px !important;
+}
+.btn_primary {
+  padding: 12px 24px !important;
+}
+
+/* Mobile gradient text for hero title */
+@media (max-width: 767px) {
+  .hero-title-gradient {
+    background: linear-gradient(180deg, #0080ED -30.28%, #2E2E2E 89.98%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+
 }

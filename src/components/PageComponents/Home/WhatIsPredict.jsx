@@ -1,97 +1,95 @@
-import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
+import { scrollToWallet } from '../../../lib/utils';
 import coinImage from "../../../assets/images/home/what_is_predict/what_is_predict_coin_image2.webp";
 import ellipseImage from "../../../assets/images/home/what_is_predict/what_is_predict_ellipse.png";
-import backgroundImage from "../../../assets/images/home/what_is_predict/what_is_predict_bg.webp";
-import checkIcon from "../../../assets/images/home/what_is_predict/what_is_predict_check.webp";
+import { Link } from 'react-router-dom';
+
 
 export default function WhatIsPredict({
   title = "What is $PREDICT?",
-  description = "$PREDICT is the cryptocurrency that powers the PredictMarkets decentralised ecosystem, enabling peer-to-peer predictions on real world events such as elections, sports, global financial markets, and much more, without the need for a bookmaker.\n\nPredictMarkets is transparent, global, and anonymous, offering instant withdrawals and full user control in a fair prediction marketplace built for the future.\n\nHolding $PREDICT unlocks real utility and exclusive platform advantages across the platform.",
+  description = "The $PREDICT token gives holders access to a decentralised prediction market ecosystem, enabling anonymous (no KYC), transparent, and global peer-to-peer predictions on real world events such as elections, sports, news, and much more.\n\nHolding $PREDICT unlocks real utility and exclusive early advantages across the platform.",
   benefits = [
-    "Daily USDT staking income from trading fee revenue",
-    "Lower fees and access to exclusive memberships",
-    "Payment method with cashback included",
-    "Weekly bonuses and free games",
+    "Daily USDT Staking Income From Platform Revenue",
+    "Lower Fees And Exclusive Membership Perks",
+    "Only Payment Method With Cashback",
+    "Weekly Bonuses And Free Games",
   ],
   buyButtonText = "BUY $PREDICT",
-  buyButtonLink = "/buy",
-  secondaryButtonText = "Visit PredictMarkets (Beta)",
+  buyButtonLink = "#wallet",
+  secondaryButtonText = "Visit Platform (Beta)",
   secondaryButtonLink = "/what-is-predictmarkets",
 }) {
-  return (
-    <section
-      id="what-is-predictmarkets"
-      className="relative w-full overflow-hidden bg-[#fff] flex items-center justify-center px-4 md:px-0 py-12 md:py-16"
-    >
-      {/* Blurred Background */}
-      <div className="absolute inset-0 w-full h-full blur-[16.8px]">
-        <img
-          src={backgroundImage}
-          alt="Background"
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            e.target.style.display = "none";
-          }}
-        />
-      </div>
+  // Split description into paragraphs
+  const descriptionParagraphs = description.split('\n\n');
 
+  return (
+    <section id="what-is-predictmarkets" className="relative w-full overflow-hidden 
+    flex items-center justify-center px-4 md:px-0 py-12 md:py-16 bg-gradient-to-br
+     from-[#E6F2FF] to-[#F0F8FF]">
       {/* Main Card Container */}
-      <div className="relative z-10 backdrop-blur-[18.65px] w-full max-w-[1220px] mx-auto px-6 md:px-12 py-8 md:py-8 md:h-[580px] flex flex-col md:flex-row gap-8 md:gap-[32px] items-center overflow-hidden rounded-[32px] border border-[#dddddd] bg-white/95">
+      <div className="relative overflow-hidden z-10 bg-white rounded-2xl md:rounded-[44px]
+       w-full max-w-[1280px] mx-auto px-6 md:px-12 py-8 md:py-12 flex
+        flex-col md:flex-row gap-2 md:gap-6 items-center border-[1px] border-[#9C9C9C]">
         {/* Left Content */}
-        <div className="flex-1 flex flex-col gap-[22px] items-start z-10">
+        <div className="flex flex-col gap-6 items-start z-10 !max-w-[500px] md:min-w-[500px] !w-[100%]">
           {/* Title */}
-          <h2 className="text-3xl md:text-[45px] font-medium leading-[53px] tracking-[-2px] capitalize text-black whitespace-nowrap">
+          <h2 className="heading-two">
             {title}
           </h2>
 
-          {/* Description */}
-          <p className="text-[#4b4b4b] text-sm md:text-[14px] font-normal leading-[22px] tracking-[0.28px] max-w-[483px] whitespace-pre-wrap">
-            {description}
-          </p>
+          {/* Description Paragraphs */}
+          <div className="w-full">
+            {descriptionParagraphs.map((paragraph, index) => (
+              <p key={index} className="!text-start md:!text-[16px] max-w-[661px] paragraph-regular">
+The $PREDICT token gives holders access to a decentralised prediction market
+ ecosystem, enabling anonymous (no KYC), transparent,
+  and global peer-to-peer predictions on real world events such as elections,
+   sports, news, and much more. <br /><br />
+Holding $PREDICT unlocks real utility and exclusive early advantages across the platform.
+              </p>
+            ))}
+          </div>
 
           {/* Benefits List */}
-          <div className="flex flex-col gap-3 md:gap-[12px]">
+          <div className="flex flex-col gap-3 md:gap-4 w-full">
             {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex gap-3 md:gap-[12px] items-center"
-              >
-                {/* Check Icon */}
-                <div className="border-[0.764px] border-[#0080ED] rounded-[3.058px] w-[22px] h-[22px] flex items-center justify-center shrink-0 bg-white">
-                  <div className="w-[15.289px] h-[15.289px] flex items-center justify-center">
-                    <img
-                      src={checkIcon}
-                      alt=""
-                      className="w-full h-full object-contain"
-                      onError={(e) => {
-                        e.target.style.display = "none";
-                        e.target.nextSibling.style.display = "block";
-                      }}
-                    />
-                    <Check className="w-full h-full text-[#0080ED] hidden" />
-                  </div>
+              <div key={index} className="flex gap-3 items-center">
+                {/* Check Icon - Blue */}
+                <div 
+                  className="flex items-center justify-center shrink-0"
+                  style={{
+                    width: '19.876px',
+                    height: '19.876px',
+                    padding: '1.938px 2.587px 2.649px 2px',
+                    borderRadius: '3.058px',
+                    border: '0.764px solid rgba(255, 255, 255, 0.51)',
+                    background: '#E6F6FF'
+                  }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6.63362 12.7521C6.63183 12.7521 6.62974 12.7521 6.62795 12.7521C6.55389 12.7506 6.48402 12.7189 6.43385 12.6646L1.31386 7.09726C1.22607 7.00171 1.21801 6.85778 1.29475 6.75296C1.3715 6.64845 1.51125 6.61262 1.6289 6.66756L6.315 8.86176C6.35442 8.88027 6.401 8.87131 6.43116 8.83996L13.5793 1.36901C13.6761 1.26778 13.8343 1.25673 13.9442 1.34392C14.0541 1.43112 14.0795 1.58759 14.0027 1.70494L6.89222 12.5977C6.88207 12.6135 6.87012 12.6278 6.85698 12.6413L6.82563 12.6726C6.77457 12.7234 6.70529 12.7521 6.63362 12.7521Z" fill="#0080ED"/>
+                  </svg>
                 </div>
                 {/* Benefit Text */}
-                <h5 className="text-[#4b4b4b] text-base md:text-[16px] font-medium leading-[24px] capitalize">
+                <h4 className="text-[#000] !text-[16px] md:!text-[14px] !leading-[120%] capitalize heading-four !leading-[120%]">
                   {benefit}
-                </h5>
+                </h4>
               </div>
             ))}
           </div>
 
-          {/* Buy Button */}
-          <div className="flex flex-col md:flex-row gap-4">
-            <Link
-              to={buyButtonLink}
-              className="btn_primary flex items-center justify-center"
+          {/* Buttons */}
+          <div className='flex flex-col md:flex-row gap-4 w-full md:w-auto'>
+            <button
+              onClick={scrollToWallet}
+              className="btn_primary flex items-center !px-[25px] justify-center"
             >
               {buyButtonText}
-            </Link>
+            </button>
 
             <Link
               to={secondaryButtonLink}
-              className="btn_outline flex items-center justify-center"
+              className="Helvetica flex items-center justify-center px-[14px] py-[12px] 
+              rounded-[8px] border-[1px] border-[#000] bg-white text-[#000]  md:text-[16px] font-[500] uppercase hover:bg-gray-50 transition-colors "
             >
               {secondaryButtonText}
             </Link>
@@ -99,25 +97,15 @@ export default function WhatIsPredict({
         </div>
 
         {/* Right Visual Content */}
-        <div className="flex-1 relative w-full h-[400px] md:h-[630px] flex items-center justify-center z-10">
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[445px] h-[498px] opacity-50">
-            <img
-              src={ellipseImage}
-              alt=""
-              className="w-full h-full object-contain"
-              onError={(e) => {
-                e.target.style.display = "none";
-              }}
-            />
-          </div>
-
-          <div className="relative w-full max-w-[547px] h-full flex items-center justify-center">
+        <div className=" w-full z-10 flex items-center max-md:h-[420px] justify-center">
+          <div className=" !w-full md:absolute absolute -bottom-6  md:-bottom-30 md:-mr-8 flex items-center 
+          justify-center md:!min-w-[700px] min-w-[480px] ">
             <img
               src={coinImage}
               alt="PredictMarkets Coin"
-              className="w-full h-full object-contain"
+              className="!w-full md:max-w-[700px]  h-full object-contain"
               onError={(e) => {
-                e.target.style.display = "none";
+                e.target.style.display = 'none';
               }}
             />
           </div>

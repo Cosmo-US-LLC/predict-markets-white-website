@@ -80,7 +80,7 @@ export const comparisonTableData = [
 
 export const whatSetsUsApartConfig = {
   title: 'What Sets Us Apart',
-  description: 'Prediction markets are growing fast because of their communities. That\'s why our principle is simple: the community should benefit from the platform\'s growth, not just the company behind it. PredictMarkets is built to be the most rewarding place where you can predict events and earn from the ecosystem at the same time.',
+  description: 'Prediction markets thrive on community. That’s why our principle is simple: the community should benefit from the platform’s growth, not just the company behind it. PredictMarkets is built to reward users for predicting real world events while participating in the growth of the ecosystem.',
   platforms: {
     predictMarkets: {
       name: 'PredictMarkets',

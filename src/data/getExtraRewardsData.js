@@ -89,13 +89,13 @@ export const membershipCards = [
 ];
 
 export const getExtraRewardsConfig = {
-  title: "Get Extra Rewards Starting From $1,000",
-  subtitle: "Not only will you get more $PREDICT, but you'll also unlock greater rewards! Enroll in the exclusive Elite PREDICT Members Club and enjoy incredible benefits starting from as little as $1000. These advantages are exclusively available during the presale.",
+  title: "Get Bonus Rewards Starting From $1,000",
+  subtitle: "Get more $PREDICT and unlock higher rewards by joining the Elite PREDICT Members Club. Access starts from $1,000 \n and is available only during the presale.",
   sliderLabel: "How much do you want to spend?",
   sliderMin: 1000,
   sliderMax: 100000,
   buyButtonText: "BUY $PREDICT",
-  buyButtonLink: "/buy",
-  disclaimer: "(You will get the membership NFT automatically when you purchase $PREDICT)",
+  buyButtonLink: "#wallet",
+  disclaimer: "(You will get the membership NFT automatically when you buy $PREDICT)",
   autoPlayInterval: 5000, // 5 seconds
 };

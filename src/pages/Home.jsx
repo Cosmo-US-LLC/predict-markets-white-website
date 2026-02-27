@@ -54,7 +54,7 @@ import { predictMarketsHeroConfig } from "../data/predictMarketsHeroData";
 
 export function Home() {
   return (
-    <div className="min-h-screen bg-[#020b10]">
+    <div className="min-h-screen">
       <PredictMarketsHero
         title={predictMarketsHeroConfig.title}
         description={predictMarketsHeroConfig.description}
@@ -128,13 +128,13 @@ export function Home() {
         buyButtonText={marketOpportunityConfig.buyButtonText}
         buyButtonLink={marketOpportunityConfig.buyButtonLink}
       />
-      {/* <WhatSetsUsApart
+      <WhatSetsUsApart
         title={whatSetsUsApartConfig.title}
         description={whatSetsUsApartConfig.description}
         tableData={comparisonTableData}
         platforms={whatSetsUsApartConfig.platforms}
         icons={whatSetsUsApartConfig.icons}
-      /> */}
+      />
       <TokenDetails
         title={tokenDetailsConfig.title}
         subtitle={tokenDetailsConfig.subtitle}
