@@ -8,7 +8,7 @@ export const howToBuySteps = [
     id: 'step-1',
     stepNumber: 'Step 1',
     title: 'Connect Your Wallet',
-    description: 'Click Connect Wallet and link your decentralized wallet like MetaMask, Trust Wallet, Phantom, or any other supported \n\ wallet in seconds.',
+    description: 'Click Connect Wallet and link your decentralized wallet like MetaMask, Trust Wallet, Phantom, or any other supported wallet in seconds.',
     image: step1Image,
   },
   {

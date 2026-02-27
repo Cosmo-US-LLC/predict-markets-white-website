@@ -293,13 +293,13 @@ export function Header() {
             asChild
             className="btn_primary  flex max-md:!hidden !rounded-[8px] !px-[24px] !text-[16px] !py-[12px]"
           >
-            <Link to=""   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Connect Wallet</Link>
+            <Link to=""   onClick={() => scrollToWallet(140)}>Connect Wallet</Link>
           </Button>
           <Button
             asChild
             className="btn_primary  flex md:!hidden !px-[24px] !text-[14px] !py-[12px]"
           >
-            <Link to=""   onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Buy Now</Link>
+            <Link to=""  onClick={() => scrollToWallet(140)}>Buy Now</Link>
           </Button>
         </div>
         {/* Mobile Menu Overlay */}

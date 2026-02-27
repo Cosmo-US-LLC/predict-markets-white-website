@@ -5,23 +5,26 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-// 🔹 Generic scroll with offset
-function scrollWithOffset(element, offset = 100) {
-  const elementPosition = element.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+
+// 🔹 Scroll to wallet with offset
+function scrollWithOffset(element, offset = 10) {
+  const y =
+    element.getBoundingClientRect().top +
+    window.scrollY -
+    offset;
 
   window.scrollTo({
-    top: offsetPosition,
+    top: y,
     behavior: "smooth",
   });
 }
 
-// 🔹 Scroll to wallet with offset
-export function scrollToWallet(offset = 100) {
+export function scrollToWallet(offset = 10) {
   const walletElement = document.getElementById("wallet");
-  if (walletElement) {
-    scrollWithOffset(walletElement, offset);
-  }
+  if (!walletElement) return;
+
+  scrollWithOffset(walletElement, offset);
 }
 
 // 🔹 Scroll to any section with offset

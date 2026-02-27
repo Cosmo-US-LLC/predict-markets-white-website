@@ -97,7 +97,7 @@ export default function MarketOpportunity({
             {/* Buy Button */}
             <div className="flex justify-center md:justify-start">
               <button
-                onClick={scrollToWallet}
+                onClick={() => scrollToWallet(140)}
                 className="btn_primary w-full md:w-[282px]  flex items-center justify-center"
               >
                 {buyButtonText}
