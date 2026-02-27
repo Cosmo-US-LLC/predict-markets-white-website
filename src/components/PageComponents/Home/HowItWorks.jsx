@@ -18,7 +18,7 @@ export default function HowItWorks({
           <h2 className="heading-two">
             {title}
           </h2>
-          <p className="text-[#000] text-base md:text-[16px] font-normal leading-[24px] tracking-[0.32px] max-w-[767px]">
+          <p className="text-[#000] text-base md:!text-[18px] font-normal leading-[24px] tracking-[0.32px] max-w-[840px]">
             {subtitle}
           </p>
         </div>

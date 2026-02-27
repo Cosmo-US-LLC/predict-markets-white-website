@@ -66,7 +66,7 @@ export default function FrequentlyAskedQuestions() {
           <h2 className="heading-two capitalize text-[#000]">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#000] paragraph-regular  md:!text-[20px] !text-[16px] max-w-[812px]">
+          <p className="text-[#000] md:!text-[18px] paragraph-regular  max-w-[812px]">
             You may have questions, <br className="md:hidden" /> we have the
             answers.
           </p>
@@ -98,7 +98,7 @@ export default function FrequentlyAskedQuestions() {
                   </span>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6 pt-0">
-                  <p className="paragraph-regular !leading-[22px] md:!leading-[28px] !text-[12px] md:!text-[20px] !text-start text-[#000]">
+                  <p className="paragraph-regular !text-start text-[#000]">
                     {faq.answer}
                   </p>
                 </AccordionContent>
