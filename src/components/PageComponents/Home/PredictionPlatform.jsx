@@ -11,7 +11,7 @@ export default function PredictionPlatform({
   buyButtonText = "BUY $PREDICT",
   supportButtonText = "24/7 Live Support here",
   buyButtonLink = "#wallet",
-  supportButtonLink = "/support",
+  supportButtonLink = "https://t.me/predict_markets_chat",
 }) {
   return (
     <section className="relative w-full overflow-hidden bg-[#fff]">
@@ -50,7 +50,7 @@ export default function PredictionPlatform({
             </h2>
 
             {/* Subtitle */}
-            <p className="paragraph-regular max-w-[539px] font-[400] text-center !text-[14px] md:!text-[20px] text-[#000]">
+            <p className="paragraph-regular md:!text-[18px] max-w-[529px] font-[400] text-center text-[#000]">
               {subtitle}
             </p>
 
@@ -58,13 +58,14 @@ export default function PredictionPlatform({
             <div className="flex flex-col items-center justify-center
              gap-[16px] pt-[2px] sm:flex-row max-md:w-[80%]">
               <button
-                onClick={scrollToWallet}
+                onClick={() => scrollToWallet(140)}
                 className="btn_primary !w-full md:w-[100%] md:!px-[65px] "
               >
                 {buyButtonText}
               </button>
               <Link
-                to={supportButtonLink}
+                to="https://t.me/predict_markets_chat"
+                target="_blank"
                 className="flex md:w-[221px] !w-full btn_secondary items-center 
                  justify-center gap-2.5 rounded-full border border-black bg-transparent 
                  md:!px-[15px]  transition-colors hover:bg-black/5"

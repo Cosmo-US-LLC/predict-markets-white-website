@@ -84,7 +84,7 @@ export default function GetExtraRewards({
             <div className="flex flex-col gap-10">
               <div className="flex flex-col  max-md:!items-center gap-8 md:max-w-[640px] max-w-[370px]  max-md:mx-auto w-full mb-0">
                 <h2 className="heading-two max-md:!text-center">{title}</h2>
-                <p className="paragraph-regular md:!text-start max-md:max-w-[355px] mx-auto !text-center md:whitespace-pre-line">
+                <p className="paragraph-regular md:!text-[18px] md:!text-start md:max-w-[530px]  max-md:max-w-[355px] max-md:mx-auto !text-center md:whitespace-pre-line">
                   {subtitle}
                 </p>
               </div>
@@ -292,11 +292,11 @@ export default function GetExtraRewards({
                         <div className="flex flex-col gap-3 flex-1 w-full lg:w-[353px]">
                           {card.cardImage && (
                             <div className="hidden md:block b h-[155px] w-full relative overflow-hidden ">
-                              <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="absolute inset-0 h-[155px]  flex items-center justify-center">
                                 <img
                                   src={card.cardImage}
                                   alt={`${card.tier} membership`}
-                                  className="w-full h-full object-contain"
+                                  className="w-full h-full !rounded-[19px] max-h-[150px] object-contain"
                                   onError={(e) => {
                                     e.target.style.display = "none";
                                   }}
@@ -308,7 +308,7 @@ export default function GetExtraRewards({
                           {/* Buy Button */}
                           <div className="flex flex-col gap-[18px] items-center mt-2">
                             <button
-                              onClick={scrollToWallet}
+                              onClick={() => scrollToWallet(140)}
                               className="btn_primary w-full max-w-[251.711px] !px-0 h-[52.988px] flex items-center justify-center"
                             >
                               {buyButtonText}

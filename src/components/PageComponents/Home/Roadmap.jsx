@@ -39,7 +39,7 @@ export default function Roadmap({
           <h2 className="heading-two capitalize text-[#000] text-center">
             {title}
           </h2>
-          <p className="text-black paragraph-regular text-[14px] md:!text-[20px] text-center max-w-4xl">
+          <p className="text-black paragraph-regular md:!text-[18px] text-center max-w-4xl">
             {subtitle}
           </p>
         </div>

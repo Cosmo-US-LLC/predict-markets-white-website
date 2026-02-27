@@ -52,7 +52,7 @@ export default function HowToBuy({
         {/* Header Section */}
         <div className="flex flex-col gap-[9px] items-center text-center mb-12 md:mb-12">
           <h2 className="heading-two">{title}</h2>
-          <p className="paragraph-regular max-w-[933px]">{subtitle}</p>
+          <p className="paragraph-regular md:!text-[18px] max-w-[933px]">{subtitle}</p>
         </div>
 
         {/* Mobile Carousel */}
@@ -162,7 +162,7 @@ export default function HowToBuy({
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-700 text-[18px] leading-[150%] tracking-[0.32px] whitespace-pre-line">
+                <p className="!text-gray-700 !text-start paragraph-regular leading-[150%] tracking-[0.32px] whitespace-pre-line">
                   {step.description}
                 </p>
               </div>
@@ -173,13 +173,14 @@ export default function HowToBuy({
         {/* Buttons */}
         <div className="flex md:flex-row flex-col gap-4 justify-center items-center">
           <button
-            onClick={scrollToWallet}
+            onClick={() => scrollToWallet(140)}
             className="btn_primary w-full sm:w-[285px] md:py-[12px] md:px-[63px] flex items-center justify-center shadow-md"
           >
             {buyButtonText}
           </button>
           <Link
-            to="/support"
+            to="https://t.me/predict_markets_chat"
+            target="_blank"
             className="btn_secondary md:!max-w-[285px] max-w-[100%] md:!py-[12px] md:!px-[3px] !w-full sm:w-auto "
           >
             Need Support?

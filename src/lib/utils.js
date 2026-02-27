@@ -5,22 +5,32 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-export function scrollToWallet() {
-  const walletElement = document.getElementById("wallet");
-  if (walletElement) {
-    walletElement.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
+
+
+// 🔹 Scroll to wallet with offset
+function scrollWithOffset(element, offset = 10) {
+  const y =
+    element.getBoundingClientRect().top +
+    window.scrollY -
+    offset;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth",
+  });
 }
 
-export function scrollToSection(sectionId) {
+export function scrollToWallet(offset = 10) {
+  const walletElement = document.getElementById("wallet");
+  if (!walletElement) return;
+
+  scrollWithOffset(walletElement, offset);
+}
+
+// 🔹 Scroll to any section with offset
+export function scrollToSection(sectionId, offset = 100) {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    scrollWithOffset(element, offset);
   }
 }

@@ -80,7 +80,7 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
           {/* Buttons */}
           <div className='flex flex-col md:flex-row gap-4 w-full md:w-auto'>
             <button
-              onClick={scrollToWallet}
+             onClick={() => scrollToWallet(140)}
               className="btn_primary flex items-center !px-[25px] justify-center"
             >
               {buyButtonText}

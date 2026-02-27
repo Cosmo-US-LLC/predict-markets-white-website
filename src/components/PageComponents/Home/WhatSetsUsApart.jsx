@@ -17,9 +17,9 @@ export default function WhatSetsUsApart({
         }}
       >
         {/* Header */}
-        <div className="flex flex-col gap-3 max-w-[970px] text-center mx-auto">
+        <div className="flex flex-col gap-3 max-w-[880px] text-center mx-auto">
           <h2 className="heading-two">{title}</h2>
-          <p className="paragraph-regular !text-[14px] md:!text-[16px] !font-normal md:leading-6 leading-[22px] md:!tracking-[0.32px] !tracking-[0.28px] text-[#000]">
+          <p className="paragraph-regular !text-[14px] md:!text-[18px] !font-normal md:leading-6 leading-[22px] md:!tracking-[0.32px] !tracking-[0.28px] text-[#000]">
             {description}
           </p>
         </div>

@@ -11,10 +11,10 @@ import usdcIcon from "../../../assets/images/logo/wallet-coins/coins (5).svg";
 import prdicon from "../../../assets/images/logo/wallet-coins/Icon.svg";
 
 export default function PresaleDashboard({
-  presaleAmount = "$11,756,398.80",
-  softcapPercentage = 80,
-  softcapTarget = "$12,000,000",
-  holdersCount = "12,394",
+  presaleAmount = "$456,398.80",
+  softcapPercentage = 60,
+  softcapTarget = "$500,000",
+  holdersCount = "2748",
   presalePrice = "$0.1",
   listingPrice = "$0.03",
   youPayAmount = "21,276",
@@ -708,7 +708,7 @@ export default function PresaleDashboard({
                                     <img
                                       src={card.cardImage}
                                       alt={`${card.tier} membership`}
-                                      className="w-full h-auto max-h-[150px] object-contain"
+                                      className="w-full h-auto !rounded-[18px] max-h-[150px] object-contain"
                                       onError={(e) => {
                                         e.target.style.display = "none";
                                       }}

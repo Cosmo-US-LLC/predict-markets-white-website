@@ -114,8 +114,8 @@ export default function SocialsAwareness() {
 
                   {/* Link Button */}
                   <a
-                    href={social.link}
-                    target="_blank"
+                    href="https://t.me/predict_markets_chat"
+                target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center justify-between rounded-lg bg-[#0080ED] px-4 py-[9px] transition-colors hover:bg-[#0390ff]"
                   >
