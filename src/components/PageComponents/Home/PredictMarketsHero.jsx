@@ -29,7 +29,6 @@ export default function PredictMarketsHero({
 }) {
   return (
     <section
-      id="wallet"
       className="relative bg-[#fff] max-md:border-b-[1px] max-md:border-[#ddd] w-full overflow-hidden min-h-screen flex items-center predict_hero_bg justify-center py-12 md:pt-10 md:pb-6"
     >
       {/* Background Image - Mobile */}
@@ -157,7 +156,7 @@ export default function PredictMarketsHero({
           </div>
 
           {/* Right Section - Presale Dashboard */}
-          <div className="w-full lg:max-w-[465px] lg:flex-shrink-0 lg:sticky lg:top-8">
+          <div className="w-full lg:max-w-[465px] lg:flex-shrink-0 lg:sticky lg:top-8"  id="wallet">
             <PresaleDashboard />
           </div>
 

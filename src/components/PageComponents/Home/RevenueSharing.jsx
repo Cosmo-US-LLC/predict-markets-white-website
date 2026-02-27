@@ -55,7 +55,7 @@ export default function RevenueSharing({
 
           {/* Buy Button */}
           <button
-            onClick={scrollToWallet}
+            onClick={() => scrollToWallet(140)}
             className="btn_primary w-full !px-0 sm:w-[285px]  flex items-center justify-center"
           >
             {buyButtonText}

@@ -12,7 +12,7 @@ import prdicon from "../../../assets/images/logo/wallet-coins/Icon.svg";
 
 export default function PresaleDashboard({
   presaleAmount = "$456,398.80",
-  softcapPercentage = 87,
+  softcapPercentage = 60,
   softcapTarget = "$500,000",
   holdersCount = "2748",
   presalePrice = "$0.1",

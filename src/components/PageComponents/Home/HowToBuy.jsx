@@ -173,7 +173,7 @@ export default function HowToBuy({
         {/* Buttons */}
         <div className="flex md:flex-row flex-col gap-4 justify-center items-center">
           <button
-            onClick={scrollToWallet}
+            onClick={() => scrollToWallet(140)}
             className="btn_primary w-full sm:w-[285px] md:py-[12px] md:px-[63px] flex items-center justify-center shadow-md"
           >
             {buyButtonText}

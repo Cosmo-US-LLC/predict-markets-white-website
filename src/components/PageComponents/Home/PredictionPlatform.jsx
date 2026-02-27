@@ -58,7 +58,7 @@ export default function PredictionPlatform({
             <div className="flex flex-col items-center justify-center
              gap-[16px] pt-[2px] sm:flex-row max-md:w-[80%]">
               <button
-                onClick={scrollToWallet}
+                onClick={() => scrollToWallet(140)}
                 className="btn_primary !w-full md:w-[100%] md:!px-[65px] "
               >
                 {buyButtonText}
