@@ -70,7 +70,7 @@ Holding $PREDICT unlocks real utility and exclusive early advantages across the 
                   </svg>
                 </div>
                 {/* Benefit Text */}
-                <h4 className="text-[#000] !text-[16px] md:!text-[14px] !leading-[120%] capitalize heading-four !leading-[120%]">
+                <h4 className="text-[#000] !text-[14px] !leading-[120%] capitalize heading-four !leading-[120%]">
                   {benefit}
                 </h4>
               </div>

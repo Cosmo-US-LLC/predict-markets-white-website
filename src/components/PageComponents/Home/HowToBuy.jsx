@@ -20,6 +20,21 @@ export default function HowToBuy({
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
 
+  const renderMobileStepDescription = (step) => {
+    if (step.id === "step-1") {
+      return (
+        <>
+          Click Connect Wallet and link your decentralized wallet like
+          MetaMask, Trust Wallet, Phantom,
+          <br />
+          or any other supported wallet in seconds.
+        </>
+      );
+    }
+
+    return step.description;
+  };
+
   useEffect(() => {
     if (!api) {
       return;
@@ -102,7 +117,7 @@ export default function HowToBuy({
 
                       {/* Description */}
                       <p className="text-[#000] text-sm leading-[22px] tracking-[0.28px]">
-                        {step.description}
+                        {renderMobileStepDescription(step)}
                       </p>
                     </div>
                   </div>

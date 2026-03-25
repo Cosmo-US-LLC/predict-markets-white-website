@@ -52,13 +52,13 @@ export default function Roadmap({
               align: "start",
               loop: false,
             }}
-            className="w-full"
+            className="w-full md:max-w-[1200px] md:mx-auto"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {roadmapItems.map((item) => (
                 <CarouselItem
                   key={item.id}
-                  className="pl-2 md:pl-4 basis-[350px] md:basis-[400px]"
+                  className="basis-full pl-2 md:basis-[400px] md:pl-4"
                 >
                   <div className="flex md:h-[510px] h-[510px] flex-col rounded-[15px] border border-[#dddddd] bg-white px-4 py-4 md:px-4 md:py-8">
                     {/* Header */}

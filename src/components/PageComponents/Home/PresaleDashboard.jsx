@@ -517,7 +517,7 @@ export default function PresaleDashboard({
            
        <div className="relative mt-34">
        <div className="absolute top-[-40px] w-full rounded-t-[15px] 
-              flex items-center justify-between z-10">
+               flex items-center justify-between z-10">
             <div className="w-[90%] mx-auto flex justify-center">
             <p className="text-[#fff] bg-[#0080ED] -mb-6 -mr-8 !text-[16px] py-[8px] px-[12px]
             md:text-[20px] font-bold font-[Inter] rounded-[8px]">
@@ -555,7 +555,7 @@ export default function PresaleDashboard({
                  mb-1 font-[Inter]">$1,400</h2>
                 <div className="flex items-center gap-4 ">
                   <span className="text-[12px] md:text-[14px] text-gray-600 font-[Inter]">Bought for $500</span>
-                  <span className="text-[12px] md:text-[14px] text-green-600 font-semibold font-[Inter]">+$900</span>
+                  <span className="rounded-[4px] bg-[#D7F8DF] px-2 py-[2px] text-[12px] md:text-[14px] text-[#06B64B] font-semibold font-[Inter]">+$900</span>
                 </div>
               </div>
 
@@ -570,7 +570,7 @@ export default function PresaleDashboard({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left Column - Token Holdings */}
                 <div className="space-y-3">
-                  <div className="py-[8px] px-[16px] bg-[#fff] rounded-[8px]">
+                  <div className="bg-[#fff] rounded-[8px] px-[12px] py-[6px] md:px-[16px] md:py-[8px]">
                     {[
                       { 
                         label: "P PREDICT Token", 
@@ -642,7 +642,7 @@ export default function PresaleDashboard({
                         )
                       },
                     ].map((item, index) => (
-                      <div key={index} className="flex items-center justify-between py-[13px] border-b border-gray-100 last:border-b-0">
+                      <div key={index} className="flex items-center justify-between border-b border-gray-100 py-[10px] md:py-[13px] last:border-b-0">
                         <div className="flex items-center gap-2">
                           <div className={`w-4 h-4 flex-shrink-0 flex items-center justify-center rounded ${index === 0 ? 'bg-[#0080ED] p-1' : ''}`}>
                             {item.icon}

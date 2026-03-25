@@ -306,10 +306,10 @@ export default function GetExtraRewards({
                           )}
 
                           {/* Buy Button */}
-                          <div className="flex flex-col gap-[18px] items-center mt-2">
+                          <div className="mt-2 flex w-full flex-col items-center gap-[18px]">
                             <button
                               onClick={() => scrollToWallet(140)}
-                              className="btn_primary w-full max-w-[251.711px] !px-0 h-[52.988px] flex items-center justify-center"
+                              className="btn_primary flex h-[52.988px] w-full items-center justify-center !px-0 max-w-[251.711px] md:max-w-none"
                             >
                               {buyButtonText}
                             </button>
