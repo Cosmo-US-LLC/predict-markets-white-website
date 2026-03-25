@@ -39,6 +39,27 @@ export default function ExclusivePresaleBenefits({
     return null;
   }
 
+  const renderBenefitTitle = (benefit) => {
+    if (benefit.id === 3) {
+      return (
+        <>
+          <span className="md:hidden">
+            <span className="inline-block whitespace-nowrap">
+              Receive Up To 40%
+            </span>
+            <br />
+            <span className="inline-block whitespace-nowrap">
+              Platform Credits
+            </span>
+          </span>
+          <span className="hidden md:inline">{benefit.title}</span>
+        </>
+      );
+    }
+
+    return benefit.title;
+  };
+
   return (
     <section className="bg-white py-12 md:py-[60px]" id="presale-benefits">
       <div className="max-w-[1280px] mx-auto px-4 md:px-2">
@@ -69,8 +90,12 @@ export default function ExclusivePresaleBenefits({
 
               {/* Content */}
               <div className="flex flex-col md:px-[10px] gap-3 items-center text-center w-full max-md:max-w-[290px] mx-auto">
-                <h3 className="heading-four max-md:!text-[17px] md:max-w-[290px] max-w-[190px] !leading-[140%] capitalize">
-                  {benefit.title}
+                <h3
+                  className={`heading-four max-md:!text-[17px] md:max-w-[290px] !leading-[140%] capitalize ${
+                    benefit.id === 3 ? "max-w-[250px]" : "max-w-[190px]"
+                  }`}
+                >
+                  {renderBenefitTitle(benefit)}
                 </h3>
                 {/* Divider Line */}
                 <div className="h-px bg-[#DFDFDF] w-[90%] mx-auto"></div>
