@@ -48,6 +48,11 @@ export default function PresaleDashboard({
   };
 
   const matchingCard = getMatchingCard();
+  const sortedMembershipCards = [...membershipCards].sort((a, b) => a.minAmount - b.minAmount);
+  const matchingCardIndex = sortedMembershipCards.findIndex((card) => card.id === matchingCard?.id);
+  const nextMatchingCard = matchingCardIndex >= 0 ? sortedMembershipCards[matchingCardIndex + 1] || null : null;
+  const nextLevelTarget = nextMatchingCard ? nextMatchingCard.minAmount : matchingCard?.minAmount || sliderMax;
+  const remainingToNextLevel = nextMatchingCard ? Math.max(0, nextMatchingCard.minAmount - sliderValueState) : 0;
 
   // Format currency
   const formatCurrency = (value) => {
@@ -533,7 +538,7 @@ export default function PresaleDashboard({
               </button>
             </div>
        <div 
-            className="relative w-full max-w-[700px]  max-h-[600px] h-[70vh]  bg-[#E5F5FF] rounded-[15px] border border-[#B9E6FE] shadow-2xl max-h-[90vh] overflow-y-auto"
+            className="relative w-full max-w-[700px] h-[70vh] max-h-[90vh] md:max-w-[750px] md:max-h-[650px] md:h-auto bg-[#E5F5FF] rounded-[15px] border border-[#B9E6FE] shadow-2xl overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -569,8 +574,8 @@ export default function PresaleDashboard({
               {/* Two Columns */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left Column - Token Holdings */}
-                <div className="space-y-3">
-                  <div className="bg-[#fff] rounded-[8px] px-[12px] py-[6px] md:px-[16px] md:py-[8px]">
+                <div className="contents md:block md:space-y-3">
+                  <div className="order-1 md:order-none bg-[#fff] rounded-[8px] px-[12px] py-[6px] md:px-[16px] md:py-[8px]">
                     {[
                       { 
                         label: "P PREDICT Token", 
@@ -642,19 +647,19 @@ export default function PresaleDashboard({
                         )
                       },
                     ].map((item, index) => (
-                      <div key={index} className="flex items-center justify-between border-b border-gray-100 py-[10px] md:py-[13px] last:border-b-0">
-                        <div className="flex items-center gap-2">
+                      <div key={index} className="flex items-center justify-evenly md:justify-between px-5 md:px-0 border-b border-gray-100 py-[10px] md:py-[13px] last:border-b-0">
+                        <div className="flex w-[62%] md:w-auto items-center gap-2 text-left">
                           <div className={`w-4 h-4 flex-shrink-0 flex items-center justify-center rounded ${index === 0 ? 'bg-[#0080ED] p-1' : ''}`}>
                             {item.icon}
                           </div>
                           <span className="text-[12px] text-[#000] font-[Inter]">{item.label}</span>
                         </div>
-                        <span className="text-[12px] font-semibold text-[#000] font-[Inter]">{item.value}</span>
+                        <span className="block w-[24%] md:w-auto text-left md:text-right text-[12px] font-semibold text-[#000] font-[Inter]">{item.value}</span>
                       </div>
                     ))}
                   </div>
-                  <div className="flex items-center justify-center">
-                  <div  className="w-full flex items-center bg-[#fff] rounded-[8px] px-2 py-[20px] justify-between
+                  <div className="order-3 md:order-none flex items-center justify-center">
+                  <div  className="w-full flex items-center bg-[#fff] rounded-[8px] px-2 py-[10px] justify-between
                    py-2 border-b border-gray-100">
                         <div className="flex items-center gap-2">
                           <span className="">
@@ -664,7 +669,7 @@ export default function PresaleDashboard({
   <path d="M1.33203 8.00065C1.33203 4.85798 1.33203 3.28665 2.30803 2.30998C3.28536 1.33398 4.85603 1.33398 7.9987 1.33398C11.1414 1.33398 12.7127 1.33398 13.6887 2.30998C14.6654 3.28732 14.6654 4.85798 14.6654 8.00065C14.6654 11.1433 14.6654 12.7147 13.6887 13.6907C12.7134 14.6673 11.1414 14.6673 7.9987 14.6673C4.85603 14.6673 3.2847 14.6673 2.30803 13.6907C1.33203 12.7153 1.33203 11.1433 1.33203 8.00065Z" stroke="#0080ED"/>
 </svg>
                           </span>
-                          <span className="text-[16px]  text-[#000] font-[Inter]">Referral Bonus</span>
+                          <span className="text-[16px] md:text-[12px] text-[#000] font-[Inter]">Referral Bonus</span>
                         </div>
                         <span className="text-[16px]  font-semibold text-[#000] font-[Inter]">
                           -</span>
@@ -673,171 +678,137 @@ export default function PresaleDashboard({
                 </div>
 
                 {/* Right Column - Membership NFT */}
-                <div className="space-y-3">
-                  
-                  {/* NFT Card Carousel */}
-                  <div className="relative bg-white rounded-[8px] py-2 px-4">
-                  <p className="text-[14px] md:text-[16px] font-bold text-center text-black
-                   mb-3 font-[Inter]">Your Membership NFT</p>
-                    <Carousel
-                      setApi={setNftCarouselApi}
-                      opts={{
-                        align: "start",
-                        loop: true,
-                      }}
-                      className="w-full"
-                    >
-                      <CarouselContent className="-ml-0">
-                        {membershipCards.map((card, index) => {
-                          const sortedCards = [...membershipCards].sort((a, b) => a.minAmount - b.minAmount);
-                          const currentIndex = sortedCards.findIndex(c => c.id === card.id);
-                          const nextCard = sortedCards[currentIndex + 1];
-                          const progressTotal = nextCard ? nextCard.minAmount : card.minAmount;
-                          // Calculate progress based on slider value
-                          const progressPercentage = nextCard 
-                            ? Math.max(0, Math.min(100, ((sliderValueState - card.minAmount) / (nextCard.minAmount - card.minAmount)) * 100))
-                            : 100;
-                          const remaining = nextCard ? Math.max(0, nextCard.minAmount - sliderValueState) : 0;
-
-                          return (
-                            <CarouselItem key={card.id} className="basis-full pl-0">
-                              <div className="space-y-3">
-                                {/* NFT Card */}
-                                {card.cardImage ? (
-                                  <div className="rounded-[12px] ">
-                                    <img
-                                      src={card.cardImage}
-                                      alt={`${card.tier} membership`}
-                                      className="w-full h-auto !rounded-[18px] max-h-[150px] object-contain"
-                                      onError={(e) => {
-                                        e.target.style.display = "none";
-                                      }}
-                                    />
-                                  </div>
-                                ) : (
-                                  <div 
-                                    className="rounded-[12px] p-4 border border-gray-700 relative overflow-hidden"
-                                    style={{
-                                      background: card.backgroundGradient || card.nftBackgroundGradient || "linear-gradient(to bottom right, #1a1a1a, #2d2d2d)",
-                                    }}
-                                  >
-                                    <div className="flex items-start justify-between mb-3">
-                                      <div>
-                                        <p className="text-[10px] text-gray-300 font-[Inter] mb-1">P PredictMarkets</p>
-                                        <p className="text-[18px] md:text-[20px] font-bold text-white font-[Inter]">{card.tier} Member</p>
-                                      </div>
-                                      <div 
-                                        className="w-12 h-12 rounded-full flex items-center justify-center"
-                                        style={{
-                                          background: card.tier === "Bronze" 
-                                            ? "linear-gradient(to bottom right, #d69e2e, #f6ad55)"
-                                            : card.tier === "Silver"
-                                            ? "linear-gradient(to bottom right, #a0aec0, #cbd5e0)"
-                                            : card.tier === "Gold"
-                                            ? "linear-gradient(to bottom right, #f6e05e, #fbd38d)"
-                                            : card.tier === "Diamond"
-                                            ? "linear-gradient(to bottom right, #63b3ed, #90cdf4)"
-                                            : "linear-gradient(to bottom right, #9f7aea, #b794f4)"
+                <div className="order-2">
+                  <div className="rounded-[8px] bg-white px-4 py-2 md:rounded-none md:bg-transparent md:px-0 md:py-0">
+                    {/* NFT Card Carousel */}
+                    <div className="relative md:rounded-[8px] md:bg-white md:px-4 md:py-2">
+                    <p className="text-[14px] md:text-[16px] font-bold text-center text-black
+                     mb-3 font-[Inter]">Your Membership NFT</p>
+                      <Carousel
+                        setApi={setNftCarouselApi}
+                        opts={{
+                          align: "start",
+                          loop: true,
+                        }}
+                        className="w-full"
+                      >
+                        <CarouselContent className="-ml-0">
+                          {membershipCards.map((card) => {
+                            return (
+                              <CarouselItem key={card.id} className="basis-full pl-0">
+                                <div className="space-y-3">
+                                  {/* NFT Card */}
+                                  {card.cardImage ? (
+                                    <div className="rounded-[12px] ">
+                                      <img
+                                        src={card.cardImage}
+                                        alt={`${card.tier} membership`}
+                                        className="w-full h-auto !rounded-[18px] max-h-[150px] object-contain"
+                                        onError={(e) => {
+                                          e.target.style.display = "none";
                                         }}
-                                      >
-                                        <span className="text-white font-bold text-[20px]">P</span>
+                                      />
+                                    </div>
+                                  ) : (
+                                    <div 
+                                      className="rounded-[12px] p-4 border border-gray-700 relative overflow-hidden"
+                                      style={{
+                                        background: card.backgroundGradient || card.nftBackgroundGradient || "linear-gradient(to bottom right, #1a1a1a, #2d2d2d)",
+                                      }}
+                                    >
+                                      <div className="flex items-start justify-between mb-3">
+                                        <div>
+                                          <p className="text-[10px] text-gray-300 font-[Inter] mb-1">P PredictMarkets</p>
+                                          <p className="text-[18px] md:text-[20px] font-bold text-white font-[Inter]">{card.tier} Member</p>
+                                        </div>
+                                        <div 
+                                          className="w-12 h-12 rounded-full flex items-center justify-center"
+                                          style={{
+                                            background: card.tier === "Bronze" 
+                                              ? "linear-gradient(to bottom right, #d69e2e, #f6ad55)"
+                                              : card.tier === "Silver"
+                                              ? "linear-gradient(to bottom right, #a0aec0, #cbd5e0)"
+                                              : card.tier === "Gold"
+                                              ? "linear-gradient(to bottom right, #f6e05e, #fbd38d)"
+                                              : card.tier === "Diamond"
+                                              ? "linear-gradient(to bottom right, #63b3ed, #90cdf4)"
+                                              : "linear-gradient(to bottom right, #9f7aea, #b794f4)"
+                                          }}
+                                        >
+                                          <span className="text-white font-bold text-[20px]">P</span>
+                                        </div>
                                       </div>
                                     </div>
-                                  </div>
-                                )}
+                                  )}
 
-                                {/* Tags */}
-                                <div className="flex justify-centewr  items-center   gap-2 mt-3">
-                                  <span className="px-3 py-1 bg-[#0080ED] w-[100%] text-white 
-                                  text-[10px] md:text-[12px] text-center rounded-[8px] font-[Inter]">
-                                    Early Access
-                                  </span>
-                                  <span className="w-[100%] px-3 py-1 bg-white border
-                                   border-[#0080ED] text-[#0080ED] text-[10px] md:text-[12px]
-                                    text-center rounded-[8px] font-[Inter]">
-                                    {card.tier === "Bronze" ? "10%" : card.tier === "Silver" ? "15%" : card.tier === "Gold" ? "20%" : "25%"} Bonus Tokens
-                                  </span>
+                                  {/* Tags */}
+                                  <div className="mt-3 flex items-center justify-center gap-[8px]">
+                                    <span className="inline-flex h-[28px] w-[135px] md:min-h-[28px] md:w-full items-center justify-center rounded-[4px] border border-[#0080ED] bg-[#0080ED] px-3 text-center text-[10px] font-[600] text-white font-[Inter] whitespace-nowrap md:rounded-[8px] md:px-3 md:py-1 md:text-[12px]">
+                                      Early Access
+                                    </span>
+                                    <span className="inline-flex h-[28px] w-[138px] md:min-h-[28px] md:w-full items-center justify-center rounded-[4px] border border-[#0080ED] bg-white px-3 text-center text-[10px] font-[600] text-[#0080ED] font-[Inter] whitespace-nowrap md:rounded-[8px] md:px-3 md:py-1 md:text-[12px]">
+                                      {card.tier === "Bronze" ? "10%" : card.tier === "Silver" ? "15%" : card.tier === "Gold" ? "20%" : "25%"} Bonus Tokens
+                                    </span>
+                                  </div>
                                 </div>
-
-                                {/* Progress to Next Level - Inside Carousel */}
-                                {/* <div className="mt-4 p-3 bg-gray-50 rounded-[8px] border border-gray-200">
-                                  <p className="text-[11px] md:text-[12px] text-gray-600 font-[Inter]">
-                                    {remaining > 0
-                                      ? `${formatCurrency(remaining)} left to reach the next NFT level`
-                                      : nextCard
-                                      ? "You've reached the next level!"
-                                      : "You've reached the maximum level!"}
-                                  </p>
-                                  <div className="mt-2">
-                                    <p className="text-[14px] md:text-[16px] font-bold text-[#0080ED] font-[Inter]">{formatCurrency(progressTotal)}</p>
-                                    {remaining > 0 && (
-                                      <div className="mt-2 w-full bg-gray-200 rounded-full h-2">
-                                        <div 
-                                          className="bg-[#0080ED] h-2 rounded-full transition-all duration-300"
-                                          style={{ width: `${progressPercentage}%` }}
-                                        ></div>
-                                      </div>
-                                    )}
-                                  </div>
-                                </div> */}
-                              </div>
-                            </CarouselItem>
-                          );
-                        })}
-                      </CarouselContent>
-                    </Carousel>
-
-                    {/* Slider Below Carousel */}
-                  </div>
-                    <div className="mt-[12px] bg-[#fff] p-2 rounded-[8px] space-y-3">
+                              </CarouselItem>
+                            );
+                          })}
+                        </CarouselContent>
+                      </Carousel>
+                    </div>
+                    <div className="mt-4 space-y-3 border-t border-[#E8EEF4] pt-4 md:mt-3 md:rounded-[8px] md:border-0 md:bg-[#fff] md:px-3 md:py-2">
                       <div className="flex items-center justify-between w-full">
-                        <p className="text-[#000] !font-[600] text-[12px] md:text-[14px] font-[Inter]">
+                        <p className="text-[#000] !font-[600] text-[12px] md:text-[12px] font-[Inter]">
                           How much do you want to spend?
                         </p>
                         <p className="text-[#0080ED] !font-[600] text-[12px] md:text-[14px] text-right font-[Inter]">
                           {formatCurrency(sliderValueState)}
                         </p>
                       </div>
+                      <div className="flex items-center justify-between gap-3">
+                        <p className="text-[11px] md:text-[12px] text-[#000] font-[Inter]">
+                          {remainingToNextLevel > 0
+                            ? `${formatCurrency(remainingToNextLevel)} left to reach the next NFT level`
+                            : "You've reached the maximum NFT level"}
+                        </p>
+                        <p className="text-[12px] md:text-[14px] font-bold text-[#0080ED] whitespace-nowrap font-[Inter]">
+                          {formatCurrency(nextLevelTarget)}
+                        </p>
+                      </div>
                       <div className="relative w-full">
-                        {/* Slider Track */}
-                        <div className="relative w-full h-[12.347px] 
-                        bg-gray-200 border border-gray-300 rounded-[76.444px] overflow-hidden">
-                          {/* Filled Portion */}
-                          <div
-                            className="absolute left-0 h-[13px] top-0 h-full bg-[#0080ED]
-                             rounded-bl-[76.444px] rounded-tl-[76.444px]"
-                            style={{ width: `${sliderPercentage}%` }}
-                          />
+                        <div className="rounded-[5px] border border-[#CFCFCF] bg-white px-[7px] py-[6px]">
+                          <div className="h-[8px] w-full rounded-full bg-[#ECECEC]">
+                            <div
+                              className="h-full rounded-full bg-[#0080ED] transition-all duration-300"
+                              style={{ width: `${Math.max(sliderPercentage, 2)}%` }}
+                            />
+                          </div>
                         </div>
-                        {/* Slider Thumb */}
                         <input
                           type="range"
                           min={sliderMin}
                           max={sliderMax}
                           value={sliderValueState}
                           onChange={handleSliderChange}
-                          className="absolute top-1/2 -translate-y-1/2 w-full h-[10.578px] appearance-none bg-transparent cursor-pointer z-10 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-[5.644px] [&::-webkit-slider-thumb]:h-[30.578px] [&::-webkit-slider-thumb]:bg-[#0080ED] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:cursor-pointer [&::-moz-range-thumb]:w-[5.644px] [&::-moz-range-thumb]:h-[30.578px] [&::-moz-range-thumb]:bg-[#0080ED] [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:cursor-pointer"
-                          style={{ left: 0 }}
-                        />
-                        <div
-                          className="absolute top-1/2 -translate-y-1/2 bg-[#0080ED] 
-                          rounded-full w-[5.644px] h-[10.578px] pointer-events-none z-20"
-                          style={{ left: `calc(${sliderPercentage}% - 2.822px)` }}
+                          className="absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none bg-transparent opacity-0"
                         />
                       </div>
                     </div>
+                  </div>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-gray-200">
-                <button className="flex items-center justify-center gap-2 bg-[#0080ED] text-white px-6 py-3 rounded-[8px] font-semibold text-[14px] md:text-[16px] hover:bg-[#0066cc] transition-colors font-[Inter]">
+              <div className="grid grid-cols-2 gap-3 md:gap-4 pt-0 md:pt-4 border-t-0 md:border-t border-gray-200">
+                <button className="flex items-center justify-center gap-2 bg-[#0080ED] text-white px-3 md:px-6 py-3 rounded-[8px] font-semibold text-[12px] md:text-[16px] hover:bg-[#0066cc] transition-colors font-[Inter]">
+                  <span className="md:hidden">10% Referral Link</span>
+                  <span className="hidden md:inline">Copy 10% Referral Link</span>
                   <Copy className="w-4 h-4" />
-                  Copy 10% Referral Link
                 </button>
-                <button className="flex items-center justify-center gap-2 bg-gray-200 text-gray-800 px-6 py-3 rounded-[8px] font-semibold text-[14px] md:text-[16px] hover:bg-gray-300 transition-colors font-[Inter]">
-                  <LogOut className="w-4 h-4" />
+                <button className="flex items-center justify-center gap-2 bg-[#0080ED] text-white px-3 md:px-6 py-3 rounded-[8px] font-semibold text-[12px] md:text-[16px] hover:bg-[#0066cc] transition-colors font-[Inter]">
                   Disconnect
+                  <LogOut className="w-4 h-4" />
                 </button>
               </div>
             </div>
