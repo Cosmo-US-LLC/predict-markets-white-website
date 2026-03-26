@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,7 +17,7 @@
     "@types/node": "^25.0.9",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.23",
     "eslint": "^9.39.2",
     "eslint-plugin-react-hooks": "^7.0.1",
@@ -22,7 +25,7 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "^5.4.11"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -41,6 +44,16 @@
     "react-dom": "^19.2.3",
     "react-hook-form": "^7.71.1",
     "react-router-dom": "^7.12.0",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "parse": "^6.1.1",
+    "react-hot-toast": "^2.5.1",
+    "viem": "^2.31.2",
+    "wagmi": "^2.15.6",
+    "@wagmi/core": "^2.16.3",
+    "@wagmi/connectors": "^5.7.3",
+    "@reown/appkit": "^1.6.3",
+    "@reown/appkit-adapter-wagmi": "^1.6.3",
+    "@tanstack/react-query": "^5.62.0",
+    "decimal.js": "^10.4.3"
   }
 }

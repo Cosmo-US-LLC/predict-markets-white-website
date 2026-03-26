@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Copy, X, LogOut, ArrowLeft, ArrowRight } from "lucide-react";
+import { usePresaleBackend } from "../../../hooks/usePresaleBackend.js";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "../../ui/carousel";
 import { membershipCards } from "../../../data/getExtraRewardsData";
 import bnbIcon from "../../../assets/images/logo/wallet-coins/coins (1).svg";
@@ -21,6 +22,7 @@ export default function PresaleDashboard({
   youReceiveAmount = "100,000",
   bonusCode = "PRE20",
 }) {
+  const backend = usePresaleBackend();
   const [activeTab, setActiveTab] = useState("buy");
   const [selectedPayment, setSelectedPayment] = useState("USDT ERC-20");
   const [openDropdownId, setOpenDropdownId] = useState(null);
@@ -228,12 +230,12 @@ export default function PresaleDashboard({
       }}
       >
         <h2 className="heading-two md:!text-[32px] !leading-[100%] !text-center mb-2 !font-[500] 
-        !font-[Helvetica Neue Medium Extended]">{presaleAmount}</h2>
+        !font-[Helvetica Neue Medium Extended]">{backend.totalRaisedUsd > 0 ? backend.formattedTotalRaised : presaleAmount}</h2>
        
         <div className="relative w-full bg-gray-200 rounded-full h-[10px] mb-3">
           <div
             className="bg-[#0080ED] h-3 rounded-full transition-all duration-300 relative"
-            style={{ width: `${softcapPercentage}%` }}
+            style={{ width: `${backend.progressPercent ?? softcapPercentage}%` }}
           >
             {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 w-0.5 h-4 bg-gray-700"></div> */}
           </div>
@@ -241,7 +243,7 @@ export default function PresaleDashboard({
         <div className="flex justify-between p-[5px] !pb-0 items-center text-[14px] !border-l-[0px] !border-r-[0px]  !border-b-[0px] mb-1 border-[1px] border-[#D4D4D4]"
         >
            <div className="text-[10px] !font-[700] font-[Inter] text-[#7B7B7B]">
-          {softcapPercentage}% of softcap raised
+          {backend.progressPercent ?? softcapPercentage}% of softcap raised
         </div>
         <div className="border-l-[1px] h-[10px] border-[#D4D4D4]"></div>
              <h5 className="text-[10px] !font-[700] !font-[Inter] text-[#7B7B7B] text-center">{holdersCount} Holders</h5>
@@ -407,12 +409,12 @@ export default function PresaleDashboard({
         <div className="flex justify-center space-x-2 items-center text-sm">
           <div className="flex items-center gap-2">
             <span className="text-black text-[12px] md:text-[12px] !font-[600]">Presale Price = </span>
-            <span className="font-semibold text-[12px] md:text-[12px] font-bold text-[#0080ED]">{presalePrice}</span>
+            <span className="font-semibold text-[12px] md:text-[12px] font-bold text-[#0080ED]">{backend.presalePriceDisplay}</span>
           </div>
           <div className="w-px h-4 bg-gray-800 !font-[600]"></div>
           <div className="flex items-center gap-2">
             <span className="text-black text-[12px] md:text-[12px] !font-[600]">Listing Price = </span>
-            <span className="font-semibold text-[12px] md:text-[12px] font-bold text-[#0080ED]">{listingPrice}</span>
+            <span className="font-semibold text-[12px] md:text-[12px] font-bold text-[#0080ED]">{backend.listingPriceDisplay}</span>
           </div>
         </div>
       </div>
@@ -426,9 +428,11 @@ export default function PresaleDashboard({
           </label>
           <div className="flex  md:h-[46px] items-center gap-0 border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
             <input
-              type="text"
-              value={youPayAmount}
-              readOnly
+              type="number"
+              min="0"
+              step="any"
+              value={backend.paymentTokenValue}
+              onChange={(e) => backend.setPaymentTokenValue(Math.max(0, parseFloat(e.target.value) || 0))}
               className="flex-1 text-[16px] font-[Inter] font-[500] max-w-[70%] !w-full  text-black bg-transparent border-none outline-none px-4 py-2.5"
             />
             <div className="flex items-center gap-2 px-3 py-2 w-[30%] border-l border-gray-200 bg-transparent">
@@ -459,7 +463,13 @@ export default function PresaleDashboard({
           <div className="flex items-center gap-0 border border-gray-200 rounded-lg bg-gray-50 md:h-[46px] overflow-hidden">
             <input
               type="text"
-              value={youReceiveAmount}
+              value={
+                backend.tokenPrice > 0
+                  ? backend.receiveAmount(selectedPayment).toLocaleString("en-US", {
+                      maximumFractionDigits: 2,
+                    })
+                  : youReceiveAmount
+              }
               readOnly
               className="flex-1 text-[16px] font-semibold max-w-[70%] text-black bg-transparent border-none outline-none px-4 py-2.5 "
             />
@@ -476,15 +486,28 @@ export default function PresaleDashboard({
         </div>
       </div>
 
-      {/* Connect Wallet Button */}
-      <button className="w-full  btn_primary text-white !py-[12px] !text-[18px]
-       !rounded-[8px] font-medium  uppercase mb-4 hover:bg-[#0066cc] transition-colors">
-        CONNECT WALLET
+      {/* Connect Wallet / Buy */}
+      <button
+        type="button"
+        disabled={backend.transactionLoading}
+        onClick={() => backend.connectOrBuy(selectedPayment)}
+        className="w-full  btn_primary text-white !py-[12px] !text-[18px]
+       !rounded-[8px] font-medium  uppercase mb-4 hover:bg-[#0066cc] transition-colors disabled:opacity-60"
+      >
+        {!backend.accountData?.isConnected
+          ? "CONNECT WALLET"
+          : backend.transactionLoading
+            ? "PROCESSING..."
+            : "BUY $PREDICT"}
       </button>
 
       {/* Special Bonus */}
       <div className="text-center text-[12px] text-gray-600 bg-[#F2F2F2] p-[6px] rounded-[8px] border border-gray-100">
-        <span className="font-semibold text-[#0080ED]">Special Bonus:</span> Get 20% more PREDICT tokens <br /> with the code{" "}
+        <span className="font-semibold text-[#0080ED]">Special Bonus:</span>{" "}
+        {backend.bonusPct > 0
+          ? `Get ${Math.round(backend.bonusPct * 100)}% more PREDICT tokens `
+          : "Get bonus PREDICT tokens "}
+        <br /> with the code{" "}
         <span className="font-semibold text-[#000]">{bonusCode}</span>{" "}
         (valid for a limited time only).
       </div>
@@ -544,7 +567,9 @@ export default function PresaleDashboard({
               <div className="flex items-center bg-[#fff] p-2 rounded-[8px] flex-col">
                 <p className="text-[14px] md:text-[16px] text-[#000] font-[600] mb-1 font-[Inter]">Your Wallet Address:</p>
                 <p className="text-[14px] md:text-[16px] text-[#000] font-[600]  font-[Inter]">
-                  0xA1f3bC9827D4Ef...8C7F7eAf
+                  {backend.accountData?.address
+                    ? `${backend.accountData.address.slice(0, 10)}...${backend.accountData.address.slice(-8)}`
+                    : "Connect wallet to view"}
                 </p>
               </div>
 
