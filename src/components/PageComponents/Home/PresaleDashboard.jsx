@@ -252,7 +252,7 @@ export default function PresaleDashboard({
              <h5 className="text-[10px] !font-[700] !font-[Inter] text-[#7B7B7B] text-center">{holdersCount} Holders</h5>
         <div className="border-l-[1px] h-[10px] border-[#D4D4D4]"></div>
 
-          <h5 className="text-[10px] !font-[700] !font-[Inter] text-[#7B7B7B]"> {softcapTarget}</h5>
+          <h5 className="text-[10px] !font-[700] !font-[Inter] text-[#7B7B7B]">Goal: {softcapTarget}</h5>
         </div>
      
       </div>
