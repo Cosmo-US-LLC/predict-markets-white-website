@@ -67,7 +67,13 @@ export default function HowToBuy({
         {/* Header Section */}
         <div className="flex flex-col gap-[9px] items-center text-center mb-12 md:mb-12">
           <h2 className="heading-two">{title}</h2>
-          <p className="paragraph-regular md:!text-[18px] max-w-[933px]">{subtitle}</p>
+          <p className="paragraph-regular md:!text-[18px] max-w-[933px]">
+            Follow the guide below to purchase $PREDICT during the presale.
+            The process supports both crypto
+            <br />
+            and card payments and is designed to be quick, secure, and easy to
+            follow.
+          </p>
         </div>
 
         {/* Mobile Carousel */}

@@ -59,7 +59,7 @@ const faqData = [
 
 export default function FrequentlyAskedQuestions() {
   return (
-    <section className="bg-white py-12 max-md:!pb-0 md:py-20" id="faq">
+    <section className="bg-white pt-12 pb-4 md:pt-20 md:pb-8" id="faq">
       <div className="max-w-[1280px] mx-auto md:px-8 px-4">
         {/* Header Section */}
         <div className="flex flex-col md:gap-4 gap-3 items-center text-center mb-1 md:mb-16">
@@ -74,7 +74,7 @@ export default function FrequentlyAskedQuestions() {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="mb-12">
+        <div className="mb-6 md:mb-8">
           <Accordion type="single" collapsible className="w-full space-y-0">
             {faqData.map((faq, index) => (
               <AccordionItem

@@ -8,6 +8,7 @@ import WhatSetsUsApart from "../components/PageComponents/Home/WhatSetsUsApart";
 import TokenDetails from "../components/PageComponents/Home/TokenDetails";
 import ExchangeListings from "../components/PageComponents/Home/ExchangeListings";
 import WhatIsPredict from "../components/PageComponents/Home/WhatIsPredict";
+import WatchRevenueFlow from "../components/PageComponents/Home/WatchRevenueFlow";
 import PredictsTheFeatures from "../components/PageComponents/Home/PredictsTheFeatures";
 import Markets from "../components/PageComponents/Home/Markets";
 import RevenueSharing from "../components/PageComponents/Home/RevenueSharing";
@@ -77,6 +78,7 @@ export function Home() {
         secondaryButtonText={whatIsPredictConfig.secondaryButtonText}
         secondaryButtonLink={whatIsPredictConfig.secondaryButtonLink}
       />
+      <WatchRevenueFlow />
       <PredictsTheFeatures
         title={featuresConfig.title}
         subtitle={featuresConfig.subtitle}
