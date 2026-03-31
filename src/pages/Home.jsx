@@ -78,13 +78,13 @@ export function Home() {
         secondaryButtonText={whatIsPredictConfig.secondaryButtonText}
         secondaryButtonLink={whatIsPredictConfig.secondaryButtonLink}
       />
-      <WatchRevenueFlow />
       <PredictsTheFeatures
         title={featuresConfig.title}
         subtitle={featuresConfig.subtitle}
         features={featuresData}
       />
       <Markets title={marketsConfig.title} markets={marketsData} />
+      <WatchRevenueFlow />
       <HowItWorks
         title={howItWorksConfig.title}
         subtitle={howItWorksConfig.subtitle}

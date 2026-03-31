@@ -52,7 +52,7 @@ export default function WhatIsPredict({
               {descriptionParagraphs.filter(Boolean).map((paragraph, index) => (
                 <p
                   key={index}
-                  className="paragraph-regular !text-start !text-[18px] !leading-[1.45] text-black"
+                  className="paragraph-regular !text-start !text-[16px] !leading-[1.45] text-black"
                 >
                   {paragraph.trim()}
                 </p>
@@ -78,14 +78,14 @@ export default function WhatIsPredict({
             <div className="flex w-full flex-col gap-4 pt-2 sm:w-auto sm:flex-row sm:flex-wrap">
               <button
                 onClick={() => scrollToWallet(140)}
-                className="btn_primary min-h-[58px] min-w-[266px] !rounded-[999px] !px-8 shadow-[0_0_0_2px_rgba(255,255,255,0.8)_inset,0_0_24px_rgba(0,128,237,0.28)]"
+                className="btn_primary min-h-[52px] min-w-[266px] !rounded-[8px] !px-[24px] !py-[12px] !text-[16px]"
               >
                 {buyButtonText}
               </button>
 
               <Link
                 to={secondaryButtonLink}
-                className="flex min-h-[58px] min-w-[266px] items-center justify-center rounded-[999px] border border-black px-8 text-center text-[16px] font-[600] uppercase leading-none text-black transition-colors hover:bg-black hover:text-white"
+                className="btn_primary flex min-h-[52px] min-w-[266px] items-center justify-center !rounded-[8px] !px-[24px] !py-[12px] !text-[16px]"
               >
                 {secondaryButtonText}
               </Link>
@@ -106,17 +106,17 @@ export default function WhatIsPredict({
           </div>
         </div>
 
-        <div className="border-t border-[#EEEEEE] bg-[#FAFAFA] px-4 py-6 md:px-8 md:py-8">
-          <div className="grid grid-cols-3 items-center gap-x-6 gap-y-6 md:grid-cols-6 md:gap-x-8">
+        <div className="border-t border-[#EEEEEE] bg-[#FAFAFA] px-4 py-4 md:px-8 md:py-5">
+          <div className="grid grid-cols-3 items-center gap-x-6 gap-y-4 md:grid-cols-6 md:gap-x-8 md:gap-y-5">
             {partnerLogos.map((logo) => (
               <div
                 key={logo.alt}
-                className="flex min-h-[64px] items-center justify-center md:min-h-[84px]"
+                className="flex h-[58px] items-center justify-center md:h-[76px]"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-[46px] w-auto object-contain opacity-80 grayscale md:max-h-[72px]"
+                  className="h-full w-full max-w-[150px] object-contain opacity-80 grayscale md:max-w-[168px]"
                   onError={(e) => {
                     e.target.style.display = "none";
                   }}

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Copy, X, LogOut, ArrowLeft, ArrowRight } from "lucide-react";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "../../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "../../ui/carousel";
 import { membershipCards } from "../../../data/getExtraRewardsData";
 import bnbIcon from "../../../assets/images/logo/wallet-coins/coins (1).svg";
 import ethIcon from "../../../assets/images/logo/wallet-coins/coins (2).svg";
@@ -163,13 +163,19 @@ export default function PresaleDashboard({
 
   // Prevent body scroll when modal is open
   useEffect(() => {
+    const { body, documentElement } = document;
+
     if (isDashboardModalOpen) {
-      document.body.style.overflow = "hidden";
+      body.style.overflow = "hidden";
+      documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      body.style.overflow = "unset";
+      documentElement.style.overflow = "unset";
     }
+
     return () => {
-      document.body.style.overflow = "unset";
+      body.style.overflow = "unset";
+      documentElement.style.overflow = "unset";
     };
   }, [isDashboardModalOpen]);
 
@@ -512,7 +518,7 @@ export default function PresaleDashboard({
       {/* Personal Dashboard Modal */}
       {isDashboardModalOpen && (
         <div 
-          className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-[200] flex items-center justify-center overflow-x-hidden p-3 pt-20 md:items-start md:p-4 md:pt-36 bg-black/50 backdrop-blur-sm"
           onClick={(e) => {
             if (e.target === e.currentTarget) {
               setIsDashboardModalOpen(false);
@@ -520,25 +526,24 @@ export default function PresaleDashboard({
           }}
         >
            
-       <div className="relative mt-34">
-       <div className="absolute top-[-40px] w-full rounded-t-[15px] 
-               flex items-center justify-between z-10">
-            <div className="w-[90%] mx-auto flex justify-center">
-            <p className="text-[#fff] bg-[#0080ED] -mb-6 -mr-8 !text-[16px] py-[8px] px-[12px]
-            md:text-[20px] font-bold font-[Inter] rounded-[8px]">
+       <div className="relative mt-10 w-full max-w-[700px] md:mt-0 md:max-w-[750px]">
+       <div className="absolute top-[-40px] left-1/2 z-10 flex w-full -translate-x-1/2 items-center justify-center px-2 md:px-0">
+            <div className="flex w-full items-center justify-center">
+            <p className="text-[#fff] bg-[#0080ED] !text-[16px] py-[8px] px-[12px]
+            md:text-[20px] font-bold font-[Inter] rounded-[8px] max-w-[calc(100%-48px)] text-center">
                 Personal Dashboard
               </p>
             </div>
               <button
                 onClick={() => setIsDashboardModalOpen(false)}
-                className="w-8 h-8 flex items-center justify-center rounded-full bg-[#B9E6FE] hover:bg-[#A8DFFE] transition-colors"
+                className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-[#B9E6FE] transition-colors hover:bg-[#A8DFFE] md:right-0"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5 text-[#0080ED]" />
               </button>
             </div>
        <div 
-            className="relative w-full max-w-[700px] h-[70vh] max-h-[90vh] md:max-w-[750px] md:max-h-[650px] md:h-auto bg-[#E5F5FF] rounded-[15px] border border-[#B9E6FE] shadow-2xl overflow-y-auto"
+            className="relative h-[70vh] max-h-[90vh] w-full max-w-[700px] overflow-x-hidden overflow-y-auto rounded-[15px] border border-[#B9E6FE] bg-[#E5F5FF] shadow-2xl md:h-auto md:max-h-[calc(100vh-180px)] md:max-w-[750px]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -572,13 +577,13 @@ export default function PresaleDashboard({
               </div>
 
               {/* Two Columns */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
                 {/* Left Column - Token Holdings */}
                 <div className="contents md:block md:space-y-3">
                   <div className="order-1 md:order-none bg-[#fff] rounded-[8px] px-[12px] py-[6px] md:px-[16px] md:py-[8px]">
                     {[
                       { 
-                        label: "P PREDICT Token", 
+                        label: "PREDICT Token", 
                         value: "100,000", 
                         icon: (
                           <svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10" fill="none">
@@ -659,21 +664,22 @@ export default function PresaleDashboard({
                     ))}
                   </div>
                   <div className="order-3 md:order-none flex items-center justify-center">
-                  <div  className="w-full flex items-center bg-[#fff] rounded-[8px] px-2 py-[10px] justify-between
-                   py-2 border-b border-gray-100">
-                        <div className="flex items-center gap-2">
-                          <span className="">
+                  <div className="w-full bg-[#fff] rounded-[8px] px-[12px] py-[6px] md:px-[16px] md:py-[8px]">
+                      <div className="flex items-center justify-evenly md:justify-between px-5 md:px-0 py-[10px] md:py-[13px]">
+                        <div className="flex w-[62%] md:w-auto items-center gap-2 text-left">
+                          <span className="w-4 h-4 flex-shrink-0 flex items-center justify-center rounded">
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
   <path d="M14.6654 8.00065H1.33203M7.9987 1.33398V14.6673M8.66536 8.00065C8.66536 8.7079 8.94632 9.38617 9.44641 9.88627C9.94651 10.3864 10.6248 10.6673 11.332 10.6673M7.33203 8.00065C7.33203 8.7079 7.05108 9.38617 6.55098 9.88627C6.05089 10.3864 5.37261 10.6673 4.66536 10.6673" stroke="#0080ED" stroke-linecap="round"/>
   <path d="M7.99789 6.69162C7.99827 6.20891 8.15982 5.74016 8.45692 5.35972C8.75403 4.97928 9.16966 4.70895 9.63789 4.59162C10.7066 4.32495 11.6752 5.29295 11.4079 6.36228C11.2906 6.83051 11.0202 7.24615 10.6398 7.54325C10.2594 7.84035 9.79059 8.00191 9.30789 8.00228H7.99789M7.99789 6.69162V8.00228M7.99789 6.69162C7.99752 6.20891 7.83596 5.74016 7.53886 5.35972C7.24175 4.97928 6.82612 4.70895 6.35789 4.59162C5.28922 4.32495 4.32056 5.29295 4.58789 6.36228C4.70522 6.83051 4.97556 7.24615 5.35599 7.54325C5.73643 7.84035 6.20519 8.00191 6.68789 8.00228H7.99789" stroke="#0080ED"/>
   <path d="M1.33203 8.00065C1.33203 4.85798 1.33203 3.28665 2.30803 2.30998C3.28536 1.33398 4.85603 1.33398 7.9987 1.33398C11.1414 1.33398 12.7127 1.33398 13.6887 2.30998C14.6654 3.28732 14.6654 4.85798 14.6654 8.00065C14.6654 11.1433 14.6654 12.7147 13.6887 13.6907C12.7134 14.6673 11.1414 14.6673 7.9987 14.6673C4.85603 14.6673 3.2847 14.6673 2.30803 13.6907C1.33203 12.7153 1.33203 11.1433 1.33203 8.00065Z" stroke="#0080ED"/>
 </svg>
                           </span>
-                          <span className="text-[16px] md:text-[12px] text-[#000] font-[Inter]">Referral Bonus</span>
+                          <span className="text-[12px] text-[#000] font-[Inter]">Referral Bonus</span>
                         </div>
-                        <span className="text-[16px]  font-semibold text-[#000] font-[Inter]">
+                        <span className="block w-[24%] md:w-auto text-left md:text-right text-[12px] font-semibold text-[#000] font-[Inter]">
                           -</span>
                       </div>
+                    </div>
                   </div>
                 </div>
 
@@ -742,11 +748,11 @@ export default function PresaleDashboard({
                                   )}
 
                                   {/* Tags */}
-                                  <div className="mt-3 flex items-center justify-center gap-[8px]">
-                                    <span className="inline-flex h-[28px] w-[135px] md:min-h-[28px] md:w-full items-center justify-center rounded-[4px] border border-[#0080ED] bg-[#0080ED] px-3 text-center text-[10px] font-[600] text-white font-[Inter] whitespace-nowrap md:rounded-[8px] md:px-3 md:py-1 md:text-[12px]">
+                                  <div className="mt-3 flex w-full gap-[8px]">
+                                    <span className="inline-flex min-h-[28px] flex-1 items-center justify-center rounded-[4px] border border-[#0080ED] bg-[#0080ED] px-2 py-1 text-center text-[10px] font-[600] text-white font-[Inter] md:rounded-[8px] md:px-3 md:text-[12px]">
                                       Early Access
                                     </span>
-                                    <span className="inline-flex h-[28px] w-[138px] md:min-h-[28px] md:w-full items-center justify-center rounded-[4px] border border-[#0080ED] bg-white px-3 text-center text-[10px] font-[600] text-[#0080ED] font-[Inter] whitespace-nowrap md:rounded-[8px] md:px-3 md:py-1 md:text-[12px]">
+                                    <span className="inline-flex min-h-[28px] flex-1 items-center justify-center rounded-[4px] border border-[#0080ED] bg-white px-2 py-1 text-center text-[10px] font-[600] text-[#0080ED] font-[Inter] md:rounded-[8px] md:px-3 md:text-[12px]">
                                       {card.tier === "Bronze" ? "10%" : card.tier === "Silver" ? "15%" : card.tier === "Gold" ? "20%" : "25%"} Bonus Tokens
                                     </span>
                                   </div>
@@ -758,14 +764,6 @@ export default function PresaleDashboard({
                       </Carousel>
                     </div>
                     <div className="mt-4 space-y-3 border-t border-[#E8EEF4] pt-4 md:mt-3 md:rounded-[8px] md:border-0 md:bg-[#fff] md:px-3 md:py-2">
-                      <div className="flex items-center justify-between w-full">
-                        <p className="text-[#000] !font-[600] text-[12px] md:text-[12px] font-[Inter]">
-                          How much do you want to spend?
-                        </p>
-                        <p className="text-[#0080ED] !font-[600] text-[12px] md:text-[14px] text-right font-[Inter]">
-                          {formatCurrency(sliderValueState)}
-                        </p>
-                      </div>
                       <div className="flex items-center justify-between gap-3">
                         <p className="text-[11px] md:text-[12px] text-[#000] font-[Inter]">
                           {remainingToNextLevel > 0
@@ -800,15 +798,15 @@ export default function PresaleDashboard({
               </div>
 
               {/* Action Buttons */}
-              <div className="grid grid-cols-2 gap-3 md:gap-4 pt-0 md:pt-4 border-t-0 md:border-t border-gray-200">
+              <div className="grid grid-cols-2 gap-2 pt-0 md:gap-4 md:pt-4 border-t-0 md:border-t border-gray-200">
                 <button className="flex items-center justify-center gap-2 bg-[#0080ED] text-white px-3 md:px-6 py-3 rounded-[8px] font-semibold text-[12px] md:text-[16px] hover:bg-[#0066cc] transition-colors font-[Inter]">
                   <span className="md:hidden">10% Referral Link</span>
                   <span className="hidden md:inline">Copy 10% Referral Link</span>
                   <Copy className="w-4 h-4" />
                 </button>
-                <button className="flex items-center justify-center gap-2 bg-[#0080ED] text-white px-3 md:px-6 py-3 rounded-[8px] font-semibold text-[12px] md:text-[16px] hover:bg-[#0066cc] transition-colors font-[Inter]">
+                <button className="flex min-w-0 items-center justify-center gap-2 bg-[#0080ED] px-3 py-3 text-[12px] font-semibold text-white transition-colors font-[Inter] rounded-[8px] hover:bg-[#0066cc] md:px-6 md:text-[16px]">
                   Disconnect
-                  <LogOut className="w-4 h-4" />
+                  <LogOut className="w-4 h-4 rotate-180" />
                 </button>
               </div>
             </div>
