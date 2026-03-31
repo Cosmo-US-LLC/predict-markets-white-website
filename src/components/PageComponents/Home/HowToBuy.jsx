@@ -68,11 +68,20 @@ export default function HowToBuy({
         <div className="flex flex-col gap-[9px] items-center text-center mb-12 md:mb-12">
           <h2 className="heading-two">{title}</h2>
           <p className="paragraph-regular md:!text-[18px] max-w-[933px]">
-            Follow the guide below to purchase $PREDICT during the presale.
-            The process supports both crypto
-            <br />
-            and card payments and is designed to be quick, secure, and easy to
-            follow.
+            <span className="md:hidden">
+              Follow the guide below to purchase $PREDICT during the presale.
+              The process supports both crypto and
+              <br />
+              card payments and is designed to be quick, secure, and easy to
+              follow.
+            </span>
+            <span className="hidden md:inline">
+              Follow the guide below to purchase $PREDICT during the presale.
+              The process supports both crypto
+              <br />
+              and card payments and is designed to be quick, secure, and easy to
+              follow.
+            </span>
           </p>
         </div>
 
