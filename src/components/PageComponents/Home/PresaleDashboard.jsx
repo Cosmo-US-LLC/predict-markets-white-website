@@ -799,12 +799,12 @@ export default function PresaleDashboard({
 
               {/* Action Buttons */}
               <div className="grid grid-cols-2 gap-2 pt-0 md:gap-4 md:pt-4 border-t-0 md:border-t border-gray-200">
-                <button className="flex items-center justify-center gap-2 bg-[#0080ED] text-white px-3 md:px-6 py-3 rounded-[8px] font-semibold text-[12px] md:text-[16px] hover:bg-[#0066cc] transition-colors font-[Inter]">
+                <button className="flex cursor-pointer items-center justify-center gap-2 bg-[#0080ED] text-white px-3 md:px-6 py-3 rounded-[8px] font-semibold text-[12px] md:text-[16px] hover:bg-[#0066cc] transition-colors font-[Inter]">
                   <span className="md:hidden">10% Referral Link</span>
                   <span className="hidden md:inline">Copy 10% Referral Link</span>
                   <Copy className="w-4 h-4" />
                 </button>
-                <button className="flex min-w-0 items-center justify-center gap-2 bg-[#0080ED] px-3 py-3 text-[12px] font-semibold text-white transition-colors font-[Inter] rounded-[8px] hover:bg-[#0066cc] md:px-6 md:text-[16px]">
+                <button className="flex min-w-0 cursor-pointer items-center justify-center gap-2 bg-[#0080ED] px-3 py-3 text-[12px] font-semibold text-white transition-colors font-[Inter] rounded-[8px] hover:bg-[#0066cc] md:px-6 md:text-[16px]">
                   Disconnect
                   <LogOut className="w-4 h-4 rotate-180" />
                 </button>
