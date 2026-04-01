@@ -7,8 +7,8 @@ export default function WatchRevenueFlow({
   buttonText = "BUY $PREDICT",
 }) {
   return (
-    <section className="px-4 pt-6 pb-6 md:px-6 md:pt-14 md:pb-16">
-      <div className="mx-auto max-w-[1280px] rounded-[24px] border border-[#DADADA] bg-white p-5 shadow-[0_10px_28px_rgba(4,25,54,0.05)] md:rounded-[28px] md:p-8 lg:p-10">
+    <section className="px-4 py-12 md:px-6 md:pt-14 md:pb-16">
+      <div className="mx-auto max-w-[1280px] rounded-[24px] border border-[#DADADA] bg-white px-5 py-6 shadow-[0_10px_28px_rgba(4,25,54,0.05)] md:rounded-[28px] md:p-8 lg:p-10">
         <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(420px,0.95fr)] lg:gap-10">
           <div className="flex w-full max-w-full flex-col items-center gap-5 text-center md:max-w-[460px] md:items-start md:text-left">
             <h2 className="text-[30px] font-[500] leading-[1.05] tracking-[-0.04em] text-black md:hidden">
@@ -29,7 +29,7 @@ export default function WatchRevenueFlow({
               </span>
             </h2>
 
-            <p className="w-full max-w-full text-[15px] leading-[1.6] text-black md:max-w-[420px] md:text-[16px]">
+            <p className="w-full max-w-full text-[16px] leading-[1.6] text-black md:max-w-[420px] md:text-[16px]">
               {description}
             </p>
 
