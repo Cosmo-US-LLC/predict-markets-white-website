@@ -85,7 +85,7 @@ export default function WhatIsPredict({
 
               <Link
                 to={secondaryButtonLink}
-                className="btn_primary flex min-h-[52px] min-w-[266px] items-center justify-center !rounded-[8px] !px-[24px] !py-[12px] !text-[16px]"
+                className="flex min-h-[52px] min-w-[266px] items-center justify-center rounded-[8px] border border-black bg-white px-[24px] py-[12px] text-[16px] font-semibold text-black transition-colors"
               >
                 {secondaryButtonText}
               </Link>
