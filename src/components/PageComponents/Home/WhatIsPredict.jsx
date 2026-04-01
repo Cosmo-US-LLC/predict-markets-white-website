@@ -42,7 +42,7 @@ export default function WhatIsPredict({
       className="w-full bg-[#EAF5FF] px-4 py-12 md:px-6 md:py-16"
     >
       <div className="mx-auto w-full max-w-[1280px] overflow-hidden rounded-[28px] border border-[#D9D9D9] bg-white shadow-[0_10px_30px_rgba(4,25,54,0.06)] md:rounded-[36px]">
-        <div className="grid gap-8 px-6 pb-6 pt-6 md:px-12 md:pb-8 md:pt-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(420px,0.98fr)] lg:items-center lg:gap-8">
+        <div className="grid gap-8 px-6 pb-6 pt-6 md:px-12 md:pb-8 md:pt-10 lg:grid-cols-[minmax(0,0.98fr)_minmax(460px,1.02fr)] lg:items-center lg:gap-4 lg:pb-12 xl:grid-cols-[minmax(0,0.95fr)_minmax(520px,1.05fr)]">
           <div className="order-2 flex flex-col items-start gap-6 lg:order-1">
             <h2 className="heading-two max-w-[520px] text-left text-black">
               {title}
@@ -90,10 +90,23 @@ export default function WhatIsPredict({
                 {secondaryButtonText}
               </Link>
             </div>
+
+            <div className="flex items-center justify-center lg:hidden">
+              <div className="relative flex w-full h-[300px] max-w-[560px] items-center justify-center">
+                <img
+                  src={heroImage}
+                  alt="PredictMarkets app preview"
+                  className="h-auto w-full object-contain"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                  }}
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="order-1 flex items-center justify-center lg:order-2">
-            <div className="relative flex w-full max-w-[520px] items-center justify-center">
+          <div className="order-1 hidden items-center justify-center lg:order-2 lg:flex lg:justify-end">
+            <div className="relative flex w-full h-[300px] max-w-[560px] items-center justify-center lg:max-w-[620px] lg:translate-x-3 xl:max-w-[660px]">
               <img
                 src={heroImage}
                 alt="PredictMarkets app preview"
