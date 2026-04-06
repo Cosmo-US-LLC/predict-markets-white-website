@@ -56,7 +56,7 @@ function HeroFileVideo({ videoUrl }) {
           onClick={handleOverlayClick}
           aria-label="Play video"
         >
-          <span className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110">
+          <span className="w-20 h-20 bg-black/50 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110">
             <svg
               className="w-10 h-10 text-white"
               fill="currentColor"
