@@ -64,6 +64,7 @@ export function Home() {
         featuredInLeftText={predictMarketsHeroConfig.featuredInLeftText}
         featuredInRightText={predictMarketsHeroConfig.featuredInRightText}
         centerImage={predictMarketsHeroConfig.centerImage}
+        videoUrl={predictMarketsHeroConfig.videoUrl}
       />
       <ExchangeListings
         title={exchangeListingsConfig.title}
