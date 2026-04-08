@@ -20,6 +20,21 @@ export default function HowToBuy({
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
 
+  const renderMobileStepDescription = (step) => {
+    if (step.id === "step-1") {
+      return (
+        <>
+          Click Connect Wallet and link your decentralized wallet like
+          MetaMask, Trust Wallet, Phantom,
+          <br />
+          or any other supported wallet in seconds.
+        </>
+      );
+    }
+
+    return step.description;
+  };
+
   useEffect(() => {
     if (!api) {
       return;
@@ -52,7 +67,22 @@ export default function HowToBuy({
         {/* Header Section */}
         <div className="flex flex-col gap-[9px] items-center text-center mb-12 md:mb-12">
           <h2 className="heading-two">{title}</h2>
-          <p className="paragraph-regular md:!text-[18px] max-w-[933px]">{subtitle}</p>
+          <p className="paragraph-regular md:!text-[18px] max-w-[933px]">
+            <span className="md:hidden">
+              Follow the guide below to purchase $PREDICT during the presale.
+              The process supports both crypto and
+              <br />
+              card payments and is designed to be quick, secure, and easy to
+              follow.
+            </span>
+            <span className="hidden md:inline">
+              Follow the guide below to purchase $PREDICT during the presale.
+              The process supports both crypto
+              <br />
+              and card payments and is designed to be quick, secure, and easy to
+              follow.
+            </span>
+          </p>
         </div>
 
         {/* Mobile Carousel */}
@@ -102,7 +132,7 @@ export default function HowToBuy({
 
                       {/* Description */}
                       <p className="text-[#000] text-sm leading-[22px] tracking-[0.28px]">
-                        {step.description}
+                        {renderMobileStepDescription(step)}
                       </p>
                     </div>
                   </div>

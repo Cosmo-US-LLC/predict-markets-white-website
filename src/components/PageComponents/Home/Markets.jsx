@@ -87,7 +87,7 @@ export default function Markets({
               return (
                 <div
                   key={market.id}
-                  className="flex-[0_0_296px] min-w-[296px] shrink-0 h-[460px] relative rounded-lg overflow-hidden shadow-md"
+                  className="h-[460px] w-[296px] shrink-0 relative rounded-lg overflow-hidden shadow-md md:w-[calc((100%-24px)/4)]"
                 >
                   {/* Background Image */}
                   <div className="absolute inset-0 rounded-lg">
@@ -119,7 +119,7 @@ export default function Markets({
                   {/* Content at Bottom */}
                   <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-2 p-4 z-10">
                     <div className={`flex flex-col items-start min-h-[130px] ${isCrypto ? 'text-white' : 'text-[#000]'}`}>
-                      <h3 className="paragraph-regular max-md:!text-[20px] !font-[Inter] 
+                      <h3 className="paragraph-regular !text-[18px] max-md:!text-[20px] !font-[Inter] 
                       !text-[#fff] !font-[600] max-md:mb-2">
                         {market.title}
                       </h3>

@@ -11,6 +11,20 @@ export default function TokenDetails({
 }) {
   const [copiedId, setCopiedId] = useState(null);
 
+  const renderMobileDetailValue = (item) => {
+    if (item.id === "presale") {
+      return (
+        <>
+          1,000,000,000 $PREDICT tokens
+          <br />
+          will be sold during the presale
+        </>
+      );
+    }
+
+    return item.valueForMobile ?? item.value;
+  };
+
   const handleCopy = (id, value) => {
     navigator.clipboard.writeText(value);
     setCopiedId(id);
@@ -222,7 +236,7 @@ if (reorderedDetails.length >= 6) {
                         : "md:!text-[16px] !text-[12px] font-semibold"
                     }`}
                   >
-                    {item.valueForMobile ? item.valueForMobile : item.value}
+                    {renderMobileDetailValue(item)}
                   </span>
                   {item.copyable && (
                     <button

@@ -84,8 +84,11 @@ export default function GetExtraRewards({
             <div className="flex flex-col gap-10">
               <div className="flex flex-col  max-md:!items-center gap-8 md:max-w-[640px] max-w-[370px]  max-md:mx-auto w-full mb-0">
                 <h2 className="heading-two max-md:!text-center">{title}</h2>
-                <p className="paragraph-regular md:!text-[18px] md:!text-start md:max-w-[530px]  max-md:max-w-[355px] max-md:mx-auto !text-center md:whitespace-pre-line">
-                  {subtitle}
+                <p className="paragraph-regular md:!text-[18px] md:!text-start md:max-w-[530px] max-md:max-w-[355px] max-md:mx-auto !text-center md:whitespace-pre-line">
+                  Get more $PREDICT and unlock higher rewards by joining the
+                  Elite PREDICT Members Club. Access starts from
+                  <br />
+                  $1,000 and is available only during the presale.
                 </p>
               </div>
               <div>
@@ -156,7 +159,7 @@ export default function GetExtraRewards({
                           <div className="flex flex-col gap-2.5 pb-4">
                             <h3 className="heading-three !text-start">
                               {card.tier} <br className="max-md:hidden" />
-                              MEMBERSHIP
+                              Membership
                             </h3>
                             <p className="text-[#000] text-base font-normal leading-[1.4] tracking-[0.32px]">
                               When you buy $PREDICT for{" "}
@@ -306,10 +309,10 @@ export default function GetExtraRewards({
                           )}
 
                           {/* Buy Button */}
-                          <div className="flex flex-col gap-[18px] items-center mt-2">
+                          <div className="mt-2 flex w-full flex-col items-center gap-[18px]">
                             <button
                               onClick={() => scrollToWallet(140)}
-                              className="btn_primary w-full max-w-[251.711px] !px-0 h-[52.988px] flex items-center justify-center"
+                              className="btn_primary flex h-[52.988px] w-full items-center justify-center !px-0 max-w-[251.711px] md:max-w-none"
                             >
                               {buyButtonText}
                             </button>

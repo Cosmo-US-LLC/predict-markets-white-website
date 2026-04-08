@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import FeaturedIn from "./FeaturedIn";
 import FeaturedInSection from "./FeaturedInSection";
@@ -15,6 +16,61 @@ import predictMarketsHeroCoin5 from "../../../assets/images/home/predict_hero/co
 import predictHeroBg from "../../../assets/images/home/predict_hero/predict_hero_bg.webp";
 import predictHeroBgMobile from "../../../assets/images/home/predict_hero/predict_hero_bg_mobile.webp";
 
+function isVideoEmbedUrl(url) {
+  if (typeof url !== "string") return false;
+  return (
+    /^https?:\/\//.test(url) &&
+    (url.includes("youtube.com") ||
+      url.includes("youtu.be") ||
+      url.includes("vimeo.com"))
+  );
+}
+
+function HeroFileVideo({ videoUrl }) {
+  const videoRef = useRef(null);
+  const [hasStarted, setHasStarted] = useState(false);
+
+  const handleOverlayClick = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.play().catch(() => {});
+  };
+
+  return (
+    <div className="relative w-full h-full min-h-[200px]">
+      <video
+        ref={videoRef}
+        className="w-full h-full object-cover bg-black"
+        src={videoUrl}
+        controls={hasStarted}
+        playsInline
+        preload="metadata"
+        loop
+        onPlay={() => setHasStarted(true)}
+      />
+      {!hasStarted && (
+        <button
+          type="button"
+          className="absolute inset-0 z-10 flex items-center justify-center bg-black/25 hover:bg-black/35 transition-colors cursor-pointer"
+          onClick={handleOverlayClick}
+          aria-label="Play video"
+        >
+          <span className="w-20 h-20 bg-black/50 rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110">
+            <svg
+              className="w-10 h-10 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+        </button>
+      )}
+    </div>
+  );
+}
+
 export default function PredictMarketsHero({
   id,
   title = "Own The Future Of Prediction Markets.",
@@ -27,18 +83,16 @@ export default function PredictMarketsHero({
   videoUrl,
 }) {
   return (
-    <section
-      className="relative bg-[#fff] max-md:border-b-[1px] max-md:border-[#ddd] w-full overflow-hidden min-h-screen flex items-center predict_hero_bg justify-center py-12 md:pt-10 md:pb-6"
-    >
+    <section className="relative bg-[#fff] max-md:border-b-[1px] max-md:border-[#ddd] w-full overflow-hidden min-h-screen flex items-center predict_hero_bg justify-center py-12 md:pt-10 md:pb-6">
       {/* Background Image - Mobile */}
       <div
         className="md:hidden absolute inset-0 w-full h-full z-0 "
         style={{
           backgroundImage: `url(${predictHeroBgMobile})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          height: '50%',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "50%",
         }}
       ></div>
 
@@ -58,12 +112,12 @@ export default function PredictMarketsHero({
         <div className="flex flex-col lg:flex-row gap-0 lg:gap-2 ">
           {/* Left Section - Content Area */}
           <div className="flex-1 w-full lg:">
-          {/* Featured In Badge - At Top */}
+            {/* Featured In Badge - At Top */}
             <div className="mb-3">
-          <FeaturedIn
-            leftText={featuredInLeftText}
-            rightText={featuredInRightText}
-          />
+              <FeaturedIn
+                leftText={featuredInLeftText}
+                rightText={featuredInRightText}
+              />
             </div>
 
             {/* Title */}
@@ -109,49 +163,60 @@ export default function PredictMarketsHero({
 </svg>
           </div> */}
 
-            {/* Video Placeholder */}
-            <div className="relative bg-gray-200 rounded-lg mb-3 md:mt-[30px] overflow-hidden border border-gray-300" style={{width: '550px', height: '269px', maxWidth: '100%'}}>
-              <div
-                className="absolute inset-0 flex items-center justify-center"
-                style={{
-                  backgroundImage: `
+            <div
+              className="relative bg-gray-200 rounded-lg mb-3 md:mt-[30px] overflow-hidden border border-gray-300"
+              style={{ width: "550px", height: "269px", maxWidth: "100%" }}
+            >
+              {videoUrl ? (
+                isVideoEmbedUrl(videoUrl) ? (
+                  <iframe
+                    className="absolute inset-0 w-full h-full border-0"
+                    src={videoUrl}
+                    title="Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                ) : (
+                  <HeroFileVideo videoUrl={videoUrl} />
+                )
+              ) : (
+                <div
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{
+                    backgroundImage: `
                       linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
                       linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
                       linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
                       linear-gradient(-45deg, transparent 75%, #f0f0f0 75%)
                     `,
-                  backgroundSize: '20px 20px',
-                  backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-                }}
-              >
-                <button className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-red-700 transition-colors shadow-lg hover:scale-110 transform">
-                  <svg
-                    className="w-10 h-10 text-white ml-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
+                    backgroundSize: "20px 20px",
+                    backgroundPosition: "0 0, 0 10px, 10px -10px, -10px 0px",
+                  }}
+                >
+                  <span className="sr-only">Video coming soon</span>
+                  <div
+                    className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center shadow-lg opacity-90"
+                    aria-hidden
                   >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-              </div>
-              {videoUrl && (
-                <iframe
-                  className="w-full h-full"
-                  src={videoUrl}
-                  title="Video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                    <svg
+                      className="w-10 h-10 text-white ml-1"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
               )}
             </div>
 
-          {/* Featured In Section - At Bottom */}
+            {/* Featured In Section - At Bottom */}
             <div className="w-full max-w-[550px] max-md:pb-26">
-            <FeaturedInSection
-              title={featuredInSectionConfig.title}
-              logos={featuredInLogos}
-            />
-          </div>
+              <FeaturedInSection
+                title={featuredInSectionConfig.title}
+                logos={featuredInLogos}
+              />
+            </div>
           </div>
 
           {/* Right Section - live presale widget (same backend as /buy) */}
@@ -161,8 +226,6 @@ export default function PredictMarketsHero({
           >
             <PresaleBuyWidgetSection />
           </div>
-
-        
         </div>
       </div>
     </section>

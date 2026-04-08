@@ -13,6 +13,15 @@ export default function PredictionPlatform({
   buyButtonLink = "#wallet",
   supportButtonLink = "https://t.me/predict_markets_chat",
 }) {
+  const desktopSubtitleBreakText = "before the public launch begins.";
+  const subtitleBreakIndex = subtitle.indexOf(desktopSubtitleBreakText);
+  const subtitlePrefix =
+    subtitleBreakIndex >= 0
+      ? subtitle.slice(0, subtitleBreakIndex).trimEnd()
+      : subtitle;
+  const subtitleSuffix =
+    subtitleBreakIndex >= 0 ? subtitle.slice(subtitleBreakIndex) : null;
+
   return (
     <section className="relative w-full overflow-hidden bg-[#fff]">
       {/* Blurred Background */}
@@ -51,7 +60,16 @@ export default function PredictionPlatform({
 
             {/* Subtitle */}
             <p className="paragraph-regular md:!text-[18px] max-w-[529px] font-[400] text-center text-[#000]">
-              {subtitle}
+              {subtitleSuffix ? (
+                <>
+                  {subtitlePrefix}
+                  <span className="md:hidden"> </span>
+                  <br className="hidden md:block" />
+                  {subtitleSuffix}
+                </>
+              ) : (
+                subtitle
+              )}
             </p>
 
             {/* Buttons */}

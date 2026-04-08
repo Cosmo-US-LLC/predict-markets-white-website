@@ -56,7 +56,6 @@ export default function PredictsTheFeatures({
 }) {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
-
   useEffect(() => {
     if (!api) {
       return;
@@ -77,7 +76,18 @@ export default function PredictsTheFeatures({
         {/* Header */}
         <div className="flex flex-col gap-2 md:gap-[8px] items-center text-center max-w-[834px]">
           <h2 className="heading-two text-[#000]  md:max-w-[700px] max-w-[300px]">
-             {title}
+            <span className="md:hidden">
+              <span className="inline-block whitespace-nowrap">
+                Redefining How The
+              </span>
+              <br />
+              <span className="inline-block whitespace-nowrap">
+                World Predicts
+              </span>
+              <br />
+              <span className="inline-block whitespace-nowrap">The Future</span>
+            </span>
+            <span className="hidden md:inline">{title}</span>
           </h2>
           <p className="text-[#000] md:!text-[18px] paragraph-regular">
             {subtitle}
@@ -116,7 +126,7 @@ export default function PredictsTheFeatures({
                       <h4 className="heading-four">
                         {feature.title}
                       </h4>
-                      <p className=" paragraph-regular md:!text-[16px] max-md:!text-[14px] max-md:!text-start w-full">
+                      <p className="paragraph-regular !text-[14px] max-md:!text-start w-full">
                         {feature.description}
                       </p>
                     </div>
@@ -167,7 +177,7 @@ export default function PredictsTheFeatures({
                 <h4 className="heading-four w-full">
                   {feature.title}
                 </h4>
-                <p className="paragraph-regular !text-[16px] !leading-[150%] !text-start w-full">
+                <p className="paragraph-regular !text-[14px] !leading-[150%] !text-start w-full">
                   {feature.description}
                 </p>
               </div>
