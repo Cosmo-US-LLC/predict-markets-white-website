@@ -163,7 +163,6 @@ export default function PredictMarketsHero({
 </svg>
           </div> */}
 
-            {/* Hero video or placeholder */}
             <div
               className="relative bg-gray-200 rounded-lg mb-3 md:mt-[30px] overflow-hidden border border-gray-300"
               style={{ width: "550px", height: "269px", maxWidth: "100%" }}
