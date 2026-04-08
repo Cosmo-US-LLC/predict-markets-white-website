@@ -5,7 +5,6 @@ import { Sheet, SheetContent, SheetTrigger, SheetClose } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { cn } from "../../lib/utils";
 import logoImage from "../../assets/images/logo/P_logo.svg";
-import { scrollToWallet } from "../../lib/utils";
 import predictHeroBgMobile from "../../assets/images/home/predict_hero/predict_hero_bg_mobile.webp";
 import xLogo from "../../assets/images/footer/X.svg";
 import telegramLogo from "../../assets/images/footer/Telegram.svg";
@@ -171,8 +170,10 @@ export function Header() {
             letterSpacing: "0.24px",
           }}
         >
-          <span className="underline font-[600]" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>Click here</span> to enter the
-          $PREDICT Presale
+          <Link to="/buy" className="underline font-[600]">
+            Click here
+          </Link>{" "}
+          to enter the $PREDICT Presale
         </p>
       </div>
       <div className="flex w-full max-w-[1280px] mx-auto px-4 md:px-2 py-3 items-center justify-between gap-4 relative z-[102] bg-white">
@@ -288,18 +289,18 @@ export function Header() {
             )}
           </div> */}
 
-          {/* Buy Button */}
+          {/* Buy Button — /buy opens presale widget (MetaMask / any wallet) */}
           <Button
             asChild
             className="btn_primary  flex max-md:!hidden !rounded-[8px] !px-[24px] !text-[16px] !py-[12px]"
           >
-            <Link to=""   onClick={() => scrollToWallet(140)}>Connect Wallet</Link>
+            <Link to="/buy">BUY $PREDICT</Link>
           </Button>
           <Button
             asChild
             className="btn_primary  flex md:!hidden !px-[24px] !text-[14px] !py-[12px]"
           >
-            <Link to=""  onClick={() => scrollToWallet(140)}>Buy Now</Link>
+            <Link to="/buy">BUY $PREDICT</Link>
           </Button>
         </div>
         {/* Mobile Menu Overlay */}

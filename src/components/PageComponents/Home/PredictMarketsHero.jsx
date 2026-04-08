@@ -1,9 +1,8 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { scrollToWallet } from "../../../lib/utils";
 import FeaturedIn from "./FeaturedIn";
 import FeaturedInSection from "./FeaturedInSection";
-import PresaleDashboard from "./PresaleDashboard";
+import { PresaleBuyWidgetSection } from "../../buy/PresaleBuyWidgetSection.jsx";
 import {
   featuredInLogos,
   featuredInSectionConfig,
@@ -221,12 +220,12 @@ export default function PredictMarketsHero({
             </div>
           </div>
 
-          {/* Right Section - Presale Dashboard */}
+          {/* Right Section - live presale widget (same backend as /buy) */}
           <div
             className="w-full lg:max-w-[465px] lg:flex-shrink-0 lg:sticky lg:top-8"
             id="wallet"
           >
-            <PresaleDashboard />
+            <PresaleBuyWidgetSection />
           </div>
         </div>
       </div>
