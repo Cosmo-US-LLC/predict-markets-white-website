@@ -22,9 +22,9 @@ export default function ExclusivePresaleBenefits({
     {
       id: 3,
       icon: treasureChestImage,
-      title: "Receive Up To 40% Platform Credits",
+      title: "Receive Up To 50% Platform Credits",
       description:
-        "Get up to 40% of your purchase value in free credits to place predictions on PredictMarkets, with no strings attached.",
+        "Get up to 50% of your purchase value in free credits to place predictions on PredictMarkets, with no strings attached.",
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ export default function ExclusivePresaleBenefits({
         <>
           <span className="md:hidden">
             <span className="inline-block whitespace-nowrap">
-              Receive Up To 40%
+              Receive Up To 50%
             </span>
             <br />
             <span className="inline-block whitespace-nowrap">
