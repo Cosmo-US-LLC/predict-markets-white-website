@@ -50,6 +50,15 @@ export default function GetExtraRewards({
     }).format(value);
   };
 
+  const tierBenefitsLimit = {
+    Bronze: 2,
+    Silver: 3,
+    Gold: 4,
+    Platinum: 4,
+    Titanium: 4,
+    Diamond: 5,
+  };
+
   const handleSliderChange = (e) => {
     const value = parseInt(e.target.value);
     setSliderValueState(value);
@@ -156,7 +165,7 @@ export default function GetExtraRewards({
                       <div className="relative z-10 w-full flex flex-col lg:flex-row gap-6 ">
                         {/* Left Side - Membership Info */}
                         <div className="flex items-start flex-col md:gap-3 gap-3 w-full lg:w-[294px]">
-                          <div className="flex flex-col gap-2.5 pb-4">
+                          <div className="flex flex-col gap-2.5 pb-2">
                             <h3 className="heading-three !text-start">
                               {card.tier} <br className="max-md:hidden" />
                               Membership
@@ -192,16 +201,22 @@ export default function GetExtraRewards({
                             card.benefits.map((benefit, idx) => {
                               // Check if benefit is included (first 2 for Bronze, more for higher tiers)
                               // For Bronze: first 2 are included, rest are excluded
-                              const isIncluded =
-                                card.tier === "Bronze"
-                                  ? idx < 2
-                                  : card.tier === "Silver"
-                                    ? idx < 3
-                                    : card.tier === "Gold"
-                                      ? idx < 4
-                                      : card.tier === "Diamond"
-                                        ? idx < 5
-                                        : true;
+                              // const isIncluded =
+                              //   card.tier === "Bronze"
+                              //     ? idx < 2
+                              //     : card.tier === "Silver"
+                              //       ? idx < 3
+                              //       : card.tier === "Gold"
+                              //         ? idx < 4
+                              //           : card.tier === "Platinum"
+                              //           ? idx < 4
+                              //             : card.tier === "Titanium"
+                              //             ? idx < 4
+                              //               : card.tier === "Diamond"
+                              //                 ? idx < 5
+                              //                 : true;
+                              const limit = tierBenefitsLimit[card.tier] ?? card.benefits.length;
+                              const isIncluded = idx < limit;
 
                               return (
                                 <div
@@ -251,7 +266,7 @@ export default function GetExtraRewards({
                                     )}
                                   </div>
                                   <div className="flex gap-1 items-start flex-1">
-                                    <h5 className="text-[#000] text-[14px] font-medium leading-[1.1]">
+                                    <h5 className="text-[#000] text-[14px] font-medium leading-[1.1] whitespace-nowrap">
                                       {benefit}
                                     </h5>
                                     <div className="">

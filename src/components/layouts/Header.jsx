@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
+import { scrollToWallet } from "../../lib/utils.js";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { cn } from "../../lib/utils";
@@ -291,17 +292,32 @@ export function Header() {
 
           {/* Buy Button — /buy opens presale widget (MetaMask / any wallet) */}
           <Button
+            onClick={() => scrollToWallet(140)}
+            className="btn_primary hidden md:flex !rounded-[8px] !px-[24px] !text-[16px] !py-[12px]"
+          >
+            Connect Wallet
+          </Button>
+
+          <Button
+            onClick={() => scrollToWallet(140)}
+            className="btn_primary flex md:hidden !px-[24px] !text-[14px] !py-[12px]"
+          >
+            Connect Wallet
+          </Button>
+          {/* <Button
+            onClick={() => scrollToWallet(140)}
             asChild
             className="btn_primary  flex max-md:!hidden !rounded-[8px] !px-[24px] !text-[16px] !py-[12px]"
           >
             <Link to="/buy">BUY $PREDICT</Link>
           </Button>
           <Button
+            onClick={() => scrollToWallet(140)}
             asChild
             className="btn_primary  flex md:!hidden !px-[24px] !text-[14px] !py-[12px]"
           >
             <Link to="/buy">BUY $PREDICT</Link>
-          </Button>
+          </Button> */}
         </div>
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (

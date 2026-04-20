@@ -4,7 +4,7 @@ import backgroundImage from "../../../assets/images/home/revenue_sharing/5377722
 import coinsImage from "../../../assets/images/home/revenue_sharing/revenue_sharing_coin.webp";
 
 export default function RevenueSharing({
-  title = "Experience A Revolutionary Revenue Sharing System",
+  // title = "Experience A Revolutionary Revenue Sharing System",
   description = "",
   buyButtonText = "BUY $PREDICT",
   buyButtonLink = "#wallet",
@@ -38,11 +38,15 @@ export default function RevenueSharing({
         <div className="flex flex-col gap-6 items-start z-10 flex-1 !w-full max-w-[690px] md:min-w-[690px] ">
           {/* Title */}
           <h2 className="heading-two flex max-md:hidden max-md:text-center">
-            {title}
+            {/* {title} */}
+            Watch Revenue Flow <br/> In On Autopilot
           </h2>
           <h2 className="heading-two max-md:flex hidden max-md:text-center">
-          Revolutionary Revenue Sharing System
+            Watch Revenue Flow In On Autopilot
           </h2>
+          {/* <h2 className="heading-two max-md:flex hidden max-md:text-center">
+          Revolutionary Revenue Sharing System
+          </h2> */}
 
           {/* Description - Split into paragraphs */}
           <div className="flex flex-col gap-4">

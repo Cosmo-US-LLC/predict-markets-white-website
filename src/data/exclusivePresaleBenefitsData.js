@@ -19,8 +19,8 @@ export const exclusivePresaleBenefits = [
   {
     id: 3,
     icon: treasureChestImage,
-    title: "Receive up to 40% platform credits",
-    description: "Get up to 40% of your purchase value in free credits to place predictions on PredictMarkets, with no strings attached.",
+    title: "Receive up to 50% platform credits",
+    description: "Get up to 50% of your purchase value in free credits to place predictions on PredictMarkets, with no strings attached.",
   },
   {
     id: 4,
