@@ -85,7 +85,7 @@ export function Home() {
         features={featuresData}
       />
       <Markets title={marketsConfig.title} markets={marketsData} />
-      <WatchRevenueFlow />
+      {/* <WatchRevenueFlow /> */}
       <HowItWorks
         title={howItWorksConfig.title}
         subtitle={howItWorksConfig.subtitle}
