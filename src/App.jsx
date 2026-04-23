@@ -6,18 +6,23 @@ import { Buy } from './pages/Buy.jsx';
 import { TermsOfService } from './pages/TermsOfService.jsx';
 import { CookiesPolicy } from './pages/CookiesPolicy.jsx';
 import { PrivacyPolicy } from './pages/PrivacyPolicy.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 function App() {
   return (
-    <Routes>
-      <Route element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="buy" element={<Buy />} />
-        <Route path="terms-of-service" element={<TermsOfService />} />
-        <Route path="cookie-management" element={<CookiesPolicy />} />
-        <Route path="privacy-policy" element={<PrivacyPolicy />} />
-      </Route>
-    </Routes>
+    <>
+      <ScrollToTop/>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="buy" element={<Buy />} />
+          <Route path="terms-of-service" element={<TermsOfService />} />
+          <Route path="cookie-management" element={<CookiesPolicy />} />
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
+        </Route>
+      </Routes>
+    </>
+    
   );
 }
 
