@@ -3,7 +3,7 @@ export const termsOfServiceConfig = {
   documentTitle: 'PredictMarket Terms Of Service',
   effectiveDate: 'Effective as of: January 1, 2026',
   introParagraphs: [
-    'These Terms of Service ("Terms") govern your access to and use of the PredictMarket website, platform, and any related products, features, or participation events (collectively, the "Services"). References to "PredictMarket," "we," "us," or "our" mean the PredictMarket operating entity. "You" refers to any individual or entity using the Services.',
+    'These Terms of Service (“Terms”) govern your access to and use of the PredictMarket website, platform, and any related products, features, or participation events (collectively, the “Services”). References to “PredictMarket,” “we,” “us,” or “our” mean the PredictMarket operating entity. “You” refers to any individual or entity using the Services.',
     'By accessing or using the Services, you agree to be legally bound by these Terms. If you do not accept them, you must not access or use the Services.',
   ],
   closingStatement:
@@ -120,6 +120,6 @@ export const termsSections = [
     id: 12,
     title: 'Contact Information',
     intro: 'For questions regarding these Terms, please contact:',
-    contactEmail: 'support@predictmarket.com',
+    contactEmail: 'Support@predictmarkets.io',
   },
 ];
