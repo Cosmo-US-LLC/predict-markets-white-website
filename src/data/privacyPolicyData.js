@@ -11,7 +11,7 @@ export const privacySections = [
     id: 1,
     title: 'Overview',
     content: [
-      'This Privacy Policy describes how PredictMarket ("PredictMarket," "we," "our," or "us") collects, uses, stores, and discloses personal information obtained from individuals ("users," "you," or "participants") who access or interact with our website, platform, and any associated token distribution or market participation activities.',
+      'This Privacy Policy describes how PredictMarket (“PredictMarket,” “we,” “our,” or “us”) collects, uses, stores, and discloses personal information obtained from individuals (“users,” “you,” or “participants”) who access or interact with our website, platform, and any associated token distribution or market participation activities.',
       'By accessing or using PredictMarket services, you confirm that you have read, understood, and agreed to the practices described in this Privacy Policy. If you do not agree, you should discontinue use of our services immediately.',
     ],
   },
@@ -42,15 +42,33 @@ export const privacySections = [
   },
   {
     id: 3,
-    title: 'Use Of Personal Information',
+    title: 'Use of Personal Information',
     intro: 'PredictMarket uses collected information for the following purposes:',
-    simpleBullets: [
-      'To operate, administer, and support PredictMarket services and any related token or market participation events.',
-      'To verify user identity and fulfill regulatory and compliance obligations.',
-      'To maintain, improve, and optimize platform functionality and user experience.',
-      'To communicate with users, including responding to support requests and providing service-related updates.',
-      'To detect, investigate, and prevent fraud, security incidents, and unlawful activity.',
-      'To meet applicable legal, regulatory, and enforcement requirements.',
+    bullets: [
+      {
+        // label: 'Legal and Regulatory Requirements:',
+        text: 'To operate, administer, and support PredictMarket services and any related token or market participation events.',
+      },
+      {
+        // label: 'Service Providers:',
+        text: 'To verify user identity and fulfill regulatory and compliance obligations.',
+      },
+      {
+        // label: 'Corporate Transactions:',
+        text: 'To maintain, improve, and optimize platform functionality and user experience.',
+      },
+      {
+        // label: 'Security and Fraud Prevention:',
+        text: 'To communicate with users, including responding to support requests and providing service-related updates.',
+      },
+      {
+        // label: 'Security and Fraud Prevention:',
+        text: 'To detect, investigate, and prevent fraud, security incidents, and unlawful activity.',
+      },
+      {
+        // label: 'Security and Fraud Prevention:',
+        text: 'To meet applicable legal, regulatory, and enforcement requirements.',
+      },
     ],
     footer:
       'We limit data collection to information that is reasonably necessary to operate our services and comply with applicable legal requirements.',
@@ -91,11 +109,23 @@ export const privacySections = [
     title: 'Data Security',
     intro:
       'We employ commercially reasonable and industry-standard safeguards to protect personal information, including:',
-    simpleBullets: [
-      'Encryption of sensitive data where appropriate',
-      'Secure storage systems for transactional and compliance information',
-      'Periodic security assessments and internal audits',
-      'Access controls limiting data availability to authorized personnel only',
+    bullets: [
+      {
+        // label: 'Legal and Regulatory Requirements:',
+        text: 'Encryption of sensitive data where appropriate',
+      },
+      {
+        // label: 'Service Providers:',
+        text: 'Secure storage systems for transactional and compliance information',
+      },
+      {
+        // label: 'Corporate Transactions:',
+        text: 'Periodic security assessments and internal audits',
+      },
+      {
+        // label: 'Security and Fraud Prevention:',
+        text: 'Access controls limiting data availability to authorized personnel only',
+      },
     ],
     footer:
       'While we strive to protect your data, no system is entirely secure, and we cannot guarantee absolute security of information transmitted or stored electronically.',
@@ -105,15 +135,30 @@ export const privacySections = [
     title: 'Your Rights',
     intro:
       'Depending on your jurisdiction, you may have rights relating to your personal data, including:',
-    simpleBullets: [
-      'The right to access and correct your personal information',
-      'The right to request deletion of data under certain conditions',
-      'The right to restrict or limit processing in specific circumstances',
-      'The right to receive a copy of your data in a portable format',
-      'The right to object to certain processing activities',
+    bullets: [
+      {
+        // label: 'Legal and Regulatory Requirements:',
+        text: 'The right to access and correct your personal information',
+      },
+      {
+        // label: 'Service Providers:',
+        text: 'The right to request deletion of data under certain conditions',
+      },
+      {
+        // label: 'Corporate Transactions:',
+        text: 'The right to restrict or limit processing in specific circumstances',
+      },
+      {
+        // label: 'Security and Fraud Prevention:',
+        text: 'The right to receive a copy of your data in a portable format',
+      },
+      {
+        // label: 'Security and Fraud Prevention:',
+        text: 'The right to object to certain processing activities',
+      },
     ],
     footer:
-      'Requests may be submitted to [Insert Contact Email]. Identity verification may be required before fulfilling such requests.',
+      'Requests may be submitted to Support@predictmarkets.io. Identity verification may be required before fulfilling such requests.',
   },
   {
     id: 8,
@@ -154,6 +199,6 @@ export const privacySections = [
     id: 13,
     title: 'Contact Details',
     intro: 'For questions or concerns regarding this Privacy Policy or our data practices, please contact:',
-    contactEmail: 'Support@PredictMarket.com',
+    contactEmail: 'Support@predictmarkets.io',
   },
 ];
