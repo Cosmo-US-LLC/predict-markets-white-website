@@ -1,7 +1,7 @@
 import { map } from "nanostores";
 import { api } from "../api";
 import toast from "react-hot-toast";
-import { getAccount, signMessage, watchAccount } from "@wagmi/core";
+import { getConnection, signMessage, watchConnection } from "@wagmi/core";
 import { getConfig } from "../web3";
 import { useStore } from "@nanostores/react";
 
@@ -76,10 +76,10 @@ document.addEventListener("wagmi-loaded", async () => {
       .getUserStakeData(address)
       .then((res) => $userState.setKey("userStakeData", res.data));
   }
-  const accountData = getAccount(config)
+  const accountData = getConnection(config)
   if (accountData.isConnected) func(accountData)
 
-  watchAccount(config, {
+  watchConnection(config, {
     onChange: func
   });
 })

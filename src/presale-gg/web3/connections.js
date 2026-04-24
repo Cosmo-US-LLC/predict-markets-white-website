@@ -2,16 +2,17 @@ import {
   http,
   connect,
   watchConnections,
-  watchAccount,
+  watchConnection,
   injected,
 } from "@wagmi/core";
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
-import { coinbaseWallet, walletConnect, metaMask } from "@wagmi/connectors";
+import { coinbaseWallet, metaMask } from "@wagmi/connectors";
 import { mainnet, bsc, base, polygon } from "@reown/appkit/networks";
 import { createAppKit } from "@reown/appkit";
 import { rpcMap } from "./util";
 import { WALLET_CONNECT_PROJECT_ID } from "../constants";
 import logo from "../../assets/images/logo/P_logo.svg";
+import { getIsMobile } from "../util";
 
 const metadata = {
   name: "Predict Markets",
@@ -20,7 +21,7 @@ const metadata = {
   icons: [`${window.location.origin}${logo}`],
 };
 
-export const metaMaskConnector = metaMask();
+export const metaMaskConnector = metaMask()
 export const coinbaseConnector = coinbaseWallet({
   appName: "Predict Markets",
   appLogoUrl: `${window.location.origin}${logo}`,
@@ -30,10 +31,10 @@ export const phantomConnector = injected({
   shimDisconnect: true,
 });
 const connectors = [
-  metaMaskConnector,
   coinbaseConnector,
   phantomConnector,
-];
+  getIsMobile() ? null : metaMaskConnector,
+].filter((connector) => !!connector);
 
 // Without this, if you refresh while connected to metamask, you can't disconnect
 if (typeof localStorage !== "undefined") localStorage.removeItem("wagmi.store");
@@ -59,8 +60,6 @@ export const walletConnectModal = createAppKit({
   themeMode: "dark",
   featuredWalletIds: [
     "4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0", // Trust Wallet
-    "a797aa35c0fadbfc1a53e7f675162ed5226968b44a19ee3d24385c64d1d3c393", // Phantom
-    "fd20dc426fb37566d803205b19bbc1d4096b248ac04548e3cfb6b3a38bd033aa" // Coinbase wallet
   ],
   features: {
     socials: false,
@@ -101,7 +100,7 @@ if (typeof localStorage !== "undefined") {
     },
   });
 
-  watchAccount(config, {
+  watchConnection(config, {
     onChange: (accounts) => {
       if (!accounts.isConnected) {
         localStorage.removeItem(localWalletConnectedKey);

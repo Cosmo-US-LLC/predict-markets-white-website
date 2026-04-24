@@ -69,8 +69,8 @@ export const connections = [
     label: "Metamask",
     key: "metamask",
     icon: metamaskImg,
-    connectorIndex: 0,
-    hide: () => !window.ethereum || !window.ethereum.isMetaMask,
+    connectorIndex: 2,
+    hide: () => !window.ethereum || !window.ethereum.isMetaMask || getIsMobile(),
   },
   {
     label: "Wallet Connect",
@@ -82,13 +82,13 @@ export const connections = [
     label: "Coinbase",
     key: "coinbase",
     icon: coinbaseImg,
-    connectorIndex: 1,
+    connectorIndex: 0,
   },
   {
     label: "Phantom Wallet",
     key: "phantom-wallet",
     icon: phantomWalletImg,
-    connectorIndex: 2,
+    connectorIndex: 1,
     hide: () =>
       typeof window === "undefined" ||
       (!("phantom" in window) && !getIsMobile()),

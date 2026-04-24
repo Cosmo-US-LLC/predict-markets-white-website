@@ -7,6 +7,11 @@ import { connect } from "@wagmi/core"
 const ConnectWalletModal = () => {
   const modalData = useModalState()
 
+  useEffect(() => {
+    // Preload config on modal open
+    getConfig()
+  }, [modalData.connectWalletModalOpen])
+
   const filteredConnections = useMemo(() => {
     return connections.filter((conn) => !conn.hide || conn.hide() === false)
   }, [])

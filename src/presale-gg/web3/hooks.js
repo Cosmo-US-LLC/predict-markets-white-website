@@ -1,7 +1,6 @@
-import { getAccount, watchAccount } from "@wagmi/core";
+import { getConnection, watchConnection } from "@wagmi/core";
 import { getConfig, configRef } from "./config";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useUserState } from "../stores/user.store";
 
 /**
  * @typedef {object} GetAccountReturnType
@@ -16,15 +15,15 @@ export const useAccount = () => {
   useEffect(() => {
     const config = configRef.current?.config;
     if (config) {
-      const accountData = getAccount(config);
+      const accountData = getConnection(config);
       setAccountData(accountData);
     }
 
     let unwatch = undefined;
     const func = async () => {
       const { config } = await getConfig();
-      setAccountData(getAccount(config));
-      const _unwatch = watchAccount(config, {
+      setAccountData(getConnection(config));
+      const _unwatch = watchConnection(config, {
         onChange: (account) => {
           setAccountData(account);
         },

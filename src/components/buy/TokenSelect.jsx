@@ -165,7 +165,7 @@ const TokenSelect = ({ tokens, onChange, value, defaultLabel, defaultToken, plac
             >
               <img
                 src={tokenImageMap[token.symbol.toLowerCase()]}
-                className="max-h-[20px]"
+                className="w-5 h-5"
               />
               <span className="flex flex-col leading-[10px] space-y-[-10px] gap-0.5">
                 {token.symbol.toUpperCase()}
