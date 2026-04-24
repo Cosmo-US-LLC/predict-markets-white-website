@@ -44,40 +44,45 @@ export const useUserState = () => useStore($userState);
 
 document.addEventListener("wagmi-loaded", async () => {
   const { config } = await getConfig();
-  watchAccount(config, {
-    onChange: (account) => {
-      const address = account.address;
-      if (!address) return $userState.set({ ...defaultUserState });
-      // Send the connected event
-      if (account.isConnected) {
-        try {
-          let connectedWallets = JSON.parse(
-            window.localStorage.getItem("userConnectedWallets") ?? "[]"
+  const func = (account) => {
+    const address = account.address;
+    if (!address) return $userState.set({ ...defaultUserState });
+    // Send the connected event
+    if (account.isConnected) {
+      try {
+        let connectedWallets = JSON.parse(
+          window.localStorage.getItem("userConnectedWallets") ?? "[]"
+        );
+        if (!Array.isArray(connectedWallets)) connectedWallets = [];
+        const hasAlreadySent = connectedWallets.find(
+          (wallet) => wallet.toLowerCase() === account.address.toLowerCase()
+        );
+        if (!hasAlreadySent) {
+          window.dataLayer.push({ event: "wallet_connect" });
+          connectedWallets.push(account.address.toLowerCase());
+          window.localStorage.setItem(
+            "userConnectedWallets",
+            JSON.stringify(connectedWallets)
           );
-          if (!Array.isArray(connectedWallets)) connectedWallets = [];
-          const hasAlreadySent = connectedWallets.find(
-            (wallet) => wallet.toLowerCase() === account.address.toLowerCase()
-          );
-          if (!hasAlreadySent) {
-            window.dataLayer.push({ event: "wallet_connect" });
-            connectedWallets.push(account.address.toLowerCase());
-            window.localStorage.setItem(
-              "userConnectedWallets",
-              JSON.stringify(connectedWallets)
-            );
-          }
-        } catch (err) {
-          console.warn(err);
         }
+      } catch (err) {
+        console.warn(err);
       }
+    }
 
-      api.getUser(address).then((res) => $userState.setKey("user", res.data));
-      api
-        .getUserStakeData(address)
-        .then((res) => $userState.setKey("userStakeData", res.data));
-    },
+    api.getUser(address).then((res) => $userState.setKey("user", res.data));
+    api.getUserRanks(address).then((res) => $userState.setKey("rankData", res.data))
+    api
+      .getUserStakeData(address)
+      .then((res) => $userState.setKey("userStakeData", res.data));
+  }
+  const accountData = getAccount(config)
+  if (accountData.isConnected) func(accountData)
+
+  watchAccount(config, {
+    onChange: func
   });
-});
+})
 
 /**
  * @param {object} [options]

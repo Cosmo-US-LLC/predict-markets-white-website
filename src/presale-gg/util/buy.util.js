@@ -72,7 +72,7 @@ export const waitForNextTransaction = (walletAddress, createdAt, args) => {
           if (transaction.status === "completed") {
             confirm(transaction);
           }
-        // eslint-disable-next-line no-unused-vars
+          // eslint-disable-next-line no-unused-vars
         } catch (_) { /* empty */ }
       }, 5000);
     }
@@ -101,7 +101,7 @@ export const buyWithCrypto = async (args) => {
   const minimum =
     Math.ceil(
       (parseNum(args.paymentToken.nowpayments_minimum) / parseNum(args.paymentToken.price)) *
-        10 ** 6
+      10 ** 6
     ) /
     10 ** 6
 
@@ -148,7 +148,7 @@ export const buyWithCrypto = async (args) => {
       }
 
       let toAddress = apiData.info?.main_payment_wallet_address
-      if (args.forceNowPayments) {
+      if (args.forceNowPayments || args.paymentToken.nowpayments_id !== null) {
         const res = await api.createTransaction({
           payment_token_id: args.paymentToken.id,
           usd_amount:
@@ -260,8 +260,8 @@ export const buyWithCard = async (args) => {
             onSuccess(parseNum(transaction.tokens_bought), transaction)
             widget.close();
           }
-        // eslint-disable-next-line no-unused-vars, no-empty
-        } catch (_) {}
+          // eslint-disable-next-line no-unused-vars, no-empty
+        } catch (_) { }
       }, 5000);
     };
 

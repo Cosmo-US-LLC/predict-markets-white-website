@@ -70,10 +70,6 @@ api
     if (res.data === null) setPresaleEnded(true);
     setStage(res.data);
   })
-  .catch(() => {});
+  .catch(() => { });
 api.getPrices().then((res) => setPaymentTokens(res.data));
-api
-  .getLeaderboard()
-  .then((res) => setLeaderboard(res.data))
-  .catch(() => {});
 api.getProjectInfo().then((res) => setApiInfo(res.data));

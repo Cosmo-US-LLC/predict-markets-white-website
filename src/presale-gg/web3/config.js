@@ -76,36 +76,36 @@ export const connections = [
     label: "Wallet Connect",
     key: "walletconnect",
     icon: walletConnectImg,
-    connectorIndex: 1,
+    connectorIndex: null,
   },
   {
     label: "Coinbase",
     key: "coinbase",
     icon: coinbaseImg,
-    connectorIndex: 2,
+    connectorIndex: 1,
   },
   {
     label: "Phantom Wallet",
     key: "phantom-wallet",
     icon: phantomWalletImg,
-    connectorIndex: 3,
+    connectorIndex: 2,
     hide: () =>
       typeof window === "undefined" ||
       (!("phantom" in window) && !getIsMobile()),
     onClick: !("phantom" in window)
       ? () => {
-          const url = new URL(window.location.href);
-          let newUrl = `${url.origin}${url.pathname}`;
-          newUrl += "?" + url.searchParams.toString();
-          if (url.search) newUrl += "&";
-          newUrl += `connect_wallet=${encodeURIComponent("phantom-wallet")}`;
-          window.open(
-            `https://phantom.app/ul/browse/${encodeURIComponent(
-              newUrl
-            )}?ref=${encodeURIComponent(window.location.href)}`,
-            "_blank"
-          );
-        }
+        const url = new URL(window.location.href);
+        let newUrl = `${url.origin}${url.pathname}`;
+        newUrl += "?" + url.searchParams.toString();
+        if (url.search) newUrl += "&";
+        newUrl += `connect_wallet=${encodeURIComponent("phantom-wallet")}`;
+        window.open(
+          `https://phantom.app/ul/browse/${encodeURIComponent(
+            newUrl
+          )}?ref=${encodeURIComponent(window.location.href)}`,
+          "_blank"
+        );
+      }
       : undefined,
   },
 ];

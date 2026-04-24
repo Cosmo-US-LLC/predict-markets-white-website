@@ -256,6 +256,8 @@ export namespace API {
     rank: string;
     reward: string;
     bonus_percentage: number;
+    staking_apy?: number
+    staking_enabled: boolean
   };
 
   export type ReferralBonuses = {

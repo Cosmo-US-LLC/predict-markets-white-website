@@ -44,7 +44,7 @@ export const postLeads = async (args) => {
  *
  * @returns {Promise<AxiosResponse<API.Stage | null>>}
  */
-export const getActiveStage = () => {
+export const getActiveStage = async () => {
   return apiFetch(`/projects/${project}/stages/current`);
 };
 
@@ -375,7 +375,7 @@ export const getReferralBonuses = (walletAddress) => {
  * @param {number} [limit]
  * @returns {Promise<AxiosResponse<import("../../presale-gg/api/api.types").API.TransactionHistoryItemV2[]>>}
  */
-export const getTransactionHistoryV2 = (address, page,limit = 12) => {
+export const getTransactionHistoryV2 = (address, page, limit = 12) => {
   return apiFetch(
     `${baseUrl.replace(
       "/v1",

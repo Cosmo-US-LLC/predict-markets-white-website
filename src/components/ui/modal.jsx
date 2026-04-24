@@ -11,7 +11,7 @@ import { createPortal } from "react-dom"
  * 
  * @param {ModalProps} props
  */
-const Modal = ({ open, onClose, title, children }) => {
+const Modal = ({ open, onClose, title, children, ...others }) => {
   useEffect(() => {
     if (open) {
       document.body.style.setProperty("overflow", "hidden", "important")
@@ -23,16 +23,16 @@ const Modal = ({ open, onClose, title, children }) => {
   if (typeof document === undefined) return <></>
   return createPortal(
     <div
-      className={clsx("fixed inset-0 z-[99999] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm transition-opacity", {
+      className={clsx("fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm transition-opacity", {
         "pointer-events-none opacity-0": !open
       })}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose?.()
       }}
     >
-      <div className={clsx("flex flex-col gap-2 relative overflow-y-auto max-w-[500px] rounded-[15px] border border-[#B9E6FE] bg-[#E5F5FF] p-4 shadow-2xl transition-transform", {
+      <div {...others} className={clsx("flex flex-col gap-2 relative overflow-y-auto max-h-[calc(100%-2rem)] max-w-[500px] rounded-[15px] border border-[#B9E6FE] bg-[#E5F5FF] p-4 shadow-2xl transition-transform", {
         "translate-y-[100vh]": !open
-      })}>
+      }, others.className)}>
         <button
           type="button"
           onClick={onClose}

@@ -23,6 +23,7 @@ export const useAccount = () => {
     let unwatch = undefined;
     const func = async () => {
       const { config } = await getConfig();
+      setAccountData(getAccount(config));
       const _unwatch = watchAccount(config, {
         onChange: (account) => {
           setAccountData(account);

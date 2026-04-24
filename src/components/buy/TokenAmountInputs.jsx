@@ -2,14 +2,15 @@ import { tokenImageMap } from "../../presale-gg/assets/img/tokens"
 import { useApiState } from "../../presale-gg/stores"
 import { formatPrecision, parseNum, partialNumRegexp } from "../../presale-gg/util"
 import predictLogo from '../../assets/images/wallet-coins/Icon.svg'
-import clsx from "clsx"
 import { membershipCards } from "../../data/getExtraRewardsData"
 import { useMemo } from "react"
+import Input from "./Input"
+import FormLabel from "./FormLabel"
 
 const sortedMemberships = [...membershipCards].sort((a, b) => b.minAmount - a.minAmount)
 
 /**
- * @typedef {import("@/presale-gg/api/api.types").API.PaymentToken} PaymentToken
+ * @typedef {import("../../presale-gg/api/api.types").API.PaymentToken} PaymentToken
  * 
  * @param {object} props 
  * @param {PaymentToken | null} props.selectedToken
@@ -38,9 +39,10 @@ const TokenAmountInputs = ({
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-bold text-gray-800">You Pay {selectedToken?.symbol.toUpperCase() === "CARD" ? "USD" : `${selectedToken?.symbol.toUpperCase() ?? ''} (${selectedToken?.chain ?? ''})`}</p>
-        <Input
+      <FormLabel label={<>
+        You Pay {selectedToken?.symbol.toUpperCase() === "CARD" ? "USD" : `${selectedToken?.symbol.toUpperCase() ?? ''} (${selectedToken?.chain ?? ''})`}
+      </>}>
+        <AmountInput
           token={selectedToken}
           value={paymentAmountStr}
           onFocus={(e) => {
@@ -66,14 +68,13 @@ const TokenAmountInputs = ({
             onReceiveAmountChange(formatPrecision(receiveNum, 0, 3))
           }}
         />
-      </div>
-      <div className="flex flex-col gap-1">
-        <p className="text-sm font-bold text-gray-800">
-          You Receive PREDICT{selectedMembership && <>{" + "}
-            <span className="text-[#0080ED] underline">{selectedMembership.tier} Membership</span>
-          </>}
-        </p>
-        <Input
+      </FormLabel>
+      <FormLabel label={<>
+        You Receive $PREDICT{selectedMembership && <>{" + "}
+          <span className="text-[#0080ED] underline">{selectedMembership.tier} Membership</span>
+        </>}
+      </>}>
+        <AmountInput
           value={receiveAmountStr}
           onFocus={(e) => {
             if (e.currentTarget.value === "0") {
@@ -99,7 +100,7 @@ const TokenAmountInputs = ({
             onPaymentAmountChange(formatPrecision(paymentNum, 0, 5))
           }}
         />
-      </div>
+      </FormLabel>
     </div>
   )
 }
@@ -107,26 +108,22 @@ const TokenAmountInputs = ({
 export default TokenAmountInputs
 
 /** @param {import("react").HTMLAttributes<HTMLInputElement> & {token?: import("../../presale-gg/api/api.types").API.PaymentToken, value: number}} props */
-const Input = ({ token, ...others }) => {
+const AmountInput = ({ token, ...others }) => {
   return (
-    <div className={clsx("flex items-center gap-0 overflow-hidden rounded-lg border border-gray-200 bg-gray-50 md:h-[46px]", others.className)}>
-      <input
-        {...others}
-        className="max-w-[70%] flex-1 border-none bg-transparent px-4 py-2.5 font-[Inter] !text-[16px] font-[500] text-black outline-none"
-      />
-      <div className="flex w-[30%] items-center gap-2 border-l border-gray-200 bg-transparent px-3 py-2">
+    <Input {...others}>
+      <div className="flex w-23 md:w-28 items-center gap-2 border-l border-gray-200 bg-transparent px-3 py-2">
         <img
-          className="w-[25.813px] h-[25.813px] object-cover"
+          className="md:w-5 md:h-5 h-4 w-4"
           src={token ? tokenImageMap[token.symbol.toLowerCase()] : predictLogo}
           alt="Predict"
         />
         <div className="flex flex-col">
-          <span className="text-[12px] font-bold leading-tight text-gray-800 md:text-sm">{token?.symbol.toUpperCase() ?? 'Predict'}</span>
+          <span className="text-[0.75rem] font-bold leading-tight text-black md:text-[0.875rem] uppercase">{token?.symbol.toUpperCase() ?? 'Predict'}</span>
           {token && (
-            <span className="text-[10px] leading-tight text-gray-600 md:text-xs">{token.chain.toUpperCase()}</span>
+            <span className="md:text-[0.625rem] text-[0.5rem] leading-tight text-[#00000080]">{token.chain.toUpperCase()}</span>
           )}
         </div>
       </div>
-    </div>
+    </Input>
   )
 }

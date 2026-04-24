@@ -77,8 +77,8 @@ export const groupTokens = (tokens) => {
       placeholder: key === "MORE" ? "MORE" : undefined,
       defaultToken: value.defaultTokenSymbol
         ? value.tokens.find(
-            (token) => token.symbol.toUpperCase() === value.defaultTokenSymbol
-          ) ?? { ...value.tokens[0], symbol: value.defaultTokenSymbol }
+          (token) => token.symbol.toUpperCase() === value.defaultTokenSymbol
+        ) ?? { ...value.tokens[0], symbol: value.defaultTokenSymbol }
         : undefined,
       defaultLabel: value.tokens.length > 1 ? value.defaultLabel : undefined,
       network: key === "MORE" ? undefined : key,
@@ -100,11 +100,11 @@ export const getIsMobile = () => {
   return false;
 };
 
-export const copyText = (text) => {
+export const copyText = (text, copyMsg = "Copied Text") => {
   try {
     navigator.clipboard.writeText(text);
-    toast("Copied text");
-  // eslint-disable-next-line no-unused-vars
+    toast(copyMsg);
+    // eslint-disable-next-line no-unused-vars
   } catch (err) {
     toast("Error copying text, copy manually");
   }

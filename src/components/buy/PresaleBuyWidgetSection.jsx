@@ -1,14 +1,8 @@
 import { useEffect } from 'react'
-import { PresaleBuyWidget } from './PresaleBuyWidget.jsx'
-import { loadStoredConnection } from '../../presale-gg/web3/connections.js'
+import { PresaleBuyWidget } from './PresaleBuyWidget'
+import { loadStoredConnection } from '../../presale-gg/web3/connections'
 
 export function PresaleBuyWidgetSection({ className = '' }) {
-  useEffect(() => {
-    if (typeof window !== 'undefined' && localStorage.getItem('predict-connect-wallet-id')) {
-      loadStoredConnection()
-    }
-  }, [])
-
   return (
     <div className={className}>
       <PresaleBuyWidget />

@@ -56,7 +56,7 @@ export const getBalanceOfWalletAddress = async (
 
   if (tokenContractAddress) {
     const abi = getAbi(chainId);
-    if (!abi) throw new Error ("Invalid abi");
+    if (!abi) throw new Error("Invalid abi");
 
     const tokens = await client.readContract({
       abi,
@@ -128,10 +128,19 @@ export const getContractAddress = (chainId, symbol) => {
     {
       1: {
         USDT: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+        USDC: "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        SHIB: "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
+        PEPE: "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+        FLOKI: "0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E"
       },
       56: {
         BUSD: "0xe9e7cea3dedca5984780bafc599bd69add087d56",
         USDT: "0x55d398326f99059ff775485246999027b3197955",
+        USDC: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d"
+      },
+      137: {
+        USDC: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+        USDT: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
       },
       8453: {
         USDC: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",

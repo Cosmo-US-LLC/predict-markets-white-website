@@ -189,10 +189,10 @@ export function Header() {
           variant="ghost"
           size="icon"
           className="md:hidden cursor-pointer flex lg:hidden"
-         onClick={(e) => {
-    e.stopPropagation(); // Prevents the click from reaching parent elements
-    setIsMobileMenuOpen((prev) => !prev);
-  }}
+          onClick={(e) => {
+            e.stopPropagation(); // Prevents the click from reaching parent elements
+            setIsMobileMenuOpen((prev) => !prev);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +203,7 @@ export function Header() {
             fill="none"
           >
             <path
-              d={isMobileMenuOpen 
+              d={isMobileMenuOpen
                 ? "M3.3335 5H16.6668M3.3335 10H16.6668M10.8335 15H16.6668"
                 : "M3.3335 5H16.6668M3.3335 10H16.6668M3.3335 15H9.16683"
               }
@@ -302,7 +302,8 @@ export function Header() {
             onClick={async () => {
               if (accountData.isConnected) {
                 const { config } = await getConfig()
-                disconnect(config)
+                await disconnect(config)
+                setTimeout(() => disconnect(config))
               } else {
                 showConnectWalletModal()
               }
@@ -340,11 +341,11 @@ export function Header() {
                 minHeight: "100vh",
               }}
             ></div>
-            
+
             {/* Menu Card */}
             <div className="relative z-10 min-h-[70vh] flex flex-col justify-start pt-4 items-center px-4 ">
               {/* Menu Card Container */}
-              <div 
+              <div
                 className="w-full max-w-[90%]  backdrop-blur-md rounded-[12px] p-6 !pt-4 flex flex-col
                  gap-2"
                 style={{
@@ -380,7 +381,7 @@ export function Header() {
 
                 {/* Language Selector */}
               </div>
-                {/* <div
+              {/* <div
                   ref={mobileLanguageRef}
                   className="flex items-center mt-4 justify-center relative"
                 >
