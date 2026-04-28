@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from "react"
-import { useApiState, useUserState } from "../../../presale-gg/stores"
+import { useApiState, userLevelUp, useUserState } from "../../../presale-gg/stores"
 import { copyText, formatDollar, formatLargeNumber, parseNum, truncateString } from "../../../presale-gg/util"
 import { LISTING_PRICE } from "../../../presale-gg/constants"
 import { getConfig, useAccount } from "../../../presale-gg/web3"
@@ -8,7 +8,6 @@ import clsx from "clsx"
 import Spinner from "../Spinner"
 import toast from "react-hot-toast"
 import { api } from "../../../presale-gg/api"
-import { levelUpUser } from "../../../presale-gg/api/api.util"
 import { disconnect } from "@wagmi/core"
 import confetti from "canvas-confetti"
 import Input from "../Input"
@@ -57,15 +56,25 @@ const DashboardTab = () => {
   }, [userData])
 
   const currentMembership = useMemo(() => {
-    return membershipCards.find((card) => card.tier.toLowerCase() === userData.rankData?.current_rank?.rank?.toLowerCase()) ?? null
+    const membership = membershipCards.find((card) => card.tier.toLowerCase() === userData.rankData?.current_rank?.rank?.toLowerCase()) ?? null
+    if (membership) return {
+      ...membership,
+      stakingApy: userData.rankData.current_rank?.staking_apy
+    }
+    return null
   }, [userData.rankData?.current_rank])
 
   const nextMembership = useMemo(() => {
     const index = membershipCards.findIndex((card) => card.tier.toLowerCase() === userData.rankData?.current_rank?.rank.toLowerCase())
     const nextIndex = index + 1
     if (index === membershipCards.length - 1) return null
-    return membershipCards[nextIndex]
+    return {
+      ...membershipCards[nextIndex],
+      stakingApy: userData.rankData?.ranks?.[nextIndex + 1].staking_apy
+    }
   }, [userData.rankData?.current_rank])
+
+  console.log("MEMBERSHIP", currentMembership, userData.rankData?.current_rank)
 
   const rankUpButtonRef = useRef(null)
   const [rankUpLoading, setRankUpLoading] = useState(false)
@@ -73,7 +82,7 @@ const DashboardTab = () => {
     if (!accountData.address || !nextMembership) return
     setRankUpLoading(true)
     try {
-      await levelUpUser(accountData.address)
+      await userLevelUp()
       const bounds = rankUpButtonRef.current.getBoundingClientRect()
       confetti({
         origin: bounds ? {
@@ -87,6 +96,7 @@ const DashboardTab = () => {
     }
     setRankUpLoading(false)
   }
+  console.log(currentMembership, nextMembership)
 
   return (
     <>
@@ -122,12 +132,13 @@ const DashboardTab = () => {
               {currentMembership ? `${currentMembership.tier} Tier` : 'No membership'}
             </p>
             {[
-              { label: "Staking Enabled", checked: currentMembership?.stakingEnabled ?? false },
+              { label: currentMembership ? `Staking Enabled (${(currentMembership.stakingApy)}% APY)` : "Staking Disabled", checked: currentMembership?.stakingEnabled ?? false },
+              { label: nextMembership ? `${nextMembership?.stakingApy}% Staking APY` : "Highest staking APY", checked: !nextMembership },
               { label: `${currentMembership?.bonusPredictPercent ?? membershipCards[0].bonusPredictPercent}% $PREDICT Bonus`, checked: (currentMembership?.bonusPredictPercent ?? 0) > 0 },
               { label: `${currentMembership?.predictMarketsCredits ? formatDollar(parseNum(currentMembership?.predictMarketsCredits), true, 0, 0) : ""} PredictMarkets Credits`, checked: (currentMembership?.predictMarketsCredits ?? 0) > 0 },
               { label: "USDT Staking Rewards", checked: currentMembership?.usdtStakingRewards ?? false },
               { label: "Founder VIP Access", checked: currentMembership?.founderVipAccess ?? false },
-            ].map((item) => (
+            ].sort((a, b) => (a.checked ? 0 : 1) - (b.checked ? 0 : 1)).map((item) => (
               <div className="flex items-center gap-2">
                 <div className="bg-white rounded-sm w-5 h-5 flex items-center justify-center">
                   {item.checked ? (

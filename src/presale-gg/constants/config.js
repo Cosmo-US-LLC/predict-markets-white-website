@@ -1,4 +1,4 @@
 export const LISTING_PRICE = 0.03;
 export const WALLET_CONNECT_PROJECT_ID = "c37cf3ea2421751d8f58daad34c5da5a";
-export const CARD_PARTNER_ID = "TODO:";
+export const CARD_PARTNER_ID = "01KQ9HBFSREVT0QR6KYAW7ZRFK";
 export const CARD_IS_SANDBOX = false;

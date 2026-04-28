@@ -48,18 +48,25 @@ const Countdown = ({ endDate, onEnd, ...others }) => {
     if (msDiff <= 0 && !calledBackRef.current) {
       calledBackRef.current = true
       onEnd?.()
-    } else if (calledBackRef.current && msDiff() > 0) {
+    } else if (calledBackRef.current && msDiff > 0) {
       calledBackRef.current = false
     }
   }, [onEnd, msDiff])
 
   return (
-    <div {...others} className={clsx("flex justify-between items-center", others.className)}>
+    <div {...others} className={clsx("flex justify-between items-center my-1", others.className)}>
       {countdownData.map((data, i) => (
         <React.Fragment key={i}>
-          <div className="flex leading-[1] items-end gap-0.5 justify-center w-[5.5rem]">
-            <Loadable component="p" length={1.5} className="text-[0.75rem] font-bold leading-[0.8] !text-[inherit]">{data[1]} {data[0]}</Loadable>
-            {/* <Loadable component="p" length={3} className="text-[0.625rem] text-black/60 font-[600]"></Loadable> */}
+          {i > 0 && (
+            <div className='w-px bg-[#D3D3D3] h-8' />
+          )}
+          <div className="flex flex-col gap-1.5 leading-[1] items-center gap-0.5 justify-center w-[5.5rem]">
+            <Loadable component="p" length={1.5} className="text-[1.5rem] font-bold leading-[0.8] !text-[inherit]">
+              {data[1]}
+            </Loadable>
+            <Loadable component="p" length={3} className="text-[0.75rem]">
+              {data[0]}
+            </Loadable>
           </div>
         </React.Fragment>
       ))}

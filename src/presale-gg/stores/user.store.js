@@ -58,7 +58,7 @@ document.addEventListener("wagmi-loaded", async () => {
           (wallet) => wallet.toLowerCase() === account.address.toLowerCase()
         );
         if (!hasAlreadySent) {
-          window.dataLayer.push({ event: "wallet_connect" });
+          window.dataLayer?.push({ event: "wallet_connect" });
           connectedWallets.push(account.address.toLowerCase());
           window.localStorage.setItem(
             "userConnectedWallets",
@@ -97,7 +97,7 @@ export const getUserToken = async (options) => {
     new Date(userData.token.expires).getTime() >= Date.now()
   )
     return userData.token;
-  const { address, isConnected } = getAccount(config);
+  const { address, isConnected } = getConnection(config);
   if (!address || !isConnected) throw new Error("Please connect your wallet");
   const messageRes = await api.getSiweMessage(address);
   const promise = signMessage(config, {
@@ -130,7 +130,7 @@ export const getUserToken = async (options) => {
 /** @returns {Promise<void>}*/
 export const refetchUserStakeData = async () => {
   const { config } = await getConfig();
-  const { address, isConnected } = getAccount(config);
+  const { address, isConnected } = getConnection(config);
   if (!address || !isConnected) throw new Error("Please connect your wallet");
   const res = await api.getUserStakeData(address);
   $userState.setKey("userStakeData", res.data);
@@ -138,7 +138,7 @@ export const refetchUserStakeData = async () => {
 
 export const refetchUserData = async () => {
   const { config } = await getConfig();
-  const { address, isConnected } = getAccount(config);
+  const { address, isConnected } = getConnection(config);
   if (!address || !isConnected) throw new Error("Please connect your wallet");
   const res = await api.getUser(address);
   $userState.setKey("user", res.data);
@@ -152,7 +152,7 @@ export const refetchUserData = async () => {
  */
 export const userStakeTokens = async (tokens, options) => {
   const { config } = await getConfig();
-  const { address, isConnected } = getAccount(config);
+  const { address, isConnected } = getConnection(config);
   if (!address || !isConnected) throw new Error("Please connect your wallet");
   const token = await getUserToken(options);
   await api.stakeTokens(address, tokens.toString(), token.token);
@@ -167,7 +167,7 @@ export const userStakeTokens = async (tokens, options) => {
  */
 export const userUnstakeTokens = async (tokens, options) => {
   const { config } = await getConfig();
-  const { address, isConnected } = getAccount(config);
+  const { address, isConnected } = getConnection(config);
   if (!address || !isConnected) throw new Error("Please connect your wallet");
   const token = await getUserToken(options);
   await api.unstakeTokens(address, tokens.toString(), token.token);
@@ -182,7 +182,7 @@ export const userUnstakeTokens = async (tokens, options) => {
  */
 export const userUpdateReferralCode = async (newCode, options) => {
   const { config } = await getConfig();
-  const { address, isConnected } = getAccount(config);
+  const { address, isConnected } = getConnection(config);
   if (!address || !isConnected) throw new Error("Please connect your wallet");
   const token = await getUserToken(options);
   await api.updateReferralCode(token.token, address, newCode);
@@ -208,7 +208,7 @@ export const userResetReferralCode = async () => {
  */
 export const userApplyBonusCode = async (code, options) => {
   const { config } = await getConfig();
-  const { address, isConnected } = getAccount(config);
+  const { address, isConnected } = getConnection(config);
   if (!address || !isConnected) throw new Error("Please connect your wallet");
   const token = await getUserToken(options);
   const res = await api.applyBonusCode(address, code, token.token);
@@ -217,9 +217,11 @@ export const userApplyBonusCode = async (code, options) => {
 
 export const userLevelUp = async () => {
   const { config } = await getConfig();
-  const { address, isConnected } = getAccount(config);
+  const { address, isConnected } = getConnection(config);
   if (!address || !isConnected) return;
+  console.log("LEVELLING UP")
   const res = await api.levelUpUser(address);
+  console.log("LEVELLED UP", res.data)
   $userState.setKey("rankData", res.data);
 };
 

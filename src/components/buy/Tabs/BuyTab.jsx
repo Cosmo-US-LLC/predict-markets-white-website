@@ -13,7 +13,6 @@ import Loader from "../Loader"
 import { BonusCodeIcon, HowToBuyIcon, ReferralLinkIcon } from "../Icons"
 import { BonusCodeInput, ReferralCodeInput } from "../CodeInputs"
 import { showConnectWalletModal } from "../../../presale-gg/stores"
-import presaleGgLogo from "../../../assets/images/logo/presale-gg-logo.svg"
 import NowPaymentsModal from "../NowPaymentsModal"
 import WalletTransferModal from "../WalletTransferModal/WalletTransferModal"
 import ContactModal from "../ContactModal"
@@ -215,7 +214,7 @@ const BuyTab = () => {
           },
           { label: "Referral Code", icon: ReferralLinkIcon, onClick: () => setVisibleCode((code) => code === 'referral' ? null : 'referral') }
         ].map(({ label, icon: Icon, onClick }) => (
-          <button className="flex items-center text-[0.75rem] gap-1 cursor-pointer underline" onClick={onClick}>
+          <button key={label} className="flex items-center text-[0.75rem] gap-1 cursor-pointer underline" onClick={onClick}>
             <Icon />
             {label}
           </button>
@@ -223,9 +222,6 @@ const BuyTab = () => {
       </div>}
       {visibleCode === "referral" && <ReferralCodeInput onClose={() => setVisibleCode(null)} />}
       {visibleCode === "bonus" && <BonusCodeInput onClose={() => setVisibleCode(null)} />}
-      <a href="https://presale.gg" target="_blank" className="text-xs flex items-center gap-1 justify-center hover:underline -mb-1 md:-mb-3">
-        Powered by <img src={presaleGgLogo} alt="Presale.gg" className="h-[1.1875em] w-auto" />
-      </a>
 
       <ContactModal
         open={contactModalOpen}

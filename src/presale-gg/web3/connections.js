@@ -11,7 +11,7 @@ import { mainnet, bsc, base, polygon } from "@reown/appkit/networks";
 import { createAppKit } from "@reown/appkit";
 import { rpcMap } from "./util";
 import { WALLET_CONNECT_PROJECT_ID } from "../constants";
-import logo from "../../assets/images/logo/P_logo.svg";
+import logo from "../../assets/images/logo/favicon.png";
 import { getIsMobile } from "../util";
 
 const metadata = {
