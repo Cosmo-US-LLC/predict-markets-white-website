@@ -1,0 +1,42 @@
+.loadable.loadable {
+  display: block;
+  background-image: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+}
+
+.loadable.loadable:not(.none) {
+  animation: load-pulse 1000ms infinite alternate ease-in-out;
+}
+
+.loadable:where(.text) {
+  display: inline-block;
+  border-radius: 0.25rem;
+  --lh-offset: 0.1em;
+  height: calc(1em - var(--lh-offset));
+  margin-block: calc((1lh - 1em + var(--lh-offset)) / 2);
+  width: var(--length, 12em);
+}
+
+.loadable:where(.invisible) {
+  animation: none;
+}
+
+.loadable:where(.full) {
+  width: 100%;
+  height: 100%;
+}
+
+.loadable:where(.block) {
+  display: block;
+  border-radius: 0.25rem;
+}
+
+@keyframes load-pulse {
+  from {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

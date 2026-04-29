@@ -10,6 +10,11 @@ import predictHeroBgMobile from "../../assets/images/home/predict_hero/predict_h
 import xLogo from "../../assets/images/footer/X.svg";
 import telegramLogo from "../../assets/images/footer/Telegram.svg";
 import instagramLogo from "../../assets/images/footer/instagram.svg";
+import { showConnectWalletModal } from "../../presale-gg/stores/modal.store.js";
+import { useAccount } from "../../presale-gg/web3/hooks.js";
+import { truncateString } from "../../presale-gg/util/string.util.js";
+import { getConfig } from "../../presale-gg/web3/config.js";
+import { disconnect } from "@wagmi/core";
 
 const navLinks = [
   {
@@ -155,6 +160,8 @@ export function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  const accountData = useAccount()
+
   return (
     <header ref={headerRef} className="sticky top-0 z-[101] w-full bg-white border-b border-[#e5e5e5]">
       <div
@@ -182,10 +189,10 @@ export function Header() {
           variant="ghost"
           size="icon"
           className="md:hidden cursor-pointer flex lg:hidden"
-         onClick={(e) => {
-    e.stopPropagation(); // Prevents the click from reaching parent elements
-    setIsMobileMenuOpen((prev) => !prev);
-  }}
+          onClick={(e) => {
+            e.stopPropagation(); // Prevents the click from reaching parent elements
+            setIsMobileMenuOpen((prev) => !prev);
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -196,7 +203,7 @@ export function Header() {
             fill="none"
           >
             <path
-              d={isMobileMenuOpen 
+              d={isMobileMenuOpen
                 ? "M3.3335 5H16.6668M3.3335 10H16.6668M10.8335 15H16.6668"
                 : "M3.3335 5H16.6668M3.3335 10H16.6668M3.3335 15H9.16683"
               }
@@ -292,17 +299,18 @@ export function Header() {
 
           {/* Buy Button — /buy opens presale widget (MetaMask / any wallet) */}
           <Button
-            onClick={() => scrollToWallet(140)}
-            className="btn_primary hidden md:flex !rounded-[8px] !px-[24px] !text-[16px] !py-[12px]"
+            onClick={async () => {
+              if (accountData.isConnected) {
+                const { config } = await getConfig()
+                await disconnect(config)
+                setTimeout(() => disconnect(config))
+              } else {
+                showConnectWalletModal()
+              }
+            }}
+            className="btn_primary !rounded-[8px] !px-[24px] !text-[16px] !py-[12px] leading-[1]"
           >
-            Connect Wallet
-          </Button>
-
-          <Button
-            onClick={() => scrollToWallet(140)}
-            className="btn_primary flex md:hidden !px-[24px] !text-[14px] !py-[12px]"
-          >
-            Connect Wallet
+            {accountData.isConnected ? <>Disconnect<br />({truncateString(accountData?.address ?? "", 10)})</> : 'Connect Wallet'}
           </Button>
           {/* <Button
             onClick={() => scrollToWallet(140)}
@@ -333,11 +341,11 @@ export function Header() {
                 minHeight: "100vh",
               }}
             ></div>
-            
+
             {/* Menu Card */}
             <div className="relative z-10 min-h-[70vh] flex flex-col justify-start pt-4 items-center px-4 ">
               {/* Menu Card Container */}
-              <div 
+              <div
                 className="w-full max-w-[90%]  backdrop-blur-md rounded-[12px] p-6 !pt-4 flex flex-col
                  gap-2"
                 style={{
@@ -373,7 +381,7 @@ export function Header() {
 
                 {/* Language Selector */}
               </div>
-                {/* <div
+              {/* <div
                   ref={mobileLanguageRef}
                   className="flex items-center mt-4 justify-center relative"
                 >
