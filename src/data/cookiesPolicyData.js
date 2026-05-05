@@ -3,7 +3,7 @@ export const cookiesPolicyConfig = {
   documentTitle: 'PredictMarket Cookies Policy',
   lastUpdated: 'Last Updated: September 08, 2026',
   introParagraphs: [
-    'This Cookies Policy explains how PredictMarket ("PredictMarket," "we," "us," or "our") uses cookies and similar technologies when you visit or interact with our website. This policy is intended to help you understand what cookies are, why they are used, and the choices available to you regarding their use.',
+    'This Cookies Policy explains how PredictMarket (“PredictMarket,” “we,” “us,” or “our”) uses cookies and similar technologies when you visit or interact with our website. This policy is intended to help you understand what cookies are, why they are used, and the choices available to you regarding their use.',
     'For information on how we process personal data more broadly, including how we protect your information, please review our Privacy Policy.',
   ],
   closingStatement:
@@ -173,6 +173,6 @@ export const cookiesSections = [
     id: 7,
     title: 'Contact Information',
     intro: 'If you have any questions or concerns regarding this Cookies Policy, you may contact us at:',
-    contactEmail: 'support@predictmarket.com',
+    contactEmail: 'Support@predictmarkets.io',
   },
 ];
