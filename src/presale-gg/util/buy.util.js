@@ -17,7 +17,7 @@ import {
 import { $apiState } from "../stores/api.store";
 import { api } from "../api";
 
-import logo from "../../assets/images/logo/favicon.png";
+import logo from "../../assets/images/logo/logo.png";
 import { CARD_IS_SANDBOX, CARD_PARTNER_ID } from "../constants";
 import { waitForTransactionReceipt } from "@wagmi/core";
 
