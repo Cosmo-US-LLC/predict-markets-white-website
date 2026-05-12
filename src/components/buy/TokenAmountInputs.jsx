@@ -119,7 +119,7 @@ const AmountInput = ({ token, ...others }) => {
         />
         <div className="flex flex-col">
           <span className="text-[0.75rem] font-bold leading-tight text-black md:text-[0.875rem] uppercase">{token?.symbol.toUpperCase() ?? 'Predict'}</span>
-          {token && (
+          {(token && token.symbol.toUpperCase() !== "CARD") && (
             <span className="md:text-[0.625rem] text-[0.5rem] leading-tight text-[#00000080]">{token.chain.toUpperCase()}</span>
           )}
         </div>
