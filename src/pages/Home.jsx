@@ -120,6 +120,8 @@ export function Home() {
         subtitle={howToBuyConfig.subtitle}
         buyButtonText={howToBuyConfig.buyButtonText}
         buyButtonLink={howToBuyConfig.buyButtonLink}
+        fullGuideText={howToBuyConfig.fullGuideText}
+        fullGuidePath={howToBuyConfig.fullGuidePath}
       />
       <MarketOpportunity
         title={marketOpportunityConfig.title}
