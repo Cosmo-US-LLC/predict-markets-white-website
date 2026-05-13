@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 27.6454 27.6454" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Ethereum (ETH)">
+<path id="Vector" d="M13.8227 27.6454C21.4568 27.6454 27.6454 21.4568 27.6454 13.8227C27.6454 6.18863 21.4568 0 13.8227 0C6.18863 0 0 6.18863 0 13.8227C0 21.4568 6.18863 27.6454 13.8227 27.6454Z" fill="url(#paint0_linear_0_29)"/>
+<path id="Vector_2" d="M13.8158 17.5869L9.17138 14.8431L13.8158 21.3895L18.4644 14.8431L13.8158 17.5869Z" fill="var(--fill-0, white)"/>
+<path id="Vector_3" d="M18.4554 13.9626L13.8096 16.7077L9.16377 13.9626L13.8096 6.25364L18.4554 13.9626Z" fill="var(--fill-0, white)"/>
+<g id="Group">
+<path id="Vector_4" d="M18.4623 13.9619L13.8164 11.8498V6.25297L18.4623 13.9619Z" fill="var(--fill-0, #C1CCF7)"/>
+<path id="Vector_5" d="M18.465 14.8424L13.8164 21.3888V17.5862L18.465 14.8424Z" fill="var(--fill-0, #C1CCF7)"/>
+<path id="Vector_6" d="M13.8158 11.8473V16.7032L9.17268 13.9588L13.8158 11.8473Z" fill="var(--fill-0, #C1CCF7)"/>
+</g>
+<path id="Vector_7" d="M18.4596 13.9616L13.8151 16.706V11.8501L18.4596 13.9616Z" fill="var(--fill-0, #8198EE)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_29" x1="13.8227" y1="27.6454" x2="13.8227" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3E5EBD"/>
+<stop offset="1" stop-color="#94AEFF"/>
+</linearGradient>
+</defs>
+</svg>

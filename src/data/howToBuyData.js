@@ -39,4 +39,7 @@ export const howToBuyConfig = {
   subtitle: 'Follow the guide below to purchase $PREDICT during the presale. The process supports both crypto and card payments and is designed to be quick, secure, and easy to follow.',
   buyButtonText: 'BUY $PREDICT',
   buyButtonLink: '#wallet',
+  /** Opens the standalone guide page (matches `Route path="how-to-buy"` in App). */
+  fullGuideText: 'Full step-by-step guide',
+  fullGuidePath: '/how-to-buy',
 };
