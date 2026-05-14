@@ -8,6 +8,7 @@ import { CookiesPolicy } from './pages/CookiesPolicy.jsx';
 import { PrivacyPolicy } from './pages/PrivacyPolicy.jsx';
 import { HowToBuyPage } from "./pages/HowToBuyPage.jsx";
 import { ReferralProgramPage } from "./pages/ReferralProgramPage.jsx";
+import { GiveawayPage } from "./pages/GiveawayPage.jsx";
 import ScrollToTop from './components/ScrollToTop.jsx'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="buy" element={<Buy />} />
           <Route path="how-to-buy" element={<HowToBuyPage />} />
           <Route path="referral" element={<ReferralProgramPage />} />
+          <Route path="giveaway" element={<GiveawayPage />} />
           <Route path="terms-of-service" element={<TermsOfService />} />
           <Route path="cookie-management" element={<CookiesPolicy />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />

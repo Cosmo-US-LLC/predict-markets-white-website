@@ -12,7 +12,9 @@ import {
 } from "../data/referralProgramPageData.js";
 import {
   referralHeroPhoneArtSrc,
+  referralHeroPhoneArtMobileSrc,
   referralHowItWorksPanelSrc,
+  referralStartEarningBgSrc,
 } from "../data/referralProgramAssets.js";
 
 export function ReferralProgramPage() {
@@ -28,6 +30,7 @@ export function ReferralProgramPage() {
         leaderboardRows={referralLeaderboardRows}
         disclaimer={referralLeaderboardDisclaimer}
         heroIllustrationSrc={referralHeroPhoneArtSrc}
+        heroMobileIllustrationSrc={referralHeroPhoneArtMobileSrc}
       />
       <ReferralProgramHowItWorks
         sectionTitle={referralHowItWorksTitle}
@@ -35,6 +38,7 @@ export function ReferralProgramPage() {
         panelImageSrc={referralHowItWorksPanelSrc}
         closingBannerTitle={referralClosingBanner.title}
         closingBannerLines={referralClosingBanner.lines}
+        closingBannerBgSrc={referralStartEarningBgSrc}
       />
     </div>
   );
