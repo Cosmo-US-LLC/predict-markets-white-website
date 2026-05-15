@@ -472,6 +472,7 @@ export function GiveawayPage() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }

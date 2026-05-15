@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Tether (USDT)">
+<path id="Vector" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="url(#paint0_linear_0_44)"/>
+<path id="Vector_2" d="M11.027 8.044V6.863H13.714V5H6.257V6.863H8.951V8.044C6.694 8.153 5 8.606 5 9.144C5 9.682 6.692 10.137 8.951 10.244V14.144H11.027V10.244C13.284 10.136 14.978 9.683 14.978 9.144C14.978 8.605 13.289 8.153 11.027 8.044ZM9.989 9.9C7.545 9.9 5.564 9.522 5.564 9.067C5.564 8.676 7.007 8.347 8.949 8.259V9.593C9.283 9.608 9.63 9.617 9.987 9.617C10.344 9.617 10.693 9.608 11.025 9.593V8.259C12.967 8.347 14.41 8.676 14.41 9.067C14.414 9.527 12.433 9.9 9.989 9.9Z" fill="var(--fill-0, white)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_44" x1="10" y1="20" x2="10" y2="0" gradientUnits="userSpaceOnUse">
+<stop stop-color="#17755D"/>
+<stop offset="1" stop-color="#68CCB2"/>
+</linearGradient>
+</defs>
+</svg>
