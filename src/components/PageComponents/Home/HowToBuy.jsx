@@ -99,7 +99,7 @@ export default function HowToBuy({
           >
             <CarouselContent className="-ml-3">
               {steps.map((step) => (
-                <CarouselItem key={step.id} className="pl-3">
+                <CarouselItem key={step.id} className="pl-3 basis-full">
                   <div
                     className="bg-white rounded-[10px] border-[1px] border-[#DDD] 
                   p-4 flex flex-col gap-4 min-h-[303px]"

@@ -47,16 +47,19 @@ function PressCard({ card }) {
         overflow-hidden
         flex flex-col items-center
         gap-[20px] lg:gap-[24px]
-        w-[340px] shrink-0
-        lg:w-auto lg:flex-[1_0_0] lg:shrink
+        w-full
+        lg:flex-[1_0_0] lg:shrink
       "
     >
       <div className="h-[80px] lg:h-[100px] flex items-center justify-center overflow-hidden w-full">
+        <style>{`
+          .press-logo-${card.id} { max-width: ${card.logoMaxWidthMobile}px; }
+          @media (min-width: 1024px) { .press-logo-${card.id} { max-width: ${card.logoMaxWidthDesktop}px; } }
+        `}</style>
         <img
           src={card.logo}
           alt={card.outlet}
-          className="object-contain h-full"
-          style={{ maxWidth: `${card.logoMaxWidthMobile}px` }}
+          className={`object-contain h-full press-logo-${card.id}`}
         />
       </div>
 
@@ -92,8 +95,8 @@ export default function PressAndMedia() {
 
   const handleScroll = () => {
     if (!scrollRef.current) return;
-    const cardWidth = 340 + 12;
-    const index = Math.round(scrollRef.current.scrollLeft / cardWidth);
+    const slideWidth = scrollRef.current.offsetWidth;
+    const index = Math.round(scrollRef.current.scrollLeft / slideWidth);
     setActiveIndex(Math.min(pressCards.length - 1, Math.max(0, index)));
   };
 
@@ -105,11 +108,15 @@ export default function PressAndMedia() {
     if (touchStartX.current === null) return;
     const diff = touchStartX.current - e.changedTouches[0].clientX;
     if (Math.abs(diff) < 40) return;
-    const next = diff > 0
-      ? Math.min(activeIndex + 1, pressCards.length - 1)
-      : Math.max(activeIndex - 1, 0);
+    const next =
+      diff > 0
+        ? Math.min(activeIndex + 1, pressCards.length - 1)
+        : Math.max(activeIndex - 1, 0);
     if (next !== activeIndex && scrollRef.current) {
-      scrollRef.current.scrollTo({ left: next * (340 + 12), behavior: "smooth" });
+      scrollRef.current.scrollTo({
+        left: next * scrollRef.current.offsetWidth,
+        behavior: "smooth",
+      });
     }
     touchStartX.current = null;
   };
@@ -120,39 +127,53 @@ export default function PressAndMedia() {
         background:
           "radial-gradient(ellipse 75% 50% at 50% 58%, rgba(0,128,237,0.36) 0%, rgba(0,128,237,0) 100%), #ffffff",
       }}
-      className="w-full py-[48px] lg:py-[60px]"
+      className="w-full py-[48px] lg:py-[60px] flex flex-col gap-[32px] lg:gap-[48px] items-center"
     >
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8 flex flex-col gap-[32px] lg:gap-[48px] items-center">
-        <h2 className="font-['Helvetica_Neue_Medium_Extended',sans-serif] text-[28px] leading-[34px] tracking-[-2px] lg:text-[45px] lg:leading-[53px] lg:tracking-[-2.56px] text-black text-center font-[500] w-full">
-          Press and Media
-        </h2>
+      <h2 className="font-['Helvetica_Neue_Medium_Extended',sans-serif] text-[28px] leading-[34px] tracking-[-2px] lg:text-[45px] lg:leading-[53px] lg:tracking-[-2.56px] text-black text-center font-[500] w-full px-4 md:px-8 max-w-[1280px] mx-auto lg:px-8">
+        Press and Media
+      </h2>
 
+      {/* Desktop: side-by-side cards */}
+      <div className="hidden lg:flex gap-[20px] w-full max-w-[1280px] mx-auto px-8">
+        {pressCards.map((card) => (
+          <PressCard key={card.id} card={card} />
+        ))}
+      </div>
+
+      {/* Mobile: full-width scroll-snap slider */}
+      <div className="lg:hidden w-full flex flex-col items-center gap-[10px]">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
-          className="
-            flex gap-[12px] lg:gap-[20px]
-            items-start
-            w-full
-            overflow-x-auto lg:overflow-x-visible
-            snap-x snap-mandatory lg:snap-none
-            scroll-smooth
-            [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
-          "
+          className="w-full flex overflow-x-auto"
+          style={{
+            scrollSnapType: "x mandatory",
+            scrollBehavior: "smooth",
+            WebkitOverflowScrolling: "touch",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+          }}
         >
           {pressCards.map((card) => (
             <div
               key={card.id}
-              className="snap-center shrink-0 lg:shrink lg:flex-[1_0_0] lg:min-w-0"
+              style={{
+                scrollSnapAlign: "start",
+                scrollSnapStop: "always",
+                minWidth: "100%",
+                maxWidth: "100%",
+                paddingLeft: "16px",
+                paddingRight: "16px",
+              }}
             >
               <PressCard card={card} />
             </div>
           ))}
         </div>
 
-        <div className="flex lg:hidden items-center justify-center gap-[10px] h-[10px]">
+        <div className="flex items-center justify-center gap-[10px] h-[10px]">
           {pressCards.map((_, i) =>
             activeIndex === i ? (
               <div key={i} className="w-[25px] h-[10px] rounded-full bg-[#0080ED]" />

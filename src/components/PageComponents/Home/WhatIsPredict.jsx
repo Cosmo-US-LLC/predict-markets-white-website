@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { scrollToWallet } from "../../../lib/utils";
 import checkIcon from "../../../assets/images/home/what_is_predict/what_is_predict_check.webp";
-import heroImage from "../../../assets/images/home/what_is_predict/what_is_predict_coin_image2.webp";
+import heroImage from "../../../assets/images/home/what_is_predict/what_is_predict_section_3x.webp";
 import ufcLogo from "../../../assets/images/home/what_is_predict/ufc.webp";
 import nflLogo from "../../../assets/images/home/what_is_predict/nfl.webp";
 import championsLeagueLogo from "../../../assets/images/home/what_is_predict/champions-league.webp";

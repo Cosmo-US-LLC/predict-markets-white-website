@@ -27,7 +27,7 @@ function LeaderboardRows({ rows }) {
         return (
           <tr key={wallet} className={tier ? "bg-[#f6f6f6]" : "bg-white"}>
             <td
-              className={`border-b border-[#ccd2dd] px-1 md:px-4 py-3 md:py-4 text-[14px] leading-[22px] md:text-[16px] md:leading-[24px] ${cellWeight} text-black ${rankCellRound}`}
+              className={`border-b border-[#ccd2dd] px-1 max-md:pl-2 md:px-4 py-3 md:py-4 text-[14px] leading-[22px] md:text-[16px] md:leading-[24px] ${cellWeight} text-black ${rankCellRound}`}
             >
               {rank}
             </td>
@@ -85,7 +85,7 @@ export default function ReferralProgramLeaderboardBlock({
             <div className="overflow-hidden rounded-[24px]">
               {/* Title bar */}
               <div className="bg-[#f2f2f2] pt-[25px] pb-[20px] flex items-center justify-center px-4">
-                <h2 className="text-[#0080ED] uppercase text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] whitespace-nowrap">
+                <h2 className="text-[#0080ED] uppercase text-[22px] leading-[32px] md:text-[32px] md:leading-[40px] whitespace-nowrap">
                   {title}
                 </h2>
               </div>

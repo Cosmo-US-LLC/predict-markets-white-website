@@ -1,4 +1,4 @@
-import stepDashboardVisual from "../assets/images/how_to_buy/step4_product.webp";
+import stepDashboardVisual from "../assets/images/how_to_buy/step4_product_4x.webp";
 import walletVisual from "../assets/images/how_to_buy/step5_claim.webp";
 
 export const howToBuyPageIntro = {

@@ -1,8 +1,8 @@
-import iconLinkWallet from "../../../assets/images/home/referral-section/icon_link_wallet.webp";
-import iconUniqueCode from "../../../assets/images/home/referral-section/icon_unique_code.webp";
-import iconRewarded from "../../../assets/images/home/referral-section/icon_rewarded.webp";
-import iconTrack from "../../../assets/images/home/referral-section/icon_track.webp";
-import referralWallet from "../../../assets/images/home/referral-section/referral_wallet.webp";
+import iconLinkWallet from "../../../assets/images/home/referral-section/icon_link_wallet.svg";
+import iconUniqueCode from "../../../assets/images/home/referral-section/icon_unique_code.svg";
+import iconRewarded from "../../../assets/images/home/referral-section/icon_rewarded.svg";
+import iconTrack from "../../../assets/images/home/referral-section/icon_track.svg";
+import referralWallet from "../../../assets/images/home/referral-section/referral_wallet_3x.webp";
 
 const CARDS = [
   {
@@ -114,7 +114,7 @@ export default function ReferralProgramSection() {
 
             {/* Card text */}
             <div className="mt-6 flex flex-col justify-between gap-4 text-white lg:mt-0 lg:flex-1 lg:h-full">
-              <p className="text-[20px] leading-[28px] text-white capitalize">
+              <p style={{ fontFamily: "'Helvetica Neue Medium Extended', sans-serif" }} className="text-[20px] leading-[28px] text-white capitalize">
                 Connect Wallet
               </p>
               <p className="font-['Inter',sans-serif] text-[18px] leading-[26px] tracking-[0.36px] text-white md:pr-1">

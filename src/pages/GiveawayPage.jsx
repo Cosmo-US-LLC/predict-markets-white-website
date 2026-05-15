@@ -199,7 +199,7 @@ export function GiveawayPage() {
             </div>
 
             {/* Hero Graphic */}
-            <div className="relative w-full h-[500px] md:h-[710px] overflow-hidden">
+            <div className="relative w-full h-[710px] md:h-[710px] overflow-hidden">
               {/* Full-bleed background: mobile image < 768px, desktop image >= 768px */}
               <div className="absolute inset-0">
                 <picture>
@@ -210,51 +210,6 @@ export function GiveawayPage() {
                     className="w-full h-full object-cover object-center"
                   />
                 </picture>
-              </div>
-              {/* Overlay content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-start pt-8 md:pt-[60px] gap-4 md:gap-5 px-4 md:px-0">
-                {/* Logo */}
-                <PredictMarketsLogo />
-
-                {/* $500,000 Giveaway Card */}
-                <div
-                  className="flex flex-col items-center gap-4 md:gap-6 px-4 md:px-6 py-6 md:py-9 rounded-2xl md:rounded-[40px] border border-[rgba(255,255,255,0.91)] w-[85%] md:w-[556px]"
-                  style={{
-                    background: "rgba(0,88,162,0.8)",
-                    backdropFilter: "blur(8.4px)",
-                    WebkitBackdropFilter: "blur(8.4px)",
-                  }}
-                >
-                  <span
-                    className="text-[42px] md:text-[80px] leading-[0.9] uppercase text-center"
-                    style={{
-                      fontFamily: "'Helvetica Neue Medium Extended', sans-serif",
-                      background: "linear-gradient(179.56deg, rgb(243, 251, 252) 11.707%, rgb(182, 221, 255) 98.022%)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    $500,000
-                  </span>
-                  <div className="bg-white px-[2px] py-[9px] rounded-[6px] w-[159px] flex items-center justify-center">
-                    <span
-                      className="text-[#1a1818] text-[18px] md:text-[23.5px] leading-[0.9] font-black uppercase text-center"
-                      style={{ fontFamily: "Inter, sans-serif" }}
-                    >
-                      Giveaway
-                    </span>
-                  </div>
-                </div>
-
-                {/* Subtitle */}
-                <p
-                  className="text-white text-[14px] md:text-[16px] leading-[1.22] text-center opacity-80 max-w-[307px] md:max-w-none"
-                  style={{ fontFamily: "Inter, sans-serif" }}
-                >
-                  PredictMarkets $250K Giveaway Is Live!<br className="hidden md:block" />
-                  {" "}Secure your entry and share before it&rsquo;s too late!
-                </p>
               </div>
             </div>
           </div>

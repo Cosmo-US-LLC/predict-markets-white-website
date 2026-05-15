@@ -6,12 +6,13 @@ import solIcon from "../../../assets/images/how_to_buy/payment_icons/sol.svg";
 import visaIcon from "../../../assets/images/how_to_buy/payment_icons/visa.svg";
 import mastercardIcon from "../../../assets/images/how_to_buy/payment_icons/mastercard.svg";
 import gpayIcon from "../../../assets/images/how_to_buy/payment_icons/gpay.png";
-import step1Img from "../../../assets/images/how_to_buy/step1_connect_wallet.webp";
-import step2Img from "../../../assets/images/how_to_buy/step2_payment.webp";
-import step3Img from "../../../assets/images/how_to_buy/step3_confirm.webp";
-import step4Img from "../../../assets/images/how_to_buy/step4_dashboard.webp";
-import step5Img from "../../../assets/images/how_to_buy/step5_claim.webp";
-import step6Img from "../../../assets/images/how_to_buy/step6_exchange.webp";
+import step1Img from "../../../assets/images/how_to_buy/step1_connect_wallet_4x.webp";
+import step2Img from "../../../assets/images/how_to_buy/step2_payment_4x.webp";
+import step3Img from "../../../assets/images/how_to_buy/step3_confirm_4x.webp";
+import step4Img from "../../../assets/images/how_to_buy/step4_dashboard_4x.webp";
+import step5Img from "../../../assets/images/how_to_buy/step5_claim_4x.webp";
+import step6Img from "../../../assets/images/how_to_buy/step6_exchange_4x.webp";
+import { scrollToWallet } from "../../../lib/utils";
 
 const paymentMethods = [
   { label: "USDT",        icon: usdtIcon       },
@@ -254,10 +255,10 @@ export default function GiveawayHowToBuy() {
       </div>
 
       {/* Mobile: horizontal scroll-snap slider */}
-      <div className="md:hidden w-full flex flex-col items-center gap-[10px] pl-2">
+      <div className="md:hidden w-full flex flex-col items-center gap-[10px]">
         <div
           ref={sliderRef}
-          className="w-full flex overflow-x-auto gap-4 px-4"
+          className="w-full flex overflow-x-auto"
           style={{
             scrollSnapType: "x mandatory",
             scrollBehavior: "smooth",
@@ -266,11 +267,12 @@ export default function GiveawayHowToBuy() {
             msOverflowStyle: "none",
           }}
         >
-          <style>{`.htb-slider::-webkit-scrollbar{display:none}`}</style>
+          <style>{`[data-htb-slide]::-webkit-scrollbar{display:none}`}</style>
           {steps.map((s) => (
             <div
               key={s.step}
-              style={{ scrollSnapAlign: "start", scrollSnapStop: "always", minWidth: "calc(100% - 32px)", maxWidth: "calc(100% - 32px)" }}
+              data-htb-slide
+              style={{ scrollSnapAlign: "start", scrollSnapStop: "always", minWidth: "100%", maxWidth: "100%", paddingLeft: "16px", paddingRight: "16px" }}
             >
               <StepCard {...s} />
             </div>
@@ -297,10 +299,9 @@ export default function GiveawayHowToBuy() {
 
       {/* CTA button */}
       <div className="relative inline-flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#0080ed] blur-[8px] rounded-full opacity-70" />
         <button
-          className="relative bg-[#0080ed] text-white rounded-full w-[calc(100vw-32px)] md:w-[289px] h-[40px] md:h-[69px] uppercase text-[14px] md:text-[18px] leading-7 text-center"
-          style={{ fontFamily: "'Helvetica Neue Medium Extended', sans-serif" }}
+          onClick={() => scrollToWallet(140)}
+          className="btn_primary relative flex h-[40px] w-[calc(100vw-32px)] items-center justify-center md:h-[69px] md:w-[319px]"
         >
           Buy $PREDICT Now
         </button>
