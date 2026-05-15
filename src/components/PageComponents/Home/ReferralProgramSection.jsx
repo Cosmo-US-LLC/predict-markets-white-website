@@ -62,7 +62,7 @@ function HowItWorksCard({ card }) {
         className="object-contain"
         loading="lazy"
       />
-      <p className="text-center text-[16px] leading-[24px] tracking-[0] text-black capitalize lg:text-[20px] lg:leading-[28px]">
+      <p className="text-center text-[16px] font-medium leading-[24px] tracking-[0] text-black capitalize lg:text-[20px] lg:leading-[28px] " style={{ fontFamily: "'Helvetica Neue Medium Extended', sans-serif" }}>
         {card.title}
       </p>
       <hr className="w-full border-t border-[#ddd]" />
@@ -117,7 +117,7 @@ export default function ReferralProgramSection() {
               <p className="text-[20px] leading-[28px] text-white capitalize">
                 Connect Wallet
               </p>
-              <p className="font-['Inter',sans-serif] text-[18px] leading-[26px] tracking-[0.36px] text-white">
+              <p className="font-['Inter',sans-serif] text-[18px] leading-[26px] tracking-[0.36px] text-white md:pr-1">
                 Have an active crypto community? Put it to work. Earn real money every time someone in your network buys $PREDICT. If you are running a group of 1,000 or more, get in touch with us on Telegram and let&apos;s figure out what we can build together.
               </p>
             </div>
