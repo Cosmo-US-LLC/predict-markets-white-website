@@ -12,6 +12,7 @@ import step3Img from "../../../assets/images/how_to_buy/step3_confirm_4x.webp";
 import step4Img from "../../../assets/images/how_to_buy/step4_dashboard_4x.webp";
 import step5Img from "../../../assets/images/how_to_buy/step5_claim_4x.webp";
 import step6Img from "../../../assets/images/how_to_buy/step6_exchange_4x.webp";
+import { scrollToWallet } from "../../../lib/utils";
 
 const paymentMethods = [
   { label: "USDT",        icon: usdtIcon       },
@@ -298,10 +299,9 @@ export default function GiveawayHowToBuy() {
 
       {/* CTA button */}
       <div className="relative inline-flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#0080ed] blur-[8px] rounded-full opacity-70" />
         <button
-          className="relative bg-[#0080ed] text-white rounded-full w-[calc(100vw-32px)] md:w-[289px] h-[40px] md:h-[69px] uppercase text-[14px] md:text-[18px] leading-7 text-center"
-          style={{ fontFamily: "'Helvetica Neue Medium Extended', sans-serif" }}
+          onClick={() => scrollToWallet(140)}
+          className="btn_primary relative flex h-[40px] w-[calc(100vw-32px)] items-center justify-center md:h-[69px] md:w-[319px]"
         >
           Buy $PREDICT Now
         </button>

@@ -3,6 +3,7 @@ import sectionBg from "../../../assets/images/home/what_is_predict/what_is_predi
 import phoneImage from "../../../assets/images/home/exchange-section/phone-image.webp";
 import checkmarkIcon from "../../../assets/images/home/exchange-section/checkmark-icon.svg";
 import liveDot from "../../../assets/images/home/exchange-section/live-dot.svg";
+import { scrollToWallet } from "../../../lib/utils";
 
 const desktopBullets = [
   "Daily USDT staking Income from Platform revenue",
@@ -170,41 +171,12 @@ export default function ExchangeSection() {
               </div>
 
               <div className="flex gap-[12px] items-start">
-                <div
-                  style={{ display: "inline-grid", gridTemplateColumns: "max-content", gridTemplateRows: "max-content" }}
+                <button
+                  onClick={() => scrollToWallet(140)}
+                  className="btn_primary flex h-[69px] w-[289px] items-center justify-center"
                 >
-                  <div
-                    className="bg-[#0080ed] rounded-[152.889px]"
-                    style={{
-                      gridColumn: 1,
-                      gridRow: 1,
-                      width: "288.641px",
-                      height: "69px",
-                      marginLeft: "0.36px",
-                      filter: "blur(7.644px)",
-                    }}
-                  />
-                  <div
-                    className="overflow-clip rounded-[152.889px] flex items-center justify-center  z-10 ]"
-                    style={{
-                      gridColumn: 1,
-                      gridRow: 1,
-                      width: "288.641px",
-                      height: "69px",
-                      backgroundColor: "#0080ed",
-                      boxShadow: "inset 0px -1.529px 3.058px 0px #f5e99c, inset 0px 1.529px 3.058px 0px #f5e99c",
-                      cursor: "pointer",
-                      color: "#fff",
-                    }}
-                  >
-                    <span
-                      className="font-['Helvetica_Neue_Medium_Extended',sans-serif] capitalize text-[18px]  leading-[28px] text-white text-center"
-                      style={{ fontWeight: 500 }}
-                    >
-                      BUY $PREDICT
-                    </span>
-                  </div>
-                </div>
+                  BUY $PREDICT
+                </button>
 
                 <button
                   className="bg-transparent flex items-center justify-center"
@@ -212,7 +184,7 @@ export default function ExchangeSection() {
                     width: "289px",
                     height: "69px",
                     border: "1px solid #000000",
-                    borderRadius: "126.923px",
+                    borderRadius: "8px",
                     cursor: "pointer",
                   }}
                 >
