@@ -4,7 +4,7 @@ function StepBodyParagraph({ paragraph, highlightSubstring }) {
   }
   const [before, ...rest] = paragraph.split(highlightSubstring);
   return (
-    <p className="font-[Inter] text-[16px] leading-6 tracking-[0.32px]">
+    <p className="font-[Inter] text-[16px] leading-6 tracking-[0.32px] ">
       {before}
       <span className="font-medium text-[#0080ED]">{highlightSubstring}</span>
       {rest.join(highlightSubstring)}
@@ -27,9 +27,9 @@ export default function ReferralProgramHowItWorks({
           {sectionTitle}
         </h2>
         <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:gap-12">
-          <div className="flex flex-col gap-4 lg:flex-1">
+          <div className="flex flex-col justify-between gap-4 lg:flex-1 ">
             {steps.map((step, i) => (
-              <div key={i} className="rounded-lg bg-[#f2f2f2] px-4 md:pr-6 py-6">
+              <div key={i} className="rounded-lg bg-[#f2f2f2] px-4 md:pr-[31px] md:pr-6 py-6">
                 <div className="mb-4 font-[Inter] text-[18px] font-bold leading-7 tracking-[0.4px] md:text-[20px]">
                   <span className="text-[#0080ED]">{step.titlePrefix}</span>
                   <span className="text-black">{step.titleAccent}</span>
