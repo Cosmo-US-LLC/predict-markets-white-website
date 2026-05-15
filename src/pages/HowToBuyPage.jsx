@@ -20,8 +20,8 @@ import {
   walletTableRows,
 } from "../data/howToBuyPageData.js";
 import {
-  howToBuyHeroBg,
   howToBuyHeroCoins,
+  howToBuyHeroCoinsMobile,
   howToBuyHeroEthIcon,
   howToBuyWalletLogos,
 } from "../data/howToBuyFigmaAssets.js";
@@ -38,12 +38,12 @@ export function HowToBuyPage() {
         badgeRight={howToBuyPageIntro.badgeRight}
         title={howToBuyPageIntro.title}
         subtitle={howToBuyPageIntro.subtitle}
-        backgroundImageSrc={howToBuyHeroBg}
         coinsImageSrc={howToBuyHeroCoins}
+        coinsMobileImageSrc={howToBuyHeroCoinsMobile}
         ethIconSrc={howToBuyHeroEthIcon}
       />
       <div className="bg-white">
-        <div className="mx-auto w-full max-w-[1280px] px-4 pb-14 md:px-8 md:pb-24">
+        <div className="mx-auto w-full max-w-[1280px] px-4 pb-14 pt-8 md:px-8 md:pb-24 md:pt-14">
           <HowToBuyStep1
             step1={step1}
             walletTableRows={walletTableRows}
@@ -58,11 +58,11 @@ export function HowToBuyPage() {
           <HowToBuyStep4 step4={step4} />
           <HowToBuyStep5 step5={step5} />
           <HowToBuyStep6 step6={step6} />
-          <HowToBuyPageCta
+          {/* <HowToBuyPageCta
             caption={howToBuyPageCta.caption}
             buttonText={howToBuyPageCta.buttonText}
             to={howToBuyPageCta.to}
-          />
+          /> */}
         </div>
       </div>
     </div>

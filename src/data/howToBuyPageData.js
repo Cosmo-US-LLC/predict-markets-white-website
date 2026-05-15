@@ -1,9 +1,5 @@
-import uniswapLogo from "../assets/images/home/exchange_listings/uniswap_logo.svg";
-import list1 from "../assets/images/home/exchange_listings/list (1).svg";
-import list2 from "../assets/images/home/exchange_listings/list (2).svg";
-import list3 from "../assets/images/home/exchange_listings/list (3).svg";
-import stepDashboardVisual from "../assets/images/home/token_details/token_details_desktop_light.webp";
-import walletVisual from "../assets/images/logo/wallet-coins/coins (2).svg";
+import stepDashboardVisual from "../assets/images/how_to_buy/step4_product.webp";
+import walletVisual from "../assets/images/how_to_buy/step5_claim.webp";
 
 export const howToBuyPageIntro = {
   badgeLeft: "First Hold-To-Earn Token",
@@ -76,8 +72,7 @@ export const step2Panels = [
     heading: "Enter the amount of $PREDICT you want to buy.",
     mockPayLabel: "Amount You Pay in USDT",
     mockPayExample: "1000",
-    mockReceivePrimary: "You Receive BFX",
-    mockReceiveAccent: "+ Novice NFT",
+    mockReceivePrimary: "You Receive $PREDICT",
     mockReceiveAmount: "6,123,135",
   },
   {
@@ -90,8 +85,7 @@ export const step2Panels = [
     heading: 'Click "Buy $PREDICT".',
     mockPayLabel: "Amount You Pay in USDT",
     mockPayExample: "1000",
-    mockReceivePrimary: "You Receive BFX",
-    mockReceiveAccent: "+ Novice NFT",
+    mockReceivePrimary: "You Receive $PREDICT",
     mockReceiveAmount: "6,123,135",
     showCta: true,
     ctaText: "BUY $PREDICT",
@@ -131,11 +125,11 @@ export const step4 = {
 };
 
 export const step5 = {
-  stepLabel: "Step 5",
+  stepLabel: "STEP 5",
   title: "Claim",
   lead: "After the presale ends:",
   bullets: [
-    "Your PredictMarkets tokens will be claimable from your dashboard in one click when claiming opens.",
+    "Your PredictMarkets tokens will be claimable in your dashboard with one click.",
     "Thank you for being part of the PredictMarkets journey.",
   ],
   visual: walletVisual,
@@ -143,21 +137,14 @@ export const step5 = {
 };
 
 export const step6 = {
-  stepLabel: "Step 6",
+  stepLabel: "STEP 6",
   title: "Launch",
-  lead: "",
+  lead: "After the presale ends:",
   bullets: [
     "PredictMarkets will officially launch on multiple top-tier exchanges after the presale concludes.",
-    "Stay tuned on our website and social channels for listing announcements.",
+    "Stay updated via our website and social channels for listing announcements.",
   ],
   headlineCard: {
     title: "PredictMarkets Launches On Multiple Top-Tier Exchanges",
-    exchanges: [
-      { id: "u", label: "UNISWAP", logo: uniswapLogo },
-      { id: "p", label: "PancakeSwap", logo: list3 },
-      { id: "f", label: "Fluid", logo: list2 },
-      { id: "c", label: "Curve", logo: list1 },
-      { id: "a", label: "Aerodrome", logo: list2 },
-    ],
   },
 };

@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame">
+<rect width="20" height="20" rx="4" fill="var(--fill-0, white)"/>
+<path id="Union" d="M12.2622 4.35079C12.9288 3.96599 13.7616 4.44676 13.7616 5.21652L13.7617 10.3394C13.7617 11.1092 12.9282 11.5903 12.2616 11.2054L11.4742 10.7508L8.16901 16.4755L5.30622 14.8227L8.6114 9.09793L7.82487 8.64383C7.15859 8.25878 7.15902 7.297 7.82555 6.91217L12.2622 4.35079Z" fill="var(--fill-0, #0080ED)"/>
+</g>
+</svg>

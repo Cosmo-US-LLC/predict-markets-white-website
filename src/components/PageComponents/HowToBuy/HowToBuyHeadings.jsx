@@ -1,13 +1,13 @@
 import { fiatPayBadges } from "../../../data/howToBuyPageData.js";
 
-/** Step label Inter bold #0080ED; title Inter bold (sizes per breakpoint). */
+/** Step label + H2 heading per Figma mobile/desktop specs. */
 export function StepHeadingLeft({ stepLabel, title }) {
   return (
-    <div className="mb-0 flex flex-col gap-2 md:gap-2">
-      <p className="text-left text-[20px] font-bold leading-7 tracking-[0.4px] text-[#0080ED] md:text-[30px] md:leading-8 md:tracking-[0.6px]">
+    <div className="mb-0 flex flex-col gap-2">
+      <p className="text-left text-[20px] font-bold leading-[28px] tracking-[0.4px] text-[#0080ED] md:text-[30px] md:leading-8 md:tracking-[0.6px]">
         {stepLabel}
       </p>
-      <h2 className="text-left font-['Inter',sans-serif] text-[28px] font-bold leading-[34px] tracking-[-2px] text-black capitalize md:text-[44px] md:leading-[50px] md:tracking-[0.88px]">
+      <h2 className="text-left text-[28px] font-medium leading-[34px] tracking-[-2px] text-black capitalize md:font-['Inter',sans-serif] md:font-bold md:text-[44px] md:leading-[50px] md:tracking-[0.88px]">
         {title}
       </h2>
     </div>
@@ -17,10 +17,10 @@ export function StepHeadingLeft({ stepLabel, title }) {
 export function StepHeadingCenter({ stepLabel, title, subtitle }) {
   return (
     <div className="mb-8 flex flex-col items-center gap-2 text-center md:mb-10 md:gap-3">
-      <p className="text-[20px] font-bold leading-7 tracking-[0.4px] text-[#0080ED] md:text-[30px] md:leading-8 md:tracking-[0.6px]">
+      <p className="text-[20px] font-bold leading-[28px] tracking-[0.4px] text-[#0080ED] md:text-[30px] md:leading-8 md:tracking-[0.6px]">
         {stepLabel}
       </p>
-      <h2 className="max-w-[900px] font-['Inter',sans-serif] text-[28px] font-bold leading-[34px] tracking-[-1px] text-black capitalize md:text-[44px] md:leading-[50px] md:tracking-[0.88px]">
+      <h2 className="max-w-[900px] text-[28px] font-medium leading-[34px] tracking-[-2px] text-black capitalize md:font-['Inter',sans-serif] md:font-bold md:text-[44px] md:leading-[50px] md:tracking-[0.88px]">
         {title}
       </h2>
       {subtitle ? (

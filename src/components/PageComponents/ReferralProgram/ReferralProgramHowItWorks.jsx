@@ -18,17 +18,18 @@ export default function ReferralProgramHowItWorks({
   panelImageSrc,
   closingBannerTitle,
   closingBannerLines,
+  closingBannerBgSrc,
 }) {
   return (
-    <section className="bg-white px-4 py-14 md:px-8 xl:px-[120px]">
-      <div className="mx-auto flex max-w-[1200px] flex-col gap-12">
+    <section className="bg-white px-4 py-14 md:px-8">
+      <div className="mx-auto flex max-w-[1280px] md:px-8 flex-col gap-12">
         <h2 className="text-center text-[clamp(28px,4vw,45px)] font-medium leading-[53px] tracking-[-2.56px] text-black uppercase">
           {sectionTitle}
         </h2>
         <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:gap-12">
           <div className="flex flex-col gap-4 lg:flex-1">
             {steps.map((step, i) => (
-              <div key={i} className="rounded-lg bg-[#f2f2f2] px-4 py-6">
+              <div key={i} className="rounded-lg bg-[#f2f2f2] px-4 md:pr-6 py-6">
                 <div className="mb-4 font-[Inter] text-[18px] font-bold leading-7 tracking-[0.4px] md:text-[20px]">
                   <span className="text-[#0080ED]">{step.titlePrefix}</span>
                   <span className="text-black">{step.titleAccent}</span>
@@ -58,18 +59,20 @@ export default function ReferralProgramHowItWorks({
         </div>
 
         <div className="relative mx-auto mt-8 w-full max-w-[800px] overflow-hidden rounded-lg bg-[#c9e6ff] px-4 py-8 text-center">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-[60%] h-48 w-[978px] max-w-[140%] -translate-x-1/2 opacity-70"
-          />
+          {closingBannerBgSrc && (
+            <img
+              aria-hidden
+              alt=""
+              src={closingBannerBgSrc}
+              className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+            />
+          )}
           <h3 className="relative z-[1] font-[Inter] text-[18px] font-bold leading-7 tracking-[0.4px] text-black md:text-xl">
             {closingBannerTitle}
           </h3>
-          <div className="relative z-[1] mt-4 space-y-1 font-[Inter] text-[15px] font-normal leading-6 tracking-[0.32px] text-black md:text-[16px]">
-            {closingBannerLines.map((line, i) => (
-              <p key={i}>{line}</p>
-            ))}
-          </div>
+          <p className="relative z-[1] mt-4 font-[Inter] text-[15px] font-normal leading-6 tracking-[0.32px] text-black md:text-[16px]">
+            {closingBannerLines.join(" ")}
+          </p>
         </div>
       </div>
     </section>
