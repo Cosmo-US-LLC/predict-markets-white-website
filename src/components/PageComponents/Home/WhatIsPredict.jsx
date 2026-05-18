@@ -20,7 +20,7 @@ const partnerLogos = [
 
 export default function WhatIsPredict({
   title = "What is $PREDICT?",
-  description = "The $PREDICT token gives holders access to a decentralised prediction market ecosystem, enabling anonymous (no KYC), transparent, and global peer-to-peer predictions on real world events such as elections, sports, news, and much more.\n\nHolding $PREDICT unlocks real utility and exclusive early advantages across the platform.",
+  description = "The $PREDICT token gives holders access to a decentralized prediction market ecosystem, enabling anonymous (no KYC), transparent, and global peer-to-peer predictions on real world events such as elections, sports, news, and much more.\n\nHolding $PREDICT unlocks real utility and exclusive early advantages across the platform.",
   benefits = [
     "Daily USDT Staking Income From Platform Revenue",
     "Lower Fees And Exclusive Membership Perks",

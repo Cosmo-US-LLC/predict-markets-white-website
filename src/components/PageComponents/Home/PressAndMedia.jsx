@@ -11,7 +11,7 @@ const pressCards = [
     logoMaxWidthMobile: 200,
     logoMaxWidthDesktop: 230,
     dividerStyle: "gray",
-    quote: `"PredictMarkets is bringing real-world event forecasting on-chain, combining decentralised prediction markets with a token model designed to reward long-term community participation."`,
+    quote: `"PredictMarkets is bringing real-world event forecasting on-chain, combining decentralized prediction markets with a token model designed to reward long-term community participation."`,
   },
   {
     id: "cryptonews",

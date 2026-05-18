@@ -18,7 +18,7 @@ export const roadmapData = [
     statusType: "completed",
     items: [
       { text: "PredictMarkets demo platform", iconcheck: true },
-      { text: "IImplemented core prediction and settlement features", iconcheck: true },
+      { text: "Implemented core prediction and settlement features", iconcheck: true },
       { text: "Whitepaper and token details", iconcheck: true },
       { text: "Deployed the $PREDICT token and smart contracts", iconcheck: true },
     ],
@@ -42,7 +42,7 @@ export const roadmapData = [
     statusType: "upcoming",
     items: [
       { text: "Enable public trading for $PREDICT", iconcheck: false },
-      { text: "Secure multiple centralised exchange (CEX) listings", iconcheck: false },
+      { text: "Secure multiple centralized exchange (CEX) listings", iconcheck: false },
       { text: "Expand influencer and affiliate acquisition", iconcheck: false },
       { text: "Release new platform features and market categories", iconcheck: false },
       { text: "Add analytics, rankings, and user tracking", iconcheck: false },

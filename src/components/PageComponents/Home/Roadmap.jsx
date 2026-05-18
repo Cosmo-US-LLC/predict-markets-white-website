@@ -7,7 +7,7 @@ import { cn } from "../../../lib/utils";
 export default function Roadmap({
   roadmapItems = [],
   title = "Roadmap",
-  subtitle = "Building the world's most rewarding decentralised prediction platform",
+  subtitle = "Building the world's most rewarding decentralized prediction platform",
 }) {
   const [api, setApi] = useState();
   const [canScrollPrev, setCanScrollPrev] = useState(false);

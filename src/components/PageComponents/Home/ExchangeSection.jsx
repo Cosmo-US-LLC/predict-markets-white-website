@@ -44,7 +44,7 @@ export default function ExchangeSection() {
                   What is $PREDICT?
                 </h2>
                 <p className="font-['Inter',sans-serif] font-normal text-[16px] leading-[24px] tracking-[0.32px] text-black w-full whitespace-pre-wrap">
-                  {`The $PREDICT token gives holders access to a decentralised prediction market ecosystem, enabling anonymous, transparent, and global peer-to-peer predictions on real world events such as elections, sports, news, and much more.`}
+                  {`The $PREDICT token gives holders access to a decentralized prediction market ecosystem, enabling anonymous, transparent, and global peer-to-peer predictions on real world events such as elections, sports, news, and much more.`}
                   <br /><br />
                   {`Holding $PREDICT unlocks real utility and exclusive early advantages across the platform.`}
                 </p>
@@ -140,7 +140,7 @@ export default function ExchangeSection() {
                   className="font-['Inter',sans-serif] font-normal text-[16px] leading-[24px] tracking-[0.32px] text-black whitespace-pre-wrap"
                   style={{ width: "534px", height: "167px" }}
                 >
-                  {`The $PREDICT token gives holders access to a decentralised prediction market ecosystem, enabling anonymous (no KYC), transparent, and global peer-to-peer predictions on real world events such as elections, sports, news, and much more.`}
+                  {`The $PREDICT token gives holders access to a decentralized prediction market ecosystem, enabling anonymous (no KYC), transparent, and global peer-to-peer predictions on real world events such as elections, sports, news, and much more.`}
                   <br /><br />
                   {`Holding $PREDICT unlocks real utility and exclusive early advantages across the platform.`}
                 </p>

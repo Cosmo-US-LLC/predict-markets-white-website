@@ -8,7 +8,7 @@ export const exclusivePresaleBenefits = [
     id: 1,
     icon: coinImage,
     title: "Lowest Entry Price Before Launch",
-    description: "During the presale, you can buy $PREDICT at its lowest price before it launches on centralised and decentralised exchanges.",
+    description: "During the presale, you can buy $PREDICT at its lowest price before it launches on centralized and decentralized exchanges.",
   },
   {
     id: 2,

@@ -74,7 +74,7 @@ function HeroFileVideo({ videoUrl }) {
 export default function PredictMarketsHero({
   id,
   title = "Own The Future Of Prediction Markets.",
-  description = "$PREDICT powers PredictMarkets, the most rewarding decentralised prediction platform that turns real world events into live on-chain markets and shares platform revenue with token holders.",
+  description = "$PREDICT powers PredictMarkets, the most rewarding decentralized prediction platform that turns real world events into live on-chain markets and shares platform revenue with token holders.",
   buttonText = "Buy $PREDICT",
   buttonLink = "#wallet",
   centerImage,
