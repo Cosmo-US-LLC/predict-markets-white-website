@@ -49,7 +49,7 @@ export const step1 = {
   stepLabel: "Step 1",
   title: "Set up a Wallet",
   body:
-    "Before you purchase $PREDICT, make sure you're using a decentralised crypto wallet. This ensures your tokens are properly linked to your wallet address and your rewards are activated.",
+    "Before you purchase $PREDICT, make sure you're using a decentralized crypto wallet. This ensures your tokens are properly linked to your wallet address and your rewards are activated.",
   /** Rich text suffix after blue “Note:” label (matches Figma). */
   noteAfterLabel:
     " Do not use centralized exchange wallets (e.g., Binance, Coinbase main app) — they won't display your tokens or rewards",

@@ -3,7 +3,7 @@ import howItWorksBgMobile from "../../../assets/images/home/how_does_work/how_do
 
 export default function HowItWorks({
   title = "How Does It Work?",
-  subtitle = "PredictMarkets is a decentralised platform where users predict real world events. Every prediction generates fees that directly benefit the $PREDICT ecosystem through daily buybacks, token burns, and revenue sharing with holders, supporting long term token value growth.",
+  subtitle = "PredictMarkets is a decentralized platform where users predict real world events. Every prediction generates fees that directly benefit the $PREDICT ecosystem through daily buybacks, token burns, and revenue sharing with holders, supporting long term token value growth.",
 }) {
   return (
     <section className="relative w-full md:bg-[#F7FCFF] py-0 md:py-16" id="how-it-works">

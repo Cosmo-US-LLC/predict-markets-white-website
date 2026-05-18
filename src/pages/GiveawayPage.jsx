@@ -246,7 +246,7 @@ export function GiveawayPage() {
                 className="text-black text-[16px] md:text-[18px] leading-[24px] md:leading-[26px] tracking-[0.32px] md:tracking-[0.36px] font-normal text-center"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
-                PredictMarkets is a decentralised prediction markets platform where users trade on real-world outcomes and see probabilities update live as sentiment changes.
+                PredictMarkets is a decentralized prediction markets platform where users trade on real-world outcomes and see probabilities update live as sentiment changes.
                 <br /><br />
                 From crypto and global markets to politics, sports, and major events, PredictMarkets transforms collective opinion into real-time market odds. As news breaks, markets move, creating fast, transparent signals of what the crowd believes will happen next.
               </p>
@@ -336,7 +336,7 @@ export function GiveawayPage() {
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
                 <span className="font-bold">Disclaimer: </span>
-                Do not use a centralised exchange wallet (e.g. The giveaway will only take place if the $PREDICT presale is completely sold out and will be distributed in tokens.
+                Do not use a centralized exchange wallet (e.g. The giveaway will only take place if the $PREDICT presale is completely sold out and will be distributed in tokens.
               </p>
             </div>
           </div>

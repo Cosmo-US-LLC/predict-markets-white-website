@@ -199,7 +199,7 @@ export function Footer() {
               or financial professionals before making any decisions. Trading
               cryptocurrencies carries significant risks, including the
               potential for partial or total loss of your funds. Thorough
-              research is crucial. BlockchainFX does not guarantee any
+              research is crucial. PredictMarkets does not guarantee any
               performance, outcome, or return of capital for any cryptocurrency
               mentioned on this platform. By using this platform, you agree to
               our Terms of Service, Privacy Policy, Cookie Policy, and any

@@ -59,7 +59,7 @@ const steps = [
         <div className="bg-[#fff5e3] rounded-[8px] p-2">
           <p className="text-black text-[12px] leading-[18px] md:leading-[20px] tracking-[0.24px]" style={{ fontFamily: "Inter, sans-serif" }}>
             <span className="font-bold">Important: </span>
-            Do not use a centralised exchange wallet (e.g. Binance or Coinbase main app). Your tokens and rewards will not show up correctly if you do.
+            Do not use a centralized exchange wallet (e.g. Binance or Coinbase main app). Your tokens and rewards will not show up correctly if you do.
           </p>
         </div>
         <div className="flex gap-2">
