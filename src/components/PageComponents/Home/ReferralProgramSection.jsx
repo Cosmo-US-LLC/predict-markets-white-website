@@ -133,7 +133,7 @@ export default function ReferralProgramSection() {
 }}
         >
           <h2 className="text-center text-[28px] font-medium leading-[34px] tracking-[-2px] text-black capitalize lg:text-[45px] lg:leading-[53px]">
-            HOW IT WORKS
+            How it Works
           </h2>
 
           {/* Cards: 1-col mobile, 2-col desktop */}
