@@ -61,6 +61,7 @@ const mobileNavLinks = [
     isHash: true,
     scrollId: "tokenomics",
   },
+  { label: "Win $250K", path: "/win-250k" },
   {
     label: "Roadmap",
     path: "/#roadmap",
@@ -186,7 +187,7 @@ export function Header() {
             letterSpacing: "0.24px",
           }}
         >
-          <Link to="/buy" className="underline font-[600]">
+          <Link to="/how-to-buy" className="underline font-[600]">
             Click here
           </Link>{" "}
           to enter the $PREDICT Presale

@@ -117,7 +117,7 @@ export default function ReferralProgramSection() {
               <p style={{ fontFamily: "'Helvetica Neue Medium Extended', sans-serif" }} className="text-[20px] leading-[28px] text-white capitalize">
                 Connect Wallet
               </p>
-              <p className="font-['Inter',sans-serif] text-[18px] leading-[26px] tracking-[0.36px] text-white md:pr-1">
+              <p className="font-['Inter',sans-serif] text-[16px] md:text-[18px] leading-[26px] tracking-[0.36px] text-white md:pr-1">
                 Have an active crypto community? Put it to work. Earn real money every time someone in your network buys $PREDICT. If you are running a group of 1,000 or more, get in touch with us on Telegram and let&apos;s figure out what we can build together.
               </p>
             </div>

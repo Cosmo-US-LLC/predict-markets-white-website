@@ -33,7 +33,7 @@ function HeroCoinGlowSvg({ className, viewBox, gradientTransform }) {
 function HeroTitleParts({ title }) {
   const m = title.match(/^(.+?)(\(\$PREDICT\))$/);
   const headingClass =
-    "w-full font-medium text-black text-[40px] leading-[34px] tracking-[-2px] md:text-[40px] md:leading-[48px] lg:text-[50px] lg:leading-[55px] lg:tracking-[-1px] capitalize";
+    "w-full font-medium text-black text-[40px] leading-[48px] tracking-[-2px] md:text-[40px] md:leading-[48px] lg:text-[50px] lg:leading-[55px] lg:tracking-[-1px] capitalize";
 
   if (!m) return <h1 className={headingClass}>{title}</h1>;
 
@@ -69,7 +69,7 @@ export default function HowToBuyPageHero({
       <div className="pointer-events-none absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-white to-transparent" />
 
       {/* ── Desktop layout ── */}
-      <div className="relative hidden lg:flex mx-auto w-full max-w-[1440px] items-center gap-6 px-20 py-12">
+      <div className="relative hidden lg:flex mx-auto w-full max-w-[1280px] items-center gap-6 px-8 py-12">
         {/* Left: badge + heading + subtitle */}
         <div className="flex min-w-0 flex-1 flex-col items-start gap-3 py-12">
           <div
@@ -104,7 +104,7 @@ export default function HowToBuyPageHero({
             viewBox="0 0 518 494"
             gradientTransform="matrix(-2.5596e-14 -34.35 24.434 -1.1874e-13 259 436)"
           />
-          <div className="absolute bottom-[-45px] left-1/2 h-[494px] w-[330px] max-w-none -translate-x-1/2">
+          <div className="absolute bottom-[-50px] left-1/2 h-[394px] w-[330px] max-w-none -translate-x-1/2">
             <img
               alt=""
               src={coinsImageSrc}

@@ -1,4 +1,4 @@
-import browserMock from "../../../assets/images/how_to_buy/step3_browser_mock.webp";
+import browserMock from "../../../assets/images/how_to_buy/step3_send&confirm.webp";
 
 export function BrowserMockConfirm() {
   return (

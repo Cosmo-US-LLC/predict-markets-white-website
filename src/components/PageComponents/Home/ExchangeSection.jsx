@@ -36,7 +36,7 @@ export default function ExchangeSection() {
           className="absolute inset-0 w-full h-full object-cover object-bottom pointer-events-none"
           aria-hidden="true"
         />
-        <div className="relative z-10 flex flex-col gap-[10px] items-center w-[357px] px-4 py-6 rounded-[12px] border-[0.5px] border-[#9c9c9c] overflow-clip backdrop-blur-[18.65px] bg-white">
+        <div className="relative z-10 flex flex-col gap-[10px] items-center w-full px-4 py-6 rounded-[12px] border-[0.5px] border-[#9c9c9c] overflow-clip backdrop-blur-[18.65px] bg-white">
           <div className="flex flex-col gap-[10px] items-center w-full">
             <div className="flex flex-col gap-4 items-start w-full">
               <div className="flex flex-col gap-4 items-center w-full">
@@ -67,28 +67,23 @@ export default function ExchangeSection() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-[10px] items-center w-full">
+            <div className="flex flex-col gap-[12px] pt-6 items-center w-full">
               <div className="relative w-full h-[50px]">
                 <div
                   className="absolute inset-0 rounded-[92px] bg-[#0080ed]"
                   style={{ filter: "blur(8px)", opacity: 0.7 }}
                 />
                 <button
-                  className="relative z-10 w-full h-full rounded-[92px] flex items-center justify-center"
-                  style={{
-                    backgroundColor: "#0080ed",
-                    boxShadow: "inset 0px -0.921px 1.841px 0px #f5e99c, inset 0px 0.921px 1.841px 0px #f5e99c",
-                  }}
+                  onClick={() => scrollToWallet(140)}
+                  className="btn_primary flex h-[50px] w-full items-center justify-center"
                 >
-                  <span className="font-['Helvetica_Neue_Medium_Extended',sans-serif] uppercase text-[14px] leading-[18px] text-white text-center" style={{ fontWeight: 500 }}>
-                    BUY $PREDICT
-                  </span>
+                  BUY $PREDICT
                 </button>
+                
               </div>
-
               <button
-                className="w-full h-[50px] bg-transparent rounded-[83.005px] flex items-center justify-center"
-                style={{ border: "0.654px solid #000000" }}
+                className="w-full h-[50px] bg-transparent flex items-center justify-center"
+                style={{ border: "0.654px solid #000000", borderRadius: "8px" }}
               >
                 <span className="font-['Helvetica_Neue_Medium_Extended',sans-serif] uppercase text-[12px] leading-[18px] text-black text-center" style={{ fontWeight: 500 }}>
                   VISIT PLATFORM (BETA)
