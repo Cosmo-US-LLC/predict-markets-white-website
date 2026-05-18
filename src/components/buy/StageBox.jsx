@@ -32,7 +32,7 @@ const StageBox = () => {
         {presaleEnded ? "Presale Ended" : formatDollar(parseNum(stage?.cumulative_usd_raised), true)}
       </Loadable>
       {!presaleEnded && <>
-        {!stage.in_overflow_phase && <>
+        {!stage?.in_overflow_phase && <>
           <div
             className="relative h-[10px] w-full rounded-full overflow-hidden isolate shrink-0"
           >
@@ -82,7 +82,7 @@ const StageBox = () => {
             <LockKeyholeIcon size={18} />
           </div>
           <p className="text-[0.75rem] text-center mx-2">
-            {stage.stage_name} sold out. You still have 7 days to buy at the last stage price before the next stage price goes live.
+            {stage?.stage_name} sold out. You still have 7 days to buy at the last stage price before the next stage price goes live.
           </p>
           <p className="flex gap-2 items-center justify-center font-bold uppercase text-[#007FEC] text-center text-[0.8125rem] before:content-[''] before:flex-1 before:h-px before:bg-[#D3D3D3] after:content-[''] after:flex-1 after:h-px after:bg-[#D3D3D3]">
             <ClockIcon size={16} />
@@ -92,17 +92,17 @@ const StageBox = () => {
           <div className="flex items-center gap-2 border border-[#D3D3D3] rounded-sm px-2 py-1.5">
             <div className="flex gap-2 items-center justify-center text-[0.75rem] leading-[1.2] flex-1">
               <BanIcon size={20} color="#DA313C" />
-              {stage.stage_name} sold&nbsp;out
+              {stage?.stage_name} sold&nbsp;out
             </div>
             <div className="self-stretch w-px bg-[#D3D3D3]" />
             <div className="flex gap-2 items-center justify-center text-[0.75rem] leading-[1.2] flex-1">
               <LockKeyholeIcon size={20} color="#007FEC" />
-              Locked&nbsp;Price: {formatDollar(parseNum(stage.token_price), true, 0, 4)}
+              Locked&nbsp;Price: {formatDollar(parseNum(stage?.token_price), true, 0, 4)}
             </div>
             <div className="self-stretch w-px bg-[#D3D3D3]" />
             <div className="flex gap-2 items-center justify-center text-[0.75rem] leading-[1.2] flex-1">
               <TrendingUpIcon size={20} color="#269252" />
-              Next&nbsp;price: {formatDollar(parseNum(stage.next_stage_price), true, 0, 4)}
+              Next&nbsp;price: {formatDollar(parseNum(stage?.next_stage_price), true, 0, 4)}
             </div>
           </div>
           <p className="text-black/50 text-[0.625rem] text-center max-w-64 mx-auto mt-1"><InfoIcon size="1.2em" className="inline-block -translate-y-0.5" /> When this timer ends, the token price automatically moves to the next stage price.</p>

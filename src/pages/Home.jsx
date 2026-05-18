@@ -3,14 +3,17 @@ import FrequentlyAskedQuestions from "../components/PageComponents/Home/Frequent
 import Roadmap from "../components/PageComponents/Home/Roadmap";
 import PressReleases from "../components/PageComponents/Home/PressReleases";
 import HowToBuy from "../components/PageComponents/Home/HowToBuy";
+import GiveawayHowToBuy from "../components/PageComponents/Giveaway/GiveawayHowToBuy.jsx";
 import MarketOpportunity from "../components/PageComponents/Home/MarketOpportunity";
 import WhatSetsUsApart from "../components/PageComponents/Home/WhatSetsUsApart";
 import TokenDetails from "../components/PageComponents/Home/TokenDetails";
 import ExchangeListings from "../components/PageComponents/Home/ExchangeListings";
+import ExchangeSection from "../components/PageComponents/Home/ExchangeSection";
 import WhatIsPredict from "../components/PageComponents/Home/WhatIsPredict";
 import WatchRevenueFlow from "../components/PageComponents/Home/WatchRevenueFlow";
 import PredictsTheFeatures from "../components/PageComponents/Home/PredictsTheFeatures";
 import Markets from "../components/PageComponents/Home/Markets";
+import ReferralProgramSection from "../components/PageComponents/Home/ReferralProgramSection";
 import RevenueSharing from "../components/PageComponents/Home/RevenueSharing";
 import PredictionPlatform from "../components/PageComponents/Home/PredictionPlatform";
 import HowItWorks from "../components/PageComponents/Home/HowItWorks";
@@ -52,6 +55,7 @@ import {
   getExtraRewardsConfig,
 } from "../data/getExtraRewardsData";
 import { predictMarketsHeroConfig } from "../data/predictMarketsHeroData";
+import PressAndMedia from "../components/PageComponents/Home/PressAndMedia";
 
 export function Home() {
   return (
@@ -70,7 +74,8 @@ export function Home() {
         title={exchangeListingsConfig.title}
         exchanges={exchangeListingsData}
       />
-      <WhatIsPredict
+      <ExchangeSection />
+      {/* <WhatIsPredict
         title={whatIsPredictConfig.title}
         description={whatIsPredictConfig.description}
         benefits={whatIsPredictConfig.benefits}
@@ -78,13 +83,14 @@ export function Home() {
         buyButtonLink={whatIsPredictConfig.buyButtonLink}
         secondaryButtonText={whatIsPredictConfig.secondaryButtonText}
         secondaryButtonLink={whatIsPredictConfig.secondaryButtonLink}
-      />
+      /> */}
       <PredictsTheFeatures
         title={featuresConfig.title}
         subtitle={featuresConfig.subtitle}
         features={featuresData}
       />
       <Markets title={marketsConfig.title} markets={marketsData} />
+      <ReferralProgramSection />
       {/* <WatchRevenueFlow /> */}
       <HowItWorks
         title={howItWorksConfig.title}
@@ -114,13 +120,16 @@ export function Home() {
         disclaimer={getExtraRewardsConfig.disclaimer}
         autoPlayInterval={getExtraRewardsConfig.autoPlayInterval}
       />
-      <HowToBuy
+      {/* <HowToBuy
         steps={howToBuySteps}
         title={howToBuyConfig.title}
         subtitle={howToBuyConfig.subtitle}
         buyButtonText={howToBuyConfig.buyButtonText}
         buyButtonLink={howToBuyConfig.buyButtonLink}
-      />
+        fullGuideText={howToBuyConfig.fullGuideText}
+        fullGuidePath={howToBuyConfig.fullGuidePath}
+      /> */}
+      <GiveawayHowToBuy />
       <MarketOpportunity
         title={marketOpportunityConfig.title}
         description={marketOpportunityConfig.description}
@@ -149,6 +158,7 @@ export function Home() {
         title={roadmapConfig.title}
         subtitle={roadmapConfig.subtitle}
       />
+      <PressAndMedia />
       {/* <PressReleases 
         pressReleases={pressReleasesData}
         title={pressReleasesConfig.title}
