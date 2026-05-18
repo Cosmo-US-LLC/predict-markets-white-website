@@ -48,7 +48,7 @@ export function PresaleBuyWidget() {
 
   return (
     <div
-      className={`flex flex-col gap-3 relative mx-auto w-full max-w-[30rem] rounded-[13.675px] border border-[#D8D8D8] bg-white px-[10px] py-[15px] shadow-xl md:px-[44px] md:py-[24px] min-h-[47rem] md:min-h-[49rem] justify-between`}
+      className={`flex flex-col gap-3 relative mx-auto w-full max-w-[30rem] rounded-[13.675px] border border-[#D8D8D8] bg-white px-[10px] py-[24px] shadow-xl md:px-[44px] md:py-[24px] min-h-[47rem] md:min-h-[49rem] justify-between`}
     >
       <div className="absolute left-1/2 top-[-15px] flex -translate-x-1/2 items-center justify-center">
         <div className="flex items-center gap-2 rounded-[4px] bg-[#0080ED] px-4 py-1.5 font-[Inter] !text-[12px] font-[600] uppercase text-white">

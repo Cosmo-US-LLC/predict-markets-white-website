@@ -6,12 +6,12 @@ import solIcon from "../../../assets/images/how_to_buy/payment_icons/sol.svg";
 import visaIcon from "../../../assets/images/how_to_buy/payment_icons/visa.svg";
 import mastercardIcon from "../../../assets/images/how_to_buy/payment_icons/mastercard.svg";
 import gpayIcon from "../../../assets/images/how_to_buy/payment_icons/gpay.png";
-import step1Img from "../../../assets/images/how_to_buy/step1_connect_wallet_4x.webp";
-import step2Img from "../../../assets/images/how_to_buy/step2_payment_4x.webp";
-import step3Img from "../../../assets/images/how_to_buy/step3_confirm_4x.webp";
-import step4Img from "../../../assets/images/how_to_buy/step4_dashboard_4x.webp";
-import step5Img from "../../../assets/images/how_to_buy/step5_claim_4x.webp";
-import step6Img from "../../../assets/images/how_to_buy/step6_exchange_4x.webp";
+import step1Img from "../../../assets/images/how_to_buy/step1_connectwallet.webp";
+import step2Img from "../../../assets/images/how_to_buy/step2_paymentmethod.webp";
+import step3Img from "../../../assets/images/how_to_buy/step3_send&confirm.webp";
+import step4Img from "../../../assets/images/how_to_buy/step4_viewtokens.webp";
+import step5Img from "../../../assets/images/how_to_buy/step5_claimtokens.webp";
+import step6Img from "../../../assets/images/how_to_buy/step6_launch.webp";
 import { scrollToWallet } from "../../../lib/utils";
 
 const paymentMethods = [
@@ -180,7 +180,7 @@ const steps = [
 function StepCard({ step, title, img, content }) {
   return (
     <div className="bg-white border border-[#ddd]/50 rounded-[16px] max-md:h-full flex flex-col gap-5 overflow-hidden pb-4 pt-2 px-2 flex-1">
-      <div className="rounded-[15px] overflow-hidden shrink-0 w-full h-[117px] md:h-[186px]">
+      <div className="rounded-[15px] overflow-hidden shrink-0 w-full h-[150px] md:h-[186px]">
         <img src={img} alt={title} className="w-full h-full object-cover object-center" />
       </div>
       <div className="px-1 flex flex-col gap-4 md:gap-5">
@@ -301,7 +301,7 @@ export default function GiveawayHowToBuy() {
       <div className="relative inline-flex items-center justify-center">
         <button
           onClick={() => scrollToWallet(140)}
-          className="btn_primary relative flex h-[40px] w-[calc(100vw-32px)] items-center justify-center md:h-[69px] md:w-[319px]"
+          className="btn_primary relative flex h-[40px] w-[calc(100vw-32px)] uppercase items-center justify-center md:h-[69px] md:w-[319px]"
         >
           Buy $PREDICT Now
         </button>

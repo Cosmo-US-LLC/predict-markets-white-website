@@ -23,7 +23,7 @@ export default function ReferralProgramHowItWorks({
   return (
     <section className="bg-white px-4 py-14 md:px-8">
       <div className="mx-auto flex max-w-[1280px] md:px-8 flex-col gap-12">
-        <h2 className="text-center text-[clamp(28px,4vw,45px)] font-medium leading-[53px] tracking-[-2.56px] text-black uppercase">
+        <h2 className="text-center text-[clamp(28px,4vw,45px)] font-medium leading-[53px] tracking-[-2.56px] text-black">
           {sectionTitle}
         </h2>
         <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:gap-12">

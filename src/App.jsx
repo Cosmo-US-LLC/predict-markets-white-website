@@ -18,10 +18,10 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="buy" element={<Buy />} />
+          {/* <Route path="buy" element={<Buy />} /> */}
           <Route path="how-to-buy" element={<HowToBuyPage />} />
           <Route path="referral" element={<ReferralProgramPage />} />
-          <Route path="giveaway" element={<GiveawayPage />} />
+          <Route path="win-250k" element={<GiveawayPage />} />
           <Route path="terms-of-service" element={<TermsOfService />} />
           <Route path="cookie-management" element={<CookiesPolicy />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />

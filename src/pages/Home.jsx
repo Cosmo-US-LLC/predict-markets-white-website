@@ -92,10 +92,10 @@ export function Home() {
       <Markets title={marketsConfig.title} markets={marketsData} />
       <ReferralProgramSection />
       {/* <WatchRevenueFlow /> */}
-      <HowItWorks
+      {/* <HowItWorks
         title={howItWorksConfig.title}
         subtitle={howItWorksConfig.subtitle}
-      />
+      /> */}
 
       <RevenueSharing
         title={revenueSharingConfig.title}
