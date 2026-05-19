@@ -16,6 +16,8 @@ export default function HowToBuy({
   subtitle = "Follow the guide below to purchase $PREDICT during the presale. The process supports both crypto and card payments and is designed to be quick, secure, and easy to follow.",
   buyButtonText = "BUY $PREDICT",
   buyButtonLink = "#wallet",
+  fullGuideText,
+  fullGuidePath,
 }) {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
@@ -97,7 +99,7 @@ export default function HowToBuy({
           >
             <CarouselContent className="-ml-3">
               {steps.map((step) => (
-                <CarouselItem key={step.id} className="pl-3">
+                <CarouselItem key={step.id} className="pl-3 basis-full">
                   <div
                     className="bg-white rounded-[10px] border-[1px] border-[#DDD] 
                   p-4 flex flex-col gap-4 min-h-[303px]"
@@ -216,6 +218,16 @@ export default function HowToBuy({
             Need Support?
           </Link>
         </div>
+        {fullGuidePath && fullGuideText ? (
+          <div className="flex justify-center">
+            <Link
+              to={fullGuidePath}
+              className="text-center font-['Inter',sans-serif] text-[14px] font-semibold text-[#0080ED] underline underline-offset-[3px] transition-opacity hover:opacity-80 md:text-[16px]"
+            >
+              {fullGuideText}
+            </Link>
+          </div>
+        ) : null}
       </div>
     </section>
   );

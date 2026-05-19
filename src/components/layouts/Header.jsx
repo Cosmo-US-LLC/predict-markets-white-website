@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { scrollToWallet } from "../../lib/utils.js";
@@ -23,12 +23,8 @@ const navLinks = [
     isHash: true,
     scrollId: "what-is-predictmarkets",
   },
-  {
-    label: "How to Buy",
-    path: "/#how-to-buy",
-    isHash: true,
-    scrollId: "how-to-buy",
-  },
+  { label: "How to Buy", path: "/how-to-buy" },
+  { label: "Referral", path: "/referral" },
   {
     label: "Tokenomics",
     path: "/#tokenomics",
@@ -57,18 +53,15 @@ const mobileNavLinks = [
     isHash: true,
     scrollId: "presale-benefits",
   },
-  {
-    label: "How To Buy",
-    path: "/#how-to-buy",
-    isHash: true,
-    scrollId: "how-to-buy",
-  },
+  { label: "How To Buy", path: "/how-to-buy" },
+  { label: "Referral", path: "/referral" },
   {
     label: "Tokenomics",
     path: "/#tokenomics",
     isHash: true,
     scrollId: "tokenomics",
   },
+  { label: "Win $250K", path: "/win-250k" },
   {
     label: "Roadmap",
     path: "/#roadmap",
@@ -84,12 +77,21 @@ const mobileNavLinks = [
 ];
 
 const socialLinks = [
-  { icon: instagramLogo, href: "https://www.instagram.com/predictmarkets", label: "Instagram" },
-  { icon: telegramLogo, href: "https://t.me/predictmarkets", label: "Telegram" },
+  {
+    icon: instagramLogo,
+    href: "https://www.instagram.com/predictmarkets",
+    label: "Instagram",
+  },
+  {
+    icon: telegramLogo,
+    href: "https://t.me/predictmarkets",
+    label: "Telegram",
+  },
   { icon: xLogo, href: "https://x.com/predictmarkets", label: "X (Twitter)" },
 ];
 
 export function Header() {
+  const navigate = useNavigate();
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileLanguageOpen, setIsMobileLanguageOpen] = useState(false);
@@ -104,7 +106,10 @@ export function Header() {
       if (languageRef.current && !languageRef.current.contains(event.target)) {
         setIsLanguageOpen(false);
       }
-      if (mobileLanguageRef.current && !mobileLanguageRef.current.contains(event.target)) {
+      if (
+        mobileLanguageRef.current &&
+        !mobileLanguageRef.current.contains(event.target)
+      ) {
         setIsMobileLanguageOpen(false);
       }
     };
@@ -126,8 +131,8 @@ export function Header() {
       }
     };
     updateHeaderHeight();
-    window.addEventListener('resize', updateHeaderHeight);
-    return () => window.removeEventListener('resize', updateHeaderHeight);
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => window.removeEventListener("resize", updateHeaderHeight);
   }, []);
 
   // Prevent body scroll when mobile menu is open
@@ -143,14 +148,17 @@ export function Header() {
   }, [isMobileMenuOpen]);
 
   const handleMobileNavClick = (link) => {
+    if (link.path && !link.isHash && link.path.startsWith("/")) {
+      navigate(link.path);
+      setIsMobileMenuOpen(false);
+      return;
+    }
     if (link.isHash) {
       const element = document.getElementById(link.scrollId);
       if (element) {
         const offset = 80;
         const elementPosition =
-          element.getBoundingClientRect().top +
-          window.scrollY -
-          offset;
+          element.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({
           top: elementPosition,
           behavior: "smooth",
@@ -160,13 +168,14 @@ export function Header() {
     setIsMobileMenuOpen(false);
   };
 
-  const accountData = useAccount()
+  const accountData = useAccount();
 
   return (
-    <header ref={headerRef} className="sticky top-0 z-[101] w-full bg-white border-b border-[#e5e5e5]">
-      <div
-        className="h-[40px] bg-[#B9E6FE] flex items-center justify-center cursor-pointer hover:bg-[#A8DFFE] transition-colors relative z-[102]"
-      >
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-[101] w-full bg-white border-b border-[#e5e5e5]"
+    >
+      <div className="h-[40px] bg-[#B9E6FE] flex items-center justify-center cursor-pointer hover:bg-[#A8DFFE] transition-colors relative z-[102]">
         <p
           className="text-[#0B4A6F] text-center"
           style={{
@@ -178,13 +187,13 @@ export function Header() {
             letterSpacing: "0.24px",
           }}
         >
-          <Link to="/buy" className="underline font-[600]">
+          <Link to="/how-to-buy" className="underline font-[600]">
             Click here
           </Link>{" "}
           to enter the $PREDICT Presale
         </p>
       </div>
-      <div className="flex w-full max-w-[1280px] mx-auto px-4 md:px-2 py-3 items-center justify-between gap-4 relative z-[102] bg-white">
+      <div className="flex w-full max-w-[1280px] mx-auto px-4 md:px-8 py-3 items-center justify-between gap-4 relative z-[102] bg-white">
         <button
           variant="ghost"
           size="icon"
@@ -203,9 +212,10 @@ export function Header() {
             fill="none"
           >
             <path
-              d={isMobileMenuOpen
-                ? "M3.3335 5H16.6668M3.3335 10H16.6668M10.8335 15H16.6668"
-                : "M3.3335 5H16.6668M3.3335 10H16.6668M3.3335 15H9.16683"
+              d={
+                isMobileMenuOpen
+                  ? "M3.3335 5H16.6668M3.3335 10H16.6668M10.8335 15H16.6668"
+                  : "M3.3335 5H16.6668M3.3335 10H16.6668M3.3335 15H9.16683"
               }
               stroke="black"
               strokeWidth="1.5"
@@ -301,16 +311,23 @@ export function Header() {
           <Button
             onClick={async () => {
               if (accountData.isConnected) {
-                const { config } = await getConfig()
-                await disconnect(config)
-                setTimeout(() => disconnect(config))
+                const { config } = await getConfig();
+                await disconnect(config);
+                setTimeout(() => disconnect(config));
               } else {
-                showConnectWalletModal()
+                showConnectWalletModal();
               }
             }}
             className="btn_primary !rounded-[8px] !px-[24px] !text-[16px] !py-[12px] leading-[1]"
           >
-            {accountData.isConnected ? <>Disconnect<br />({truncateString(accountData?.address ?? "", 10)})</> : 'Connect Wallet'}
+            {accountData.isConnected ? (
+              <>
+                Disconnect
+                <br />({truncateString(accountData?.address ?? "", 10)})
+              </>
+            ) : (
+              "Connect Wallet"
+            )}
           </Button>
           {/* <Button
             onClick={() => scrollToWallet(140)}
@@ -329,7 +346,10 @@ export function Header() {
         </div>
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-[100] overflow-y-auto" style={{ top: `${headerHeight}px` }}>
+          <div
+            className="md:hidden fixed inset-0 z-[100] overflow-y-auto"
+            style={{ top: `${headerHeight}px` }}
+          >
             {/* Background Image */}
             <div
               className="absolute inset-0 w-full h-full z-0"
@@ -349,8 +369,8 @@ export function Header() {
                 className="w-full max-w-[90%]  backdrop-blur-md rounded-[12px] p-6 !pt-4 flex flex-col
                  gap-2"
                 style={{
-                  border: '0.7px solid #DDD',
-                  background: 'rgba(250, 249, 249, 0.34)',
+                  border: "0.7px solid #DDD",
+                  background: "rgba(250, 249, 249, 0.34)",
                 }}
               >
                 {/* Close Button */}

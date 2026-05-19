@@ -34,7 +34,7 @@ export const featuresData = [
       id: 5,
       image: featureImage5,
       title: "No KYC & 24/7 Open Markets",
-      description: "Fully decentralised with no KYC and open markets available 24/7, giving users the freedom to participate anytime, anywhere.",
+      description: "Fully decentralized with no KYC and open markets available 24/7, giving users the freedom to participate anytime, anywhere.",
     },
     {
       id: 6,

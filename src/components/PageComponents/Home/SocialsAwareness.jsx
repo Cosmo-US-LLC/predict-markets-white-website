@@ -13,7 +13,8 @@ const heroCards = [
     buttonText: "Read Here",
     image: socialsAwarenessCard1,
     mobileImage: socialsAwarenessMobileCard1,
-    link: "/whitepaper",
+    link: "/whitepaper.pdf",
+    newTab: true,
   },
   {
     id: "how-to-buy",
@@ -55,44 +56,63 @@ export default function SocialsAwareness() {
         <div className="relative z-10 flex flex-col items-start gap-4 md:flex-row md:gap-4">
           {/* Left Side - Image Cards */}
           <div className="relative z-20 flex md:flex-row flex-col gap-4 flex-1 w-full">
-            {heroCards.map((card) => (
-              <Link
-                key={card.id}
-                to={card.link}
-                className="group relative h-[300px] w-full rounded-[12px] md:h-[348px] md:w-[396px]"
-              >
-                {/* Background Image with dark overlay */}
-                <div className="relative h-full w-full overflow-hidden rounded-[12px] border border-[#262626] bg-black">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="h-full w-full object-cover opacity-90 max-md:hidden"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                    }}
-                  />
-                  <img
-                    src={card.mobileImage}
-                    alt={card.title}
-                    className="h-full w-full object-cover opacity-90 md:hidden"
-                    onError={(e) => {
-                      e.target.style.display = "none";
-                    }}
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60" />
-                </div>
+            {heroCards.map((card) => {
+              const cardClassName = "group relative h-[300px] w-full rounded-[12px] md:h-[348px] md:w-[396px]";
+              const cardInner = (
+                <>
+                  {/* Background Image with dark overlay */}
+                  <div className="relative h-full w-full overflow-hidden rounded-[12px] border border-[#262626] bg-black">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="h-full w-full object-cover opacity-90 max-md:hidden"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                      }}
+                    />
+                    <img
+                      src={card.mobileImage}
+                      alt={card.title}
+                      className="h-full w-full object-cover opacity-90 md:hidden"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                      }}
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/60" />
+                  </div>
 
-                {/* Content */}
-                <div className="absolute left-[20px] flex flex-col gap-3 bottom-[30px] md:bottom-[20px]">
-                  <h3 className="capitalize text-white text-[20px] leading-[28px] md:text-[24px] md:font-[600]">
-                    {card.title}
-                  </h3>
-                  <button className="btn_primary !px-0 py-[20px] w-[170px] md:w-[200px]">
-                    {card.buttonText}
-                  </button>
-                </div>
-              </Link>
-            ))}
+                  {/* Content */}
+                  <div className="absolute left-[20px] flex flex-col gap-3 bottom-[30px] md:bottom-[20px]">
+                    <h3 className="capitalize text-white text-[20px] leading-[28px] md:text-[24px] md:font-[600]">
+                      {card.title}
+                    </h3>
+                    <button className="btn_primary !px-0 py-[20px] w-[170px] md:w-[200px]">
+                      {card.buttonText}
+                    </button>
+                  </div>
+                </>
+              );
+
+              return card.newTab ? (
+                <a
+                  key={card.id}
+                  href={card.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cardClassName}
+                >
+                  {cardInner}
+                </a>
+              ) : (
+                <Link
+                  key={card.id}
+                  to={card.link}
+                  className={cardClassName}
+                >
+                  {cardInner}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right Side - Social Cards */}

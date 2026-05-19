@@ -6,12 +6,8 @@ import telegramLogo from "../../assets/images/footer/Telegram.svg";
 import instagramLogo from "../../assets/images/footer/instagram.svg";
 
 const quickLinks = [
-  {
-    label: "How to Buy",
-    path: "/#how-to-buy",
-    isHash: true,
-    scrollId: "how-to-buy",
-  },
+  { label: "How to Buy", path: "/how-to-buy" },
+  { label: "Referral Program", path: "/referral" },
   {
     label: "Roadmap",
     path: "/#roadmap",
@@ -58,7 +54,7 @@ export function Footer() {
 
   return (
     <footer className="bg-white text-black">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-2 py-[50px]">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8 py-[50px]">
         {/* Main Content Section */}
         <div className="flex flex-col gap-[24px] md:gap-[42px] mb-[30px] md:mb-[42px]">
           {/* Top Section - Four Columns */}
@@ -203,7 +199,7 @@ export function Footer() {
               or financial professionals before making any decisions. Trading
               cryptocurrencies carries significant risks, including the
               potential for partial or total loss of your funds. Thorough
-              research is crucial. BlockchainFX does not guarantee any
+              research is crucial. PredictMarkets does not guarantee any
               performance, outcome, or return of capital for any cryptocurrency
               mentioned on this platform. By using this platform, you agree to
               our Terms of Service, Privacy Policy, Cookie Policy, and any
