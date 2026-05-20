@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
-import { scrollToWallet } from "../../lib/utils.js";
+import { scrollToWallet, scrollToHashSection } from "../../lib/utils.js";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { cn } from "../../lib/utils";
@@ -154,16 +154,7 @@ export function Header() {
       return;
     }
     if (link.isHash) {
-      const element = document.getElementById(link.scrollId);
-      if (element) {
-        const offset = 80;
-        const elementPosition =
-          element.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: "smooth",
-        });
-      }
+      scrollToHashSection(link.scrollId, { offset: 80, navigate });
     }
     setIsMobileMenuOpen(false);
   };
@@ -247,18 +238,7 @@ export function Header() {
                 className="hover:opacity-80 transition-opacity whitespace-nowrap !text-[16px] !font-[Inter] !font-[600]"
                 onClick={(e) => {
                   e.preventDefault();
-                  const element = document.getElementById(link.scrollId);
-                  if (element) {
-                    const offset = 80;
-                    const elementPosition =
-                      element.getBoundingClientRect().top +
-                      window.scrollY -
-                      offset;
-                    window.scrollTo({
-                      top: elementPosition,
-                      behavior: "smooth",
-                    });
-                  }
+                  scrollToHashSection(link.scrollId, { offset: 80, navigate });
                 }}
               >
                 {link.label}

@@ -12,14 +12,14 @@ export default function ReferralProgramHero({ title, subtitle, connectWalletLabe
             {subtitle}
           </p>
         </div>
-        <div className="relative flex items-center justify-center py-4">
+        <div className="relative flex items-center justify-center ">
           <div
             aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[69px] w-[288px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0080ED]/45 blur-[7px]"
+            className="pointer-events-none absolute inset-0 rounded-[92px] bg-[#0080ed]"
           />
           <button
             type="button"
-            className="relative z-[1] flex h-[69px] w-[288px] shrink-0 items-center justify-center rounded-full bg-[#0080ED] px-8 capitalize text-[18px] font-medium leading-[28px] text-white transition hover:bg-[#0070d6]"
+            className="btn_primary relative z-[1] flex h-full w-full items-center justify-center"
             onClick={() => showConnectWalletModal()}
           >
             {connectWalletLabel}

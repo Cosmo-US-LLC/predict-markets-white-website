@@ -56,8 +56,24 @@ import {
 } from "../data/getExtraRewardsData";
 import { predictMarketsHeroConfig } from "../data/predictMarketsHeroData";
 import PressAndMedia from "../components/PageComponents/Home/PressAndMedia";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { scrollToSection } from "../lib/utils";
 
 export function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const sectionId = location.state?.scrollTo;
+    if (!sectionId) return;
+
+    const timer = window.setTimeout(() => {
+      scrollToSection(sectionId, 80);
+    }, 100);
+
+    return () => window.clearTimeout(timer);
+  }, [location.state?.scrollTo]);
+
   return (
     <div className="min-h-screen">
       <PredictMarketsHero
