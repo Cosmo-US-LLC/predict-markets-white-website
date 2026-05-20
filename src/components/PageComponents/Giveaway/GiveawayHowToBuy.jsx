@@ -69,11 +69,11 @@ const steps = [
             { icon: <GlobeIcon />, label: "Any Device", desc: "Any Wallet Connect-supported app" },
           ].map((d) => (
             <div key={d.label} className="bg-[#f2f2f2] rounded-[8px] flex-1 p-2 flex flex-col gap-2">
-              <div className="flex flex-col gap-1.5 items-center md:items-start">
+              <div className="flex flex-col gap-1.5 items-center">
                 <div className="size-5 md:size-6 text-black">{d.icon}</div>
                 <span className="text-black text-[12px] md:text-[16px] leading-[20px] md:leading-[24px] capitalize" style={{ fontFamily: "'Helvetica Neue Medium Extended', sans-serif" }}>{d.label}</span>
               </div>
-              <p className="text-black text-[10px] md:text-[14px] leading-[16px] md:leading-[22px] tracking-[0.2px] md:tracking-[0.28px] text-center md:text-left" style={{ fontFamily: "Inter, sans-serif" }}>{d.desc}</p>
+              <p className="text-black text-[10px] md:text-[14px] leading-[16px] md:leading-[22px] tracking-[0.2px] md:tracking-[0.28px] text-center" style={{ fontFamily: "Inter, sans-serif" }}>{d.desc}</p>
             </div>
           ))}
         </div>

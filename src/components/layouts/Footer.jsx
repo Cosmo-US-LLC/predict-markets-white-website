@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Instagram, Send, Twitter } from "lucide-react";
 import logoImage from "../../assets/images/logo/P_logo.svg";
 import xLogo from "../../assets/images/footer/X.svg";
 import telegramLogo from "../../assets/images/footer/Telegram.svg";
 import instagramLogo from "../../assets/images/footer/instagram.svg";
+import { scrollToHashSection } from "../../lib/utils";
 
 const quickLinks = [
   { label: "How to Buy", path: "/how-to-buy" },
@@ -32,7 +33,7 @@ const docsLinks = [
   { label: "Terms of Service", path: "/terms-of-service" },
   { label: "Privacy Policy", path: "/privacy-policy" },
   { label: "Token Sale Agreement", path: "/token-sale-agreement" },
-  { label: "Live 24/7 Support", path: "/support" },
+  { label: "Live 24/7 Support", path: "https://t.me/predict_markets_chat" },
 ];
 
 const socialLinks = [
@@ -50,6 +51,7 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const navigate = useNavigate();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -89,15 +91,10 @@ export function Footer() {
                       className="text-[#000] text-[16px] font-normal leading-[24px] tracking-[0.32px] hover:text-black transition-colors"
                       onClick={(e) => {
                         e.preventDefault();
-                        const element = document.getElementById(link.scrollId);
-                        if (element) {
-                          const offset = 80;
-                          const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;
-                          window.scrollTo({
-                            top: elementPosition,
-                            behavior: "smooth",
-                          });
-                        }
+                        scrollToHashSection(link.scrollId, {
+                          offset: 80,
+                          navigate,
+                        });
                       }}
                     >
                       {link.label}
@@ -122,15 +119,27 @@ export function Footer() {
                 <span>Legal</span>
               </h3>
               <nav className="flex flex-col md:gap-1.5 gap-1.5 pl-4">
-                {docsLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className="text-[#000] text-[16px] font-normal leading-[24px] tracking-[0.32px] hover:text-black transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                {docsLinks.map((link) =>
+                  link.path.startsWith("http") ? (
+                    <a
+                      key={link.path}
+                      href={link.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#000] text-[16px] font-normal leading-[24px] tracking-[0.32px] hover:text-black transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className="text-[#000] text-[16px] font-normal leading-[24px] tracking-[0.32px] hover:text-black transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ),
+                )}
               </nav>
             </div>
 
