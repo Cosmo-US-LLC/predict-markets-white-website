@@ -22,9 +22,12 @@ const mobileBullets = [
 const panelGradient =
   "linear-gradient(180deg, rgba(255,255,255,0.34) 24.53%, rgba(0,128,237,0.34) 57.049%), linear-gradient(90deg, #ffffff 0%, #ffffff 100%)";
 
+const PLATFORM_URL = "http://predictmarkets.io/";
+
 export default function ExchangeSection() {
   return (
     <section
+      id="what-is-predictmarkets"
       className="relative w-full  overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${sectionBg})` }}
     >
@@ -81,14 +84,14 @@ export default function ExchangeSection() {
                 </button>
                 
               </div>
-              <button
-                className="w-full h-[50px] bg-transparent flex items-center justify-center"
-                style={{ border: "0.654px solid #000000", borderRadius: "8px" }}
+              <a
+                href={PLATFORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn_secondary flex h-[50px] w-full items-center justify-center !px-[16px] !py-[12px] !text-[12px] !uppercase whitespace-nowrap"
               >
-                <span className="font-['Helvetica_Neue_Medium_Extended',sans-serif] uppercase text-[12px] leading-[18px] text-black text-center" style={{ fontWeight: 500 }}>
-                  VISIT PLATFORM (BETA)
-                </span>
-              </button>
+                VISIT PLATFORM (BETA)
+              </a>
             </div>
           </div>
 
@@ -173,23 +176,14 @@ export default function ExchangeSection() {
                   BUY $PREDICT
                 </button>
 
-                <button
-                  className="bg-transparent flex items-center justify-center"
-                  style={{
-                    width: "289px",
-                    height: "69px",
-                    border: "1px solid #000000",
-                    borderRadius: "8px",
-                    cursor: "pointer",
-                  }}
+                <a
+                  href={PLATFORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn_secondary flex h-[69px] w-[289px] items-center justify-center !px-[16px] !py-[12px] !text-[16px] !uppercase whitespace-nowrap"
                 >
-                  <span
-                    className="font-['Helvetica_Neue_Medium_Extended',sans-serif] uppercase text-[18px] leading-[28px] text-black text-center"
-                    style={{ fontWeight: 500 }}
-                  >
-                    VISIT PLATFORM (BETA)
-                  </span>
-                </button>
+                  VISIT PLATFORM (BETA)
+                </a>
               </div>
             </div>
 

@@ -32,5 +32,15 @@ export function scrollToSection(sectionId, offset = 100) {
   const element = document.getElementById(sectionId);
   if (element) {
     scrollWithOffset(element, offset);
+    return true;
+  }
+  return false;
+}
+
+export function scrollToHashSection(sectionId, { offset = 80, navigate } = {}) {
+  if (scrollToSection(sectionId, offset)) return;
+
+  if (navigate && window.location.pathname !== "/") {
+    navigate("/", { state: { scrollTo: sectionId } });
   }
 }
