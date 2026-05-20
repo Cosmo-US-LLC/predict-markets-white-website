@@ -177,6 +177,10 @@ export const buyWithCrypto = async (args) => {
       args.onStateChanged?.({ type: 'finalizing' })
       const transaction = await waitForNextTransaction(args.walletAddress, createdAt)
       args.onStateChanged?.({ type: 'finished', transaction })
+      window.fbq?.('track', 'Purchase', {
+        value: paymentTokenNum * parseNum(args.paymentToken.price),
+        currency: 'USD'
+      })
       return {
         type: 'sent'
       }
