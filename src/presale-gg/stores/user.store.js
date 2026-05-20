@@ -59,6 +59,7 @@ document.addEventListener("wagmi-loaded", async () => {
         );
         if (!hasAlreadySent) {
           window.dataLayer?.push({ event: "wallet_connect" });
+          window.fbq?.('track', 'Lead')
           connectedWallets.push(account.address.toLowerCase());
           window.localStorage.setItem(
             "userConnectedWallets",
