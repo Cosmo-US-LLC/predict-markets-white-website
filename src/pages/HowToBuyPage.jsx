@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import HowToBuyPageCta from "../components/PageComponents/HowToBuy/HowToBuyPageCta.jsx";
 import HowToBuyPageHero from "../components/PageComponents/HowToBuy/HowToBuyPageHero.jsx";
 import HowToBuyStep1 from "../components/PageComponents/HowToBuy/HowToBuyStep1.jsx";
@@ -33,6 +34,10 @@ import {
 export function HowToBuyPage() {
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>How to Buy $PREDICT | PredictMarkets Presale Guide</title>
+        <meta name="description" content="Step-by-step guide to buying $PREDICT in the presale. Connect a wallet, pay with crypto or card, and claim your tokens after launch." />
+      </Helmet>
       <HowToBuyPageHero
         badgeLeft={howToBuyPageIntro.badgeLeft}
         badgeRight={howToBuyPageIntro.badgeRight}

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import ReferralProgramHero from "../components/PageComponents/ReferralProgram/ReferralProgramHero.jsx";
 import ReferralProgramSection from "../components/PageComponents/Home/ReferralProgramSection.jsx";
 import ReferralProgramHowItWorks from "../components/PageComponents/ReferralProgram/ReferralProgramHowItWorks.jsx";
@@ -21,6 +22,10 @@ import {
 export function ReferralProgramPage() {
   return (
     <div className="min-h-screen bg-white">
+      <Helmet>
+        <title>Referral Program | Earn $PREDICT | PredictMarkets</title>
+        <meta name="description" content="Share your PredictMarkets referral link and earn 10% of every qualifying purchase in $PREDICT. Your buyers get a 30% token bonus too." />
+      </Helmet>
       <ReferralProgramHero
         title={referralPageHero.title}
         subtitle={referralPageHero.subtitle}
