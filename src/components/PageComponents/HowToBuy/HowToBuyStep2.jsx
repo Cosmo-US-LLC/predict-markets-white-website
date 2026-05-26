@@ -1,28 +1,14 @@
-import {
-  step2ArrowDown,
-  step2CryptoIcons,
-  step2PaymentLogos,
-  step2PickerBnb,
-  step2PickerBtc,
-  step2PickerEth,
-  step2PickerSol,
-  step2PickerUsdt,
-} from "../../../data/howToBuyFigmaAssets.js";
+import usdtDropdown from "../../../assets/images/how_to_buy/usdt_dropdown_container.webp";
+import paymentIconsDesktop from "../../../assets/images/how_to_buy/payment_icons/group_1686561711.webp";
+import paymentIconsMobile from "../../../assets/images/how_to_buy/payment_icons/icon_container.webp";
+import pickerDesktop from "../../../assets/images/how_to_buy/step_to_fiels on_desktop.webp";
+import pickerMobile from "../../../assets/images/how_to_buy/step_to_fiels on_mobile.webp";
 import { StepHeadingCenter } from "./HowToBuyHeadings.jsx";
 import { SectionShell } from "./SectionShell.jsx";
 
 function UsdtDropdown() {
   return (
-    <div className="flex shrink-0 items-center gap-[8px] rounded-full border-[0.5px] border-[rgba(0,0,0,0.2)] px-2 py-0.5">
-      <div className="flex items-center gap-1">
-        <img src={step2PickerUsdt} alt="USDT" className="size-5 shrink-0 object-contain" />
-        <div className="flex flex-col items-start">
-          <span className="text-[8px] font-semibold leading-[18px] text-black">USDT</span>
-          <span className="text-[8px] font-normal leading-[16px] text-black/50">ERC-20</span>
-        </div>
-      </div>
-      <img src={step2ArrowDown} alt="" className="size-[10px] shrink-0" />
-    </div>
+    <img src={usdtDropdown} alt="USDT ERC-20" className="h-8 w-auto shrink-0 object-contain" />
   );
 }
 
@@ -77,53 +63,12 @@ function AmountCard({ showCta }) {
   );
 }
 
-const PICKER_ROWS = [
-  [
-    { sym: "ETH",  sub: "ERC-20",  icon: step2PickerEth },
-    { sym: "BNB",  sub: "BEP-20",  icon: step2PickerBnb },
-    { sym: "USDT", sub: "ERC-20",  icon: step2PickerUsdt },
-  ],
-  [
-    { sym: "BTC",  sub: "BITCOIN", icon: step2PickerBtc },
-    { sym: "SOL",  sub: "SOLANA",  icon: step2PickerSol },
-    { sym: "More", sub: null,      icon: null },
-  ],
-];
-
-function PickerChip({ sym, sub, icon }) {
-  return (
-    <div className="flex flex-1 items-center justify-between rounded bg-white px-2 py-0.5 min-w-0">
-      <div className="flex items-center gap-1.5 min-w-0">
-        {icon ? (
-          <img src={icon} alt={sym} className="size-5 shrink-0 object-contain" />
-        ) : null}
-        <div className="flex flex-col items-start">
-          <span className="text-[10px] font-bold leading-[19px] text-black">{sym}</span>
-          {sub && <span className="text-[8px] leading-[14px] text-black/50 whitespace-nowrap">{sub}</span>}
-        </div>
-      </div>
-      <img src={step2ArrowDown} alt="" className="h-1 w-2 shrink-0" />
-    </div>
-  );
-}
 
 function PickerCard() {
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-center gap-2 rounded-lg bg-white py-2 px-4">
-        <img src={step2PaymentLogos[0].src} alt={step2PaymentLogos[0].alt} className="h-[22px] w-auto shrink-0 object-contain" />
-        <img src={step2PaymentLogos[1].src} alt={step2PaymentLogos[1].alt} className="h-[22px] w-auto shrink-0 object-contain" />
-        <span className="text-[12px] font-semibold text-black whitespace-nowrap">Buy with Card</span>
-      </div>
-      <div className="flex flex-col gap-2">
-        {PICKER_ROWS.map((row, ri) => (
-          <div key={ri} className="flex gap-2">
-            {row.map((chip) => (
-              <PickerChip key={chip.sym} {...chip} />
-            ))}
-          </div>
-        ))}
-      </div>
+    <div>
+      <img src={pickerMobile} alt="Select currency or card" className="w-full md:hidden" />
+      <img src={pickerDesktop} alt="Select currency or card" className="hidden md:block w-full" />
     </div>
   );
 }
@@ -148,26 +93,9 @@ export default function HowToBuyStep2({ step2, cryptoTickerSymbols, step2Panels 
     <SectionShell compact className="!mb-10 md:!mb-14 lg:min-h-0">
       <StepHeadingCenter stepLabel={step2.stepLabel} title={step2.title} subtitle={step2.subtitle} />
 
-      <div className="flex flex-wrap justify-center gap-4">
-        {step2CryptoIcons.map((coin) => (
-          <div
-            key={coin.id}
-            className="flex h-[54px] w-[60px] shrink-0 items-center justify-center rounded-[8px] border border-[rgba(0,0,0,0.24)] bg-white p-0.5"
-          >
-            <img src={coin.src} alt={coin.sym} className="size-[31px] object-contain" loading="lazy" />
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-6 flex flex-wrap justify-center gap-4">
-        {step2PaymentLogos.map((p) => (
-          <div
-            key={p.id}
-            className="flex h-[53px] w-[86px] shrink-0 items-center justify-center rounded-[8px] border border-[rgba(0,0,0,0.24)] bg-white px-3 py-2"
-          >
-            <img src={p.src} alt={p.alt} className="max-h-7 max-w-full object-contain" loading="lazy" />
-          </div>
-        ))}
+      <div className="w-full">
+        <img src={paymentIconsMobile} alt="Accepted payment methods" className="w-full md:hidden" />
+        <img src={paymentIconsDesktop} alt="Accepted payment methods" className="hidden md:block w-full" />
       </div>
 
       <div className="mt-8 flex flex-col gap-6 md:mt-10 md:gap-6">

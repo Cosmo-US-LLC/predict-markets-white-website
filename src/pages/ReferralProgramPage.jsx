@@ -1,4 +1,5 @@
 import ReferralProgramHero from "../components/PageComponents/ReferralProgram/ReferralProgramHero.jsx";
+import ReferralProgramSection from "../components/PageComponents/Home/ReferralProgramSection.jsx";
 import ReferralProgramHowItWorks from "../components/PageComponents/ReferralProgram/ReferralProgramHowItWorks.jsx";
 import ReferralProgramLeaderboardBlock from "../components/PageComponents/ReferralProgram/ReferralProgramLeaderboardBlock.jsx";
 import {
@@ -25,6 +26,7 @@ export function ReferralProgramPage() {
         subtitle={referralPageHero.subtitle}
         connectWalletLabel={referralPageHero.connectWalletLabel}
       />
+      <ReferralProgramSection />
       <ReferralProgramLeaderboardBlock
         title={referralLeaderboardTitle}
         leaderboardRows={referralLeaderboardRows}
