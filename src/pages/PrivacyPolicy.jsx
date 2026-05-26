@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { privacyPolicyConfig, privacySections } from '../data/privacyPolicyData';
 
 export function PrivacyPolicy() {
@@ -5,6 +6,10 @@ export function PrivacyPolicy() {
 
   return (
     <section className="min-h-screen bg-[#ffffff] overflow-x-hidden flex flex-col border-b border-[#A6A6A6]">
+      <Helmet>
+        <title>Privacy Policy | PredictMarkets</title>
+        <meta name="description" content="Read how PredictMarkets collects, uses, and protects your personal data when you use the presale platform." />
+      </Helmet>
 
       {/* Hero Section */}
       <div 

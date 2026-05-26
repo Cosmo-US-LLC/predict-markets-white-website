@@ -1,11 +1,6 @@
 import { useRef, useState, useEffect } from "react";
-import usdtIcon from "../../../assets/images/how_to_buy/payment_icons/usdt.svg";
-import btcIcon from "../../../assets/images/how_to_buy/payment_icons/btc.svg";
-import ethIcon from "../../../assets/images/how_to_buy/payment_icons/eth.svg";
-import solIcon from "../../../assets/images/how_to_buy/payment_icons/sol.svg";
-import visaIcon from "../../../assets/images/how_to_buy/payment_icons/visa.svg";
-import mastercardIcon from "../../../assets/images/how_to_buy/payment_icons/mastercard.svg";
-import gpayIcon from "../../../assets/images/how_to_buy/payment_icons/gpay.png";
+import paymentIconsDesktop from "../../../assets/images/how_to_buy/payment_icons/group_1686561711.webp";
+import paymentIconsMobile from "../../../assets/images/how_to_buy/payment_icons/icon_container.webp";
 import step1Img from "../../../assets/images/how_to_buy/step1_connectwallet.webp";
 import step2Img from "../../../assets/images/how_to_buy/step2_paymentmethod.webp";
 import step3Img from "../../../assets/images/how_to_buy/step3_send&confirm.webp";
@@ -14,15 +9,6 @@ import step5Img from "../../../assets/images/how_to_buy/step5_claimtokens.webp";
 import step6Img from "../../../assets/images/how_to_buy/step6_launch.webp";
 import { scrollToWallet } from "../../../lib/utils";
 
-const paymentMethods = [
-  { label: "USDT",        icon: usdtIcon       },
-  { label: "BTC",         icon: btcIcon        },
-  { label: "ETH",         icon: ethIcon        },
-  { label: "SOL",         icon: solIcon        },
-  { label: "Visa",        icon: visaIcon       },
-  { label: "Mastercard",  icon: mastercardIcon },
-  { label: "Google Pay",  icon: gpayIcon       },
-];
 
 const DesktopIcon = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="#0080ED" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
@@ -89,15 +75,9 @@ const steps = [
         <p className="text-black text-[14px] md:text-[16px] leading-[22px] md:leading-[24px] tracking-[0.28px] md:tracking-[0.32px]" style={{ fontFamily: "Inter, sans-serif" }}>
           We support a wide range of payment options including ETH, BNB, USDT, BTC, SOL and more, as well as card payments via Visa, Mastercard and Google Pay.
         </p>
-        <div className="flex flex-wrap gap-2">
-          {paymentMethods.map(({ label, icon }) => (
-            <div key={label} className="bg-[#f2f2f2] rounded-[8px] px-3 py-[6px] flex items-center gap-[6px] shrink-0">
-              <div className="shrink-0 size-5 flex items-center justify-center overflow-hidden">
-                <img src={icon} alt={label} className="w-full h-full object-contain" />
-              </div>
-              <span className="text-black text-[14px] leading-[22px] tracking-[0.28px] font-medium whitespace-nowrap" style={{ fontFamily: "Inter, sans-serif" }}>{label}</span>
-            </div>
-          ))}
+        <div>
+          <img src={paymentIconsMobile} alt="Accepted payment methods" className="w-full md:hidden" />
+          <img src={paymentIconsDesktop} alt="Accepted payment methods" className="hidden md:block w-full" />
         </div>
         <ul className="list-disc pl-5 flex flex-col gap-0.5" style={{ fontFamily: "Inter, sans-serif" }}>
           <li className="text-black text-[14px] md:text-[16px] leading-[22px] md:leading-[24px] tracking-[0.28px] md:tracking-[0.32px]">Enter the amount of $PREDICT you want to buy</li>
@@ -179,7 +159,7 @@ const steps = [
 
 function StepCard({ step, title, img, content }) {
   return (
-    <div className="bg-white border border-[#ddd]/50 rounded-[16px] max-md:h-full flex flex-col gap-5 overflow-hidden pb-4 pt-2 px-2 flex-1">
+    <div className="bg-white border border-[#ddd]/50 rounded-[16px] max-md:h-full flex flex-col gap-5 h-full overflow-hidden pb-4 pt-2 px-2 flex-1">
       <div className="rounded-[15px] overflow-hidden shrink-0 w-full h-[150px] md:h-[186px]">
         <img src={img} alt={title} className="w-full h-full object-cover object-center" />
       </div>
@@ -206,9 +186,14 @@ function StepCard({ step, title, img, content }) {
   );
 }
 
+const stepGroups = [steps.slice(0, 3), steps.slice(3, 6)];
+
 export default function GiveawayHowToBuy() {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const desktopSliderRef = useRef(null);
+  const [desktopActiveIndex, setDesktopActiveIndex] = useState(0);
 
   useEffect(() => {
     const el = sliderRef.current;
@@ -221,9 +206,30 @@ export default function GiveawayHowToBuy() {
     return () => el.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const el = desktopSliderRef.current;
+    if (!el) return;
+    const onScroll = () => {
+      const gap = 12;
+      const cardWidth = (el.offsetWidth - gap * 2) / 3;
+      const index = Math.round(el.scrollLeft / (cardWidth + gap));
+      setDesktopActiveIndex(index);
+    };
+    el.addEventListener("scroll", onScroll, { passive: true });
+    return () => el.removeEventListener("scroll", onScroll);
+  }, []);
+
   const goTo = (i) => {
     if (!sliderRef.current) return;
     sliderRef.current.scrollTo({ left: i * sliderRef.current.offsetWidth, behavior: "smooth" });
+  };
+
+  const goToDesktop = (i) => {
+    const el = desktopSliderRef.current;
+    if (!el) return;
+    const gap = 12;
+    const cardWidth = (el.offsetWidth - gap * 2) / 3;
+    el.scrollTo({ left: i * (cardWidth + gap), behavior: "smooth" });
   };
 
   return (
@@ -244,13 +250,72 @@ export default function GiveawayHowToBuy() {
         </p>
       </div>
 
-      {/* Desktop: 2-row × 3-col grid (unchanged) */}
-      <div className="hidden md:flex w-full max-w-[1280px] mx-auto px-8 flex-col gap-3">
-        <div className="flex gap-3">
-          {steps.slice(0, 3).map((s) => <StepCard key={s.step} {...s} />)}
+      {/* Desktop: 3 cards visible, scroll one by one */}
+      <div className="hidden md:flex w-full flex-col items-center gap-4">
+        <div className="relative w-full max-w-[1290px] mx-auto px-10">
+          <button
+            onClick={() => goToDesktop(desktopActiveIndex - 1)}
+            disabled={desktopActiveIndex === 0}
+            aria-label="Previous step"
+            className="absolute -left-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full border border-[#ddd] bg-white transition-all duration-200 disabled:opacity-30 hover:border-[#0080ed]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-black">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <div
+            ref={desktopSliderRef}
+            className="w-full flex gap-3 overflow-x-scroll"
+            style={{
+              scrollSnapType: "x mandatory",
+              scrollBehavior: "smooth",
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {steps.map((s) => (
+              <div
+                key={s.step}
+                style={{
+                  scrollSnapAlign: "start",
+                  scrollSnapStop: "always",
+                  minWidth: "calc((100% - 24px) / 3)",
+                  maxWidth: "calc((100% - 24px) / 3)",
+                }}
+              >
+                <StepCard {...s} />
+              </div>
+            ))}
+          </div>
+
+          <button
+            onClick={() => goToDesktop(desktopActiveIndex + 1)}
+            disabled={desktopActiveIndex === steps.length - 3}
+            aria-label="Next step"
+            className="absolute -right-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full border border-[#ddd] bg-white transition-all duration-200 disabled:opacity-30 hover:border-[#0080ed]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-black">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
-        <div className="flex gap-3">
-          {steps.slice(3, 6).map((s) => <StepCard key={s.step} {...s} />)}
+
+        <div className="flex items-center gap-1.5">
+          {Array.from({ length: steps.length - 2 }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goToDesktop(i)}
+              aria-label={`Go to step ${i + 1}`}
+              className="rounded-full transition-all duration-200"
+              style={{
+                width: i === desktopActiveIndex ? "20px" : "8px",
+                height: "8px",
+                background: i === desktopActiveIndex ? "#0080ed" : "#cdcdcd",
+              }}
+            />
+          ))}
         </div>
       </div>
 

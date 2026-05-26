@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { cookiesPolicyConfig, cookiesSections } from '../data/cookiesPolicyData';
 
 export function CookiesPolicy() {
@@ -6,6 +7,10 @@ export function CookiesPolicy() {
 
   return (
     <section className="min-h-screen bg-[#ffffff] overflow-x-hidden flex flex-col border-b border-[#A6A6A6]">
+      <Helmet>
+        <title>Cookie Management | PredictMarkets</title>
+        <meta name="description" content="Manage your cookie preferences for PredictMarkets and learn how cookies are used across the site." />
+      </Helmet>
 
       {/* Hero Section */}
       <div

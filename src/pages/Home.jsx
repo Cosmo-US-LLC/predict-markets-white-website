@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import SocialsAwareness from "../components/PageComponents/Home/SocialsAwareness";
 import FrequentlyAskedQuestions from "../components/PageComponents/Home/FrequentlyAskedQuestions";
 import Roadmap from "../components/PageComponents/Home/Roadmap";
@@ -13,7 +14,6 @@ import WhatIsPredict from "../components/PageComponents/Home/WhatIsPredict";
 import WatchRevenueFlow from "../components/PageComponents/Home/WatchRevenueFlow";
 import PredictsTheFeatures from "../components/PageComponents/Home/PredictsTheFeatures";
 import Markets from "../components/PageComponents/Home/Markets";
-import ReferralProgramSection from "../components/PageComponents/Home/ReferralProgramSection";
 import RevenueSharing from "../components/PageComponents/Home/RevenueSharing";
 import PredictionPlatform from "../components/PageComponents/Home/PredictionPlatform";
 import HowItWorks from "../components/PageComponents/Home/HowItWorks";
@@ -76,6 +76,10 @@ export function Home() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>PredictMarkets Crypto Presale | Prediction Market Token</title>
+        <meta name="description" content="Join the $PREDICT presale, a decentralized prediction market that shares platform revenue in USDT with token holders. Buy before public launch." />
+      </Helmet>
       <PredictMarketsHero
         title={predictMarketsHeroConfig.title}
         description={predictMarketsHeroConfig.description}
@@ -106,7 +110,6 @@ export function Home() {
         features={featuresData}
       />
       <Markets title={marketsConfig.title} markets={marketsData} />
-      <ReferralProgramSection />
       {/* <WatchRevenueFlow /> */}
       {/* <HowItWorks
         title={howItWorksConfig.title}

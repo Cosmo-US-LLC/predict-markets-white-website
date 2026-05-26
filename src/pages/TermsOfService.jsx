@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { termsOfServiceConfig, termsSections } from '../data/termsOfServiceData';
 
 export function TermsOfService() {
@@ -6,6 +7,10 @@ export function TermsOfService() {
 
   return (
     <section className="min-h-screen bg-[#ffffff] overflow-x-hidden flex flex-col border-b border-[#A6A6A6]">
+      <Helmet>
+        <title>Terms of Service | PredictMarkets</title>
+        <meta name="description" content="Read the PredictMarkets terms of service covering use of the presale, $PREDICT token sale, eligibility, and user responsibilities." />
+      </Helmet>
 
       {/* Hero Section (SAME as Privacy) */}
       <div
