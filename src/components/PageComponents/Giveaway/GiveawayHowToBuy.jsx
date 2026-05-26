@@ -159,7 +159,7 @@ const steps = [
 
 function StepCard({ step, title, img, content }) {
   return (
-    <div className="bg-white border border-[#ddd]/50 rounded-[16px] max-md:h-full flex flex-col gap-5 overflow-hidden pb-4 pt-2 px-2 flex-1">
+    <div className="bg-white border border-[#ddd]/50 rounded-[16px] max-md:h-full flex flex-col gap-5 h-full overflow-hidden pb-4 pt-2 px-2 flex-1">
       <div className="rounded-[15px] overflow-hidden shrink-0 w-full h-[150px] md:h-[186px]">
         <img src={img} alt={title} className="w-full h-full object-cover object-center" />
       </div>

@@ -169,9 +169,9 @@ export default function HowToBuy({
             opts={{ align: "start", loop: true }}
             className="w-full"
           >
-            <CarouselContent className="-ml-[21px]">
+            <CarouselContent className="-ml-[21px] items-stretch">
               {steps.map((step) => (
-                <CarouselItem key={step.id} className="pl-[21px] basis-1/2">
+                <CarouselItem key={step.id} className="pl-[21px] basis-1/2 h-full">
                   <div className="bg-white rounded-[15px] border border-[#DDD] p-[26px] flex flex-col gap-[19px] h-full">
                     {/* Image Container */}
                     <div className="h-[186px] rounded-[15px] overflow-hidden relative bg-gray-100">
