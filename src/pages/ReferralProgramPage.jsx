@@ -26,7 +26,6 @@ export function ReferralProgramPage() {
         subtitle={referralPageHero.subtitle}
         connectWalletLabel={referralPageHero.connectWalletLabel}
       />
-      <ReferralProgramSection />
       <ReferralProgramLeaderboardBlock
         title={referralLeaderboardTitle}
         leaderboardRows={referralLeaderboardRows}
@@ -34,14 +33,15 @@ export function ReferralProgramPage() {
         heroIllustrationSrc={referralHeroPhoneArtSrc}
         heroMobileIllustrationSrc={referralHeroPhoneArtMobileSrc}
       />
-      <ReferralProgramHowItWorks
+      <ReferralProgramSection />
+      {/* <ReferralProgramHowItWorks
         sectionTitle={referralHowItWorksTitle}
         steps={referralHowItWorksSteps}
         panelImageSrc={referralHowItWorksPanelSrc}
         closingBannerTitle={referralClosingBanner.title}
         closingBannerLines={referralClosingBanner.lines}
         closingBannerBgSrc={referralStartEarningBgSrc}
-      />
+      /> */}
     </div>
   );
 }
