@@ -13,7 +13,6 @@ import WhatIsPredict from "../components/PageComponents/Home/WhatIsPredict";
 import WatchRevenueFlow from "../components/PageComponents/Home/WatchRevenueFlow";
 import PredictsTheFeatures from "../components/PageComponents/Home/PredictsTheFeatures";
 import Markets from "../components/PageComponents/Home/Markets";
-import ReferralProgramSection from "../components/PageComponents/Home/ReferralProgramSection";
 import RevenueSharing from "../components/PageComponents/Home/RevenueSharing";
 import PredictionPlatform from "../components/PageComponents/Home/PredictionPlatform";
 import HowItWorks from "../components/PageComponents/Home/HowItWorks";
@@ -106,7 +105,6 @@ export function Home() {
         features={featuresData}
       />
       <Markets title={marketsConfig.title} markets={marketsData} />
-      <ReferralProgramSection />
       {/* <WatchRevenueFlow /> */}
       {/* <HowItWorks
         title={howItWorksConfig.title}
