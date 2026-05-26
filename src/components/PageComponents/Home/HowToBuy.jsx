@@ -21,6 +21,8 @@ export default function HowToBuy({
 }) {
   const [api, setApi] = useState();
   const [current, setCurrent] = useState(0);
+  const [desktopApi, setDesktopApi] = useState();
+  const [desktopCurrent, setDesktopCurrent] = useState(0);
 
   const renderMobileStepDescription = (step) => {
     if (step.id === "step-1") {
@@ -38,16 +40,16 @@ export default function HowToBuy({
   };
 
   useEffect(() => {
-    if (!api) {
-      return;
-    }
-
+    if (!api) return;
     setCurrent(api.selectedScrollSnap());
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
+    api.on("select", () => setCurrent(api.selectedScrollSnap()));
   }, [api]);
+
+  useEffect(() => {
+    if (!desktopApi) return;
+    setDesktopCurrent(desktopApi.selectedScrollSnap());
+    desktopApi.on("select", () => setDesktopCurrent(desktopApi.selectedScrollSnap()));
+  }, [desktopApi]);
 
   if (!steps || steps.length === 0) {
     return null;
@@ -160,46 +162,67 @@ export default function HowToBuy({
           </div>
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid grid-cols-2 gap-[21px] mb-12">
-          {steps.map((step) => (
-            <div
-              key={step.id}
-              className="bg-white rounded-[15px] border-[1px] border-[#DDD] p-[26px] flex flex-col gap-[19px]"
-            >
-              {/* Image Container */}
-              <div className="h-[186px] rounded-[15px] overflow-hidden relative bg-gray-100">
-                <img
-                  src={step.image}
-                  alt={step.title}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                  }}
-                />
-              </div>
+        {/* Desktop Carousel */}
+        <div className="hidden md:block mb-12">
+          <Carousel
+            setApi={setDesktopApi}
+            opts={{ align: "start", loop: true }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-[21px]">
+              {steps.map((step) => (
+                <CarouselItem key={step.id} className="pl-[21px] basis-1/2">
+                  <div className="bg-white rounded-[15px] border border-[#DDD] p-[26px] flex flex-col gap-[19px] h-full">
+                    {/* Image Container */}
+                    <div className="h-[186px] rounded-[15px] overflow-hidden relative bg-gray-100">
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        className="w-full h-full object-cover"
+                        onError={(e) => { e.target.style.display = "none"; }}
+                      />
+                    </div>
 
-              {/* Text Content */}
-              <div className="flex flex-col gap-2">
-                {/* Step Header */}
-                <div className="flex gap-3 items-center">
-                  <div className="bg-white border border-[#0080ED] rounded-full px-3 py-[3px] flex items-center justify-center shrink-0">
-                    <span className="text-sm leading-[22px] tracking-[0.28px] whitespace-nowrap">
-                      {step.stepNumber}
-                    </span>
+                    {/* Text Content */}
+                    <div className="flex flex-col gap-2">
+                      <div className="flex gap-3 items-center">
+                        <div className="bg-white border border-[#0080ED] rounded-full px-3 py-[3px] flex items-center justify-center shrink-0">
+                          <span className="text-sm leading-[22px] tracking-[0.28px] whitespace-nowrap">
+                            {step.stepNumber}
+                          </span>
+                        </div>
+                        <h3 className="text-[#000] text-2xl leading-8">{step.title}</h3>
+                      </div>
+                      <p className="!text-gray-700 !text-start paragraph-regular leading-[150%] tracking-[0.32px] whitespace-pre-line">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-[#000] text-2xl leading-8">
-                    {step.title}
-                  </h3>
-                </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-                {/* Description */}
-                <p className="!text-gray-700 !text-start paragraph-regular leading-[150%] tracking-[0.32px] whitespace-pre-line">
-                  {step.description}
-                </p>
+            {/* Arrow Buttons */}
+            <div className="flex items-center justify-center gap-4 mt-6">
+              <CarouselPrevious className="static translate-y-0 w-11 h-11 border-2 border-[#0080ED] text-[#0080ED] hover:bg-[#0080ED] hover:text-white transition-colors" />
+              <div className="flex items-center gap-2">
+                {Array.from({ length: Math.ceil(steps.length / 2) }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => desktopApi?.scrollTo(index * 2)}
+                    className={cn(
+                      "w-2 h-2 rounded-full transition-all duration-200",
+                      desktopCurrent === index * 2 || desktopCurrent === index * 2 + 1
+                        ? "bg-[#0080ED]"
+                        : "bg-gray-300"
+                    )}
+                    aria-label={`Go to slide group ${index + 1}`}
+                  />
+                ))}
               </div>
+              <CarouselNext className="static translate-y-0 w-11 h-11 border-2 border-[#0080ED] text-[#0080ED] hover:bg-[#0080ED] hover:text-white transition-colors" />
             </div>
-          ))}
+          </Carousel>
         </div>
 
         {/* Buttons */}

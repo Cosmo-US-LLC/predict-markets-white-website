@@ -210,7 +210,9 @@ export default function GiveawayHowToBuy() {
     const el = desktopSliderRef.current;
     if (!el) return;
     const onScroll = () => {
-      const index = Math.round(el.scrollLeft / el.offsetWidth);
+      const gap = 12;
+      const cardWidth = (el.offsetWidth - gap * 2) / 3;
+      const index = Math.round(el.scrollLeft / (cardWidth + gap));
       setDesktopActiveIndex(index);
     };
     el.addEventListener("scroll", onScroll, { passive: true });
@@ -223,8 +225,11 @@ export default function GiveawayHowToBuy() {
   };
 
   const goToDesktop = (i) => {
-    if (!desktopSliderRef.current) return;
-    desktopSliderRef.current.scrollTo({ left: i * desktopSliderRef.current.offsetWidth, behavior: "smooth" });
+    const el = desktopSliderRef.current;
+    if (!el) return;
+    const gap = 12;
+    const cardWidth = (el.offsetWidth - gap * 2) / 3;
+    el.scrollTo({ left: i * (cardWidth + gap), behavior: "smooth" });
   };
 
   return (
@@ -245,37 +250,64 @@ export default function GiveawayHowToBuy() {
         </p>
       </div>
 
-      {/* Desktop: 3-cards-per-slide scroll-snap slider */}
+      {/* Desktop: 3 cards visible, scroll one by one */}
       <div className="hidden md:flex w-full flex-col items-center gap-4">
-        <div
-          ref={desktopSliderRef}
-          className="w-full flex overflow-x-auto"
-          style={{
-            scrollSnapType: "x mandatory",
-            scrollBehavior: "smooth",
-            WebkitOverflowScrolling: "touch",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-        >
-          {stepGroups.map((group, gi) => (
-            <div
-              key={gi}
-              style={{ scrollSnapAlign: "start", scrollSnapStop: "always", minWidth: "100%", maxWidth: "100%" }}
-              className="flex justify-center"
-            >
-              <div className="w-full max-w-[1280px] px-8 flex gap-3">
-                {group.map((s) => <StepCard key={s.step} {...s} />)}
+        <div className="flex items-center gap-4 w-full max-w-[1280px] mx-auto px-4">
+          <button
+            onClick={() => goToDesktop(desktopActiveIndex - 1)}
+            disabled={desktopActiveIndex === 0}
+            aria-label="Previous step"
+            className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full border border-[#ddd] bg-white transition-all duration-200 disabled:opacity-30 hover:border-[#0080ed]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-black">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <div
+            ref={desktopSliderRef}
+            className="flex-1 flex gap-3 overflow-x-scroll"
+            style={{
+              scrollSnapType: "x mandatory",
+              scrollBehavior: "smooth",
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+            }}
+          >
+            {steps.map((s) => (
+              <div
+                key={s.step}
+                style={{
+                  scrollSnapAlign: "start",
+                  scrollSnapStop: "always",
+                  minWidth: "calc((100% - 24px) / 3)",
+                  maxWidth: "calc((100% - 24px) / 3)",
+                }}
+              >
+                <StepCard {...s} />
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <button
+            onClick={() => goToDesktop(desktopActiveIndex + 1)}
+            disabled={desktopActiveIndex === steps.length - 3}
+            aria-label="Next step"
+            className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full border border-[#ddd] bg-white transition-all duration-200 disabled:opacity-30 hover:border-[#0080ed]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-black">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </div>
-        <div className="flex items-center gap-[6px]">
-          {stepGroups.map((_, i) => (
+
+        <div className="flex items-center gap-1.5">
+          {Array.from({ length: steps.length - 2 }).map((_, i) => (
             <button
               key={i}
               onClick={() => goToDesktop(i)}
-              aria-label={`Go to group ${i + 1}`}
+              aria-label={`Go to step ${i + 1}`}
               className="rounded-full transition-all duration-200"
               style={{
                 width: i === desktopActiveIndex ? "20px" : "8px",
