@@ -163,7 +163,7 @@ export default function HowToBuy({
         </div>
 
         {/* Desktop Carousel */}
-        <div className="hidden md:block mb-12">
+        <div className="hidden md:block mb-12 px-14">
           <Carousel
             setApi={setDesktopApi}
             opts={{ align: "start", loop: true }}
@@ -202,25 +202,24 @@ export default function HowToBuy({
               ))}
             </CarouselContent>
 
-            {/* Arrow Buttons */}
-            <div className="flex items-center justify-center gap-4 mt-6">
-              <CarouselPrevious className="static translate-y-0 w-11 h-11 border-2 border-[#0080ED] text-[#0080ED] hover:bg-[#0080ED] hover:text-white transition-colors" />
-              <div className="flex items-center gap-2">
-                {Array.from({ length: Math.ceil(steps.length / 2) }).map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => desktopApi?.scrollTo(index * 2)}
-                    className={cn(
-                      "w-2 h-2 rounded-full transition-all duration-200",
-                      desktopCurrent === index * 2 || desktopCurrent === index * 2 + 1
-                        ? "bg-[#0080ED]"
-                        : "bg-gray-300"
-                    )}
-                    aria-label={`Go to slide group ${index + 1}`}
-                  />
-                ))}
-              </div>
-              <CarouselNext className="static translate-y-0 w-11 h-11 border-2 border-[#0080ED] text-[#0080ED] hover:bg-[#0080ED] hover:text-white transition-colors" />
+            <CarouselPrevious className="-left-14 w-11 h-11 border-2 border-[#0080ED] text-[#0080ED] hover:bg-[#0080ED] hover:text-white transition-colors" />
+            <CarouselNext className="-right-14 w-11 h-11 border-2 border-[#0080ED] text-[#0080ED] hover:bg-[#0080ED] hover:text-white transition-colors" />
+
+            {/* Pagination Dots */}
+            <div className="flex items-center justify-center gap-2 mt-6">
+              {Array.from({ length: Math.ceil(steps.length / 2) }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => desktopApi?.scrollTo(index * 2)}
+                  className={cn(
+                    "w-2 h-2 rounded-full transition-all duration-200",
+                    desktopCurrent === index * 2 || desktopCurrent === index * 2 + 1
+                      ? "bg-[#0080ED]"
+                      : "bg-gray-300"
+                  )}
+                  aria-label={`Go to slide group ${index + 1}`}
+                />
+              ))}
             </div>
           </Carousel>
         </div>

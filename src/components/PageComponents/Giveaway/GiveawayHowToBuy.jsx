@@ -252,12 +252,12 @@ export default function GiveawayHowToBuy() {
 
       {/* Desktop: 3 cards visible, scroll one by one */}
       <div className="hidden md:flex w-full flex-col items-center gap-4">
-        <div className="flex items-center gap-4 w-full max-w-[1280px] mx-auto px-4">
+        <div className="relative w-full max-w-[1290px] mx-auto px-10">
           <button
             onClick={() => goToDesktop(desktopActiveIndex - 1)}
             disabled={desktopActiveIndex === 0}
             aria-label="Previous step"
-            className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full border border-[#ddd] bg-white transition-all duration-200 disabled:opacity-30 hover:border-[#0080ed]"
+            className="absolute -left-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full border border-[#ddd] bg-white transition-all duration-200 disabled:opacity-30 hover:border-[#0080ed]"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-black">
               <polyline points="15 18 9 12 15 6" />
@@ -266,7 +266,7 @@ export default function GiveawayHowToBuy() {
 
           <div
             ref={desktopSliderRef}
-            className="flex-1 flex gap-3 overflow-x-scroll"
+            className="w-full flex gap-3 overflow-x-scroll"
             style={{
               scrollSnapType: "x mandatory",
               scrollBehavior: "smooth",
@@ -294,7 +294,7 @@ export default function GiveawayHowToBuy() {
             onClick={() => goToDesktop(desktopActiveIndex + 1)}
             disabled={desktopActiveIndex === steps.length - 3}
             aria-label="Next step"
-            className="shrink-0 flex items-center justify-center w-12 h-12 rounded-full border border-[#ddd] bg-white transition-all duration-200 disabled:opacity-30 hover:border-[#0080ed]"
+            className="absolute -right-3 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-12 h-12 rounded-full border border-[#ddd] bg-white transition-all duration-200 disabled:opacity-30 hover:border-[#0080ed]"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-black">
               <polyline points="9 18 15 12 9 6" />
