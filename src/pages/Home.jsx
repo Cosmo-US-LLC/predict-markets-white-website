@@ -77,8 +77,8 @@ export function Home() {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>PredictMarkets Crypto Presale | Prediction Market Token</title>
-        <meta name="description" content="Join the $PREDICT presale, a decentralized prediction market that shares platform revenue in USDT with token holders. Buy before public launch." />
+        <title>PredictMarkets | Best Crypto Presale Live Now</title>
+        <meta name="description" content="Discover the future of decentralized prediction markets and earn a share of platform revenue by entering the PREDICT Token Presale before it sells out." />
       </Helmet>
       <PredictMarketsHero
         title={predictMarketsHeroConfig.title}
