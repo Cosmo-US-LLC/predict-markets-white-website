@@ -8,8 +8,8 @@ const distDir = path.resolve(__dirname, '../dist');
 const routes = [
   {
     path: '/',
-    title: 'PredictMarkets Crypto Presale | Prediction Market Token',
-    description: 'Join the $PREDICT presale, a decentralized prediction market that shares platform revenue in USDT with token holders. Buy before public launch.',
+    title: 'PredictMarkets | Best Crypto Presale Live Now',
+    description: 'Discover the future of decentralized prediction markets and earn a share of platform revenue by entering the PREDICT Token Presale before it sells out.',
   },
   {
     path: '/how-to-buy',
